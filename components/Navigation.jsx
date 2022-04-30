@@ -24,7 +24,6 @@ import Headroom from "headroom.js";
 // reactstrap components
 import {
   UncontrolledCollapse,
-  NavbarBrand,
   Navbar,
   NavItem,
   NavLink,
@@ -32,12 +31,14 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip
 } from "reactstrap";
 import Image from "next/image";
 
 import Logo from "../assets/img/brand/logo_white.png";
+import LogoSmall from "../assets/img/brand/logo_small.png";
 
+import NextNavbarBrand from "./link/NextNavbarBrand";
+import NextNavLink from "./link/NextNavLink";
 
 class Navigation extends React.Component {
   componentDidMount() {
@@ -78,15 +79,10 @@ class Navigation extends React.Component {
             id="navbar-main"
           >
             <Container>
-              <Link href="/">
-                <span>
-                  <NavbarBrand href="#foo" className="mr-lg-5">
-                    <Image
-                      alt="..."
-                      src={Logo}
-                    />
-                  </NavbarBrand>
-                </span>
+              <Link href="/" passHref>
+                <NextNavbarBrand className="mr-lg-5">
+                  <Image alt="..." src={Logo} />
+                </NextNavbarBrand>
               </Link>
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />
@@ -107,7 +103,7 @@ class Navigation extends React.Component {
                         <a>
                           <Image
                             alt="..."
-                            src={require("../assets/img/brand/logo_small.png")}
+                            src={LogoSmall}
                           />
                         </a>
                       </Link>

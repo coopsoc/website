@@ -1,0 +1,16 @@
+.section-shaped {
+    .shape-style-custom {
+        @extend .shape-style-1;
+
+        &.shape-primary {
+            background: linear-gradient(
+                150deg,
+                shapes-primary-color("step-1-gradient-bg"),
+                shapes-primary-color("step-2-gradient-bg"),
+                shapes-primary-color("step-3-gradient-bg"),
+                shapes-primary-color("step-4-gradient-bg"),
+                shapes-primary-color("step-5-gradient-bg")
+            );
+        }
+    }
+}
