@@ -1,0 +1,17 @@
+.btn-icon {
+    @each $color, $value in $icon-colors {
+        $hover-value: map-get($icon-hover-colors, $color);
+
+        &.btn-icon-#{$color} {
+            color: $value;
+            background-color: $hover-value;
+            border-color: $hover-value;
+
+            &:hover {
+                color: $hover-value;
+                background-color: $value;
+                border-color: $value;
+            }
+        }
+    }
+}

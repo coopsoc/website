@@ -1,5 +1,17 @@
 $default: #788fd3;
 
+$icon-colors: (
+    "style1": #e095bb,
+    "style2": #788fd3,
+    "style3": #7ad4fa,
+);
+
+$icon-hover-colors: (
+    "style1": #fdedea,
+    "style2": #dee3f3,
+    "style3": #e2f5fd,
+);
+
 $shapes-primary-colors: (
     "step-1-gradient-bg": #fec1b3,
     "step-2-gradient-bg": #e5abc8,

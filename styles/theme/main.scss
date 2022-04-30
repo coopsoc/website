@@ -21,7 +21,7 @@
 @import "../node_modules/bootstrap/scss/mixins";
 
 // Custom overrides
-@import "custom/variables.scss";
+@import "custom/variables";
 
 // Theme Variables
 @import "argon-design-system/variables";
@@ -33,7 +33,7 @@
 @import "argon-design-system/theme";
 
 // Custom styles
-@import "custom/section.scss";
+@import "custom/theme";
 
 // React Differences
 @import "react/react-differences";

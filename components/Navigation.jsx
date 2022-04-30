@@ -31,6 +31,7 @@ import {
   Container,
   Row,
   Col,
+  UncontrolledTooltip
 } from "reactstrap";
 import Image from "next/image";
 
@@ -68,7 +69,6 @@ class Navigation extends React.Component {
     });
   };
 
-
   render() {
     return (
       <>
@@ -95,7 +95,6 @@ class Navigation extends React.Component {
                 onExiting={this.onExiting}
                 onExited={this.onExited}
               >
-
                 <div className="navbar-collapse-header">
                   <Row>
                     <Col className="collapse-brand" xs="6">
@@ -118,80 +117,47 @@ class Navigation extends React.Component {
                 </div>
                 <Nav className="navbar-nav-hover align-items-lg-center" navbar >
                   <NavItem>
-                    <Link href="/team">
-                      <NavLink
-                        href="#foo"
+                    <Link href="/team" passHref>
+                      <NextNavLink
                         className={this.getNavLinkClass("/team")}
                       >
                         <span className="nav-link-inner--text">THE  TEAM</span>
-                      </NavLink>
+                      </NextNavLink>
                     </Link>
                   </NavItem>
                   <NavItem>
-                    <Link href="/events">
-                      <NavLink
-                        href="#foo"
+                    <Link href="/events" passHref>
+                      <NextNavLink
                         className={this.getNavLinkClass("/events")}
                       >
                         <span className="nav-link-inner--text">EVENTS</span>
-                      </NavLink>
+                      </NextNavLink>
                     </Link>
                   </NavItem>
 
                   <NavItem>
-                    <Link href="/publications">
-                      <NavLink
-                        href="#foo"
+                    <Link href="/publications" passHref>
+                      <NextNavLink
                         className={this.getNavLinkClass("/publications")}
                       >
                         <span className="nav-link-inner--text">PUBLICATIONS</span>
-                      </NavLink>
+                      </NextNavLink>
                     </Link>
 
                   </NavItem>
 
                   <NavItem>
-                    <Link href="/charity">
-                      <NavLink
-                        href="#foo"
+                    <Link href="/charity" passHref>
+                      <NextNavLink
                         className={this.getNavLinkClass("/charity")}
                       >
                         <span className="nav-link-inner--text">CHARITY</span>
-                      </NavLink>
+                      </NextNavLink>
                     </Link>
                   </NavItem>
-
-                  {/* <UncontrolledDropdown nav>
-                    <DropdownToggle nav >
-                      <NavLink
-                        // activeClassName="nav-active"
-                        // className="navbar-hover navbar-nav-hover" 
-                        tag={Link}
-                        to="/publications" 
-                        activeClassName="active"
-                      >
-                        <span className="nav-link-inner--text">Publications</span>
-                      </NavLink>
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem>
-                      <a className="linkNone" href="https://www.coopsoc.com.au/FYG2021.pdf" target="_blank">
-                        First Year Guide
-                      </a>
-                      </DropdownItem>
-                      <DropdownItem to="/blog" tag={Link}>                
-                        Blog Posts
-                      </DropdownItem>
-                      <DropdownItem>
-                      <a className="linkNone" href="https://open.spotify.com/show/25fOObrHq0t3hPrmf8B8Dx?si=IYM-tZg-Q0CfufTKVqTqJg&dl_branch=1" target="_blank">
-                        Podcast
-                      </a>
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown> */}
-
                 </Nav>
-                {/* <Nav className="align-items-lg-center ml-lg-auto" navbar>
+
+                <Nav className="align-items-lg-center ml-lg-auto" navbar>
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
@@ -256,7 +222,7 @@ class Navigation extends React.Component {
                       Connect on LinkedIn
                     </UncontrolledTooltip>
                   </NavItem>
-                </Nav> */}
+                </Nav>
               </UncontrolledCollapse>
             </Container>
           </Navbar>
