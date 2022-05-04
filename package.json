@@ -10,16 +10,20 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "animate.css": "^4.1.1",
     "bootstrap": "4.6.1",
     "headroom.js": "^0.12.0",
     "next": "12.1.5",
+    "nouislider": "^15.6.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "reactstrap": "^9.0.2",
     "swiper": "^8.1.4",
-    "typewriter-effect": "^2.18.2"
+    "typewriter-effect": "^2.18.2",
+    "wnumb": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "8.14.0",

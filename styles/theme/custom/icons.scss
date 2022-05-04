@@ -5,18 +5,12 @@
 }
 
 .icon-shape {
-    &.icon-shape-style1 {
-        color: map-get($icon-colors, "style1");
-        background-color: #fdedea;
-    }
-    
-    &.icon-shape-style2 {
-        color: map-get($icon-colors, "style2");
-        background-color: #dee3f3;
-    }
-    
-    &.icon-shape-style3 {
-        color: map-get($icon-colors, "style3");
-        background-color: #e2f5fd;
+    @each $color, $value in $icon-colors {
+        $bg-value: map-get($icon-hover-colors, $color);
+
+        &.icon-shape-#{$color} {
+            color: $value;
+            background-color: $bg-value;
+        }
     }
 }

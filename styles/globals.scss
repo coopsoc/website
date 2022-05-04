@@ -1,9 +1,11 @@
-html {
-    min-height: 100%;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }

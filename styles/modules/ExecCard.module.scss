@@ -1,0 +1,104 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+
+$card-colors: (
+    "style1": #008cc9,
+    "style2": #006591,
+    "style3": #76a4b8,
+    "style4": #075170,
+    "style5": #72bfe0,
+);
+
+// Auto-resizing text inside each person's card
+
+.person-text {
+    width: 80%;
+    font-size: 20px;
+    font-weight: 400px;
+}
+
+@include media-breakpoint-up(md) {
+    .person-text {
+        font-size: 8px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .person-text {
+        font-size: 12px;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .person-text {
+        font-size: 13px;
+    }
+}
+
+// Card styling
+
+@each $color, $value in $card-colors {
+    .card-person-#{$color} {
+        width: 100%;
+        display: block;
+        position: relative;
+        text-decoration: none;
+        z-index: 0;
+        text-align: center;
+        overflow: hidden;
+
+        p {
+            position: absolute;
+            color: white;
+            top: 50%;
+            z-index: -1;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        // Little quarter circle in top right
+        & .card-person-animation {
+            position: absolute;
+            z-index: 1;
+            top: -16px;
+            right: -16px;
+            background-color: $value;
+            height: 32px;
+            width: 32px;
+            border-radius: 32px;
+            transform: scale(1);
+            transform-origin: 50% 50%;
+            transition: transform 0.25s ease-out;
+        }
+
+        &:hover .card-person-animation {
+            transform: scale(50);
+        }
+
+        &:hover p {
+            z-index: 1;
+        }
+    }
+
+    .go-corner-#{$color} {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        background-color: $value;
+        border-radius: 0 4px 0 32px;
+    }
+}
+
+.go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+}
