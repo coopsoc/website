@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { useState } from "react";
 
 // reactstrap components
 import {
@@ -38,77 +38,63 @@ import { START, END, MEMBERS } from "../data/TeamData";
 import "animate.css";
 
 
-class Team extends React.Component {
-  constructor(props) {
-    super(props);
+const Team = () => {
+  const [year, setYear] = useState(END);
 
-    this.state = {
-      year: END,
-    };
+  const currentYear = year - START;
+  const members = MEMBERS[currentYear];
 
-    this.mainRef = React.createRef();
-  }
+  return (
+    <>
+      <Navigation />
+      <main>
+        <Header />
+        <section className="section section-lg">
+          <Row className="justify-content-center text-center mb-lg">
+            <Col lg="8">
+              <h1 className="animate__animated animate__zoomIn animate__fast">MEET THE TEAM</h1>
+            </Col>
+          </Row>
 
-  componentDidMount() {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.mainRef.current.scrollTop = 0;
-  }
+          <YearSlider
+            start={START}
+            end={END}
+            onChange={year => setYear(year)} />
 
-  render() {
-    const currentYear = this.state.year - START;
-    const members = MEMBERS[currentYear];
+          <br />
 
-    return (
-      <>
-        <Navigation />
-        <main ref={this.mainRef}>
-          <Header />
-          <section className="section section-lg">
-            <Row className="justify-content-center text-center mb-lg">
-              <Col lg="8">
-                <h1 className="animate__animated animate__zoomIn animate__fast">MEET THE TEAM</h1>
-              </Col>
-            </Row>
+          <div className="container">
+            {members.exec.map((section, index) => (
+              <ExecSection
+                key={`exec-section-${section.sectionName}-${index}`}
+                section={section} />
+            ))}
 
-            <YearSlider
-              start={START}
-              end={END}
-              onChange={year => this.setState({
-                year: year
-              })} />
-
-            <br></br>
-
-            <div className="container">
-              {members.exec.map((section, index) => (
-                <ExecSection
-                  key={`exec-section${index}`}
-                  section={section} />
-              ))}
-
-              {members.subcoms && (
-                <section className="about-section text-center bg-white pb-sm-5">
-                  <div className="container subcom">
-                    <hr></hr>
-                    <Row className="justify-content-center text-center mb-lg">
-                      <h2>The Committee</h2>
-                    </Row>
-                    {members.subcoms.map((portfolio, index) => (
+            {members.subcoms && (
+              <section className="about-section text-center bg-white pb-sm-5">
+                <div className="container subcom">
+                  <hr></hr>
+                  <Row className="justify-content-center text-center mb-lg">
+                    <h2>The Committee</h2>
+                  </Row>
+                  {members.subcoms.map((portfolio, index) => (
+                    <>
+                      {/* Only have separators between subcoms */}
+                      {index !== 0 && <hr />}
                       <Subcom
-                        key={index}
-                        data={portfolio} />
-                    ))}
-                  </div>
-                </section>
-              )}
-            </div>
-          </section>
-        </main>
-        <Footer />
-      </>
-    );
-  }
+                        key={`subcom-${portfolio.name}-${index}`}
+                        portfolio={portfolio} />
+                    </>
+                  ))}
+                </div>
+              </section>
+            )}
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
 }
 
 export default Team;

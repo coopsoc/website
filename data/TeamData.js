@@ -1,4 +1,4 @@
-import { faBullhorn, faDesktop, faDove, faEdit, faUserFriends } from "@fortawesome/free-solid-svg-icons";
+import { faBullhorn, faDesktop, faDove, faEdit, faUserFriends, faClipboard } from "@fortawesome/free-solid-svg-icons";
 
 // 2020 Team Images
 import Jelinna_Image from '../assets/img/exec/2020/Jelinna.jpg';
@@ -155,7 +155,7 @@ const MEMBERS = [
     ],
     "subcoms": [
       {
-        "icon": [faBullhorn],
+        "icons": [faBullhorn],
         "name": "Marketing",
         "description": `The marketing portfolio focuses on creating continued engagement with our Co-op Soc Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
         "members": [
@@ -165,7 +165,7 @@ const MEMBERS = [
         ],
       },
       {
-        "icon": [faUserFriends],
+        "icons": [faUserFriends],
         "name": "Social",
         "description": `The team is responsible for organising our social calendar, including planning, developing and executing a core suite of events. They ensure all members are given the opportunity to be a part of this vibrant community, through the creation and maintenance of social groups.`,
         "members": [
@@ -175,7 +175,7 @@ const MEMBERS = [
         ],
       },
       {
-        "icon": [faDove],
+        "icons": [faDove],
         "name": "Charity",
         "description": `This portfolio seeks to create awareness, raise funds and drive social change for charities. The Charity subcommittee also compliments the Social portfolio in hosting fun events for a great cause.`,
         "members": [
@@ -300,7 +300,7 @@ const MEMBERS = [
     ],
     "subcoms": [
       {
-        "icon": [faDove],
+        "icons": [faDove],
         "name": "Charity",
         "description": `The Charity portfolio seeks to create awareness, raise funds and drive social change for charities. The committee also compliments the Social portfolio in hosting fun events for a great cause.`,
         "members": [
@@ -310,7 +310,7 @@ const MEMBERS = [
         ],
       },
       {
-        "icon": [faBullhorn],
+        "icons": [faBullhorn],
         "name": "Marketing",
         "description": `The marketing portfolio focuses on creating continued engagement with our Co-op Society Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
         "members": [
@@ -321,7 +321,7 @@ const MEMBERS = [
         ],
       },
       {
-        "icon": [faEdit, faDesktop],
+        "icons": [faEdit, faDesktop],
         "name": "Publications/IT",
         "description": `This year, our society has combined the Publications and IT iteams in order to take advantage of the many synergies that exist between the two portfolios. The combined Pubs/IT portfolio is responsible for continuing to develop and facilitate the society's online presence through new and existing avenues, as well as occassional standalone publications such as the First Year Guide.`,
         "members": [
@@ -331,7 +331,7 @@ const MEMBERS = [
         ],
       },
       {
-        "icon": [faUserFriends],
+        "icons": [faUserFriends],
         "name": "Social",
         "description": `The team is responsible for organising our social calendar, including planning, developing and executing a core suite of events. They ensure all members are given the opportunity to be a part of this vibrant community, through the creation and maintenance of social groups.`,
         "members": [
@@ -466,7 +466,58 @@ const MEMBERS = [
       },
       // TODO: fill in FYR as they come in
     ],
-    // TODO: fill in subcom as they come in
+    "subcoms": [
+      {
+        "icons": [faClipboard],
+        "name": "Administrative Officer",
+        "description": ``,
+        "members": [
+          "Issac Liu"
+        ],
+      },
+      {
+        "icons": [faDove],
+        "name": "Charity",
+        "description": `The Charity portfolio seeks to create awareness, raise funds and drive social change for charities. The committee also compliments the Social portfolio in hosting fun events for a great cause.`,
+        "members": [
+          "Alexandra Sheedy",
+          "Crystal Zhao",
+          "Thivakar Jeyaseelan",
+        ],
+      },
+      {
+        "icons": [faBullhorn],
+        "name": "Marketing",
+        "description": `The Marketing portfolio focuses on creating continued engagement with our Co-op Society Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
+        "members": [
+          "Anna Wu",
+          "Arousha Soltany",
+          "Jack Lane",
+          "Savera Shabih",
+        ],
+      },
+      {
+        "icons": [faEdit, faDesktop],
+        "name": "Publications/IT",
+        "description": `The Publications/IT portfolio is responsible for continuing to develop and facilitate the society's online presence through new and existing avenues, focusing on the Co-op Soc website and the Chicken Coop podcast.`,
+        "members": [
+          "Lucas Brunton",
+          "Meghna Sunil",
+          "Michelle Yeom",
+          "Stephen Lincon",
+        ],
+      },
+      {
+        "icons": [faUserFriends],
+        "name": "Social",
+        "description": `The Social portfolio is responsible for organising our social calendar, including planning, developing and executing a core suite of events. They ensure all members are given the opportunity to be a part of this vibrant community, through the creation and maintenance of social groups.`,
+        "members": [
+          "Isabella Cook",
+          "Lily Miranda",
+          "Zack Bolland",
+        ],
+      }
+    ]
   }
 ];
 

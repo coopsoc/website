@@ -35,18 +35,10 @@ import Footer from "../components/Footer";
 import styles from "../styles/modules/index.module.scss";
 
 const Index = () => {
-  const mainRef = useRef(null);
-
-  useEffect(() => {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    mainRef.current.scrollTop = 0;
-  });
-
   return (
     <>
       <Navigation />
-      <main ref={mainRef}>
+      <main>
         <div className="position-relative">
           {/* shape Hero */}
           <section className="section section-lg section-shaped pb-250">
