@@ -61,8 +61,6 @@ const Team = () => {
             end={END}
             onChange={year => setYear(year)} />
 
-          <br />
-
           <div className="container">
             {members.exec.map((section, index) => (
               <ExecSection
@@ -73,7 +71,7 @@ const Team = () => {
             {members.subcoms && (
               <section className="about-section text-center bg-white pb-sm-5">
                 <div className="container subcom">
-                  <hr></hr>
+                  <hr />
                   <Row className="justify-content-center text-center mb-lg">
                     <h2>The Committee</h2>
                   </Row>
