@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Co-op Soc Website
 
-## Getting Started
+This repository houses the source code for UNSW Co-op Society's website, hosted
+at [https://coopsoc.com.au](https://coopsoc.com.au) and written in
+[Next.js](https://nextjs.org). Visit our website and explore around!
 
-First, run the development server:
+## Running the website locally
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Before running the website, please ensure that the following is installed:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Git](https://git-scm.com)
+- [Node.js](https://nodejs.org)
+- [Yarn](https://yarnpkg.com)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+To run the website on your local machine, do the following:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+1. Clone the repository through `git clone https://github.com/coopsoc/coopsoc.com.au`.
+2. Go into the repository and run `yarn install` to install all required packages.
+3. Run `yarn dev` to launch the website. After executing this command, the website
+   should be available at `http://localhost:3000`, where any edits made to the
+   website's source code should be immediately reflected on the webpage.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Contributors
 
-## Learn More
+The first version of the website was written by the 2020 Co-op Soc IT director,
+Vincent Chen.
 
-To learn more about Next.js, take a look at the following resources:
+The React rewrite of the website was done by the 2021 IT subcom:
+- Noa Challis
+- Hanyuan Li
+- Rohan Agarwal
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This was then ported over to Next.js by the 2022 IT subcom.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Acknowledgements
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This website was originally built using CreativeTim's
+[Argon Design System for React](https://github.com/creativetimofficial/argon-design-system-react),
+and heavily modified to work with Next.js.
