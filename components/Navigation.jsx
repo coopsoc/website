@@ -38,12 +38,12 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookSquare, faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
-import Logo from "../assets/img/brand/logo_white.png";
-import LogoSmall from "../assets/img/brand/logo_small.png";
+import Logo from "assets/img/brand/logo_white.png";
+import LogoSmall from "assets/img/brand/logo_small.png";
 
-import NextNavbarBrand from "./link/NextNavbarBrand";
-import NextNavLink from "./link/NextNavLink";
-import NavIcon from "./navigation/NavIcon";
+import NextNavbarBrand from "./link/NextNavbarBrand.jsx";
+import NextNavLink from "./link/NextNavLink.jsx";
+import NavIcon from "./navigation/NavIcon.jsx";
 
 const Navigation = () => {
   const router = useRouter();

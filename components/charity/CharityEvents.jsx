@@ -2,10 +2,10 @@ import React, { cloneElement } from "react";
 import { Card, Container, Row } from "reactstrap";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import YearSlider from "../YearSlider";
-import CharityCard from "./events/CharityCard";
+import YearSlider from "../YearSlider.jsx";
+import CharityCard from "./events/CharityCard.jsx";
 
-import styles from "../../styles/modules/CharityEvents.module.scss";
+import styles from "styles/modules/CharityEvents.module.scss";
 
 class CharityEvents extends React.Component {
   constructor(props) {

@@ -25,14 +25,14 @@ SwiperCore.use([SNavigation, Pagination]);
 // FontAwesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faHeart } from "@fortawesome/free-solid-svg-icons";
-import { niCalendarGrid } from "../components/icon/nucleo.js";
+import { niCalendarGrid } from "components/icon/nucleo.js";
 
 // Core components
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import Navigation from "components/Navigation.jsx";
+import Footer from "components/Footer.jsx";
 
 // Styles for this page only
-import styles from "../styles/modules/index.module.scss";
+import styles from "styles/modules/index.module.scss";
 
 const Index = () => {
   return (

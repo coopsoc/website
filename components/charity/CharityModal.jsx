@@ -1,8 +1,8 @@
 import React from "react";
 import { Modal, ModalBody, ModalFooter, ModalHeader, Button } from "reactstrap";
 
-import CharityBody from "./modal/CharityBody";
-import CaseCompBody from "./modal/custom/CaseCompBody";
+import CharityBody from "./modal/CharityBody.jsx";
+import CaseCompBody from "./modal/custom/CaseCompBody.jsx";
 
 const CharityModal = ({ isOpen, toggle, event }) => {
   // Renders the body of our modal. If there's anything in the `special`

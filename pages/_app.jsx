@@ -4,11 +4,11 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
 // Styles
-import "../styles/globals.scss";
-import "../styles/theme/main.scss";
+import "styles/globals.scss";
+import "styles/theme/main.scss";
 
 // Icons
-import "../assets/vendor/nucleo/css/nucleo.css";
+import "assets/vendor/nucleo/css/nucleo.css";
 
 // FontAwesome config
 import { config } from "@fortawesome/fontawesome-svg-core";

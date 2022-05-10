@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
 
-import styles from "../../styles/modules/ExecCard.module.scss";
+import styles from "styles/modules/ExecCard.module.scss";
 
+// TODO: consider separating into component that's more generic, and having
+// ExecCard inherit from that
 const ExecCard = ({ data, colour }) => {
   const { name, image, description, role } = data;
 

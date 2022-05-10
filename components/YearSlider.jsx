@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Col, Container } from "reactstrap";
+
 import Slider from "nouislider";
 import wNumb from "wnumb";
 

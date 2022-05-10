@@ -28,7 +28,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <footer className=" footer">
+      <footer className="footer">
         <Container>
             <br></br>
             <Row className="justify-content-center text-center">

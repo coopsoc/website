@@ -1,3 +1,4 @@
+// Required to make cards not get shoved to the next row
 @keyframes delayShow {
     0% {
         position: absolute;
@@ -7,6 +8,11 @@
         position: static;
     }
 }
+
+// Transition base classes for react-transition-group, flow is like this:
+// - `exit` animation gets played first
+// - `enter` animation gets played next (seen in transition-delay, animation
+//   properties in `enter-active` classes)
 
 .right-to-left-enter {
     opacity: 0;

@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { Row, Col } from "reactstrap";
 
-import CharityBody from "../CharityBody";
+import CharityBody from "../CharityBody.jsx";
 
-import caseCompWinners from '../../../../assets/img/charity/case-comp2021Winners.jpg';
+import caseCompWinners from 'assets/img/charity/case-comp2021Winners.jpg';
 
 const CaseCompBody = ({ event }) => {
   return (

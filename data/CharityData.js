@@ -1,24 +1,24 @@
 // Event images
-import sixKForWater from '../assets/img/charity/6k-for-water.jpg';
-import bloodDrive from '../assets/img/charity/blood-drive.jpg';
-import caseComp from '../assets/img/charity/case-comp.jpg';
-import greatestShave from '../assets/img/charity/greatest-shave.jpg';
-import hscWorkshop from '../assets/img/charity/hsc-workshops.jpg';
-import pokerNight from '../assets/img/charity/poker.jpg';
-import caseComp2021 from '../assets/img/charity/case-comp2021.png';
-import funRun from '../assets/img/charity/funRun.jpg';
+import sixKForWater from 'assets/img/charity/6k-for-water.jpg';
+import bloodDrive from 'assets/img/charity/blood-drive.jpg';
+import caseComp from 'assets/img/charity/case-comp.jpg';
+import greatestShave from 'assets/img/charity/greatest-shave.jpg';
+import hscWorkshop from 'assets/img/charity/hsc-workshops.jpg';
+import pokerNight from 'assets/img/charity/poker.jpg';
+import caseComp2021 from 'assets/img/charity/case-comp2021.png';
+import funRun from 'assets/img/charity/funRun.jpg';
 
 // Sponsor charity images
-import ILF from "../assets/img/charity/logos/ilf.png";
-import Leukaemia from "../assets/img/charity/logos/leukaemia_foundation.png";
-import Dignity from "../assets/img/charity/logos/share_the_dignity.png";
-import Starlight from "../assets/img/charity/logos/starlight.png";
-import Variety from "../assets/img/charity/logos/variety.png";
-import WorldVision from "../assets/img/charity/logos/world_vision.png";
+import ILF from "assets/img/charity/logos/ilf.png";
+import Leukaemia from "assets/img/charity/logos/leukaemia_foundation.png";
+import Dignity from "assets/img/charity/logos/share_the_dignity.png";
+import Starlight from "assets/img/charity/logos/starlight.png";
+import Variety from "assets/img/charity/logos/variety.png";
+import WorldVision from "assets/img/charity/logos/world_vision.png";
 
 // Upcoming event images
-import FHF from "../assets/img/charity/upcoming/40_hour_famine.png";
-import WGS from "../assets/img/charity/upcoming/worlds_greatest_shave.png";
+import FHF from "assets/img/charity/upcoming/40_hour_famine.png";
+import WGS from "assets/img/charity/upcoming/worlds_greatest_shave.png";
 
 const START = 2019;
 const END = 2021;

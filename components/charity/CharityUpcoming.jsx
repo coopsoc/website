@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { Col, Container, Row } from "reactstrap";
 
-import styles from "../../styles/modules/CharityUpcoming.module.scss";
+import styles from "styles/modules/CharityUpcoming.module.scss";
 
-import { UPCOMING } from "../../data/CharityData.js";
+import { UPCOMING } from "data/CharityData.js";
 
 const CharityUpcoming = () => {
   return (

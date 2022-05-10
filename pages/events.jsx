@@ -12,20 +12,20 @@ import {
 } from "reactstrap";
 
 // Core components
-import Header from "../components/Header";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import Header from "components/Header";
+import Navigation from "components/Navigation";
+import Footer from "components/Footer";
 
 // Images
-import Ball from "../assets/img/events/ball2.jpg";
-import Camp from "../assets/img/events/camp.jpg";
-import CampWhole from "../assets/img/events/campWhole.jpg";
-import FunRun from "../assets/img/events/funRun.jpg";
-import FunRun2 from "../assets/img/events/funRun2.jpg";
-import Gals from "../assets/img/events/gals.jpg";
-import Gals2 from "../assets/img/events/gals2.jpg";
-import GalsBall from "../assets/img/events/galsBall.jpg";
-import YTB from "../assets/img/events/ytb.jpg";
+import Ball from "assets/img/events/ball2.jpg";
+import Camp from "assets/img/events/camp.jpg";
+import CampWhole from "assets/img/events/campWhole.jpg";
+import FunRun from "assets/img/events/funRun.jpg";
+import FunRun2 from "assets/img/events/funRun2.jpg";
+import Gals from "assets/img/events/gals.jpg";
+import Gals2 from "assets/img/events/gals2.jpg";
+import GalsBall from "assets/img/events/galsBall.jpg";
+import YTB from "assets/img/events/ytb.jpg";
 
 const Events = () => {
   return (

@@ -24,15 +24,15 @@ import {
 } from "reactstrap";
 
 // core components
-import Header from "../components/Header";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
-import YearSlider from "../components/YearSlider";
+import Header from "components/Header.jsx";
+import Navigation from "components/Navigation.jsx";
+import Footer from "components/Footer.jsx";
+import YearSlider from "components/YearSlider.jsx";
 
-import ExecSection from "../components/team/ExecSection";
-import Subcom from "../components/team/Subcom";
+import ExecSection from "components/team/ExecSection.jsx";
+import Subcom from "components/team/Subcom.jsx";
 
-import { START, END, MEMBERS } from "../data/TeamData";
+import { START, END, MEMBERS } from "data/TeamData.js";
 
 // yess let's get those animations
 import "animate.css";
