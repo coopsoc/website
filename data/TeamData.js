@@ -470,7 +470,7 @@ const MEMBERS = [
       {
         "icons": [faClipboard],
         "name": "Administrative Officer",
-        "description": ``,
+        "description": `The administrative officer assists the executive team, largely secretary, with things such as event organisation, booking systems and managing the inbox. They are organised, efficient and dedicated to their work.`,
         "members": [
           "Issac Liu"
         ],

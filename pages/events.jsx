@@ -54,7 +54,7 @@ const Events = () => {
 
         <section className="section section-lg pt-lg-0">
           <Container>
-            <div className="row">
+            <Row>
               <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
                 <Image
                   src={Camp}
@@ -114,7 +114,7 @@ const Events = () => {
                   alt=""
                 />
               </div>
-            </div>
+            </Row>
           </Container>
         </section>
       </main>

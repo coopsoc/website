@@ -20,8 +20,14 @@
         transform: scale(0);
         transition: transform 0.2s ease;
     }
-    
+
     &:hover::after {
         transform: scale(0.8, 0.5);
     }
+}
+
+.nav-link.active {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 800;
+    font-size: large;
 }

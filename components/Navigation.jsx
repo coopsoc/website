@@ -78,7 +78,7 @@ const Navigation = () => {
             </button>
 
             <UncontrolledCollapse
-              toggler="#navbar_global"
+              toggler="#navbar-global"
               navbar
               className={open ? "collapsing-out" : ""}
               onExiting={() => setOpen(true)}
@@ -97,7 +97,7 @@ const Navigation = () => {
                     </Link>
                   </Col>
                   <Col className="collapse-close" xs="6">
-                    <button className="navbar-toggler" id="navbar_global">
+                    <button className="navbar-toggler" id="navbar-global">
                       <span />
                       <span />
                     </button>

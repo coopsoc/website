@@ -1,0 +1,57 @@
+@keyframes delayShow {
+    0% {
+        position: absolute;
+    }
+
+    100% {
+        position: static;
+    }
+}
+
+.right-to-left-enter {
+    opacity: 0;
+    transform: translate(100%, 0);
+}
+
+.right-to-left-enter-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 500ms ease-out;
+    transition-delay: 500ms;
+    animation: delayShow 500ms normal forwards step-end;
+}
+
+.right-to-left-exit {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.right-to-left-exit-active {
+    opacity: 0;
+    transform: translate(-100%, 0);
+    transition: all 500ms ease-in;
+}
+
+.left-to-right-enter {
+    opacity: 0;
+    transform: translate(-100%, 0);
+}
+
+.left-to-right-enter-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 500ms ease-out;
+    transition-delay: 500ms;
+    animation: delayShow 500ms normal forwards step-end;
+}
+
+.left-to-right-exit {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.left-to-right-exit-active {
+    opacity: 0;
+    transform: translate(100%, 0);
+    transition: all 500ms ease-in;
+}
