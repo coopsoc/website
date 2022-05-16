@@ -15,8 +15,7 @@ const CharityList = () => {
             <a href={sponsor.link} target="_blank" rel="noopener noreferrer">
               <Image
                 alt={sponsor.name}
-                src={sponsor.image}
-                style={{ width: "100%" }} />
+                src={sponsor.image} />
             </a>
           </Col>
         ))}
