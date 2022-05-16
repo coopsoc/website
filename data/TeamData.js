@@ -39,6 +39,8 @@ import Emily22_Image from "assets/img/exec/2022/Emily.jpg";
 import Nicole_Image from "assets/img/exec/2022/Nicole.jpg";
 import Annie_Image from "assets/img/exec/2022/Annie.png";
 import Hanyuan_Image from "assets/img/exec/2022/Hanyuan.png";
+import Aks_Image from "assets/img/exec/2022/Aks.jpg";
+import Kristina_Image from "assets/img/exec/2022/Kristina.jpg";
 
 const START = 2020;
 const END = 2022;
@@ -52,13 +54,13 @@ const MEMBERS = [
           [
             {
               "image": Jelinna_Image,
-              "description": `Stepping into the role of President, not only did I want to be the leader who oversees the events and logistics that happen ‘behind the scenes’; I wanted to act as a key support network for not only the executive members on the team but also those in the society as well- ensuring that the goals and voices of the co-op community were being heard and considered.`,
+              "description": `Stepping into the role of President, not only did I want to be the leader who oversees the events and logistics that happen ‘behind the scenes'; I wanted to act as a key support network for not only the executive members on the team but also those in the society as well- ensuring that the goals and voices of the co-op community were being heard and considered.`,
               "name": "Jelinna Wang",
               "role": "President"
             },
             {
               "image": Roary_Image,
-              "description": `I decided to run for Vice President in order to channel my inner Nigel: the fun-loving guy who can bring a room together and give warm welcomes to everyone coming into Co-op Society. Seeing the first-years enjoy camp so much and create long-lasting memories and friendships honestly filled me with joy; it was definitely one of my biggest goals stepping into this position. It’s quite sad that we’ve been kept at home this term, but I’m looking forward to seeing you all in person again, and continuing to facilitate a friendly and fun environment.`,
+              "description": `I decided to run for Vice President in order to channel my inner Nigel: the fun-loving guy who can bring a room together and give warm welcomes to everyone coming into Co-op Society. Seeing the first-years enjoy camp so much and create long-lasting memories and friendships honestly filled me with joy; it was definitely one of my biggest goals stepping into this position. It's quite sad that we've been kept at home this term, but I'm looking forward to seeing you all in person again, and continuing to facilitate a friendly and fun environment.`,
               "name": "Roary Xu",
               "role": "Vice President"
             },
@@ -66,7 +68,7 @@ const MEMBERS = [
           [
             {
               "image": Shrey_Image,
-              "description": `I honestly believe that organisation is a staple to running any society. I applied to be secretary so that I could help be the backbone of the society. Along the way I’ve helped develop the teams’ communication abilities further, whilst simultaneously increasing my ability to work in and lead a team.  My goal is to have everyone working together as a tightly oiled machine, and so far it’s been pretty good!!`,
+              "description": `I honestly believe that organisation is a staple to running any society. I applied to be secretary so that I could help be the backbone of the society. Along the way I've helped develop the teams' communication abilities further, whilst simultaneously increasing my ability to work in and lead a team.  My goal is to have everyone working together as a tightly oiled machine, and so far it's been pretty good!!`,
               "name": "Shrey Somaiya",
               "role": "Secretary"
             },
@@ -92,19 +94,19 @@ const MEMBERS = [
           [
             {
               "image": Stanley_Image,
-              "description": `Social director and all-round LIFO. The aim for this year was to help y'all work hard, play hard. With COVID-19 in our systems, I’ve tried to help Co-op play hard, whether it be games over zoom, getting inebriated over zoom or finding love over zoom, I wanted to replicate that feeling of in person connection. Once COVID-19 is over, my goal is to throw a term you’ll never forget.`,
+              "description": `Social director and all-round LIFO. The aim for this year was to help y'all work hard, play hard. With COVID-19 in our systems, I've tried to help Co-op play hard, whether it be games over zoom, getting inebriated over zoom or finding love over zoom, I wanted to replicate that feeling of in person connection. Once COVID-19 is over, my goal is to throw a term you'll never forget.`,
               "name": "Stanley Chen",
               "role": "Events"
             },
             {
               "image": Hayes_Image,
-              "description": `As a Charity co-director I wanted to highlight the philanthropic side of Co-op Soc that our members tend to forget. Given that we’re a privileged bunch, it’s important we give back to the community, and these acts of kindness don’t have to be boring! We’ve already fundraised through the World’s Greatest Shave and started a new case comp initiative to help small charities. Later on we hope to run in the City2Surf and hold our much-anticipated Poker Night.`,
+              "description": `As a Charity co-director I wanted to highlight the philanthropic side of Co-op Soc that our members tend to forget. Given that we're a privileged bunch, it's important we give back to the community, and these acts of kindness don't have to be boring! We've already fundraised through the World's Greatest Shave and started a new case comp initiative to help small charities. Later on we hope to run in the City2Surf and hold our much-anticipated Poker Night.`,
               "name": "Hayes Choy",
               "role": "Charity"
             },
             {
               "image": Emily20_Image,
-              "description": `Coming into the Charity Director role, my goal was to organise fun events that allow Co-ops to volunteer first-hand and give back to the community - to do good and feel good. We’ve had the opportunity to hold some great events, such as our upcoming online Case Comp partnering with a real charity to help them tackle a very real issue in our society. Looking forward to launching some of our planned events when in-person activities resume!`,
+              "description": `Coming into the Charity Director role, my goal was to organise fun events that allow Co-ops to volunteer first-hand and give back to the community - to do good and feel good. We've had the opportunity to hold some great events, such as our upcoming online Case Comp partnering with a real charity to help them tackle a very real issue in our society. Looking forward to launching some of our planned events when in-person activities resume!`,
               "name": "Emily Kasovska",
               "role": "Charity"
             },
@@ -120,7 +122,7 @@ const MEMBERS = [
             },
             {
               "image": Susan_Image,
-              "description": `As the publications director, my vision is to develop the society’s online presence through the introduction of published articles on our new platform that is the Co-op Soc website. I hope that by establishing a friendly blog environment, these features can inform, amuse and provoke thought in the wider community.`,
+              "description": `As the publications director, my vision is to develop the society's online presence through the introduction of published articles on our new platform that is the Co-op Soc website. I hope that by establishing a friendly blog environment, these features can inform, amuse and provoke thought in the wider community.`,
               "name": "Susan Sun",
               "role": "Publications"
             },
@@ -139,13 +141,13 @@ const MEMBERS = [
           [
             {
               "image": Celine_Image,
-              "description": `As one of two First Year Representatives, I’ve had the opportunity to represent the Co-op Soc 2020 cohort, and function as a channel of communication between us and the Executive Body. My goals stepping into this role were to contribute effectively to the smooth running of the society and actively engage with my cohort, and throughout the year I’ve had the privilege to work on the 2020 Co-op Soc merchandise line, as well as learn from the current executive body.`,
+              "description": `As one of two First Year Representatives, I've had the opportunity to represent the Co-op Soc 2020 cohort, and function as a channel of communication between us and the Executive Body. My goals stepping into this role were to contribute effectively to the smooth running of the society and actively engage with my cohort, and throughout the year I've had the privilege to work on the 2020 Co-op Soc merchandise line, as well as learn from the current executive body.`,
               "name": "Celine Goh",
               "role": ""
             },
             {
               "image": Kenuka_Image,
-              "description": `As one of this year’s First Year Representatives, my role has been to bridge the gap between the 2020 Co-op Soc First Year cohort and the Co-op Soc Executive team. I’ve strived to play an active role in the society by engaging with my cohort and working to design and distribute the 2020 Co-op Soc merchandise. After seeing how tightly-knit the second year cohort were, my main goal has been to foster a similar environment and make Co-op Soc a second family for my year.`,
+              "description": `As one of this year's First Year Representatives, my role has been to bridge the gap between the 2020 Co-op Soc First Year cohort and the Co-op Soc Executive team. I've strived to play an active role in the society by engaging with my cohort and working to design and distribute the 2020 Co-op Soc merchandise. After seeing how tightly-knit the second year cohort were, my main goal has been to foster a similar environment and make Co-op Soc a second family for my year.`,
               "name": "Kenuka Wijayatunga",
               "role": ""
             }
@@ -212,14 +214,14 @@ const MEMBERS = [
               "image": Kai_Image,
               "description": `My number one goal is to make sure everyone is included in Co-op Soc. As secretary,
                         it is my duty to ensure that communication occurs not only quickly and effectively, but also that it reaches each and every member.
-                        My vision is to not only maintain the society’s health, but to help grow the Co-op community as a whole by keeping track of our historical records,
+                        My vision is to not only maintain the society's health, but to help grow the Co-op community as a whole by keeping track of our historical records,
                         meetings, goals, plans, contact with external organisations, members, and events to name a few!`,
               "name": "Kai Mashimo",
               "role": "Secretary"
             },
             {
               "image": Connor_Image,
-              "description": `Holistically, I would like to utilise my role to further advance the Co-op family, facilitating strong friendships and unforgettable memories for all. Moreover, I hope to ensure a robust financial position into the future, building upon the work of previous treasurers so as to increase the society’s assets and lay the platform for continued development.`,
+              "description": `Holistically, I would like to utilise my role to further advance the Co-op family, facilitating strong friendships and unforgettable memories for all. Moreover, I hope to ensure a robust financial position into the future, building upon the work of previous treasurers so as to increase the society's assets and lay the platform for continued development.`,
               "name": "Connor Pilger",
               "role": "Treasurer"
             },
@@ -265,13 +267,13 @@ const MEMBERS = [
             },
             {
               "image": Jack_Image,
-              "description": `As the Publications Director, it is my vision to continue to develop and facilitate the UNSW Co-op Society’s online presence through its existing avenues - LinkedIn and the website - as well as new and emerging - potentially Instagram and a podcast. To avoid stale writing and allow multiple perspectives, a substantial goal of mine is to co-lead a combined Pubs/IT Subcom - the first of its kind for our society.`,
+              "description": `As the Publications Director, it is my vision to continue to develop and facilitate the UNSW Co-op Society's online presence through its existing avenues - LinkedIn and the website - as well as new and emerging - potentially Instagram and a podcast. To avoid stale writing and allow multiple perspectives, a substantial goal of mine is to co-lead a combined Pubs/IT Subcom - the first of its kind for our society.`,
               "name": "Jack Yin",
               "role": "Publications"
             },
             {
               "image": Noa_Image,
-              "description": `Over the following year as IT Director, I’m hoping to cultivate the society’s online presence, channelling my creativity and love for tech into the Co-op Soc website. I’m looking forward to co-leading the first Pubs/IT Sub-committee as Jack and I strengthen the partnership between our two roles, introducing Co-op Soc Instagram and podcast.`,
+              "description": `Over the following year as IT Director, I'm hoping to cultivate the society's online presence, channelling my creativity and love for tech into the Co-op Soc website. I'm looking forward to co-leading the first Pubs/IT Sub-committee as Jack and I strengthen the partnership between our two roles, introducing Co-op Soc Instagram and podcast.`,
               "name": "Noa Challis",
               "role": "IT"
             },
@@ -361,15 +363,15 @@ const MEMBERS = [
               "description": `Stepping into the role of Vice President and Grievance Officer, I would love to see fellow
               Co-ops bond over these unprecedented times. I hope to facilitate the wonderful executives to bring forth
               events and initiatives both online and in-person to improve the social experiences of being a UNSW Co-op
-              student. Most of all, I hope to make the Co-op Society everyone’s second family on campus.`,
+              student. Most of all, I hope to make the Co-op Society everyone's second family on campus.`,
               "name": "Ronaldo Keng",
               "role": "Vice President"
             },
           ], [
             {
               "image": Nala_Image,
-              "description": `I’m looking forward to another incredible year with the Co-op team as the 2022 secretary.
-              With this role, I’m aiming to foster growth and bonding in the society through delivering efficient,
+              "description": `I'm looking forward to another incredible year with the Co-op team as the 2022 secretary.
+              With this role, I'm aiming to foster growth and bonding in the society through delivering efficient,
               transparent communication to all parties and building structured systems within the team. I also strive
               to become not just a behind-the-scenes figure, but a familiar face in the support network of the incoming cohort.`,
               "name": "Nala Hong",
@@ -377,17 +379,17 @@ const MEMBERS = [
             },
             {
               "image": Vivian_Image,
-              "description": `As the treasurer in 2022, I aim to maximise the Co-op community’s experience whilst
+              "description": `As the treasurer in 2022, I aim to maximise the Co-op community's experience whilst
               maintaining a robust financial position for present and future generations of Co-op scholars. Overall, I
-              hope to benefit Co-op society through continuing past treasurers’ work in growing our financial assets to
+              hope to benefit Co-op society through continuing past treasurers' work in growing our financial assets to
               create more opportunities for our community.`,
               "name": "Vivian Chan",
               "role": "Treasurer"
             },
             {
               "image": Cameron_Image,
-              "description": `Hi I’m Cam! 
-              I’m a 2nd year CS student and this year I am go to above and beyond the average Arc Delegate and be extra
+              "description": `Hi I'm Cam! 
+              I'm a 2nd year CS student and this year I am go to above and beyond the average Arc Delegate and be extra
               on time with forms and signup sheets, and also to ensure that everybody gets the same welcome into Co-op that I did! :))`,
               "name": "Cameron Mayhew",
               "role": "Arc Delegate"
@@ -409,7 +411,7 @@ const MEMBERS = [
             },
             {
               "image": Alannah_Image,
-              "description": `I’m passionate about social justice, and as one of the 2022 Charity Directors, I look
+              "description": `I'm passionate about social justice, and as one of the 2022 Charity Directors, I look
               forward to making meaningful change while bringing the members of Co-op Society closer together, through
               fundraising, volunteering and working with charities for our events.`,
               "name": "Alannah Darling",
@@ -427,7 +429,7 @@ const MEMBERS = [
           [
             {
               "image": Emily22_Image,
-              "description": `Above all, my main goal as one of the Marketing Directors is to further the society’s open
+              "description": `Above all, my main goal as one of the Marketing Directors is to further the society's open
               and animated environment. I am extremely excited to work with the team to bring the community closer, both
               by providing platforms for engagement via social media and by aiding interpersonal connections through event marketing.`,
               "name": "Emily Ross",
@@ -436,8 +438,8 @@ const MEMBERS = [
             {
               "image": Nicole_Image,
               "description": `Marketing serves as a medium for the connection of not only ideas, but of people. As one of
-              Co-op Soc’s Marketing Directors for 2022 I’m excited to work with the team to manage our social media
-              platforms as well as deliver content that’ll nourish our Co-op community in ways which bring us closer.`,
+              Co-op Soc's Marketing Directors for 2022 I'm excited to work with the team to manage our social media
+              platforms as well as deliver content that'll nourish our Co-op community in ways which bring us closer.`,
               "name": "Nicole Huang",
               "role": "Marketing"
             },
@@ -454,7 +456,7 @@ const MEMBERS = [
           [
             {
               "image": Hanyuan_Image,
-              "description": `As the new IT director for 2022, I’m excited to continue work on the Co-op Soc website,
+              "description": `As the new IT director for 2022, I'm excited to continue work on the Co-op Soc website,
               the first point of access new students have with our society. I hope to consult with the Co-op community
               and create features that would benefit the school and social lives of each scholar, and give back to my
               cohort using my technical skills.`,
@@ -464,7 +466,26 @@ const MEMBERS = [
           ]
         ]
       },
-      // TODO: fill in FYR as they come in
+      {
+        "sectionName": "First Year Representatives",
+        "members": [
+          [
+            // TODO: fill in FYR descriptions
+            {
+              "image": Aks_Image,
+              "description": ``,
+              "name": "Aks Walia",
+              "role": ""
+            },
+            {
+              "image": Kristina_Image,
+              "description": ``,
+              "name": "Kristina Hua",
+              "role": ""
+            },
+          ],
+        ]
+      }
     ],
     "subcoms": [
       {

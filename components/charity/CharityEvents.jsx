@@ -9,6 +9,7 @@ import styles from "styles/modules/CharityEvents.module.scss";
 
 import { END, EVENTS, START } from "data/CharityData.js";
 
+// TODO: events sliding is still a bit janky, patch up when possible
 const CharityEvents = ({ onClick }) => {
   const [year, setYear] = useState(END);
   const [direction, setDirection] = useState("left");

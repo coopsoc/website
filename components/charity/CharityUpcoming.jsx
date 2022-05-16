@@ -34,8 +34,8 @@ const CharityUpcoming = () => {
 
       images.push(
         <Image
-          alt={item["name"]}
-          src={item["image"]} />
+          alt={item.name}
+          src={item.image} />
       );
 
       text.push(
