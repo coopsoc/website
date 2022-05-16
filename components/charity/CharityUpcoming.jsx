@@ -35,8 +35,7 @@ const CharityUpcoming = () => {
       images.push(
         <Image
           alt={item["name"]}
-          src={item["image"]}
-          style={{ width: "100%" }} />
+          src={item["image"]} />
       );
 
       text.push(

@@ -1,15 +1,17 @@
 import React from "react";
 import Image from "next/image";
 
+import { Col } from "reactstrap";
+
 const CharityCard = ({ event, onClick }) => {
   return (
-    <div className="col-md-4 col-lg-6 mb-4 mb-lg-4 charity-event">
+    <Col sm={12} md={6} className="mb-4 mb-lg-4 charity-event">
       <Image
-        src={event["image"]}
-        alt={event["title"]}
+        src={event.image}
+        alt={event.title}
         className="card-img-top"
         onClick={onClick} />
-    </div>
+    </Col>
   );
 }
 

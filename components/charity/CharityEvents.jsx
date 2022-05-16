@@ -1,4 +1,4 @@
-import React, { cloneElement } from "react";
+import React, { cloneElement, useEffect, useState } from "react";
 import { Card, Container, Row } from "reactstrap";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -7,41 +7,37 @@ import CharityCard from "./events/CharityCard.jsx";
 
 import styles from "styles/modules/CharityEvents.module.scss";
 
-class CharityEvents extends React.Component {
-  constructor(props) {
-    super(props);
+import { END, EVENTS, START } from "data/CharityData.js";
 
-    this.state = {
-      year: props.end,
-      slideIn: true,
-      direction: "left"
-    };
-  }
+const CharityEvents = ({ onClick }) => {
+  const [year, setYear] = useState(END);
+  const [direction, setDirection] = useState("left");
 
-  updateYear = (year) => {
-    if (year === this.state.year) return;
-    
-    const dir_check = year > this.state.year;
-    const slide_out = dir_check ? "right" : "left";
-    const slide_in = dir_check ? "left" : "right";
+  useEffect(() => {
+    console.log(year);
+  }, [year]);
 
-    this.setState({
-      slideIn: false,
-      direction: slide_out
+  const updateYear = (newYear) => {
+    setYear(prev => {
+      if (newYear === prev) return;
+
+      const dirCheck = newYear > prev;
+      const slideOut = dirCheck ? "right" : "left";
+      const slideIn = dirCheck ? "left" : "right";
+
+      setDirection(slideOut);
+
+      setTimeout(() => {
+        setDirection(slideIn);
+      }, 500);
+
+      return newYear;
     });
+  };
 
-    setTimeout(() => {
-      this.setState({
-        year: year,
-        slideIn: true,
-        direction: slide_in
-      });
-    }, 500);
-  }
-
-  renderYear = () => {
-    const year_index = this.state.year - this.props.start;
-    const events = this.props.events[year_index];
+  const renderYear = () => {
+    const yearIndex = year - START;
+    const events = EVENTS[yearIndex];
 
     return (
       <Container className={styles["charity-container"]}>
@@ -53,7 +49,7 @@ class CharityEvents extends React.Component {
                   <CharityCard
                     key={index}
                     event={event}
-                    onClick={() => this.props.onClick(event)} />
+                    onClick={() => onClick(event)} />
                 ))}
               </div>
             </Row>
@@ -61,47 +57,45 @@ class CharityEvents extends React.Component {
         </Card>
       </Container>
     );
-  }
+  };
 
-  fetchStyles = (style) => {
+  const fetchStyles = () => {
+    const style = direction === "right" ? "left-to-right" : "right-to-left";
+
     return {
       enter: styles[`${style}-enter`],
       enterActive: styles[`${style}-enter-active`],
       exit: styles[`${style}-exit`],
       exitActive: styles[`${style}-exit-active`]
     };
-  }
+  };
 
-  render() {
-    return (
-      <>
-        <YearSlider
-          start={this.props.start}
-          end={this.props.end}
-          onChange={year => this.updateYear(year)} />
+  return (
+    <>
+      <YearSlider
+        start={START}
+        end={END}
+        onChange={updateYear} />
 
-        <TransitionGroup childFactory={child => {
-          return cloneElement(child, {
-            classNames: this.state.direction === "right" ?
-              this.fetchStyles("left-to-right") :
-              this.fetchStyles("right-to-left"),
-            timeout: 1000,
-            unmountOnExit: true
-          });
-        }}>
-          <CSSTransition
-            key={`transition-${this.state.year}`}
-            classNames={this.fetchStyles("left-to-right")}
-            timeout={1000}
-            unmountOnExit>
-            <Container>
-              {this.renderYear()}
-            </Container>
-          </CSSTransition>
-        </TransitionGroup>
-      </>
-    );
-  }
+      <TransitionGroup childFactory={child => {
+        return cloneElement(child, {
+          classNames: fetchStyles(),
+          timeout: 1000,
+          unmountOnExit: true
+        });
+      }}>
+        <CSSTransition
+          key={`transition-${year}`}
+          classNames={fetchStyles()}
+          timeout={1000}
+          unmountOnExit>
+          <Container>
+            {renderYear()}
+          </Container>
+        </CSSTransition>
+      </TransitionGroup>
+    </>
+  );
 }
 
 export default CharityEvents;

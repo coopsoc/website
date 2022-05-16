@@ -20,8 +20,6 @@ import CharityList from "components/charity/CharityList.jsx";
 import CharityModal from "components/charity/CharityModal.jsx";
 import CharityUpcoming from "components/charity/CharityUpcoming.jsx";
 
-import { START, END, EVENTS } from "data/CharityData.js";
-
 class Charity extends React.Component {
   constructor(props) {
     super(props);
@@ -88,9 +86,6 @@ class Charity extends React.Component {
             </Row>
 
             <CharityEvents
-              start={START}
-              end={END}
-              events={EVENTS}
               onClick={this.displayInfo} />
           </section>
 
