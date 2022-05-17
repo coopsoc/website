@@ -1,7 +1,7 @@
 // This now serves as a template document for future years. When entering in data,
 // it should follow the format below.
 // TODO: create a system to automate/simplify data entry
-export default [
+const NOMINEES = [
   {
     "role": "President",
     "nominees": [
@@ -14,3 +14,5 @@ export default [
     ]
   },
 ];
+
+export default NOMINEES;

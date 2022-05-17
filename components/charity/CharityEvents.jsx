@@ -19,6 +19,8 @@ const CharityEvents = ({ onClick }) => {
   }, [year]);
 
   const updateYear = (newYear) => {
+    // Using a callback here to ensure that state gets updated properly -
+    // when we didn't use a callback, `prev` would always be stuck on END
     setYear(prev => {
       if (newYear === prev) return;
 
