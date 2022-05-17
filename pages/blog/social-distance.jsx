@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import Checkin_Image from 'assets/img/pubs/checkin.png';
 import Kahoot_Image from 'assets/img/pubs/kahoot.png';
@@ -36,7 +37,7 @@ const SocialDistanceBlog = () => {
                 </p>
               </div>
               <div className="col-sm-6">
-                <img src={Checkin_Image} className="img-fluid float-right" style={{ width: '100%' }} ></img>
+                <Image alt="Check in" src={Checkin_Image} className="img-fluid float-right" />
               </div>
             </div>
           </div>
@@ -64,7 +65,7 @@ const SocialDistanceBlog = () => {
             <br></br>
             <div className="row">
               <div className="col-sm-4">
-                <img src={Kahoot_Image} className="img-fluid" style={{ width: '100%' }} ></img>
+                <Image alt="Kahoot" src={Kahoot_Image} className="img-fluid" />
               </div>
               <div className="col-sm-8">
                 <p>

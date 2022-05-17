@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import { TabContent, TabPane } from "reactstrap";
 
 // nodejs library that concatenates classes
@@ -32,28 +33,28 @@ const PlacementBlog = () => {
             <div className="row">
               <div className="col-sm-3">
                 <a href="#" onClick={e => updateScholar(e, 1)}>
-                  <img src={Roary_Image} className={classnames("img-fluid float-right", {
+                  <Image src={Roary_Image} className={classnames("img-fluid float-right", {
                     imageActiveTab: scholarsTab === 1
                   })} />
                 </a>
               </div>
               <div className="col-sm-3">
                 <a href="#" onClick={e => updateScholar(e, 2)}>
-                  <img src={Emily_Image} className={classnames("img-fluid float-right", {
+                  <Image src={Emily_Image} className={classnames("img-fluid float-right", {
                     imageActiveTab: scholarsTab === 2
                   })} />
                 </a>
               </div>
               <div className="col-sm-3">
                 <a href="#" onClick={e => updateScholar(e, 3)}>
-                  <img src={Lelland_Image} className={classnames("img-fluid float-right", {
+                  <Image src={Lelland_Image} className={classnames("img-fluid float-right", {
                     imageActiveTab: scholarsTab === 3
                   })} />
                 </a>
               </div>
               <div className="col-sm-3">
                 <a href="#" onClick={e => updateScholar(e, 4)}>
-                  <img src={Stanley_Image} className={classnames("img-fluid float-right", {
+                  <Image src={Stanley_Image} className={classnames("img-fluid float-right", {
                     imageActiveTab: scholarsTab === 4
                   })} />
                 </a>
