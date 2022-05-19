@@ -25,7 +25,7 @@ import {
 import "animate.css"
 
 const Blog = () => {
-  // TODO: style up blog posts so they mesh with rest of website
+  // FIXME: style up blog posts so they mesh with rest of website
   // TODO: consider converting blogs to Markdown or MDX
   return (
     <>
@@ -35,13 +35,12 @@ const Blog = () => {
         <section className="section section-lg">
           <Row className="justify-content-center text-center ">
             <Col lg="8">
-
               <h1 className="animate__animated animate__fadeInDown animate__fast">BLOG POSTS</h1>
             </Col>
           </Row>
         </section>
 
-        <section className="section section-lg mt--200 ">
+        <section className="section section-lg mt--200">
           <Row className="justify-content-center text-center ">
             <Col lg="5">
               <br></br>

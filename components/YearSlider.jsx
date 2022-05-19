@@ -37,7 +37,7 @@ const YearSlider = ({ start, end, onChange }) => {
     <>
       <Container className="py-lg-md d-flex">
         <Col></Col>
-        <Col lg="5" sm="8" >
+        <Col lg="5" sm="8">
           <div className="slider" ref={sliderRef} />
         </Col>
         <Col></Col>
