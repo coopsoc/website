@@ -30,10 +30,17 @@ const PodcastSlider = ({ duration, currentTime, onChange }) => {
     sliderRef.current.noUiSlider.set(currentTime);
   }, [currentTime]);
 
+  const toTimestamp = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainder = seconds % 60;
+
+    return `${minutes}:${String(remainder).padStart(2, "0")}`;
+  }
+
   return (
     <>
       <div className="slider w-100" ref={sliderRef}></div>
-      <p>{Math.floor(currentTime)} seconds in</p>
+      <p>{toTimestamp(Math.floor(currentTime))} / {toTimestamp(Math.floor(duration))}</p>
     </>
   );
 };
