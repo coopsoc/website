@@ -1,4 +1,3 @@
-// TODO: link podcast data to actual webpage
 const PODCASTS = [
     {
         "name": "Ep. 1: Andrew Phin",

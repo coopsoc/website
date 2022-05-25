@@ -24,9 +24,6 @@ import {
 } from "reactstrap";
 
 // core components
-import Header from "components/Header.jsx";
-import Navigation from "components/Navigation.jsx";
-import Footer from "components/Footer.jsx";
 import YearSlider from "components/YearSlider.jsx";
 
 import ExecSection from "components/team/ExecSection.jsx";
@@ -46,51 +43,46 @@ const Team = () => {
 
   return (
     <>
-      <Navigation />
-      <main>
-        <Header />
-        <section className="section section-lg">
-          <Row className="justify-content-center text-center mb-lg">
-            <Col lg="8">
-              <h1 className="animate__animated animate__zoomIn animate__fast">MEET THE TEAM</h1>
-            </Col>
-          </Row>
+      <section className="section section-lg">
+        <Row className="justify-content-center text-center mb-lg">
+          <Col lg="8">
+            <h1 className="animate__animated animate__zoomIn animate__fast">MEET THE TEAM</h1>
+          </Col>
+        </Row>
 
-          <YearSlider
-            start={START}
-            end={END}
-            onChange={year => setYear(year)} />
+        <YearSlider
+          start={START}
+          end={END}
+          onChange={year => setYear(year)} />
 
-          <div className="container">
-            {members.exec.map((section, index) => (
-              <ExecSection
-                key={`exec-section-${section.sectionName}-${index}`}
-                section={section} />
-            ))}
+        <div className="container">
+          {members.exec.map((section, index) => (
+            <ExecSection
+              key={`exec-section-${section.sectionName}-${index}`}
+              section={section} />
+          ))}
 
-            {members.subcoms && (
-              <section className="about-section text-center bg-white pb-sm-5">
-                <div className="container subcom">
-                  <hr />
-                  <Row className="justify-content-center text-center mb-lg">
-                    <h2>The Committee</h2>
-                  </Row>
-                  {members.subcoms.map((portfolio, index) => (
-                    <>
-                      {/* Only have separators between subcoms */}
-                      {index !== 0 && <hr />}
-                      <Subcom
-                        key={`subcom-${portfolio.name}-${index}`}
-                        portfolio={portfolio} />
-                    </>
-                  ))}
-                </div>
-              </section>
-            )}
-          </div>
-        </section>
-      </main>
-      <Footer />
+          {members.subcoms && (
+            <section className="about-section text-center bg-white pb-sm-5">
+              <div className="container subcom">
+                <hr />
+                <Row className="justify-content-center text-center mb-lg">
+                  <h2>The Committee</h2>
+                </Row>
+                {members.subcoms.map((portfolio, index) => (
+                  <>
+                    {/* Only have separators between subcoms */}
+                    {index !== 0 && <hr />}
+                    <Subcom
+                      key={`subcom-${portfolio.name}-${index}`}
+                      portfolio={portfolio} />
+                  </>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
+      </section>
     </>
   );
 }

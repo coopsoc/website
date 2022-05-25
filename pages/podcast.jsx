@@ -1,34 +1,25 @@
 import React from "react";
 
-import { Col, Row } from "reactstrap";
-
-import Navigation from "components/Navigation";
-import Header from "components/Header";
-import Footer from "components/Footer";
+import { Col, Container, Row } from "reactstrap";
 
 import PodcastList from "components/podcast/PodcastList";
 
 const Podcast = () => {
   return (
     <>
-      <Navigation />
-      <Header />
+      <section className="section section-lg">
+        <Row className="justify-content-center text-center">
+          <Col lg="8">
+            <h1 className="animate__animated animate__fadeInDown animate__fast">PODCAST</h1>
+          </Col>
+        </Row>
+      </section>
 
-      <main>
-        <section className="section section-lg">
-          <Row className="justify-content-center text-center ">
-            <Col lg="8">
-              <h1 className="animate__animated animate__fadeInDown animate__fast">PODCAST</h1>
-            </Col>
-          </Row>
-        </section>
-
-        <section className="section">
+      <section className="section section-lg">
+        <Container>
           <PodcastList />
-        </section>
-      </main>
-
-      <Footer />
+        </Container>
+      </section>
     </>
   );
 };

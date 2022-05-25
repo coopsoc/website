@@ -479,7 +479,7 @@ const MEMBERS = [
             },
             {
               "image": Kristina_Image,
-              "description": ``,
+              "description": `As a first year representative, I aim to forge strong connections between the executive team and the first year cohort by actively participating and creating social events. We are responsible for designing and distributing the Co-op merchandise so that everyone looks incredible! Ultimately, I hope that our cohort become a tight-knit community which fosters lifelong memories and friendships.`,
               "name": "Kristina Hua",
               "role": ""
             },

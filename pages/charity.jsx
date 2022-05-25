@@ -10,11 +10,6 @@ import {
   Row
 } from "reactstrap";
 
-// core components
-import Header from "components/Header.jsx";
-import Navigation from "components/Navigation.jsx";
-import Footer from "components/Footer.jsx";
-
 import CharityEvents from "components/charity/CharityEvents.jsx";
 import CharityList from "components/charity/CharityList.jsx";
 import CharityModal from "components/charity/CharityModal.jsx";
@@ -49,74 +44,68 @@ class Charity extends React.Component {
   render() {
     return (
       <>
-        <Navigation />
-        <main>
-          <Header />
+        <section className="section section-lg">
+          <Row className="justify-content-center text-center">
+            <Col lg="8">
+              <h1 className="animate__animated animate__zoomIn animate__fast">CHARITY</h1>
+            </Col>
+          </Row>
 
-          <section className="charity-section">
+          <Container className="py-lg-md d-flex">
             <Row className="justify-content-center text-center">
               <Col lg="8">
-                <h1 className="animate__animated animate__zoomIn animate__fast">CHARITY</h1>
+                <p className="lead text-muted">
+                  Co-op Soc merged with the Co-op Soc Charitable Society (CSCS) in
+                  2018, and since then, the charity portfolio has been an integral
+                  way for Co-op scholars to give back to the community. We organise
+                  fun events to support a diverse range of charities and social
+                  issues, providing various avenues for social impact. Beyond having
+                  a positive impact on society, our core aims are to socialise, meet
+                  new people and above all, contribute with a giving heart.
+                </p>
               </Col>
             </Row>
+          </Container>
+        </section>
 
-            <Container className="py-lg-md d-flex">
-              <Row className="justify-content-center text-center">
-                <Col lg="8">
-                  <p className="lead text-muted">
-                    Co-op Soc merged with the Co-op Soc Charitable Society (CSCS) in
-                    2018, and since then, the charity portfolio has been an integral
-                    way for Co-op scholars to give back to the community. We organise
-                    fun events to support a diverse range of charities and social
-                    issues, providing various avenues for social impact. Beyond having
-                    a positive impact on society, our core aims are to socialise, meet
-                    new people and above all, contribute with a giving heart.
-                  </p>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+        <hr />
 
-          <hr />
+        {/* Interactive carousel for events */}
+        <section className="section">
+          <Row className="justify-content-center text-center mb-lg">
+            <h2>Our Events</h2>
+          </Row>
 
-          {/* Interactive carousel for events */}
-          <section className="section">
-            <Row className="justify-content-center text-center mb-lg">
-              <h2>Our Events</h2>
-            </Row>
+          <CharityEvents
+            onClick={this.displayInfo} />
+        </section>
 
-            <CharityEvents
-              onClick={this.displayInfo} />
-          </section>
+        <hr />
 
-          <hr />
+        {/* List of supported charities */}
+        <section className="section">
+          <Row className="justify-content-center text-center mb-lg">
+            <h2>Charities Supported</h2>
+          </Row>
 
-          {/* List of supported charities */}
-          <section className="section">
-            <Row className="justify-content-center text-center mb-lg">
-              <h2>Charities Supported</h2>
-            </Row>
+          <CharityList />
+        </section>
 
-            <CharityList />
-          </section>
+        <hr />
 
-          <hr />
+        {/* List of upcoming events */}
+        <section className="section">
+          <Row className="justify-content-center text-center mb-lg">
+            <h2>Upcoming Community Events</h2>
+          </Row>
 
-          {/* List of upcoming events */}
-          <section className="section">
-            <Row className="justify-content-center text-center mb-lg">
-              <h2>Upcoming Community Events</h2>
-            </Row>
+          <CharityUpcoming />
+        </section>
 
-            <CharityUpcoming />
-          </section>
-
-          <CharityModal
-            isOpen={this.state.showModal}
-            toggle={this.toggleModal}
-            event={this.state.currentEvent} />
-        </main>
-        <Footer />
+        <CharityModal
+          isOpen={this.state.showModal}
+          toggle={this.toggleModal}
+          event={this.state.currentEvent} />
       </>
     );
   }
