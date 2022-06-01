@@ -26,7 +26,6 @@ import {
 } from "reactstrap";
 
 const Footer = () => {
-  // FIXME: ensure footer is actually on bottom of page at all times
   return (
     <>
       <footer className="footer">

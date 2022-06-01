@@ -5,7 +5,6 @@ import Typewriter from "typewriter-effect";
 import styles from "styles/modules/IndexHeader.module.scss";
 
 const IndexHeader = () => {
-  // FIXME: patch index header so it doesn't cover cards
   return (
     <div className="position-relative">
       {/* shape Hero */}
