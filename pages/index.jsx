@@ -26,7 +26,7 @@ import { niCalendarGrid } from "components/icon/nucleo.js";
 const Index = () => {
   return (
     <>
-      <section className="section section-lg pt-lg-0 mt--200">
+      <section className="section section-lg">
         <Container>
           <Row className="justify-content-center">
             <CardDeck>

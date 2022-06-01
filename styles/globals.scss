@@ -4,7 +4,12 @@ html, body {
     padding: 0;
 }
 
+#__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 main {
-    position: relative;
-    min-height: 100vh;
+    flex: 1;
 }
