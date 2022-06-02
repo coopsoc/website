@@ -2,11 +2,6 @@
 import React from "react";
 import Image from "next/image";
 
-// core components
-import Header from "components/Header";
-import Navigation from "components/Navigation";
-import Footer from "components/Footer";
-
 // Images
 import Stonks from "assets/img/pubs/stonks.jpeg";
 
@@ -25,89 +20,83 @@ import {
 import "animate.css"
 
 const Blog = () => {
-  // TODO: style up blog posts so they mesh with rest of website
+  // FIXME: style up blog posts so they mesh with rest of website
   // TODO: consider converting blogs to Markdown or MDX
   return (
     <>
-      <Navigation />
-      <main>
-        <Header />
-        <section className="section section-lg">
-          <Row className="justify-content-center text-center ">
-            <Col lg="8">
+      <section className="section section-lg">
+        <Row className="justify-content-center text-center ">
+          <Col lg="8">
+            <h1 className="animate__animated animate__fadeInDown animate__fast">BLOG POSTS</h1>
+          </Col>
+        </Row>
+      </section>
 
-              <h1 className="animate__animated animate__fadeInDown animate__fast">BLOG POSTS</h1>
-            </Col>
-          </Row>
-        </section>
+      <section className="section section-lg mt--200">
+        <Row className="justify-content-center text-center ">
+          <Col lg="5">
+            <br></br>
+            <br></br>
+            <Container className="py-lg-md d-flex">
+              <div className="card">
+                <Image src={Stonks} className="card-img-top" />
+                <div className="card-body" >
+                  <h5 className="card-title" style={{ height: '50px' }}><b>Why Most Young People Should Start Investing</b></h5>
+                  <p className="card-text" style={{ height: '100px' }}>Ever considered learning to invest? This article by Ethan Wong (BIS21) - a passionate young investor himself - outlines why you should, and how you can make a start on it today!</p>
 
-        <section className="section section-lg mt--200 ">
-          <Row className="justify-content-center text-center ">
-            <Col lg="5">
-              <br></br>
-              <br></br>
-              <Container className="py-lg-md d-flex">
-                <div className="card">
-                  <Image src={Stonks} className="card-img-top" />
-                  <div className="card-body" >
-                    <h5 className="card-title" style={{ height: '50px' }}><b>Why Most Young People Should Start Investing</b></h5>
-                    <p className="card-text" style={{ height: '100px' }}>Ever considered learning to invest? This article by Ethan Wong (BIS21) - a passionate young investor himself - outlines why you should, and how you can make a start on it today!</p>
-
-                    <Button
-                      className="mt-4"
-                      color="index"
-                      href="https://ethwong.medium.com/why-most-young-people-should-start-investing-6ea64448ef6b"
-                      target="_Blank"
-                    >
-                      Learn more
-                    </Button>
-                  </div>
+                  <Button
+                    className="mt-4"
+                    color="index"
+                    href="https://ethwong.medium.com/why-most-young-people-should-start-investing-6ea64448ef6b"
+                    target="_Blank"
+                  >
+                    Learn more
+                  </Button>
                 </div>
-              </Container>
-            </Col>
+              </div>
+            </Container>
+          </Col>
 
-            <Col lg="5">
-              <br></br>
-              <br></br>
-              <Container className="py-lg-md d-flex">
-                <div className="card">
-                  <Image src={Connected} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title" style={{ height: '50px' }}><b>Social Distancing Without the Socially Distant</b></h5>
-                    <p className="card-text" style={{ height: '100px' }}>How can we stay connected during isolation?</p>
+          <Col lg="5">
+            <br></br>
+            <br></br>
+            <Container className="py-lg-md d-flex">
+              <div className="card">
+                <Image src={Connected} className="card-img-top" />
+                <div className="card-body">
+                  <h5 className="card-title" style={{ height: '50px' }}><b>Social Distancing Without the Socially Distant</b></h5>
+                  <p className="card-text" style={{ height: '100px' }}>How can we stay connected during isolation?</p>
 
-                    <Button className="mt-4" color="index" href="/blog/social-distance">
-                      Learn more
-                    </Button>
-                  </div>
-
+                  <Button className="mt-4" color="index" href="/blog/social-distance">
+                    Learn more
+                  </Button>
                 </div>
-              </Container>
-            </Col>
-          </Row>
 
-          <Row className="justify-content-center text-center ">
-            <Col lg="5">
-              <br></br>
-              <br></br>
-              <Container className="py-lg-md d-flex">
-                <div className="card">
-                  <Image src={Placement} className="card-img-top" />
-                  <div className="card-body" >
-                    <h5 className="card-title" style={{ height: '50px' }}><b>First Placement Experiences</b></h5>
-                    <p className="card-text" style={{ height: '100px' }}>Read about some of our past Exec's placement experiences!</p>
+              </div>
+            </Container>
+          </Col>
+        </Row>
 
-                    <Button className="mt-4" color="index" href="/blog/placement">
-                      Learn more
-                    </Button>
-                  </div>
+        <Row className="justify-content-center text-center ">
+          <Col lg="5">
+            <br></br>
+            <br></br>
+            <Container className="py-lg-md d-flex">
+              <div className="card">
+                <Image src={Placement} className="card-img-top" />
+                <div className="card-body" >
+                  <h5 className="card-title" style={{ height: '50px' }}><b>First Placement Experiences</b></h5>
+                  <p className="card-text" style={{ height: '100px' }}>Read about some of our past Exec's placement experiences!</p>
+
+                  <Button className="mt-4" color="index" href="/blog/placement">
+                    Learn more
+                  </Button>
                 </div>
-              </Container>
-            </Col>
-          </Row>
-        </section>
-      </main>
-      <Footer />
+              </div>
+            </Container>
+          </Col>
+        </Row>
+      </section>
     </>
   );
 }

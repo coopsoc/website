@@ -24,7 +24,7 @@ const CharityEvents = ({ onClick }) => {
     setYear(prev => {
       if (newYear === prev) return;
 
-      const dirCheck = newYear > prev;
+      const dirCheck = newYear < prev;
       const slideOut = dirCheck ? "right" : "left";
       const slideIn = dirCheck ? "left" : "right";
 
