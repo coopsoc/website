@@ -36,6 +36,7 @@ import "animate.css";
 
 
 const Team = () => {
+  // TODO: have this be a subpage of "About"
   const [year, setYear] = useState(END);
 
   const currentYear = year - START;

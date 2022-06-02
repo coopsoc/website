@@ -470,16 +470,15 @@ const MEMBERS = [
         "sectionName": "First Year Representatives",
         "members": [
           [
-            // TODO: fill in FYR descriptions
             {
               "image": Aks_Image,
-              "description": ``,
+              "description": `First Year Representative to me means ensuring every Co-Op student in my cohort, has a place in the greater UNSW Co-Op family. Our role is facilitate the communication between new and older students and I ensure my peers’ voices are heard by forming a connection with each and every one of them, so I can best represent them in an executive role. In a time to come, Kristina and I hope to foster a community of love and compassion, entwined with everlasting moments and relationships.`,
               "name": "Aks Walia",
               "role": ""
             },
             {
               "image": Kristina_Image,
-              "description": `As a first year representative, I aim to forge strong connections between the executive team and the first year cohort by actively participating and creating social events. We are responsible for designing and distributing the Co-op merchandise so that everyone looks incredible! Ultimately, I hope that our cohort become a tight-knit community which fosters lifelong memories and friendships.`,
+              "description": `As a first year representative, I aim to forge strong connections between the executive team and the first year cohort by actively participating and creating social events. We are responsible for designing and distributing the Co-op merchandise so that everyone looks incredible! Ultimately, Aks and I hope that our cohort becomes a tight-knit community which fosters lifelong memories and friendships.`,
               "name": "Kristina Hua",
               "role": ""
             },
