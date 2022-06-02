@@ -1,8 +1,11 @@
 const path = require("path");
 
+const isProd = process.env.NODE_ENV === "production";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix: "",
+  assetPrefix: isProd ? "/coopsoc.com.au/" : "",
+  basePath: isProd ? "/coopsoc.com.au" : "",
   images: {
     loader: "akamai",
     path: "/"
