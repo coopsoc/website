@@ -77,7 +77,7 @@ const Blog = () => {
           </Col>
         </Row>
 
-        <Row className="justify-content-center text-center ">
+        <Row className="justify-content-center text-center">
           <Col lg="5">
             <br></br>
             <br></br>
@@ -86,7 +86,7 @@ const Blog = () => {
                 <Image src={Placement} className="card-img-top" />
                 <div className="card-body" >
                   <h5 className="card-title" style={{ height: '50px' }}><b>First Placement Experiences</b></h5>
-                  <p className="card-text" style={{ height: '100px' }}>Read about some of our past Exec's placement experiences!</p>
+                  <p className="card-text" style={{ height: '100px' }}>Read about some of our past Exec&apos;s placement experiences!</p>
 
                   <Button className="mt-4" color="index" href="/blog/placement">
                     Learn more
