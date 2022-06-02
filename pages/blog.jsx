@@ -39,7 +39,7 @@ const Blog = () => {
             <br></br>
             <Container className="py-lg-md d-flex">
               <div className="card">
-                <Image src={Stonks} className="card-img-top" />
+                <Image alt="Why Most Young People Should Start Investing" src={Stonks} className="card-img-top" />
                 <div className="card-body" >
                   <h5 className="card-title" style={{ height: '50px' }}><b>Why Most Young People Should Start Investing</b></h5>
                   <p className="card-text" style={{ height: '100px' }}>Ever considered learning to invest? This article by Ethan Wong (BIS21) - a passionate young investor himself - outlines why you should, and how you can make a start on it today!</p>
@@ -62,7 +62,7 @@ const Blog = () => {
             <br></br>
             <Container className="py-lg-md d-flex">
               <div className="card">
-                <Image src={Connected} className="card-img-top" />
+                <Image alt="Social Distancing Without the Socially Distant" src={Connected} className="card-img-top" />
                 <div className="card-body">
                   <h5 className="card-title" style={{ height: '50px' }}><b>Social Distancing Without the Socially Distant</b></h5>
                   <p className="card-text" style={{ height: '100px' }}>How can we stay connected during isolation?</p>
@@ -83,7 +83,7 @@ const Blog = () => {
             <br></br>
             <Container className="py-lg-md d-flex">
               <div className="card">
-                <Image src={Placement} className="card-img-top" />
+                <Image alt="First Placement Experiences" src={Placement} className="card-img-top" />
                 <div className="card-body" >
                   <h5 className="card-title" style={{ height: '50px' }}><b>First Placement Experiences</b></h5>
                   <p className="card-text" style={{ height: '100px' }}>Read about some of our past Exec&apos;s placement experiences!</p>

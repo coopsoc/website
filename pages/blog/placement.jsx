@@ -33,28 +33,28 @@ const PlacementBlog = () => {
             <div className="row">
               <div className="col-sm-3">
                 <a href="#" onClick={e => updateScholar(e, 1)}>
-                  <Image src={Roary_Image} className={classnames("img-fluid float-right", {
+                  <Image alt="Roary" src={Roary_Image} className={classnames("img-fluid float-right", {
                     imageActiveTab: scholarsTab === 1
                   })} />
                 </a>
               </div>
               <div className="col-sm-3">
                 <a href="#" onClick={e => updateScholar(e, 2)}>
-                  <Image src={Emily_Image} className={classnames("img-fluid float-right", {
+                  <Image alt="Emily" src={Emily_Image} className={classnames("img-fluid float-right", {
                     imageActiveTab: scholarsTab === 2
                   })} />
                 </a>
               </div>
               <div className="col-sm-3">
                 <a href="#" onClick={e => updateScholar(e, 3)}>
-                  <Image src={Lelland_Image} className={classnames("img-fluid float-right", {
+                  <Image alt="Lelland" src={Lelland_Image} className={classnames("img-fluid float-right", {
                     imageActiveTab: scholarsTab === 3
                   })} />
                 </a>
               </div>
               <div className="col-sm-3">
                 <a href="#" onClick={e => updateScholar(e, 4)}>
-                  <Image src={Stanley_Image} className={classnames("img-fluid float-right", {
+                  <Image alt="Stanley" src={Stanley_Image} className={classnames("img-fluid float-right", {
                     imageActiveTab: scholarsTab === 4
                   })} />
                 </a>
@@ -82,9 +82,9 @@ const PlacementBlog = () => {
                 <br></br>
                 <div className="row">
                   <div className="col-sm-12">
-                    <h5 className="card-title">What's the first industry placement like?</h5>
+                    <h5 className="card-title">What&apos;s the first industry placement like?</h5>
                     <p className="description" style={{ color: 'black' }}>
-                      I'm Roary, I’m currently spending my first placement in the SIAM (Service Integration and Management) department at AMP.
+                      I&apos;m Roary, I’m currently spending my first placement in the SIAM (Service Integration and Management) department at AMP.
                       One great thing about placement is that whilst your agreement may put you in a certain team or role, it is up to you to seek experiences in whatever you are interested in, and since this placement is my first, I was interested in everything. This advice was given to me by a few mentors, so I reached out and am now working on 3 separate projects in different teams across our department, providing me with a helpfully wholistic view of SIAM as originally I had no clue what it even stood for.
                     </p>
                     <p className="description" style={{ color: 'black' }}>
@@ -116,7 +116,7 @@ const PlacementBlog = () => {
                       What are some ways you balance work, university and your social life?
                     </h5>
                     <p className="description" style={{ color: 'black' }}>
-                      One upside of working full-time is the structure it pushes into your life – 7am wakeups eventually began to feel normal rather than soul crushing. Having a significant chunk of your Monday to Friday committed to work leaves you with a much clearer indication of the time you have available for other things.
+                      One upside of working full-time is the structure it pushes into your life - 7am wakeups eventually began to feel normal rather than soul crushing. Having a significant chunk of your Monday to Friday committed to work leaves you with a much clearer indication of the time you have available for other things.
                       I would say a balance is very achievable with timetabling skills and ascertaining what your priorities are, and therefore knowing what you would sacrifice.
                     </p>
                     <br></br>
@@ -150,7 +150,7 @@ const PlacementBlog = () => {
                 <br></br>
                 <div className="row">
                   <div className="col-sm-12">
-                    <h5 className="card-title">What's the first industry placement like?</h5>
+                    <h5 className="card-title">What&apos;s the first industry placement like?</h5>
                     <p className="description" style={{ color: 'black' }}>
                       I’m Emily Kasovska and I am a 2019 Accounting and Business Management Co Op Scholar. I’m currently undertaking my first industry placement at Coca Cola Amatil, working in Supply Chain Operations.
                       I am extremely grateful to be in an area of accounting that is closely linked to the management accounting course I am studying at university, thus allowing me to apply the theoretical concepts I’ve learnt into a real work setting.
@@ -162,7 +162,7 @@ const PlacementBlog = () => {
                     <br></br>
 
                     <h5 className="card-title">
-                      What's some advice you would give to students who have yet to begin their placements?
+                      What&apos;s some advice you would give to students who have yet to begin their placements?
                     </h5>
                     <p className="description" style={{ color: 'black' }}>
                       Take on the challenge! This is an extremely valuable opportunity - it isn’t the stereotypical ‘intern’ role you see in movies so don’t expect to be doing coffee runs. You will be given meaningful tasks that make a real difference in your organisation so really give it your all. In fact, go even further! If you see or hear about a project you’re interested in, ask your manager if you can sit in on some meetings and get involved.
@@ -182,7 +182,7 @@ const PlacementBlog = () => {
                       What are some challenges you have encountered and how did you overcome them?
                     </h5>
                     <p className="description" style={{ color: 'black' }}>
-                      The greatest challenge I’ve had to overcome is the general unfamiliarity of it all – it’s my first time in an accounting role and in a corporation in general. Particularly during my first month, I had to deal with the fact that I didn’t really know how to complete certain tasks. I overcame this by asking lots of questions to clarify expectations. I am extremely grateful that my manager, colleagues and the general culture of CCA is really open and everyone is willing to offer a helping hand.
+                      The greatest challenge I’ve had to overcome is the general unfamiliarity of it all - it’s my first time in an accounting role and in a corporation in general. Particularly during my first month, I had to deal with the fact that I didn’t really know how to complete certain tasks. I overcame this by asking lots of questions to clarify expectations. I am extremely grateful that my manager, colleagues and the general culture of CCA is really open and everyone is willing to offer a helping hand.
                     </p>
                     <p className="description" style={{ color: 'black' }}>
                       Recently with the COVID-19 circumstances however, I have been working from home with no manager or colleagues next to me when I have a quick question to ask. This has allowed me to become a bit more independent; trying to find a solution myself but knowing if ever needed, they are only one phone call away.
@@ -239,9 +239,9 @@ const PlacementBlog = () => {
                 <br></br>
                 <div className="row">
                   <div className="col-sm-12">
-                    <h5 className="card-title">What's the first industry placement like?</h5>
+                    <h5 className="card-title">What&apos;s the first industry placement like?</h5>
                     <p className="description" style={{ color: 'black' }}>
-                      Hi, I'm Lelland, and I'm currently doing my placement at American Express. I was quite overwhelmed with how the workplace was unlike any environment I have previously experienced. That was to be expected, however I really struggled to adapt to it in my first week. I talk about my experience with this a bit later in the publication, however my best advice to get over this initial environment change is being proactive. This means you should be eager to meet new people by introducing yourself first rather than waiting.                            </p>
+                      Hi, I&apos;m Lelland, and I&apos;m currently doing my placement at American Express. I was quite overwhelmed with how the workplace was unlike any environment I have previously experienced. That was to be expected, however I really struggled to adapt to it in my first week. I talk about my experience with this a bit later in the publication, however my best advice to get over this initial environment change is being proactive. This means you should be eager to meet new people by introducing yourself first rather than waiting.                            </p>
                     <p className="description" style={{ color: 'black' }}>
                       Furthermore, you should be actively taking on work and getting involved with things like office sport or events as much as you can. I believe that being proactive in meeting people has a big change on whether you enjoy your placement or not.                            </p>
 
@@ -251,14 +251,14 @@ const PlacementBlog = () => {
                       What are some challenges you have encountered and how did you overcome them?
                     </h5>
                     <p className="description" style={{ color: 'black' }}>
-                      One thing I found really challenging because it was my first IT placement was trying to fit into the workplace. The first day I just felt like everyone was so much older than I was and I wouldn't be able to really fit in with the rest of the office. I talked to a few older co-ops and they advised me that it generally takes a bit of time to start feeling more comfortable in the office.                            </p>
+                      One thing I found really challenging because it was my first IT placement was trying to fit into the workplace. The first day I just felt like everyone was so much older than I was and I wouldn&apos;t be able to really fit in with the rest of the office. I talked to a few older co-ops and they advised me that it generally takes a bit of time to start feeling more comfortable in the office.                            </p>
                     <p className="description" style={{ color: 'black' }}>
-                      However, I took it upon myself to get to know as many people as I could within the first few months and put myself out there. My first initiative was that every time I went to get tea and saw a person I didn't know, I would introduce myself. This was super scary but the more I did it the easier it became for me and it really helped me get out of my shell. After the first two months I eventually met at least one person from each team on a floor of 150 people and it helped me settle in.                            </p>
+                      However, I took it upon myself to get to know as many people as I could within the first few months and put myself out there. My first initiative was that every time I went to get tea and saw a person I didn&apos;t know, I would introduce myself. This was super scary but the more I did it the easier it became for me and it really helped me get out of my shell. After the first two months I eventually met at least one person from each team on a floor of 150 people and it helped me settle in.                            </p>
 
                     <br></br>
 
                     <h5 className="card-title">
-                      What's some advice you would give to students who have yet to begin their placements?
+                      What&apos;s some advice you would give to students who have yet to begin their placements?
                     </h5>
                     <p className="description" style={{ color: 'black' }}>
                       As mentioned above my best advice to get over the initial environment change is being proactive. This means you should be eager to meet new people by introducing yourself first rather than waiting.
@@ -304,7 +304,7 @@ const PlacementBlog = () => {
                 <br></br>
                 <div className="row">
                   <div className="col-sm-12">
-                    <h5 className="card-title">What's the first industry placement like?</h5>
+                    <h5 className="card-title">What&apos;s the first industry placement like?</h5>
                     <p className="description" style={{ color: 'black' }}>
                       Hi, I’m Stanley, currently doing Data Science and working at PwC in Data Assurance. During my first few weeks I was given a share trading project where we used Alteryx to highlight individuals that were conducting suspicious trades. I was then assigned to an internal training job where I built an Alteryx workflow to determine who in the Data Assurance team needed training in various technical areas.
                       The current project I am on is a data migration reconciliation project. At its core, we are checking whether the data migration from one company to another was done correctly.

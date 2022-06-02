@@ -11,7 +11,9 @@ const CharityBody = ({ event }) => {
           style={{ width: "50%" }} />
       </div>
       <hr />
-      {event.description.split("\n").map(line => <p>{line}</p>)}
+      {event.description.split("\n").map((line, index) => (
+        <p key={index}>{line}</p>
+      ))}
     </>
   );
 }
