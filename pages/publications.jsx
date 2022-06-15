@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Link from "next/link";
 
 // reactstrap components
@@ -22,6 +23,10 @@ import NextCardBody from "components/link/NextCardBody";
 const Publications = () => {
   return (
     <>
+      <Head>
+        <title>Publications | UNSW Co-op Society</title>
+      </Head>
+
       <section className="section section-lg">
         <Row className="justify-content-center text-center ">
           <Col lg="8">

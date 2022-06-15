@@ -16,6 +16,7 @@
 
 */
 import React, { useState } from "react";
+import Head from "next/head";
 
 // reactstrap components
 import {
@@ -44,6 +45,10 @@ const Team = () => {
 
   return (
     <>
+      <Head>
+        <title>Our Team | UNSW Co-op Society</title>
+      </Head>
+
       <section className="section section-lg">
         <Row className="justify-content-center text-center mb-lg">
           <Col lg="8">

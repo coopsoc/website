@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 import Image from "next/image";
 import { TabContent, TabPane } from "reactstrap";
 
@@ -20,6 +21,10 @@ const PlacementBlog = () => {
 
   return (
     <>
+      <Head>
+        <title>First Placement Experiences | UNSW Co-op Society</title>
+      </Head>
+
       <div className="modal-header">
         <h4 className="modal-title" id="modal-title-default">
           First Placement Experiences

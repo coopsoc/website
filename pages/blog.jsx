@@ -1,5 +1,5 @@
-
 import React from "react";
+import Head from "react/head";
 import Image from "next/image";
 
 // Images
@@ -17,13 +17,17 @@ import {
 } from "reactstrap";
 
 // yess let's get those animations
-import "animate.css"
+import "animate.css";
 
 const Blog = () => {
   // FIXME: style up blog posts so they mesh with rest of website
   // TODO: consider converting blogs to Markdown or MDX
   return (
     <>
+      <Head>
+        <title>Blog | UNSW Co-op Society</title>
+      </Head>
+
       <section className="section section-lg">
         <Row className="justify-content-center text-center ">
           <Col lg="8">

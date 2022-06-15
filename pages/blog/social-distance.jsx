@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Image from "next/image";
 
 import Checkin_Image from 'assets/img/pubs/checkin.png';
@@ -7,6 +8,10 @@ import Kahoot_Image from 'assets/img/pubs/kahoot.png';
 const SocialDistanceBlog = () => {
   return (
     <>
+      <Head>
+        <title>Social Distancing Without the Socially Distant | UNSW Co-op Society</title>
+      </Head>
+
       <div className="modal-header">
         <h4 className="modal-title" id="modal-title-default">
           Social Distancing Without the Socially Distant

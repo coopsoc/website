@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 
 import { Col, Container, Row } from "reactstrap";
 
@@ -7,6 +8,10 @@ import PodcastList from "components/podcast/PodcastList";
 const Podcast = () => {
   return (
     <>
+      <Head>
+        <title>Podcast | UNSW Co-op Society</title>
+      </Head>
+
       <section className="section section-lg">
         <Row className="justify-content-center text-center">
           <Col lg="8">
