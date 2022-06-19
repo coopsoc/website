@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Image from "next/image";
 
 // yess let's get those animations
@@ -25,6 +26,10 @@ import YTB from "assets/img/events/ytb.jpg";
 const Events = () => {
   return (
     <>
+      <Head>
+        <title>Events | UNSW Co-op Society</title>
+      </Head>
+      
       <section className="section section-lg">
         <Row className="justify-content-center text-center ">
           <Col lg="8">

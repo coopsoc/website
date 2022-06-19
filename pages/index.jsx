@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 
 // Reactstrap components
 import {
@@ -26,6 +27,10 @@ import { niCalendarGrid } from "components/icon/nucleo.js";
 const Index = () => {
   return (
     <>
+      <Head>
+        <title>UNSW Co-op Society</title>
+      </Head>
+
       <section className="section section-lg">
         <Container>
           <Row className="justify-content-center">
