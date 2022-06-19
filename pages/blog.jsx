@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "react/head";
+import Head from "next/head";
 import Image from "next/image";
 
 // Images
