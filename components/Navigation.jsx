@@ -73,6 +73,7 @@ const Navigation = () => {
                 <Image alt="..." src={Logo} />
               </NextNavbarBrand>
             </Link>
+
             <button className="navbar-toggler" id="navbar_global">
               <span className="navbar-toggler-icon" />
             </button>
@@ -96,6 +97,7 @@ const Navigation = () => {
                       </a>
                     </Link>
                   </Col>
+
                   <Col className="collapse-close" xs="6">
                     <button className="navbar-toggler" id="navbar-global">
                       <span />
@@ -104,6 +106,7 @@ const Navigation = () => {
                   </Col>
                 </Row>
               </div>
+
               <Nav className="navbar-nav-hover align-items-lg-center" navbar >
                 <NavItem>
                   <Link href="/team" passHref>
@@ -114,6 +117,7 @@ const Navigation = () => {
                     </NextNavLink>
                   </Link>
                 </NavItem>
+
                 <NavItem>
                   <Link href="/events" passHref>
                     <NextNavLink
@@ -132,7 +136,6 @@ const Navigation = () => {
                       <span className="nav-link-inner--text">PUBLICATIONS</span>
                     </NextNavLink>
                   </Link>
-
                 </NavItem>
 
                 <NavItem>
@@ -141,6 +144,16 @@ const Navigation = () => {
                       className={getNavLinkClass("/charity")}
                     >
                       <span className="nav-link-inner--text">CHARITY</span>
+                    </NextNavLink>
+                  </Link>
+                </NavItem>
+
+                <NavItem>
+                  <Link href="https://merch.coopsoc.com.au" passHref>
+                    <NextNavLink
+                      className="navbar-hover navbar-nav-hover align-items-lg-center"
+                    >
+                      <span className="nav-link-inner--text">MERCH</span>
                     </NextNavLink>
                   </Link>
                 </NavItem>
