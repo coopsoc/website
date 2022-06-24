@@ -4,7 +4,7 @@ import { Row, Col } from "reactstrap";
 
 import CharityBody from "../CharityBody.jsx";
 
-import caseCompWinners from 'assets/img/charity/case-comp2021Winners.jpg';
+import caseCompWinners from 'public/img/charity/case-comp2021Winners.jpg';
 
 const CaseCompBody = ({ event }) => {
   return (

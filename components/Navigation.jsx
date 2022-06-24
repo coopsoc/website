@@ -38,8 +38,8 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookSquare, faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
-import Logo from "assets/img/brand/logo_white.png";
-import LogoSmall from "assets/img/brand/logo_small.png";
+import Logo from "public/img/brand/logo_white.png";
+import LogoSmall from "public/img/brand/logo_small.png";
 
 import NextNavbarBrand from "./link/NextNavbarBrand.jsx";
 import NextNavLink from "./link/NextNavLink.jsx";

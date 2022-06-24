@@ -3,10 +3,10 @@ import Head from "next/head";
 import Image from "next/image";
 
 // Images
-import Stonks from "assets/img/pubs/stonks.jpeg";
+import Stonks from "public/img/pubs/stonks.jpeg";
 
-import Connected from "assets/img/pubs/connected.jpg";
-import Placement from "assets/img/pubs/placement.jpg";
+import Connected from "public/img/pubs/connected.jpg";
+import Placement from "public/img/pubs/placement.jpg";
 
 // reactstrap components
 import {
@@ -22,6 +22,7 @@ import "animate.css";
 const Blog = () => {
   // FIXME: style up blog posts so they mesh with rest of website
   // TODO: consider converting blogs to Markdown or MDX
+  // TODO: move cards to their own component
   return (
     <>
       <Head>
