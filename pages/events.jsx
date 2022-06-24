@@ -13,15 +13,15 @@ import {
 } from "reactstrap";
 
 // Images
-import Ball from "assets/img/events/ball2.jpg";
-import Camp from "assets/img/events/camp.jpg";
-import CampWhole from "assets/img/events/campWhole.jpg";
-import FunRun from "assets/img/events/funRun.jpg";
-import FunRun2 from "assets/img/events/funRun2.jpg";
-import Gals from "assets/img/events/gals.jpg";
-import Gals2 from "assets/img/events/gals2.jpg";
-import GalsBall from "assets/img/events/galsBall.jpg";
-import YTB from "assets/img/events/ytb.jpg";
+import Ball from "public/img/events/ball2.jpg";
+import Camp from "public/img/events/camp.jpg";
+import CampWhole from "public/img/events/campWhole.jpg";
+import FunRun from "public/img/events/funRun.jpg";
+import FunRun2 from "public/img/events/funRun2.jpg";
+import Gals from "public/img/events/gals.jpg";
+import Gals2 from "public/img/events/gals2.jpg";
+import GalsBall from "public/img/events/galsBall.jpg";
+import YTB from "public/img/events/ytb.jpg";
 
 const Events = () => {
   return (

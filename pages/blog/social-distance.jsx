@@ -2,8 +2,8 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-import Checkin_Image from 'assets/img/pubs/checkin.png';
-import Kahoot_Image from 'assets/img/pubs/kahoot.png';
+import Checkin_Image from 'public/img/pubs/checkin.png';
+import Kahoot_Image from 'public/img/pubs/kahoot.png';
 
 const SocialDistanceBlog = () => {
   return (

@@ -12,7 +12,7 @@ import "styles/globals.scss";
 import "styles/theme/main.scss";
 
 // Icons
-import "assets/vendor/nucleo/css/nucleo.css";
+import "public/vendor/nucleo/css/nucleo.css";
 
 // FontAwesome config
 import { config } from "@fortawesome/fontawesome-svg-core";

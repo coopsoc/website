@@ -6,10 +6,10 @@ import { TabContent, TabPane } from "reactstrap";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 
-import Roary_Image from 'assets/img/exec/2020/Roary.jpg';
-import Stanley_Image from 'assets/img/exec/2020/Stanley.jpeg';
-import Emily_Image from 'assets/img/exec/2020/Emily.png';
-import Lelland_Image from 'assets/img/exec/2020/Lelland.jpeg';
+import Roary_Image from 'public/img/exec/2020/Roary.jpg';
+import Stanley_Image from 'public/img/exec/2020/Stanley.jpeg';
+import Emily_Image from 'public/img/exec/2020/Emily.png';
+import Lelland_Image from 'public/img/exec/2020/Lelland.jpeg';
 
 const PlacementBlog = () => {
   const [scholarsTab, setScholarsTab] = useState(0);
