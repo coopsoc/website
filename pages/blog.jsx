@@ -22,6 +22,7 @@ import "animate.css";
 const Blog = () => {
   // FIXME: style up blog posts so they mesh with rest of website
   // TODO: consider converting blogs to Markdown or MDX
+  // TODO: move cards to their own component
   return (
     <>
       <Head>
