@@ -14,10 +14,6 @@ const CharityEvents = ({ onClick }) => {
   const [year, setYear] = useState(END);
   const [direction, setDirection] = useState("left");
 
-  useEffect(() => {
-    console.log(year);
-  }, [year]);
-
   const updateYear = (newYear) => {
     // Using a callback here to ensure that state gets updated properly -
     // when we didn't use a callback, `prev` would always be stuck on END
@@ -40,6 +36,7 @@ const CharityEvents = ({ onClick }) => {
 
   const renderYear = () => {
     const yearIndex = year - START;
+    console.log(events);
     const events = EVENTS[yearIndex];
 
     return (
