@@ -36,8 +36,6 @@ const CharityEvents = ({ onClick }) => {
 
   const renderYear = () => {
     const yearIndex = year - START;
-    console.log(EVENTS);
-    console.log(yearIndex);
     const events = EVENTS[yearIndex];
 
     return (
