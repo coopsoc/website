@@ -18,7 +18,7 @@ const CharityEvents = ({ onClick }) => {
     // Using a callback here to ensure that state gets updated properly -
     // when we didn't use a callback, `prev` would always be stuck on END
     setYear(prev => {
-      if (newYear === prev) return;
+      if (newYear === prev) return newYear;
 
       const dirCheck = newYear < prev;
       const slideOut = dirCheck ? "right" : "left";
