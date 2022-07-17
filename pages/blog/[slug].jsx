@@ -2,7 +2,11 @@ import React from "react";
 import Head from "next/head";
 
 import { MDXRemote } from "next-mdx-remote";
-import { getSlugs } from "server/article";
+import { serialize } from "next-mdx-remote/serialize";
+
+import { getArticle, getSlugs } from "scripts/article";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 const BlogPost = ({ source, frontmatter }) => {
   return (
@@ -19,7 +23,32 @@ const BlogPost = ({ source, frontmatter }) => {
 export default BlogPost;
 
 export async function getStaticProps({ params }) {
+  const { slug } = params;
+  const { content, frontmatter } = await getArticle(slug);
 
+  const mdx = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            properties: { className: ["anchor"] },
+          },
+          { behaviour: "wrap" },
+        ],
+      ]
+    }
+  });
+
+  return {
+    props: {
+      post: {
+        source: mdx,
+        frontmatter,
+      }
+    }
+  }
 }
 
 export async function getStaticPaths() {
