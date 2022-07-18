@@ -43,9 +43,10 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      post: {
-        source: mdx,
-        frontmatter,
+      source: mdx,
+      frontmatter: {
+        ...frontmatter,
+        published: frontmatter.published.toISOString(),
       }
     }
   }

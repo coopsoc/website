@@ -15,11 +15,6 @@ import "animate.css";
 
 import BlogCard from "components/blog/BlogCard.jsx";
 
-// Images
-import Stonks from "public/img/pubs/stonks.jpeg";
-import Connected from "public/img/pubs/connected.jpg";
-import Placement from "public/img/pubs/placement.jpg";
-
 import { partition } from "scripts/list";
 import { getAllArticles } from "scripts/article";
 
@@ -27,7 +22,6 @@ const Blog = ({ posts }) => {
   // FIXME: style up blog posts so they mesh with rest of website
   // TODO: consider converting blogs to Markdown or MDX
   const rows = partition(posts, 2);
-  console.log(rows);
 
   return (
     <>
