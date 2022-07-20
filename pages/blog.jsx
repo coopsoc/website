@@ -1,13 +1,9 @@
 import React from "react";
 import Head from "next/head";
-import Image from "next/image";
-
 // reactstrap components
 import {
   Row,
   Col,
-  Button,
-  Container,
 } from "reactstrap";
 
 // yess let's get those animations
@@ -20,8 +16,8 @@ import { getAllArticles } from "scripts/article";
 
 const Blog = ({ posts }) => {
   // FIXME: style up blog posts so they mesh with rest of website
-  // TODO: consider converting blogs to Markdown or MDX
-  const rows = partition(posts, 2);
+  // TODO: add dates published to each blog
+  const rows = partition(posts, 3);
 
   return (
     <>

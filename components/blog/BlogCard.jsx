@@ -5,7 +5,7 @@ import { Button, Card, CardBody, Col, Container } from "reactstrap";
 
 const BlogCard = ({ title, description, img, href }) => {
   return (
-    <Col lg="5">
+    <Col lg="4">
       <Container className="py-lg-md">
         <Card>
           <Image
