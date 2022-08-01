@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 
 import {
   Row,
@@ -13,6 +14,14 @@ import { serialize } from "next-mdx-remote/serialize";
 import { getArticle, getSlugs } from "scripts/article";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+
+const ResponsiveImage = (props) => (
+  <Image alt={props.alt} layout="responsive" width="50%" height="50%" {...props} />
+);
+
+const components = {
+  img: ResponsiveImage,
+};
 
 const BlogPost = ({ source, frontmatter }) => {
   // TODO: add styles to our blog
@@ -37,9 +46,11 @@ const BlogPost = ({ source, frontmatter }) => {
       </section>
 
       <section className="section section-lg">
-        <Container>
-          <MDXRemote {...source} />
-        </Container>
+        <Row className="justify-content-center">
+          <Col lg="6" className="markdown">
+            <MDXRemote components={components} {...source} />
+          </Col>
+        </Row>
       </section>
     </>
   );

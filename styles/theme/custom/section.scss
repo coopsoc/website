@@ -1,3 +1,9 @@
+.section {
+    .markdown .icon-link {
+        margin-left: 0;
+    }
+}
+
 .section-shaped {
     .shape-style-custom {
         @extend .shape-style-1;

@@ -48,7 +48,6 @@ export async function getArticle(slug) {
  */
 export async function getAllArticles() {
     const articles = fs.readdirSync(articlesPath);
-    console.log(articles);
 
     return articles.map(slug => {
         const location = path.join(articlesPath, slug);
