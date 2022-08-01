@@ -31,6 +31,7 @@
     "react-transition-group": "^4.4.2",
     "reactstrap": "^9.0.2",
     "rehype-autolink-headings": "^6.1.1",
+    "rehype-img-size": "^1.0.1",
     "rehype-slug": "^5.0.1",
     "swiper": "^8.1.4",
     "typewriter-effect": "^2.18.2",

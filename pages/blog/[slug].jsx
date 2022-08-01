@@ -4,23 +4,24 @@ import Image from "next/image";
 
 import {
   Row,
-  Col,
-  Container
+  Col
 } from "reactstrap";
 
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
-import { getArticle, getSlugs } from "scripts/article";
-import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeImgSize from "rehype-img-size";
+import rehypeSlug from "rehype-slug";
 
-const ResponsiveImage = (props) => (
-  <Image alt={props.alt} layout="responsive" width="50%" height="50%" {...props} />
+import { getArticle, getSlugs } from "scripts/article";
+
+const MarkdownImage = (props) => (
+  <Image alt={props.alt} layout="responsive" loading="lazy" {...props} />
 );
 
 const components = {
-  img: ResponsiveImage,
+  img: MarkdownImage,
 };
 
 const BlogPost = ({ source, frontmatter }) => {
@@ -65,7 +66,6 @@ export async function getStaticProps({ params }) {
   const mdx = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
-        rehypeSlug,
         [
           rehypeAutolinkHeadings,
           {
@@ -73,6 +73,13 @@ export async function getStaticProps({ params }) {
           },
           { behaviour: "wrap" },
         ],
+        [
+          rehypeImgSize,
+          {
+            dir: "public"
+          }
+        ],
+        rehypeSlug,
       ]
     }
   });
