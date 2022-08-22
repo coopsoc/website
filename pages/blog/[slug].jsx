@@ -15,6 +15,8 @@ import rehypeImgSize from "rehype-img-size";
 import rehypeSlug from "rehype-slug";
 
 import { getArticle, getSlugs } from "scripts/article";
+import BlogTab from "components/blog/social_distance/BlogTab";
+import BlogTabEntry from "components/blog/social_distance/BlogTabEntry";
 
 const MarkdownImage = (props) => (
   <Image alt={props.alt} layout="responsive" loading="lazy" {...props} />
@@ -22,6 +24,8 @@ const MarkdownImage = (props) => (
 
 const components = {
   img: MarkdownImage,
+  BlogTab: BlogTab,
+  BlogTabEntry: BlogTabEntry
 };
 
 const BlogPost = ({ source, frontmatter }) => {

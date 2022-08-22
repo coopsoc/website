@@ -40,6 +40,7 @@
   "devDependencies": {
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.5",
+    "eslint-plugin-mdx": "^2.0.2",
     "sass": "^1.51.0"
   }
 }

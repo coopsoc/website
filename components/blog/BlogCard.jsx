@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 import { Button, Card, CardBody, CardImg, Col, Container } from "reactstrap";
 
@@ -8,10 +7,7 @@ const BlogCard = ({ title, description, img, href }) => {
     <Col lg="4">
       <Container className="py-lg-md">
         <Card>
-          <CardImg
-            src={img}
-            alt={title}
-            top />
+          <CardImg src={img} alt={title} top />
 
           <CardBody>
             <h5 className="card-title" style={{ height: "50px" }}><b>{title}</b></h5>
