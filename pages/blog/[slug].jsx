@@ -14,6 +14,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeImgSize from "rehype-img-size";
 import rehypeSlug from "rehype-slug";
 
+import dayjs from "scripts/dayjs";
 import { getArticle, getSlugs } from "scripts/article";
 import BlogTab from "components/blog/social_distance/BlogTab";
 import BlogTabEntry from "components/blog/social_distance/BlogTabEntry";
@@ -47,10 +48,16 @@ const BlogPost = ({ source, frontmatter }) => {
           <Col lg="8">
             <p className="lead text-muted">{frontmatter.description}</p>
           </Col>
+
+          <Col lg="8">
+            <p className="text-muted">{dayjs(frontmatter.published).format("D MMMM YYYY")}</p>
+
+            <hr />
+          </Col>
         </Row>
       </section>
 
-      <section className="section section-lg">
+      <section className="section section-lg pt-0">
         <Row className="justify-content-center">
           <Col lg="6" className="markdown">
             <MDXRemote components={components} {...source} />

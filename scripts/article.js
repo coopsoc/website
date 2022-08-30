@@ -3,7 +3,8 @@ import matter from "gray-matter";
 import path from "path";
 
 import { sync } from "glob";
-import dayjs from "dayjs";
+
+import dayjs from "scripts/dayjs.js";
 
 const articlesPath = path.join(process.cwd(), "articles");
 
