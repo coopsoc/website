@@ -30,7 +30,10 @@ The React rewrite of the website was done by the 2021 IT subcom:
 - Hanyuan Li
 - Rohan Agarwal
 
-This was then ported over to Next.js by the 2022 IT subcom.
+This was then ported over to Next.js and improved on by the 2022 IT subcom:
+- Hanyuan Li
+- Stephen Lincon
+- Meghna Sunil
 
 ## Acknowledgements
 
