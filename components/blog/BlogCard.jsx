@@ -10,8 +10,8 @@ const BlogCard = ({ title, description, img, published, href }) => {
       <CardImg src={img} alt={title} top />
 
       <CardBody className="d-flex flex-column">
-        <CardTitle tag="h5">{title}</CardTitle>
-        <CardText>{description}</CardText>
+        <CardTitle tag="h5" className="h-50">{title}</CardTitle>
+        <CardText className="h-100 align-self-center">{description}</CardText>
 
         <Button
           color="index"

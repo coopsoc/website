@@ -47,7 +47,7 @@ const Blog = ({ posts }) => {
                     description={post.description}
                     img={post.image}
                     published={post.published}
-                    href={`/blog/${post.slug}`} />
+                    href={post.link === null ? `/blog/${post.slug}` : post.link} />
                 ))}
               </CardDeck>
             ))}
