@@ -1,28 +1,24 @@
 import React from "react";
 import Head from "next/head";
-import Image from "next/image";
-
-// Images
-import Stonks from "public/img/pubs/stonks.jpeg";
-
-import Connected from "public/img/pubs/connected.jpg";
-import Placement from "public/img/pubs/placement.jpg";
-
 // reactstrap components
 import {
   Row,
   Col,
-  Button,
-  Container,
+  CardDeck,
 } from "reactstrap";
 
 // yess let's get those animations
 import "animate.css";
 
-const Blog = () => {
-  // FIXME: style up blog posts so they mesh with rest of website
-  // TODO: consider converting blogs to Markdown or MDX
-  // TODO: move cards to their own component
+import BlogCard from "components/blog/BlogCard.jsx";
+
+import { partition } from "scripts/list";
+import { getAllArticles } from "scripts/article";
+
+const Blog = ({ posts }) => {
+  // TODO: add dates published to each blog
+  const rows = partition(posts, 3);
+
   return (
     <>
       <Head>
@@ -30,75 +26,31 @@ const Blog = () => {
       </Head>
 
       <section className="section section-lg">
-        <Row className="justify-content-center text-center ">
+        <Row className="justify-content-center text-center">
           <Col lg="8">
             <h1 className="animate__animated animate__fadeInDown animate__fast">BLOG POSTS</h1>
           </Col>
         </Row>
       </section>
 
-      <section className="section section-lg mt--200">
-        <Row className="justify-content-center text-center ">
-          <Col lg="5">
-            <br></br>
-            <br></br>
-            <Container className="py-lg-md d-flex">
-              <div className="card">
-                <Image alt="Why Most Young People Should Start Investing" src={Stonks} className="card-img-top" />
-                <div className="card-body" >
-                  <h5 className="card-title" style={{ height: '50px' }}><b>Why Most Young People Should Start Investing</b></h5>
-                  <p className="card-text" style={{ height: '100px' }}>Ever considered learning to invest? This article by Ethan Wong (BIS21) - a passionate young investor himself - outlines why you should, and how you can make a start on it today!</p>
-
-                  <Button
-                    className="mt-4"
-                    color="index"
-                    href="https://ethwong.medium.com/why-most-young-people-should-start-investing-6ea64448ef6b"
-                    target="_Blank"
-                  >
-                    Learn more
-                  </Button>
-                </div>
-              </div>
-            </Container>
-          </Col>
-
-          <Col lg="5">
-            <br></br>
-            <br></br>
-            <Container className="py-lg-md d-flex">
-              <div className="card">
-                <Image alt="Social Distancing Without the Socially Distant" src={Connected} className="card-img-top" />
-                <div className="card-body">
-                  <h5 className="card-title" style={{ height: '50px' }}><b>Social Distancing Without the Socially Distant</b></h5>
-                  <p className="card-text" style={{ height: '100px' }}>How can we stay connected during isolation?</p>
-
-                  <Button className="mt-4" color="index" href="/blog/social-distance">
-                    Learn more
-                  </Button>
-                </div>
-
-              </div>
-            </Container>
-          </Col>
-        </Row>
-
+      <section className="section section-lg">
         <Row className="justify-content-center text-center">
-          <Col lg="5">
-            <br></br>
-            <br></br>
-            <Container className="py-lg-md d-flex">
-              <div className="card">
-                <Image alt="First Placement Experiences" src={Placement} className="card-img-top" />
-                <div className="card-body" >
-                  <h5 className="card-title" style={{ height: '50px' }}><b>First Placement Experiences</b></h5>
-                  <p className="card-text" style={{ height: '100px' }}>Read about some of our past Exec&apos;s placement experiences!</p>
-
-                  <Button className="mt-4" color="index" href="/blog/placement">
-                    Learn more
-                  </Button>
-                </div>
-              </div>
-            </Container>
+          <Col lg="8">
+            {rows.map((row, index) => (
+              <CardDeck
+                key={`blog-row-${index}`}
+                className="mb-lg">
+                {row.map((post, postIndex) => (
+                  <BlogCard
+                    key={`blog-${index}-${postIndex}`}
+                    title={post.title}
+                    description={post.description}
+                    img={post.image}
+                    published={post.published}
+                    href={post.link === null ? `/blog/${post.slug}` : post.link} />
+                ))}
+              </CardDeck>
+            ))}
           </Col>
         </Row>
       </section>
@@ -107,3 +59,30 @@ const Blog = () => {
 }
 
 export default Blog;
+
+export async function getStaticProps() {
+  const articles = await getAllArticles();
+
+  const sorted = articles
+    .sort((a, b) => {
+      if (a.published.isBefore(b.published)) {
+        return 1;
+      } else if (a.published.isAfter(b.published)) {
+        return -1;
+      } else {
+        return 0;
+      }
+    })
+    .map(article => {
+      return {
+        ...article,
+        published: article.published.toISOString(),
+      };
+    });
+
+  return {
+    props: {
+      posts: sorted,
+    }
+  }
+}

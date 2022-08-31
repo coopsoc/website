@@ -17,12 +17,13 @@ import "public/vendor/nucleo/css/nucleo.css";
 // FontAwesome config
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+
 import Footer from "components/Footer";
 import IndexHeader from "components/IndexHeader";
 
 config.autoAddCss = false;
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   const { pathname } = useRouter();
 
   useEffect(() => {
@@ -41,4 +42,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default App;

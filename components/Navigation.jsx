@@ -26,13 +26,18 @@ import Headroom from "headroom.js";
 
 // reactstrap components
 import {
-  UncontrolledCollapse,
+  Collapse,
+  UncontrolledDropdown,
   Navbar,
   NavItem,
   Nav,
   Container,
   Row,
   Col,
+  DropdownMenu,
+  DropdownItem,
+  DropdownToggle,
+  NavbarToggler,
 } from "reactstrap";
 
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -74,17 +79,9 @@ const Navigation = () => {
               </NextNavbarBrand>
             </Link>
 
-            <button className="navbar-toggler" id="navbar_global">
-              <span className="navbar-toggler-icon" />
-            </button>
+            <NavbarToggler onClick={() => setOpen(true)} />
 
-            <UncontrolledCollapse
-              toggler="#navbar-global"
-              navbar
-              className={open ? "collapsing-out" : ""}
-              onExiting={() => setOpen(true)}
-              onExited={() => setOpen(false)}
-            >
+            <Collapse isOpen={open} navbar>
               <div className="navbar-collapse-header">
                 <Row>
                   <Col className="collapse-brand" xs="6">
@@ -99,15 +96,35 @@ const Navigation = () => {
                   </Col>
 
                   <Col className="collapse-close" xs="6">
-                    <button className="navbar-toggler" id="navbar-global">
+                    {/* Needs two spans to make "X" shape */}
+                    <NavbarToggler onClick={() => setOpen(false)}>
                       <span />
                       <span />
-                    </button>
+                    </NavbarToggler>
                   </Col>
                 </Row>
               </div>
 
-              <Nav className="navbar-nav-hover align-items-lg-center" navbar >
+              <Nav className="navbar-nav-hover align-items-lg-center" navbar>
+                {/*
+                <UncontrolledDropdown nav inNavbar>
+                  <DropdownToggle nav caret>
+                    <span className="nav-link-inner--text">ABOUT</span>
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem>
+                      <NavItem>
+                        <Link href="/team" passHref>
+                          <NextNavLink>
+                            The Team
+                          </NextNavLink>
+                        </Link>
+                      </NavItem>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+                */}
+
                 <NavItem>
                   <Link href="/team" passHref>
                     <NextNavLink
@@ -185,7 +202,7 @@ const Navigation = () => {
                   collapseText="LINKEDIN"
                   tooltip="Connect on LinkedIn" />
               </Nav>
-            </UncontrolledCollapse>
+            </Collapse>
           </Container>
         </Navbar>
       </header>

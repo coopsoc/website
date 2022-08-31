@@ -2,24 +2,10 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Col, Container, Row } from "reactstrap";
 
-import useBreakpoints from "./upcoming/useBreakpoints";
+import { partition } from "scripts/list";
 import { UPCOMING } from "data/CharityData.js";
 
-/**
- * Partitions a list into smaller sublists, each with a maximum of n elements.
- * @param {any[]} list - The list to be partitioned.
- * @param {number} n   - The number of elements in each part.
- * @returns {any[][]}
- */
- const partition = (list, n) => {
-  let result = [];
-
-  for (let i = 0; i < list.length; i += n) {
-    result.push(list.slice(i, i + n));
-  }
-
-  return result;
-};
+import useBreakpoints from "./upcoming/useBreakpoints";
 
 const CharityUpcoming = () => {
   const [small, medium, large] = useBreakpoints([720, 960, 1140]);
