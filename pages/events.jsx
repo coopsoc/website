@@ -46,7 +46,6 @@ const Events = () => {
             </Col>
           </Row>
         </Container>
-        <br></br>
       </section>
 
       <section className="section section-lg pt-lg-0">

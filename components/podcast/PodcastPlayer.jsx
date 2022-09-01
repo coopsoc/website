@@ -93,13 +93,15 @@ const PodcastPlayer = ({ podcast }) => {
           </Col>
         </Row>
 
-        <Row>
-          {audio !== null && !isNaN(duration) && (
-            <PodcastSlider
-              currentTime={currentTime}
-              duration={duration}
-              onChange={onChange} />
-          )}
+        <Row className="justify-content-center">
+          <Col lg={10}>
+            {audio !== null && !isNaN(duration) && (
+              <PodcastSlider
+                currentTime={currentTime}
+                duration={duration}
+                onChange={onChange} />
+            )}
+          </Col>
         </Row>
       </CardBody>
     </Card>
