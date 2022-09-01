@@ -14,10 +14,22 @@ const Podcast = () => {
 
       <section className="section section-lg">
         <Row className="justify-content-center text-center">
-          <Col lg="8">
+          <Col lg={8}>
             <h1 className="animate__animated animate__fadeInDown animate__fast">PODCAST</h1>
           </Col>
         </Row>
+
+        <Container className="py-lg-md d-flex">
+          <Row className="justify-content-center text-center">
+            <Col lg={8}>
+              <p className="lead text-muted">
+                The home of the Chicken Coop podcast, where we interview Co-op
+                scholars past and present. Stay tuned to this page whenever we have
+                new episodes!
+              </p>
+            </Col>
+          </Row>
+        </Container>
       </section>
 
       <section className="section section-lg">
