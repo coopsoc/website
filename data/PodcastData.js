@@ -33,6 +33,16 @@ const PODCASTS = [
                         `,
         "href": "http://docs.google.com/uc?export=open&id=1LFbAE_L7GfjqOd8RD0hL1Xwj0zkcVqZm",
     },
+    {
+        "name": "Ep. 4: Wilson Hua",
+        "description": `Tune into 🐥 Episode 4 🐥 to hear the wisdom of Wilson Hua, a BIS Coop turned INFS lecturer 📚 with a mind-blowing 🤯 side-hustle. 
+        We cover:
+        - the coop uni experience (including exciting 4am shenanigans) 🤩
+        - the honours program 📖
+        - being at the front of the classroom instead of the back as a tutor/lecturer 👨‍🏫
+        - side hustles 📈`,
+        "href": "https://docs.google.com/uc?export=open&id=10l6omADaOIDHNT6v9Mtz6Rt6AWSX_hlB"
+    }
 ];
 
 export default PODCASTS;
