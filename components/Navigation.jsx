@@ -106,12 +106,21 @@ const Navigation = () => {
               </div>
 
               <Nav className="navbar-nav-hover align-items-lg-center" navbar>
-                {/*
+                {
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
                     <span className="nav-link-inner--text">ABOUT</span>
                   </DropdownToggle>
                   <DropdownMenu>
+                    <DropdownItem>
+                      <NavItem>
+                        <Link href="/about" passHref>
+                          <NextNavLink>
+                            About Us
+                          </NextNavLink>
+                        </Link>
+                      </NavItem>
+                    </DropdownItem>
                     <DropdownItem>
                       <NavItem>
                         <Link href="/team" passHref>
@@ -123,17 +132,17 @@ const Navigation = () => {
                     </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
-                */}
+                }
 
-                <NavItem>
-                  <Link href="/team" passHref>
+                {/* { <NavItem>
+                  <Link href="/about" passHref>
                     <NextNavLink
-                      className={getNavLinkClass("/team")}
+                      className={getNavLinkClass("/about")}
                     >
-                      <span className="nav-link-inner--text">THE TEAM</span>
+                      <span className="nav-link-inner--text">ABOUT US</span>
                     </NextNavLink>
                   </Link>
-                </NavItem>
+                </NavItem> } */}
 
                 <NavItem>
                   <Link href="/events" passHref>
@@ -174,7 +183,19 @@ const Navigation = () => {
                     </NextNavLink>
                   </Link>
                 </NavItem>
+
+                <NavItem>
+                  <Link href="https://forms.gle/CRsYby5YuSXNqTnEA" passHref>
+                    <NextNavLink
+                      className="navbar-hover navbar-nav-hover align-items-lg-center"
+                    >
+                      <span className="nav-link-inner--text">NOMINATIONS FORM</span>
+                    </NextNavLink>
+                  </Link>
+                </NavItem>
+
               </Nav>
+
 
               <Nav className="align-items-lg-center ml-lg-auto" navbar>
                 <NavIcon
