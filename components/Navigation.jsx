@@ -111,7 +111,7 @@ const Navigation = () => {
                   <DropdownToggle nav caret>
                     <span className="nav-link-inner--text">ABOUT</span>
                   </DropdownToggle>
-                  <DropdownMenu>
+                  <DropdownMenu style={{ marginTop: "25px", marginLeft: "18px" }}>
                     <DropdownItem>
                       <NavItem>
                         <Link href="/about" passHref>
