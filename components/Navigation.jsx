@@ -115,7 +115,7 @@ const Navigation = () => {
                     <DropdownItem>
                       <NavItem>
                         <Link href="/about" passHref>
-                          <NextNavLink>
+                          <NextNavLink style={{ color: 'grey' }}>
                             About Us
                           </NextNavLink>
                         </Link>
@@ -124,7 +124,7 @@ const Navigation = () => {
                     <DropdownItem>
                       <NavItem>
                         <Link href="/team" passHref>
-                          <NextNavLink>
+                          <NextNavLink style={{ color: 'grey' }}>
                             The Team
                           </NextNavLink>
                         </Link>
