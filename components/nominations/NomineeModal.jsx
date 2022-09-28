@@ -26,7 +26,7 @@ const NomineeModal = ({ data, roles, isOpen, toggle }) => {
         <hr />
 
         <Row>
-          {data.description.split("\n").map(paragraph => (
+          {data.description !== undefined && data.description.split("\n").map(paragraph => (
             <>
               <p>{paragraph}</p>
               <br />

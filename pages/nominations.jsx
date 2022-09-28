@@ -50,7 +50,7 @@ const Nominations = () => {
         <Row className="justify-content-center text-center">
           <Col lg="8">
             <h1 className="animate__animated animate__zoomIn animate__fast">
-              <h2 className="display-1">2023 EXEC NOMINEES</h2>
+              2023 EXEC NOMINEES
             </h1>
           </Col>
         </Row>
@@ -123,7 +123,6 @@ const Nominations = () => {
                         onClick={() => clickNominee(nominee)} />
                     ))}
                   </div>
-
                 </Container>
               </div>
 
