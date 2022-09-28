@@ -175,6 +175,16 @@ const Navigation = () => {
                 </NavItem>
 
                 <NavItem>
+                  <Link href="/nominations" passHref>
+                    <NextNavLink
+                      className={getNavLinkClass("/nominations")}
+                    >
+                      <span className="nav-link-inner--text">2023 NOMINEES</span>
+                    </NextNavLink>
+                  </Link>
+                </NavItem>
+
+                <NavItem>
                   <Link href="https://merch.coopsoc.com.au" passHref>
                     <NextNavLink
                       className="navbar-hover navbar-nav-hover align-items-lg-center"
@@ -183,17 +193,6 @@ const Navigation = () => {
                     </NextNavLink>
                   </Link>
                 </NavItem>
-
-                <NavItem>
-                  <Link href="https://forms.gle/CRsYby5YuSXNqTnEA" passHref>
-                    <NextNavLink
-                      className="navbar-hover navbar-nav-hover align-items-lg-center"
-                    >
-                      <span className="nav-link-inner--text">NOMINATIONS FORM</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem>
-
               </Nav>
 
 
