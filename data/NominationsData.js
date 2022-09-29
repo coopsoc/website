@@ -16,6 +16,7 @@ import Sofia_Image from "public/img/nominee/Sofia.png";
 import Stephen_Image from "public/img/nominee/Stephen.jpeg";
 import TJ_Image from "public/img/nominee/Thivakar.jpg";
 import Will_Image from "public/img/nominee/William.jpg";
+import Bonnie_Image from "public/img/nominee/Bonnie.jpg";
 
 const NOMINEES = [
   {
@@ -184,6 +185,15 @@ const NOMINEES = [
         I have always been ready to participate and organise charity events during both my short time at uni and also during high school where I have run fundraiser events and service weeks to support organisations such as The Starlight Foundation and Macleay Vocational College.  
         So, I would love to keep on creating events that can gather the co-op family together while also continuing to learn what giving back to the community means. 😊`
       },
+      {
+        "name": "Bonnie Ranger",
+        "image": Bonnie_Image,
+        "preference": 1,
+        "description": `Being a member of Co-op Soc has been such a spectacular experience and led to me making so many new friends and memories throughout all the events this year. 
+        Since Co-op Soc has been so much fun, I’m hoping to give back to Co-ops in the future as Arc Delegate. 
+        Similarly, the conjunction of my immortal memory and the fact that I live less than 1km from the Arc office will ensure that Arc is effectively communicated with and with the banner is never forgotten meaning Co-op Soc will never miss out on an Arc Grants. 
+        But most importantly, I love all the people in Co-op Soc and would love to do as much as possible to give back and make next year amazing!!`
+      },
     ]
   },
   {
@@ -294,7 +304,7 @@ const NOMINEES = [
       {
         "name": "Stephen Lincon",
         "image": Stephen_Image,
-        "preference": 2,
+        "preference": 1,
         "description": `I think being a charity director would be a great way to address widespread societal issues that are not addressed enough. In particular, I would like to focus on the issue of mental health, especially in Australia, where it is the leading cause of death for individuals aged 15 – 44. To help the cause, I took part in the StepUp and StampOut Suicide Campaign, which was a fundraising campaign which involved frequently going on walks and hikes to generate funds. I also delivered a speech for my school to raise awareness for mental health, which I was told sparked further conversations from teachers and students.  Through this role, I'd like to bring awareness to these issues. 
         `
       },
