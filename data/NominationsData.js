@@ -16,6 +16,7 @@ import Sofia_Image from "public/img/nominee/Sofia.png";
 import Stephen_Image from "public/img/nominee/Stephen.jpeg";
 import TJ_Image from "public/img/nominee/Thivakar.jpg";
 import Will_Image from "public/img/nominee/William.jpg";
+import Bonnie_Image from "public/img/nominee/Bonnie.jpg";
 
 const NOMINEES = [
   {
@@ -183,6 +184,15 @@ const NOMINEES = [
         "description": `Hi! Being a part of the charity subcom this year has shown me the potential that every individual has to positively contribute to their community with their unique skillsets. I’m running for Charity Director because I want to be able to encourage others to generously use their time to promote awareness for any cause they are passionate about and ultimately be able to foster a community that is eager to actively serve others. 
         I have always been ready to participate and organise charity events during both my short time at uni and also during high school where I have run fundraiser events and service weeks to support organisations such as The Starlight Foundation and Macleay Vocational College.  
         So, I would love to keep on creating events that can gather the co-op family together while also continuing to learn what giving back to the community means. 😊`
+      },
+      {
+        "name": "Bonnie Ranger",
+        "image": Bonnie_Image,
+        "preference": 1,
+        "description": `Being a member of Co-op Soc has been such a spectacular experience and led to me making so many new friends and memories throughout all the events this year. 
+        Since Co-op Soc has been so much fun, I’m hoping to give back to Co-ops in the future as Arc Delegate. 
+        Similarly, the conjunction of my immortal memory and the fact that I live less than 1km from the Arc office will ensure that Arc is effectively communicated with and with the banner is never forgotten meaning Co-op Soc will never miss out on an Arc Grants. 
+        But most importantly, I love all the people in Co-op Soc and would love to do as much as possible to give back and make next year amazing!!`
       },
     ]
   },
