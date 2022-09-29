@@ -294,7 +294,7 @@ const NOMINEES = [
       {
         "name": "Stephen Lincon",
         "image": Stephen_Image,
-        "preference": 2,
+        "preference": 1,
         "description": `I think being a charity director would be a great way to address widespread societal issues that are not addressed enough. In particular, I would like to focus on the issue of mental health, especially in Australia, where it is the leading cause of death for individuals aged 15 – 44. To help the cause, I took part in the StepUp and StampOut Suicide Campaign, which was a fundraising campaign which involved frequently going on walks and hikes to generate funds. I also delivered a speech for my school to raise awareness for mental health, which I was told sparked further conversations from teachers and students.  Through this role, I'd like to bring awareness to these issues. 
         `
       },
