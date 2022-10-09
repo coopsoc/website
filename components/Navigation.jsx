@@ -97,25 +97,24 @@ const Navigation = () => {
 
                   <Col className="collapse-close" xs="6">
                     {/* Needs two spans to make "X" shape */}
-                    <NavbarToggler onClick={() => setOpen(false)}>
+                    <NavbarToggler onClick={() => setOpen(false)} >
                       <span />
                       <span />
                     </NavbarToggler>
                   </Col>
                 </Row>
               </div>
-
-              <Nav className="navbar-nav-hover align-items-lg-center" navbar>
+              <Nav className="navbar-nav-click align-items-lg-center" navbar>
                 {
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
-                    <span className="nav-link-inner--text">ABOUT</span>
+                    <span className="nav-link-inner--text">ABOUT   </span>
                   </DropdownToggle>
-                  <DropdownMenu>
+                  <DropdownMenu style={{ marginTop: "20px", marginLeft: "18px"}}>
                     <DropdownItem>
                       <NavItem>
                         <Link href="/about" passHref>
-                          <NextNavLink>
+                          <NextNavLink style={{ color: 'grey' }}>
                             About Us
                           </NextNavLink>
                         </Link>
@@ -124,7 +123,7 @@ const Navigation = () => {
                     <DropdownItem>
                       <NavItem>
                         <Link href="/team" passHref>
-                          <NextNavLink>
+                          <NextNavLink style={{ color: 'grey' }}>
                             The Team
                           </NextNavLink>
                         </Link>
@@ -133,16 +132,6 @@ const Navigation = () => {
                   </DropdownMenu>
                 </UncontrolledDropdown>
                 }
-
-                {/* { <NavItem>
-                  <Link href="/about" passHref>
-                    <NextNavLink
-                      className={getNavLinkClass("/about")}
-                    >
-                      <span className="nav-link-inner--text">ABOUT US</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem> } */}
 
                 <NavItem>
                   <Link href="/events" passHref>
