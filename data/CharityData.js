@@ -103,9 +103,9 @@ const EVENTS = [
   [
     {
       // Special items specifically for the case comp
-      "special": "casecomp",
+      "special": "casecomp22",
       // Regular
-      "title": "Case Comp 2021",
+      "title": "Case Comp 2022",
       "image": charitycasecomp,
       "description": `In term 2, we collaborated with the TLR Foundation to deliver a case challenging teams to increase the number of suitable donors on the Australian Bone Marrow Donor Registry (ABMDR). `,
       "link": "https://www.facebook.com/events/369691528601159/",
