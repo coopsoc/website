@@ -105,17 +105,26 @@ const Navigation = () => {
                 </Row>
               </div>
 
-              <Nav className="navbar-nav-hover align-items-lg-center" navbar>
-                {/*
+              <Nav className="navbar-nav-click align-items-lg-center" navbar>
+                {
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
-                    <span className="nav-link-inner--text">ABOUT</span>
+                    <span className="nav-link-inner--text">ABOUT   </span>
                   </DropdownToggle>
-                  <DropdownMenu>
+                  <DropdownMenu style={{ marginTop: "20px", marginLeft: "18px"}}>
+                    <DropdownItem>
+                      <NavItem>
+                        <Link href="/about" passHref>
+                          <NextNavLink style={{ color: 'grey' }}>
+                            About Us
+                          </NextNavLink>
+                        </Link>
+                      </NavItem>
+                    </DropdownItem>
                     <DropdownItem>
                       <NavItem>
                         <Link href="/team" passHref>
-                          <NextNavLink>
+                          <NextNavLink style={{ color: 'grey' }}>
                             The Team
                           </NextNavLink>
                         </Link>
@@ -123,7 +132,7 @@ const Navigation = () => {
                     </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
-                */}
+                }
 
                 <NavItem>
                   <Link href="/team" passHref>
