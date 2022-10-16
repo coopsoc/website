@@ -6,7 +6,8 @@ import CharityBody from "../CharityBody.jsx";
 
 import caseCompWinners from 'public/img/charity/case-comp2021Winners.jpg';
 
-const CaseCompBody = ({ event }) => {
+
+const CaseCompBody1 = ({ event }) => {
   return (
     <>
       <CharityBody event={event} />
@@ -24,4 +25,4 @@ const CaseCompBody = ({ event }) => {
   );
 }
 
-export default CaseCompBody;
+export default CaseCompBody1;

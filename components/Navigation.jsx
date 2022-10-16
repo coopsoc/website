@@ -1,19 +1,13 @@
 /*!
-
 =========================================================
 * Argon Design System React - v1.1.0
 =========================================================
-
 * Product Page: https://www.creative-tim.com/product/argon-design-system-react
 * Copyright 2020 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md)
-
 * Coded by Creative Tim
-
 =========================================================
-
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 */
 
 import React, { useEffect, useState } from "react";
@@ -97,14 +91,13 @@ const Navigation = () => {
 
                   <Col className="collapse-close" xs="6">
                     {/* Needs two spans to make "X" shape */}
-                    <NavbarToggler onClick={() => setOpen(false)}>
+                    <NavbarToggler onClick={() => setOpen(false)} >
                       <span />
                       <span />
                     </NavbarToggler>
                   </Col>
                 </Row>
               </div>
-
               <Nav className="navbar-nav-click align-items-lg-center" navbar>
                 {
                 <UncontrolledDropdown nav inNavbar>
@@ -133,16 +126,6 @@ const Navigation = () => {
                   </DropdownMenu>
                 </UncontrolledDropdown>
                 }
-
-                <NavItem>
-                  <Link href="/team" passHref>
-                    <NextNavLink
-                      className={getNavLinkClass("/team")}
-                    >
-                      <span className="nav-link-inner--text">THE TEAM</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem>
 
                 <NavItem>
                   <Link href="/events" passHref>
@@ -175,6 +158,16 @@ const Navigation = () => {
                 </NavItem>
 
                 <NavItem>
+                  <Link href="/nominations" passHref>
+                    <NextNavLink
+                      className={getNavLinkClass("/nominations")}
+                    >
+                      <span className="nav-link-inner--text">2023 NOMINEES</span>
+                    </NextNavLink>
+                  </Link>
+                </NavItem>
+
+                <NavItem>
                   <Link href="https://merch.coopsoc.com.au" passHref>
                     <NextNavLink
                       className="navbar-hover navbar-nav-hover align-items-lg-center"
@@ -184,6 +177,7 @@ const Navigation = () => {
                   </Link>
                 </NavItem>
               </Nav>
+
 
               <Nav className="align-items-lg-center ml-lg-auto" navbar>
                 <NavIcon
