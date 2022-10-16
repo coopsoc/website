@@ -3,6 +3,7 @@ import { Modal, ModalBody, ModalFooter, ModalHeader, Button } from "reactstrap";
 
 import CharityBody from "./modal/CharityBody.jsx";
 import CaseCompBody from "./modal/custom/CaseCompBody.jsx";
+import CaseCompBody1 from "./modal/custom/CaseCompBody2022.jsx";
 
 const CharityModal = ({ isOpen, toggle, event }) => {
   // Renders the body of our modal. If there's anything in the `special`
@@ -12,6 +13,8 @@ const CharityModal = ({ isOpen, toggle, event }) => {
     switch (special) {
       case "casecomp":
         return <CaseCompBody event={event} />
+      case "casecomp22":
+        return <CaseCompBody1 event={event} />
       default:
         return <CharityBody event={event} />;
     }
