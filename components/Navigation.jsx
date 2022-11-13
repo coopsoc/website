@@ -166,16 +166,6 @@ const Navigation = () => {
                     </NextNavLink>
                   </Link>
                 </NavItem>
-
-                <NavItem>
-                  <Link href="https://merch.coopsoc.com.au" passHref>
-                    <NextNavLink
-                      className="navbar-hover navbar-nav-hover align-items-lg-center"
-                    >
-                      <span className="nav-link-inner--text">MERCH</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem>
               </Nav>
 
 
