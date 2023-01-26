@@ -39,11 +39,23 @@ import Emily22_Image from "public/img/exec/2022/Emily.jpg";
 import Nicole_Image from "public/img/exec/2022/Nicole.jpg";
 import Annie_Image from "public/img/exec/2022/Annie.png";
 import Hanyuan_Image from "public/img/exec/2022/Hanyuan.png";
+
+// 2023 Team Images
 import Aks_Image from "public/img/exec/2022/Aks.jpg";
 import Kristina_Image from "public/img/exec/2022/Kristina.jpg";
+import Arousha_Image from "public/img/nominee/Arousha.jpg";
+import Issac_Image from "public/img/nominee/Issac.jpg";
+import JackL_Image from "public/img/nominee/Jack.jpg";
+import Lily_Image from "public/img/nominee/Lily.png";
+import Matthew_Image from "public/img/nominee/Matthew.jpg";
+import Max_Image from "public/img/nominee/Max.png";
+import Michelle_Image from "public/img/nominee/Michelle.jpg";
+import Sofia_Image from "public/img/nominee/Sofia.png";
+import TJ_Image from "public/img/nominee/Thivakar.jpg";
+import Will_Image from "public/img/nominee/William.jpg";
 
 const START = 2020;
-const END = 2022;
+const END = 2023;
 
 const MEMBERS = [
   {
@@ -538,7 +550,100 @@ const MEMBERS = [
         ],
       }
     ]
-  }
+  },
+  { 
+   "exec": [
+	   // titles will need to change pending EGM
+	      {
+		"sectionName": "Executive",
+		"members": [
+		  [
+		    {
+		      "image": Aks_Image,
+		      "description": ``,
+		      "name": "Aks Walia",
+		      "role": "President"
+		    },
+		    {
+		      "image": Kristina_Image,
+		      "description": ``,
+		      "name": "Kristina Hua",
+		      "role": "Vice President"
+		    },
+		  ],
+		  [
+		    {
+		      "image": Issac_Image,
+		      "description": ``,
+		      "name": "Issac Liu",
+		      "role": "Secretary"
+		    },
+		    {
+		      "image": Lily_Image,
+		      "description": ``,
+		      "name": "Lily Miranda",
+		      "role": "Treasurer"
+		    },
+		    {
+		      "image": Sofia_Image,
+		      "description": ``,
+		      "name": "Sofia De Bellis",
+		      "role": "Arc Delegate"
+		    },
+		  ]
+		]
+	      },
+	      {
+		"sectionName": "Directors",
+		"members": [
+		  [
+		    {
+		      "image": Matthew_Image,
+		      "description": ``,
+		      "name": "Matthew Awad",
+		      "role": "Events"
+		    },
+		    {
+		      "image": TJ_Image,
+		      "description": ``,
+		      "name": "Thivakar Jeyaseelan (TJ)",
+		      "role": "Charity"
+		    },
+		    {
+		      "image": Max_Image,
+		      "description": ``,
+		      "name": "Max Gobel",
+		      "role": "Charity"
+		    },
+		    {
+		      "image": JackL_Image,
+		      "description": ``,
+		      "name": "Jack Lane",
+		      "role": "Marketing"
+		    },
+		    {
+		      "image": Arousha_Image,
+		      "description": ``,
+		      "name": "Arousha Soltany",
+		      "role": "Marketing"
+		    },
+		    {
+		      "image": Michelle_Image,
+		      "description": ``,
+		      "name": "Michelle Yeom",
+		      "role": "Publications"
+		    },
+		    {
+		      "image": Will_Image,
+		      "description": ``,
+		      "name": "Will Kennedy",
+		      "role": "IT"
+		    },
+		  ]
+		]
+   	      },
+           ]
+      }
 ];
 
 export { START, END, MEMBERS };
