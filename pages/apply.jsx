@@ -20,7 +20,7 @@ const Apply = () => {
 
             <Container fluid={true}>
                 <section className="d-flex justify-content-center">
-                    <iframe className="d-flex" src="https://docs.google.com/forms/d/e/1FAIpQLSdEmkN_OPUCpdJ2wNTNoDGamcoNhmv4IuEHEOPmk8rt9lIslg/viewform?embedded=true" width="640" height="2290">Loading…</iframe>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc_coKZXESUBwNU9QWmr-oXMoA2yY8jUhHLG70KrcpsqOCFlQ/viewform?embedded=true" width="640" height="2290">Loading…</iframe>
                 </section>
             </Container>
         </>
