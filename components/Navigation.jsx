@@ -102,7 +102,7 @@ const Navigation = () => {
                 <NavItem>
                   <Link href="/about" passHref>
                     <NextNavLink className={getNavLinkClass("/about")}>
-                      About Us
+                      <span className="nav-link-inner--text">About Us</span>
                     </NextNavLink>
                   </Link>
                 </NavItem>
@@ -110,7 +110,7 @@ const Navigation = () => {
                 <NavItem>
                   <Link href="/team" passHref>
                     <NextNavLink className={getNavLinkClass("/team")}>
-                      The Team
+                      T<span className="nav-link-inner--text">The Team</span>
                     </NextNavLink>
                   </Link>
                 </NavItem>
@@ -120,7 +120,7 @@ const Navigation = () => {
                     <NextNavLink
                       className={getNavLinkClass("/events")}
                     >
-                      <span className="nav-link-inner--text">EVENTS</span>
+                      <span className="nav-link-inner--text">Events</span>
                     </NextNavLink>
                   </Link>
                 </NavItem>
@@ -130,7 +130,7 @@ const Navigation = () => {
                     <NextNavLink
                       className={getNavLinkClass("/publications")}
                     >
-                      <span className="nav-link-inner--text">PUBLICATIONS</span>
+                      <span className="nav-link-inner--text">Publications</span>
                     </NextNavLink>
                   </Link>
                 </NavItem>
@@ -140,21 +140,11 @@ const Navigation = () => {
                     <NextNavLink
                       className={getNavLinkClass("/charity")}
                     >
-                      <span className="nav-link-inner--text">CHARITY</span>
+                      <span className="nav-link-inner--text">Charity</span>
                     </NextNavLink>
                   </Link>
                 </NavItem>
-
-                <NavItem>
-                  <Link href="/apply" passHref>
-                    <NextNavLink
-                      className={getNavLinkClass("/apply")}
-                    >
-                      <span className="nav-link-inner--text">APPLY</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem>
-
+ 
               </Nav>
 
 
