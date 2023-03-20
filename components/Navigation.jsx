@@ -110,7 +110,7 @@ const Navigation = () => {
                 <NavItem>
                   <Link href="/team" passHref>
                     <NextNavLink className={getNavLinkClass("/team")}>
-                      T<span className="nav-link-inner--text">The Team</span>
+                      <span className="nav-link-inner--text">The Team</span>
                     </NextNavLink>
                   </Link>
                 </NavItem>
