@@ -101,7 +101,7 @@ const Navigation = () => {
               <Nav className="navbar-nav-click align-items-lg-center" navbar>
                 <NavItem>
                   <Link href="/about" passHref>
-                    <NextNavLink style={getnavlinkclass("/about")}>
+                    <NextNavLink className={getNavLinkClass("/about")}>
                       About Us
                     </NextNavLink>
                   </Link>
@@ -109,7 +109,7 @@ const Navigation = () => {
 
                 <NavItem>
                   <Link href="/team" passHref>
-                    <NextNavLink style={getnavlinkclass("/team")}>
+                    <NextNavLink className={getNavLinkClass("/team")}>
                       The Team
                     </NextNavLink>
                   </Link>
