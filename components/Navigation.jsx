@@ -101,7 +101,7 @@ const Navigation = () => {
               <Nav className="navbar-nav-click align-items-lg-center" navbar>
                 <NavItem>
                   <Link href="/about" passHref>
-                    <NextNavLink style={{ color: 'grey' }}>
+                    <NextNavLink style={getnavlinkclass("/about")}>
                       About Us
                     </NextNavLink>
                   </Link>
@@ -109,7 +109,7 @@ const Navigation = () => {
 
                 <NavItem>
                   <Link href="/team" passHref>
-                    <NextNavLink style={{ color: 'grey' }}>
+                    <NextNavLink style={getnavlinkclass("/team")}>
                       The Team
                     </NextNavLink>
                   </Link>
