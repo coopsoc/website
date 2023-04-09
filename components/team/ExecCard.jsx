@@ -8,6 +8,7 @@ import styles from "styles/modules/ExecCard.module.scss";
 const ExecCard = ({ data, colour }) => {
   const { name, image, description, role } = data;
 
+  // TODO: fix description not showing
   return (
     <div className="col-md-4">
       <div className="card-person">
@@ -17,7 +18,6 @@ const ExecCard = ({ data, colour }) => {
             alt={name}
             src={image}
             className="card-img-top" />
-          <p className={styles["person-text"]}>{description}</p>
           <div className={styles[`go-corner-style${colour}`]}>
             <div className={styles["go-arrow"]} />
           </div>
@@ -26,6 +26,7 @@ const ExecCard = ({ data, colour }) => {
       <div className="card-body text-center">
         <h4 className="about-name">{name}</h4>
         {role === "" ? null : <p className="about-role">{role}</p>}
+        {/* {description === "" ? null : <p className={styles["person-text"]}>{description}</p>} */}
       </div>
     </div>
   );

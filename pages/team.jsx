@@ -43,6 +43,9 @@ const Team = () => {
   const currentYear = year - START;
   const members = MEMBERS[currentYear];
 
+  // FIXME: Keys must not change and so shouldn't be generated during rendering (good practice but not
+  // strictly necessary here as the order won't change). See:
+  // https://react.dev/learn/rendering-lists#rules-of-keys
   return (
     <>
       <Head>
