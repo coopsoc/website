@@ -46,7 +46,7 @@ const Team = () => {
   return (
     <>
       <Head>
-        <title>Our Team | UNSW Co-op Society</title>
+        <title>Team | UNSW Co-op Society</title>
       </Head>
 
       <section className="section section-lg">
