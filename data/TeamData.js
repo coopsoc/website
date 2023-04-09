@@ -54,7 +54,7 @@ import Sofia_Image from "public/img/exec/2023/Sofia.png";
 import TJ_Image from "public/img/exec/2023/Thivakar.jpg";
 import Will_Image from "public/img/exec/2023/William.jpg";
 import Doris_Image from "public/img/exec/2023/Doris.jpeg";
-import MattL_Image from "public/img/exec/2023/Doris.jpeg"; // Todo
+import MattL_Image from "public/img/exec/2023/MattL.jpeg";
 
 const START = 2020;
 const END = 2023;
