@@ -43,22 +43,25 @@ import Hanyuan_Image from "public/img/exec/2022/Hanyuan.png";
 // 2023 Team Images
 import Aks_Image from "public/img/exec/2022/Aks.jpg";
 import Kristina_Image from "public/img/exec/2022/Kristina.jpg";
-import Arousha_Image from "public/img/nominee/Arousha.jpg";
-import Issac_Image from "public/img/nominee/Issac.jpg";
-import JackL_Image from "public/img/nominee/Jack.jpg";
-import Lily_Image from "public/img/nominee/Lily.png";
-import Matthew_Image from "public/img/nominee/Matthew.jpg";
-import Max_Image from "public/img/nominee/Max.png";
-import Michelle_Image from "public/img/nominee/Michelle.jpg";
-import Sofia_Image from "public/img/nominee/Sofia.png";
-import TJ_Image from "public/img/nominee/Thivakar.jpg";
-import Will_Image from "public/img/nominee/William.jpg";
+import Arousha_Image from "public/img/exec/2023/Arousha.jpg";
+import Issac_Image from "public/img/exec/2023/Issac.jpg";
+import JackL_Image from "public/img/exec/2023/Jack.jpg";
+import Lily_Image from "public/img/exec/2023/Lily.png";
+import Matthew_Image from "public/img/exec/2023/Matthew.jpg";
+import Max_Image from "public/img/exec/2023/Max.png";
+import Michelle_Image from "public/img/exec/2023/Michelle.jpg";
+import Sofia_Image from "public/img/exec/2023/Sofia.png";
+import TJ_Image from "public/img/exec/2023/Thivakar.jpg";
+import Will_Image from "public/img/exec/2023/William.jpg";
+import Doris_Image from "public/img/exec/2023/Doris.jpeg";
+import MattL_Image from "public/img/exec/2023/MattL.jpeg";
 
 const START = 2020;
 const END = 2023;
 
 const MEMBERS = [
   {
+    // 2020
     "exec": [
       {
         "sectionName": "Executive",
@@ -201,6 +204,7 @@ const MEMBERS = [
     ],
   },
   {
+    // 2021
     "exec": [
       {
         "sectionName": "Executive",
@@ -221,7 +225,8 @@ const MEMBERS = [
               "name": "Celine Goh",
               "role": "Vice President"
             },
-          ], [
+          ],
+          [
             {
               "image": Kai_Image,
               "description": `My number one goal is to make sure everyone is included in Co-op Soc. As secretary,
@@ -357,6 +362,7 @@ const MEMBERS = [
     ],
   },
   {
+    // 2022
     "exec": [
       {
         "sectionName": "Executive",
@@ -379,7 +385,8 @@ const MEMBERS = [
               "name": "Ronaldo Keng",
               "role": "Vice President"
             },
-          ], [
+          ],
+          [
             {
               "image": Nala_Image,
               "description": `I'm looking forward to another incredible year with the Co-op team as the 2022 secretary.
@@ -502,7 +509,7 @@ const MEMBERS = [
       {
         "icons": [faClipboard],
         "name": "Administrative Officer",
-        "description": `The administrative officer assists the executive team, largely secretary, with things such as event organisation, booking systems and managing the inbox. They are organised, efficient and dedicated to their work.`,
+        "description": `The Administrative Officer assists the executive team, largely secretary, with things such as event organisation, booking systems and managing the inbox. They are organised, efficient and dedicated to their work.`,
         "members": [
           "Issac Liu"
         ],
@@ -551,99 +558,182 @@ const MEMBERS = [
       }
     ]
   },
-  { 
-   "exec": [
-	   // titles will need to change pending EGM
-	      {
-		"sectionName": "Executive",
-		"members": [
-		  [
-		    {
-		      "image": Aks_Image,
-		      "description": ``,
-		      "name": "Aks Walia",
-		      "role": "President"
-		    },
-		    {
-		      "image": Kristina_Image,
-		      "description": ``,
-		      "name": "Kristina Hua",
-		      "role": "Vice President"
-		    },
-		  ],
-		  [
-		    {
-		      "image": Issac_Image,
-		      "description": ``,
-		      "name": "Issac Liu",
-		      "role": "Secretary"
-		    },
-		    {
-		      "image": Lily_Image,
-		      "description": ``,
-		      "name": "Lily Miranda",
-		      "role": "Treasurer"
-		    },
-		    {
-		      "image": Sofia_Image,
-		      "description": ``,
-		      "name": "Sofia De Bellis",
-		      "role": "Arc Delegate"
-		    },
-		  ]
-		]
-	      },
-	      {
-		"sectionName": "Directors",
-		"members": [
-		  [
-		    {
-		      "image": Matthew_Image,
-		      "description": ``,
-		      "name": "Matthew Awad",
-		      "role": "Events"
-		    },
-		    {
-		      "image": TJ_Image,
-		      "description": ``,
-		      "name": "Thivakar Jeyaseelan (TJ)",
-		      "role": "Charity"
-		    },
-		    {
-		      "image": Max_Image,
-		      "description": ``,
-		      "name": "Max Gobel",
-		      "role": "Charity"
-		    },
-		    {
-		      "image": JackL_Image,
-		      "description": ``,
-		      "name": "Jack Lane",
-		      "role": "Marketing"
-		    },
-		    {
-		      "image": Arousha_Image,
-		      "description": ``,
-		      "name": "Arousha Soltany",
-		      "role": "Marketing"
-		    },
-		    {
-		      "image": Michelle_Image,
-		      "description": ``,
-		      "name": "Michelle Yeom",
-		      "role": "Publications"
-		    },
-		    {
-		      "image": Will_Image,
-		      "description": ``,
-		      "name": "Will Kennedy",
-		      "role": "IT"
-		    },
-		  ]
-		]
-   	      },
-           ]
+  {
+    // 2023
+    "exec": [
+      // titles will need to change pending EGM
+      {
+        "sectionName": "Executive",
+        "members": [
+          [
+            {
+              "image": Aks_Image,
+              "description": ``,
+              "name": "Aks Walia",
+              "role": "President"
+            },
+            {
+              "image": Kristina_Image,
+              "description": ``,
+              "name": "Kristina Hua",
+              "role": "Vice President"
+            },
+          ],
+          [
+            {
+              "image": Issac_Image,
+              "description": ``,
+              "name": "Issac Liu",
+              "role": "Secretary"
+            },
+            {
+              "image": Lily_Image,
+              "description": ``,
+              "name": "Lily Miranda",
+              "role": "Treasurer"
+            },
+            {
+              "image": Sofia_Image,
+              "description": ``,
+              "name": "Sofia De Bellis",
+              "role": "Arc Delegate"
+            },
+          ]
+        ]
+      },
+      {
+        "sectionName": "Directors",
+        "members": [
+          [
+            {
+              "image": Matthew_Image,
+              "description": ``,
+              "name": "Matthew Awad",
+              "role": "Events"
+            },
+            {
+              "image": TJ_Image,
+              "description": ``,
+              "name": "Thivakar Jeyaseelan (TJ)",
+              "role": "Charity"
+            },
+            {
+              "image": Max_Image,
+              "description": ``,
+              "name": "Max Gobel",
+              "role": "Charity"
+            },
+          ],
+          [
+            {
+              "image": JackL_Image,
+              "description": ``,
+              "name": "Jack Lane",
+              "role": "Marketing"
+            },
+            {
+              "image": Arousha_Image,
+              "description": ``,
+              "name": "Arousha Soltany",
+              "role": "Marketing"
+            },
+            {
+              "image": Michelle_Image,
+              "description": ``,
+              "name": "Michelle Yeom",
+              "role": "Publications"
+            },
+          ],
+          [
+            {
+              "image": Will_Image,
+              "description": ``,
+              "name": "Will Kennedy",
+              "role": "IT"
+            },
+          ]
+        ]
+      },
+      {
+        "sectionName": "First Year Representatives",
+        "members": [
+          [
+            {
+              "image": Doris_Image,
+              "description": ``,
+              "name": "Doris Yang",
+              "role": ""
+            },
+            {
+              "image": MattL_Image,
+              "description": ``,
+              "name": "Matthew Lim",
+              "role": ""
+            },
+          ],
+        ]
       }
+    ],
+    "subcoms": [
+      {
+        "icons": [faClipboard],
+        "name": "Administrative Officers",
+        "description": `The Administrative Officers assist the executive team, largely secretary, with things such as event organisation, booking systems and managing the inbox. They are organised, efficient and dedicated to their work.`,
+        "members": [
+          "Arya Ahluwalia",
+          "Flick Jensen",
+          "Peter Osborne",
+        ],
+      },
+      {
+        "icons": [faDove],
+        "name": "Charity",
+        "description": `The Charity portfolio seeks to create awareness, raise funds and drive social change for charities. The committee also compliments the Social portfolio in hosting fun events for a great cause.`,
+        "members": [
+          "Alex Lee",
+          "Anna Tokarev",
+          "Dinara Jayarathna",
+          "Inika Weber",
+          "Isabel Dean",
+        ],
+      },
+      {
+        "icons": [faBullhorn],
+        "name": "Marketing",
+        "description": `The Marketing portfolio focuses on creating continued engagement with our Co-op Society Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
+        "members": [
+          "Amal Khan",
+          "Essa Mehdi",
+          "Jaime Pitcher",
+          "Maggie Lam",
+          "Sam Katz",
+        ],
+      },
+      {
+        "icons": [faEdit, faDesktop],
+        "name": "Publications/IT",
+        "description": `The Publications/IT portfolio is responsible for continuing to develop and facilitate the society's online presence through new and existing avenues, focusing on the Co-op Soc website and the Chicken Coop podcast.`,
+        "members": [
+          "Gemma Lapins-Silvirs",
+          "Immi Wills",
+          "Sebastian Pelayo",
+          "Jason Tang",
+          "Lucas Harvey",
+          "Nicholas Langford",
+          "Sky Lam",
+        ],
+      },
+      {
+        "icons": [faUserFriends],
+        "name": "Social",
+        "description": `The Social portfolio is responsible for organising our social calendar, including planning, developing and executing a core suite of events. They ensure all members are given the opportunity to be a part of this vibrant community, through the creation and maintenance of social groups.`,
+        "members": [
+          "Kiran Singh",
+          "Sienna Strauss",
+        ],
+      }
+    ]
+  }
 ];
 
 export { START, END, MEMBERS };

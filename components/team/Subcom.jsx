@@ -1,10 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// import styles from "styles/modules/Subcom.module.scss"; // TODO: centre left column (col-sm-8)
+
 const Subcom = ({ portfolio }) => {
   return (
     <>
       <div className="row">
+        {/* <div className={styles["col-sm-8"]}> */}
         <div className="col-sm-8">
           {portfolio.icons.map((icon, index) => (
             <FontAwesomeIcon
