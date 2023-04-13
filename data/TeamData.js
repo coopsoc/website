@@ -570,13 +570,13 @@ const MEMBERS = [
               "image": Aks_Image,
               "description": ``,
               "name": "Aks Walia",
-              "role": "President"
+              "role": "Co-President"
             },
             {
               "image": Kristina_Image,
               "description": ``,
               "name": "Kristina Hua",
-              "role": "Vice President"
+              "role": "Co-President"
             },
           ],
           [
@@ -715,7 +715,7 @@ const MEMBERS = [
         "description": `The Publications/IT portfolio is responsible for continuing to develop and facilitate the society's online presence through new and existing avenues, focusing on the Co-op Soc website and the Chicken Coop podcast.`,
         "members": [
           "Gemma Lapins-Silvirs",
-          "Immi Wills",
+          "Imogen Wills",
           "Sebastian Pelayo",
           "Jason Tang",
           "Lucas Harvey",
