@@ -37,7 +37,7 @@ const Footer = () => {
               <a className="footerLink" href="/Constitution.pdf">Constitution</a> | <a className="footerLink" href="/Grievance-Resolution-Policy-Procedure.pdf">Grievance Policy</a>
             </div>
             <div className="container">
-                Copyright &copy; 2022 UNSW Co-op Society
+                Copyright &copy; 2023 UNSW Co-op Society
             </div>
             <br></br>
             </Col>              
