@@ -144,7 +144,16 @@ const Navigation = () => {
                     </NextNavLink>
                   </Link>
                 </NavItem>
- 
+                
+                <NavItem>
+                  <Link href="/calendar" passHref>
+                    <NextNavLink
+                      className={getNavLinkClass("/calendar")}
+                    >
+                      <span className="nav-link-inner--text">Calendar</span>
+                    </NextNavLink>
+                  </Link>
+                </NavItem>
               </Nav>
 
 
