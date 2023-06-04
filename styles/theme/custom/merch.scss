@@ -1,0 +1,32 @@
+.overlay {
+  position: absolute;
+  bottom: 0;
+  color: #f1f1f1;
+  background: linear-gradient(
+                150deg,
+                shapes-primary-color("step-1-gradient-bg"),
+                shapes-primary-color("step-2-gradient-bg"),
+                shapes-primary-color("step-3-gradient-bg"),
+                shapes-primary-color("step-4-gradient-bg"),
+                shapes-primary-color("step-5-gradient-bg")
+            );
+  width: 95%;
+  height: 100%;
+  transition: .3s ease;
+  opacity:0;
+  color: white;
+  text-align: center;
+  border-radius: 0.5rem;
+
+  button {
+    top: 45%;
+  }
+}
+
+.merch-card {
+  &:hover {
+    .overlay {
+      opacity: 1;
+    }
+  }
+}
