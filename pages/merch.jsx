@@ -12,7 +12,29 @@ function handleGet (key) {
   }
 }
 
-const Merch = () => {
+export async function getStaticProps () {
+  const products = await fetch("https://api.coopsoc.com.au/products");
+  const _data = await products.json();
+
+	const final = []
+
+	for (const data of _data) {
+		if (data.images.length > 0 && data.images[0].startsWith("https://localhost")) {
+			continue;
+		}
+
+		final.push(data);
+	}
+  
+	return {
+    props: {
+      final
+    }
+  }
+}
+
+const Merch = (props) => {
+	const { _data } = props;
 	const [ modal, setModal ] = useState();
 	const [ cart, setCart ] = useState([]);
 
@@ -28,17 +50,17 @@ const Merch = () => {
 	return (
 		<>
       		<Head>
-        			<title>Merch | UNSW Co-op Society</title>
+        			<title>Merch | UNSW Co-op Society</title>	
      			</Head>
 					<div className="container">
 						<MerchHeader click={toggle}/>
-						<MerchCollection/>
+						<MerchCollection _data={_data}/>
 						<Modal isOpen={modal} toggle={toggle} size="lg">
 							<ModalBody>
 								<CheckoutForm cart={cart} updateCart={updateCart}/>
 							</ModalBody>
 						</Modal>	
-					</div>
+					</div>	
 			</>
 		);
 	};
