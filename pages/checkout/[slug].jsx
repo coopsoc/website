@@ -15,7 +15,7 @@ const Payment = () => {
   }
 
   return (
-    <Elements stripePromise={stripePromise} options={options}>
+    <Elements stripe={stripePromise} options={options}>
       <form>
         <PaymentElement/>
         <button>Submit</button>
