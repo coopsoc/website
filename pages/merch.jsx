@@ -1,35 +1,21 @@
-import React, { useRef, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import CheckoutForm from "components/merch/CheckoutForm";
-import MerchCollection from "components/merch/MerchCollection";
+
+const MerchCollection = dynamic(() => import("components/merch/MerchCollection"));
 
 import { Modal, ModalBody } from "reactstrap";
 import MerchHeader from "components/merch/MerchHeader";
 
-function handleGet (key) {
-  if (typeof window !== 'undefined' && window.sessionStorage) {
-    return JSON.parse(sessionStorage.getItem(key));
-  }
-}
-
 export async function getStaticProps () {
   const products = await fetch("https://api.coopsoc.com.au/products");
   const _data = await products.json();
-
-	const final = []
-
-	for (const data of _data) {
-		if (data.images.length > 0 && data.images[0].startsWith("https://localhost")) {
-			continue;
-		}
-
-		final.push(data);
-	}
-  
+ 
 	return {
     props: {
-      final
-    }
+      _data,
+    },
   }
 }
 
@@ -39,13 +25,19 @@ const Merch = (props) => {
 	const [ cart, setCart ] = useState([]);
 
 	const toggle = () => {
-		setCart(handleGet("cart") ?? []);
 		setModal(!modal);
 	}
 	
 	const updateCart = (value) => {
 		setCart(value);
 	}
+
+	const addToCart = (value) => {
+		let _cart = JSON.parse(JSON.stringify(cart));
+		_cart.push(value);
+		setCart(_cart);
+	}
+
 
 	return (
 		<>
@@ -54,7 +46,7 @@ const Merch = (props) => {
      			</Head>
 					<div className="container">
 						<MerchHeader click={toggle}/>
-						<MerchCollection _data={_data}/>
+						<MerchCollection _data={_data} addToCart={addToCart}/>
 						<Modal isOpen={modal} toggle={toggle} size="lg">
 							<ModalBody>
 								<CheckoutForm cart={cart} updateCart={updateCart}/>

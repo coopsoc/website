@@ -1,7 +1,7 @@
 import React from "react";
 import MerchCard from "./MerchCard";
 
-const MerchCollection = ({ _data }) => {
+const MerchCollection = ({ _data, addToCart }) => {
   const data = []
 
   while (_data?.length) {
@@ -15,9 +15,7 @@ const MerchCollection = ({ _data }) => {
             <div className="row py-3" key={rowIndex}>
               {row.map((productData, index) => {
                 return (
-                  <div className="col-md-4" key={index}>
-                    <MerchCard productData={productData}/>
-                  </div>
+                  <MerchCard productData={productData} addToCart={addToCart} key={index}/>
                 )
               })}
             </div>

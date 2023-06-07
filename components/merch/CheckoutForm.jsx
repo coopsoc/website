@@ -1,26 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-function handleSave (key, value) {
-  if (typeof window !== 'undefined' && window.sessionStorage) {
-    let string = JSON.stringify(value);
-    sessionStorage.setItem(key, string);
-  }
-}
+import { useRouter } from "next/router";
 
 const CheckoutForm = ({ cart, updateCart }) => {
+
+  const router = useRouter();
 
   const removeFromCart = (e) => {
     let _cart = JSON.parse(JSON.stringify(cart));
     let index = e.target.parentElement.getAttribute('data-value');
     _cart.splice(index, 1);
-    handleSave("cart", _cart);
     updateCart(_cart);
   }
 
-  const createPaymentIntent = async () => {
-    const { CLIENT_SECRET } = await fetch("https://api.coopsoc.com.au/payment");
+  const createPaymentIntent = async (e) => {
+    e.preventDefault();
+    const { CLIENT_SECRET } = await fetch(
+      "https://api.coopsoc.com.au/payment",
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({})
+      }
+    );
 
-    
+    router.push(`/checkout/${CLIENT_SECRET}`);
   }
 
   return (
@@ -80,7 +87,7 @@ const CheckoutForm = ({ cart, updateCart }) => {
 
           <hr className="my-4"/>
 
-          <button className="w-100 btn btn-primary btn-lg" onClick={() => createPaymentIntent()}>Continue to checkout</button>
+          <button className="w-100 btn btn-primary btn-lg" onClick={(e) => createPaymentIntent(e)}>Continue to checkout</button>
         </form>
       </div>
     </div>

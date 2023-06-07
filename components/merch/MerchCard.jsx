@@ -1,30 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Modal, ModalBody } from "reactstrap";
 
-function handleSave (key, value) {
-  if (typeof window !== 'undefined' && window.sessionStorage) {
-    let string = JSON.stringify(value);
-    sessionStorage.setItem(key, string);
-  }
-}
-
-function handleGet (key) {
-  if (typeof window !== 'undefined' && window.sessionStorage) {
-    return JSON.parse(sessionStorage.getItem(key));
-  }
-}
-
-const MerchCard = ({productData}) => {
+const MerchCard = ({productData, addToCart}) => {
   const [modal, setModal] = useState(false);
   const [size, setSize] = useState("S");
   const {name, id, images, price} = productData;
-  const [source, setSource] = useState(images[0]);
-
-  const addToCart = (e) => {
-    let cart = handleGet("cart") ?? [];
-    cart.push({ id: id, name: name, price: price, size: size });
-    handleSave("cart", cart);
-  }
+  const [source, setSource] = useState(images[0]); 
   
   const toggle = () => setModal(!modal);
 
@@ -38,8 +19,13 @@ const MerchCard = ({productData}) => {
     setSize(value);
   }
 
+  const _addToCart = () => {
+    const value = { id: id, name: name, price: price, size: size };
+    addToCart(value);
+  }
+
   return (
-    <>
+    <div className="col md-4">
       <div className="card text-center p-2 border-0 merch-card" key={id} onClick={toggle}>
         <img className="card-img-top" src={images[0]} alt={name}/>
         <div className="card-body pt-3"> 
@@ -49,7 +35,7 @@ const MerchCard = ({productData}) => {
       </div>
       <Modal isOpen={modal} toggle={toggle} size="lg">
         <ModalBody>
-          <div className="row d-flex justify-content-center">
+            <div className="row d-flex justify-content-center">
               <div className="col-md-10">
                 <div className="card">
                   <div className="row">
@@ -72,21 +58,21 @@ const MerchCard = ({productData}) => {
                           <div className="price d-flex flex-row align-items-center">
                             <span className="act-price">{price}</span>
                           </div>
-                          </div>
                           <div className="sizes mt-5">
                             <h6 className="text-uppercase">Size</h6> <label className="radio"> <input type="radio" name="size" value="S" onChange={() => onChange("S")} defaultChecked/> <span>S</span> </label> <label className="radio"> <input type="radio" name="size" value="M" onChange={() => onChange("M")}/> <span>M</span> </label> <label className="radio"> <input type="radio" name="size" value="L" onChange={() => onChange("L")}/> <span>L</span> </label> <label className="radio"> <input type="radio" name="size" value="XL" onChange={() => onChange("XL")}/> <span>XL</span> </label> <label className="radio"> <input type="radio" name="size" value="XXL" onChange={() => onChange("XXL")}/> <span>XXL</span> </label>
                           </div>
-                          <div className="cart mt-4 align-items-center"> <button className="btn btn-primary text-uppercase mr-2 px-4" onClick={addToCart}>Add to cart</button></div>
+                          <div className="cart mt-4 align-items-center"> <button className="btn btn-primary text-uppercase mr-2 px-4" onClick={_addToCart}>Add to cart</button></div>
                         </div>
                       </div>
+                    </div>
                     </div>
                 </div>
               </div>
             </div>
         </ModalBody>
       </Modal>
-    </>
-  );
+    </div>
+  ); 
 };
 
 export default MerchCard;
