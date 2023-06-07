@@ -28,7 +28,7 @@
     "next": "^12.1.5",
     "next-mdx-remote": "^4.0.3",
     "nouislider": "^15.6.0",
-    "react": "^18.1.0",
+    "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-transition-group": "^4.4.2",
     "reactstrap": "^9.0.2",

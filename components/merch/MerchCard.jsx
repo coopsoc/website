@@ -20,6 +20,7 @@ const MerchCard = ({productData, addToCart}) => {
   }
 
   const _addToCart = () => {
+    console.log("THIS WAS DONE");
     const value = { id: id, name: name, price: price, size: size };
     addToCart(value);
   }
@@ -30,7 +31,7 @@ const MerchCard = ({productData, addToCart}) => {
         <img className="card-img-top" src={images[0]} alt={name}/>
         <div className="card-body pt-3"> 
           <h5 className="card-title mb-3">{name}</h5>
-          <h5 className="card-subtitle text-muted">{price}</h5>
+          <h5 className="card-subtitle text-muted">${(price/100).toFixed(2)}</h5>
         </div>
       </div>
       <Modal isOpen={modal} toggle={toggle} size="lg">
@@ -56,7 +57,7 @@ const MerchCard = ({productData, addToCart}) => {
                         <div className="mt-4 mb-3"> <span className="text-uppercase text-muted brand">Orianz</span>
                           <h5 className="text-uppercase">{name}</h5>
                           <div className="price d-flex flex-row align-items-center">
-                            <span className="act-price">{price}</span>
+                            <span className="act-price">${(price/100).toFixed(2)}</span>
                           </div>
                           <div className="sizes mt-5">
                             <h6 className="text-uppercase">Size</h6> <label className="radio"> <input type="radio" name="size" value="S" onChange={() => onChange("S")} defaultChecked/> <span>S</span> </label> <label className="radio"> <input type="radio" name="size" value="M" onChange={() => onChange("M")}/> <span>M</span> </label> <label className="radio"> <input type="radio" name="size" value="L" onChange={() => onChange("L")}/> <span>L</span> </label> <label className="radio"> <input type="radio" name="size" value="XL" onChange={() => onChange("XL")}/> <span>XL</span> </label> <label className="radio"> <input type="radio" name="size" value="XXL" onChange={() => onChange("XXL")}/> <span>XXL</span> </label>

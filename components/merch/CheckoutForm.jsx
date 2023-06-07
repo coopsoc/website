@@ -14,20 +14,44 @@ const CheckoutForm = ({ cart, updateCart }) => {
   }
 
   const createPaymentIntent = async (e) => {
+
+    const c = [];
+
+    for (const item of cart) {
+      const { id } = item;
+
+      let f = false;
+      for (const [i, item] of c.entries()) {
+        if (item.id == id) {
+          c[i].quantity++;
+          f = true;
+          break;
+        }
+      }
+
+      if (!f) {
+        c.push({id: id, quantity: 1});
+      }
+    }
+    
     e.preventDefault();
-    const { CLIENT_SECRET } = await fetch(
+    fetch(
       "https://api.coopsoc.com.au/payment",
       {
         method: "POST",
-        mode: "no-cors",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify({})
+        body: JSON.stringify(c)
       }
-    );
-
-    router.push(`/checkout/${CLIENT_SECRET}`);
+    ).then((object) => {
+      object.json().then((client) => {
+        const { clientSecret } = client;
+        router.push(`/checkout/${clientSecret}`);
+      });
+    }).catch((err) => {
+      console.log(err);
+    })
   }
 
   return (
@@ -45,14 +69,14 @@ const CheckoutForm = ({ cart, updateCart }) => {
                 <div>
                   <h6 className="my-0">{name}</h6>
                 </div>
-                <span className="text-muted">{price}</span>
+                <span className="text-muted">${(price/100).toFixed(2)}</span>
                 <span className="text-muted" onClick={removeFromCart}>&#x2715;</span>
               </li>
             );
           })} 
           <li className="list-group-item d-flex justify-content-between">
             <span>Total (USD)</span>
-            <strong>${cart.reduce((partialSum, product) => partialSum + Number(product.price.substring(1)), 0).toFixed(2)}</strong>
+            <strong>${cart.reduce((partialSum, product) => partialSum +  Number(product.price / 100), 0).toFixed(2)}</strong>
           </li>
         </ul>
       </div>

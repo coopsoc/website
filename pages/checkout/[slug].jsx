@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { useRouter } from 'next/router';
 
@@ -9,19 +9,24 @@ const stripePromise = loadStripe("pk_live_51N7xWEKWz42bhxUE0OeOgsSQoeFdMRPXvxelN
 
 const Payment = () => {
   const router = useRouter();
+  if (router.isReady) { 
+    const options = {
+      clientSecret: `${router.query.slug}`
+    }
 
-  const options = {
-    clientSecret: `{{${router.query.slug}}}`
+    return (
+      <div className="container">
+        <div className="w-50 mx-auto p-4">
+          <Elements stripe={stripePromise} options={options}>
+            <form>
+              <PaymentElement className="py-3"/>
+              <button className='btn btn-primary'>Submit</button>
+            </form>
+          </Elements>
+        </div>
+      </div>
+    );
   }
-
-  return (
-    <Elements stripe={stripePromise} options={options}>
-      <form>
-        <PaymentElement/>
-        <button>Submit</button>
-      </form>
-    </Elements> 
-  )
 }
 
 export default Payment;

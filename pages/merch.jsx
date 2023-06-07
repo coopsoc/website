@@ -2,25 +2,12 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import CheckoutForm from "components/merch/CheckoutForm";
-
-const MerchCollection = dynamic(() => import("components/merch/MerchCollection"));
+import MerchCollection from "components/merch/MerchCollection";
 
 import { Modal, ModalBody } from "reactstrap";
 import MerchHeader from "components/merch/MerchHeader";
 
-export async function getStaticProps () {
-  const products = await fetch("https://api.coopsoc.com.au/products");
-  const _data = await products.json();
- 
-	return {
-    props: {
-      _data,
-    },
-  }
-}
-
-const Merch = (props) => {
-	const { _data } = props;
+const Merch = () => {
 	const [ modal, setModal ] = useState();
 	const [ cart, setCart ] = useState([]);
 
@@ -38,7 +25,6 @@ const Merch = (props) => {
 		setCart(_cart);
 	}
 
-
 	return (
 		<>
       		<Head>
@@ -46,7 +32,7 @@ const Merch = (props) => {
      			</Head>
 					<div className="container">
 						<MerchHeader click={toggle}/>
-						<MerchCollection _data={_data} addToCart={addToCart}/>
+						<MerchCollection addToCart={addToCart}/>
 						<Modal isOpen={modal} toggle={toggle} size="lg">
 							<ModalBody>
 								<CheckoutForm cart={cart} updateCart={updateCart}/>
