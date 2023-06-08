@@ -14,26 +14,6 @@ const CheckoutForm = ({ cart, updateCart }) => {
   }
 
   const createPaymentIntent = async (e) => {
-
-    const c = [];
-
-    for (const item of cart) {
-      const { id } = item;
-
-      let f = false;
-      for (const [i, item] of c.entries()) {
-        if (item.id == id) {
-          c[i].quantity++;
-          f = true;
-          break;
-        }
-      }
-
-      if (!f) {
-        c.push({id: id, quantity: 1});
-      }
-    }
-    
     e.preventDefault();
     fetch(
       "https://api.coopsoc.com.au/payment",
@@ -42,7 +22,14 @@ const CheckoutForm = ({ cart, updateCart }) => {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(c)
+        body: JSON.stringify({
+          firstName: document.querySelector("#firstName").value,
+          lastName: document.querySelector("#lastName").value,
+          email: document.querySelector("#email").value,
+          cart: {
+            items: [...cart.map((item) => { return {id: item.id, size: item.size} })]
+          }
+        })
       }
     ).then((object) => {
       object.json().then((client) => {

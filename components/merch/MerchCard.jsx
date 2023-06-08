@@ -20,7 +20,6 @@ const MerchCard = ({productData, addToCart}) => {
   }
 
   const _addToCart = () => {
-    console.log("THIS WAS DONE");
     const value = { id: id, name: name, price: price, size: size };
     addToCart(value);
   }
