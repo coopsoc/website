@@ -24,6 +24,7 @@ const MerchCard = ({productData, addToCart}) => {
   const _addToCart = () => {
     const value = { id: id, name: name, price: price, size: size };
     addToCart(value);
+    setModal(false);
   }
 
   return (
