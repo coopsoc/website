@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, ModalBody } from "reactstrap";
 
-import styles from "styles/modules/MerchCard.module.scss";
+import styles from "styles/modules/Merch.module.scss";
 
 const MerchCard = ({productData, addToCart}) => {
   const [modal, setModal] = useState(false);
@@ -24,6 +24,7 @@ const MerchCard = ({productData, addToCart}) => {
   const _addToCart = () => {
     const value = { id: id, name: name, price: price, size: size };
     addToCart(value);
+    setModal(false);
   }
 
   return (
@@ -35,7 +36,7 @@ const MerchCard = ({productData, addToCart}) => {
           <h5 className="card-subtitle text-muted">${(price/100).toFixed(2)}</h5>
         </div>
       </div>
-      <Modal isOpen={modal} toggle={toggle} size="lg">
+      <Modal isOpen={modal} toggle={toggle} className={styles[`merch-modal`]} size="lg">
         <ModalBody>
             <div className="row d-flex justify-content-center">
               <div className="col-md-10">
@@ -44,13 +45,13 @@ const MerchCard = ({productData, addToCart}) => {
                     <div className="col-md-6">
                       <div className="images p-3">
                         <div className="text-center p-4"> <img id="main-image" src={source} width="250" /> </div>
-                        <div className="thumbnail text-center">
+                        {/* <div className="thumbnail text-center">
                           {images.map((src, index) => {
                             return (
                               <img key={index} onClick={() => changeImage(index)} src={src} width="70"/>
                             );
                           })}
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     <div className="col-md-6">

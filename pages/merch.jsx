@@ -7,6 +7,8 @@ import MerchCollection from "components/merch/MerchCollection";
 import { Modal, ModalBody } from "reactstrap";
 import MerchHeader from "components/merch/MerchHeader";
 
+import styles from "styles/modules/Merch.module.scss";
+
 const Merch = () => {
 	const [ modal, setModal ] = useState();
 	const [ cart, setCart ] = useState([]);
@@ -33,7 +35,7 @@ const Merch = () => {
 					<div className="container">
 						<MerchHeader click={toggle}/>
 						<MerchCollection addToCart={addToCart}/>
-						<Modal isOpen={modal} toggle={toggle} size="lg">
+						<Modal isOpen={modal} toggle={toggle} size="lg" className={styles[`merch-modal`]}>
 							<ModalBody>
 								<CheckoutForm cart={cart} updateCart={updateCart}/>
 							</ModalBody>
