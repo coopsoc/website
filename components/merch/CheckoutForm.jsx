@@ -2,6 +2,8 @@ import React from "react";
 
 import { useRouter } from "next/router";
 
+import styles from "styles/modules/Merch.module.scss";
+
 const CheckoutForm = ({ cart, updateCart }) => {
 
   const router = useRouter();
@@ -46,7 +48,7 @@ const CheckoutForm = ({ cart, updateCart }) => {
       <div className="col-md-5 col-lg-4 order-md-last">
         <h4 className="d-flex justify-content-between align-items-center mb-3">
           <span className="text-primary">Your cart</span>
-          <span className="badge bg-primary rounded-pill">{cart.length}</span>
+          <span className={"badge bg-primary rounded-pill " + styles[`cart-items-badge`]}>{cart.length}</span>
         </h4>
         <ul className="list-group mb-3"> 
           {cart.map((product, index) => {
