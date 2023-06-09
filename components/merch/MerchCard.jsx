@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Modal, ModalBody } from "reactstrap";
 
+import styles from "styles/modules/MerchCard.module.scss";
+
 const MerchCard = ({productData, addToCart}) => {
   const [modal, setModal] = useState(false);
   const [size, setSize] = useState("S");
