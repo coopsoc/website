@@ -62,7 +62,7 @@ const CheckoutForm = ({ cart, updateCart }) => {
             );
           })} 
           <li className="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
+            <span>Total (AUD)</span>
             <strong>${cart.reduce((partialSum, product) => partialSum +  Number(product.price / 100), 0).toFixed(2)}</strong>
           </li>
         </ul>

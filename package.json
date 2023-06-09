@@ -44,5 +44,18 @@
     "eslint-config-next": "12.1.5",
     "eslint-plugin-mdx": "^2.0.2",
     "sass": "^1.51.0"
-  }
+  },
+  "description": "This repository houses the source code for UNSW Co-op Society's website, hosted at [https://coopsoc.com.au](https://coopsoc.com.au) and written in [Next.js](https://nextjs.org). Visit our website and explore around!",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coopsoc/coopsoc.com.au.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coopsoc/coopsoc.com.au/issues"
+  },
+  "homepage": "https://github.com/coopsoc/coopsoc.com.au#readme"
 }
