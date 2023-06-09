@@ -10,9 +10,14 @@ const MerchCollection = ({ addToCart }) => {
         cache: "force-cache"
       }).then((value) => { 
         value.json().then((_data) => {
+          let _d = _data.sort((a, b) => {
+            if (a.name == b.name) return 0; 
+            return a.name < b.name ? 1 : -1;
+          })
+
           let d = []
-          while (_data.length) {
-            d.push(_data.splice(0, 3 > _data.length ? _data.length : 3));
+          while (_d.length) {
+            d.push(_d.splice(0, 3 > _d.length ? _d.length : 3));
           }
 
           setData(d);
