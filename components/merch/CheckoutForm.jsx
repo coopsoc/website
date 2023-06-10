@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useRouter } from "next/router";
 
 import styles from "styles/modules/Merch.module.scss";
+import LoadingButton from "components/LoadingButton";
 
 const CheckoutForm = ({ cart, updateCart }) => {
+  const [isLoading, setLoading] = useState(false);
 
   const router = useRouter();
 
   const removeFromCart = (e) => {
-    let _cart = JSON.parse(JSON.stringify(cart));
-    let index = e.target.parentElement.getAttribute('data-value');
-    _cart.splice(index, 1);
-    updateCart(_cart);
+    let newCart = JSON.parse(JSON.stringify(cart)); // this an extremely hacky way of getting a hard copied array
+    let index = e.target.parentElement.getAttribute('data-value'); // this is gross chaining
+    newCart.splice(index, 1);
+    updateCart(newCart);
   }
 
   const createPaymentIntent = async (e) => {
+    setLoading(true);
     e.preventDefault();
     fetch(
       "https://api.coopsoc.com.au/payment",
@@ -35,11 +38,13 @@ const CheckoutForm = ({ cart, updateCart }) => {
       }
     ).then((object) => {
       object.json().then((client) => {
+        setLoading(false);
         const { clientSecret } = client;
         router.push(`/checkout/${clientSecret}`);
       });
     }).catch((err) => {
-      console.log(err);
+      setLoading(false);
+      router.push('/checkout/unsuccessful');
     })
   }
 
@@ -100,7 +105,11 @@ const CheckoutForm = ({ cart, updateCart }) => {
 
           <hr className="my-4"/>
 
-          <button className="w-100 btn btn-primary btn-lg" onClick={(e) => createPaymentIntent(e)}>Continue to checkout</button>
+          <LoadingButton
+            onClick={(e) => createPaymentIntent(e)}
+            text="Continue to Checkout"
+            isLoading={isLoading}
+            disabled={isLoading}/>
         </form>
       </div>
     </div>

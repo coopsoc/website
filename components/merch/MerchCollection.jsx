@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MerchCard from "./MerchCard";
+import Loader from "components/Loader";
 
 const MerchCollection = ({ addToCart }) => {
   const [data, setData] = useState([]);
@@ -7,7 +8,7 @@ const MerchCollection = ({ addToCart }) => {
   useEffect(() => {
     if (data.length === 0) {
       fetch("https://api.coopsoc.com.au/products", {
-        cache: "force-cache"
+        cache: "no-cache"
       }).then((value) => { 
         value.json().then((_data) => {
           let _d = _data.sort((a, b) => {
@@ -28,7 +29,11 @@ const MerchCollection = ({ addToCart }) => {
 
   return (
     <>
-      {data.map((row, rowIndex) => {
+      {data.length == 0 ? 
+        <div className="mx-auto w-50 text-center">
+          <Loader width={100} height={100} strokeColour="black"/>
+        </div> :
+        data.map((row, rowIndex) => {
           return (
             <div className="row py-3" key={rowIndex}>
               {row.map((productData, index) => {
