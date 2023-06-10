@@ -48,7 +48,7 @@ const CheckoutForm = ({ cart, updateCart }) => {
       <div className="col-md-5 col-lg-4 order-md-last">
         <h4 className="d-flex justify-content-between align-items-center mb-3">
           <span className="text-primary">Your cart</span>
-          <span className={"badge bg-primary rounded-pill " + styles[`cart-items-badge`]}>{cart.length}</span>
+          <span className={"badge bg-primary rounded-pill " + styles[`cart-items-badge`]}>{cart ? cart.length : 0}</span>
         </h4>
         <ul className="list-group mb-3"> 
           {cart.map((product, index) => {

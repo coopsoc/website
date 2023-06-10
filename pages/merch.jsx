@@ -16,10 +16,6 @@ const Merch = () => {
 	const toggle = () => {
 		setModal(!modal);
 	}
-	
-	const updateCart = (value) => {
-		setCart(value);
-	}
 
 	const addToCart = (value) => {
 		let _cart = JSON.parse(JSON.stringify(cart));
@@ -37,7 +33,7 @@ const Merch = () => {
 						<MerchCollection addToCart={addToCart}/>
 						<Modal isOpen={modal} toggle={toggle} size="lg" className={styles[`merch-modal`]}>
 							<ModalBody>
-								<CheckoutForm cart={cart} updateCart={updateCart}/>
+								<CheckoutForm cart={cart} updateCart={setCart}/>
 							</ModalBody>
 						</Modal>	
 					</div>	

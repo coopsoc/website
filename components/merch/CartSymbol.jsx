@@ -6,7 +6,7 @@ const CartSymbol = ({ click, cart }) => {
   return (
     <>
       <i className="fa badge fa-2x" onClick={click} >&#xf07a;</i>
-      <span className={"badge bg-primary rounded-pill " + [styles[`cart-items-badge`], styles[`header-cart-badge`]].join(' ')}> {5} </span>
+      <span className={"badge bg-primary rounded-pill " + [styles[`cart-items-badge`], styles[`header-cart-badge`]].join(' ')}> {cart ? cart.length : 0} </span>
     </>
   );
 };
