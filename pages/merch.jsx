@@ -33,7 +33,7 @@ const Merch = () => {
         			<title>Merch | UNSW Co-op Society</title>	
      			</Head>
 					<div className="container">
-						<MerchHeader click={toggle}/>
+						<MerchHeader click={toggle} cart={cart}/>
 						<MerchCollection addToCart={addToCart}/>
 						<Modal isOpen={modal} toggle={toggle} size="lg" className={styles[`merch-modal`]}>
 							<ModalBody>
