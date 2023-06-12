@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import MerchCard from "./MerchCard";
 import Loader from "components/Loader";
 
+import Image from "next/image";
+
 const MerchCollection = ({ addToCart }) => {
   const [data, setData] = useState([]);
   
@@ -29,6 +31,9 @@ const MerchCollection = ({ addToCart }) => {
 
   return (
     <>
+      <div className="mx-auto text-center">
+        <Image src="img/merch/sizing-chart.jpg" alt="Sizing chart" width={464} height={205}/>
+      </div>
       {data.length == 0 ? 
         <div className="mx-auto w-50 text-center">
           <Loader width={100} height={100} strokeColour="black"/>
