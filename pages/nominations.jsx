@@ -62,7 +62,7 @@ const Nominations = () => {
               className="mt-4"
               color="index2"
               target="_blank"
-              href="https://forms.office.com/Pages/ResponsePage.aspx?id=pM_2PxXn20i44Qhnufn7oytFJak2vGJHu9CXh1oxuxxUMTVNNEJPUDRHRlpGWkgwVjdYVEZNSDJJMi4u"
+              href="https://forms.office.com/r/DigzqmSwZX"
             >
               Vote Now!
             </Button>
