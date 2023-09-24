@@ -10,7 +10,7 @@ import Inika_Image from "public/img/nominee/Inika.jpg";
 import Kelly_Image from "public/img/nominee/Kelly.JPG";
 import Kiran_Image from "public/img/nominee/Kiran.jpeg";
 import Lucas_Image from "public/img/nominee/Lucas.jpg";
-import Maggie_Image from "public/img/nominee/Maggie.heic";
+import Maggie_Image from "public/img/nominee/Maggie.jpg";
 import Matthew_Image from "public/img/nominee/Matthew.jpg";
 import Nicholas_Image from "public/img/nominee/Nicholas.png";
 import Peter_Image from "public/img/nominee/Peter.png";
@@ -192,7 +192,6 @@ On a serious note, it's been a pleasure to be a part of this society and I would
 
 I am running for the positions of Secretary and Arc Delegate because I believe in the value of effective organisation and communication within our society. Having had the privilege of working under this year’s Secretary and Arc Delegate as their subcom, I recognise the pivotal role these positions play in the smooth functioning of our society and see my strengths aligning with their responsibilities. Over this year, I have picked up valuable experience in completing Arc Forms for event grants (to get our society more money!!) and room bookings, as well as helping organise 2 roadtrips (one each for DataSoc and Co-OpSoc). These skills transfer directly into the Exec roles I am applying for.`
       },
-      {,
       {
         "name": "Franklin Ruan",
         "image": Franklin_Image,
