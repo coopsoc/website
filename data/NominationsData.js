@@ -38,7 +38,7 @@ const NOMINEES = [
       {
         "name": "Doris Yang",
         "image": Doris_Image,
-        "preference": 2,
+        "preference": 1,
         "description": `
 (T)rust,
 (O)pen-mindedness,
