@@ -18,6 +18,8 @@ import styles from "styles/modules/nominations.module.scss";
 const Nominations = () => {
   const [showModal, setShowModal] = useState(false);
   const [nominee, setNominee] = useState({});
+  const showNominations = false; // Change this to true when nominations are open
+
 
   // Given a person's name, returns all roles they're nominated for
   const getNominatedRoles = (name) => {
@@ -42,6 +44,15 @@ const Nominations = () => {
   const toggleModal = () => {
     setShowModal(!showModal);
   };
+
+  if (!showNominations) {
+    return (
+      <div className="container text-center">
+        <h1>Nominations are currently closed.</h1>
+        <p>Come back next year for the nominations!</p>
+      </div>
+    );
+  }
 
   return (
     <>

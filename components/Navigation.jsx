@@ -155,15 +155,6 @@ const Navigation = () => {
                   </Link>
                 </NavItem>
 
-		<NavItem>
-                  <Link href="/nominations" passHref>
-                    <NextNavLink
-                      className={getNavLinkClass("/nominations")}
-                    >
-                      <span className="nav-link-inner--text">Nominations</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem>
               </Nav>
 
 
