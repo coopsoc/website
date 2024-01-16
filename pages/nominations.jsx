@@ -47,15 +47,37 @@ const Nominations = () => {
 
   if (!showNominations) {
     return (
-      <div className="container text-center">
-        <h1>Nominations are currently closed.</h1>
-        <p>Come back next year for the nominations!</p>
-      </div>
+      <>
+        <Head>
+          <title>Nominations | UNSW Co-op Society</title>
+        </Head>
+  
+        <section className="section section-lg">
+          <Row className="justify-content-center text-center ">
+            <Col lg="8">
+              <h1 className="animate__animated animate__zoomIn animate__fast">VOTING CLOSED</h1>
+            </Col>
+          </Row>
+
+          <Container className="py-lg-md d-flex">
+            <Row className="justify-content-center text-center">
+              <Col lg="10">
+                <p className="lead text-muted">
+                  Thank you for participating! The voting process for the new executive team has concluded. Come back at the end of this year for the next round of nominations!
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </>
     );
   }
 
   return (
     <>
+      <Head>
+        <title>Nominations | UNSW Co-op Society</title>
+      </Head>
       <section className="section section-lg">
         {/* Title */}
         <Row className="justify-content-center text-center">
