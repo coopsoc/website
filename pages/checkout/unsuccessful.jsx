@@ -1,7 +1,7 @@
 import React from "react";
 
 const Unsuccessful = () => {
-  return <></>
-}
+  return <></>;
+};
 
 export default Unsuccessful;

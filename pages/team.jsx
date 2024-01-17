@@ -19,10 +19,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 
 // reactstrap components
-import {
-  Row,
-  Col
-} from "reactstrap";
+import { Row, Col } from "reactstrap";
 
 // core components
 import YearSlider from "components/YearSlider.jsx";
@@ -34,7 +31,6 @@ import { START, END, MEMBERS } from "data/TeamData.js";
 
 // yess let's get those animations
 import "animate.css";
-
 
 const Team = () => {
   // TODO: have this be a subpage of "About"
@@ -55,20 +51,24 @@ const Team = () => {
       <section className="section section-lg">
         <Row className="justify-content-center text-center mb-lg">
           <Col lg="8">
-            <h1 className="animate__animated animate__zoomIn animate__fast">MEET THE TEAM</h1>
+            <h1 className="animate__animated animate__zoomIn animate__fast">
+              MEET THE TEAM
+            </h1>
           </Col>
         </Row>
 
         <YearSlider
           start={START}
           end={END}
-          onChange={year => setYear(year)} />
+          onChange={(year) => setYear(year)}
+        />
 
         <div className="container">
           {members.exec.map((section, index) => (
             <ExecSection
               key={`exec-section-${section.sectionName}-${index}`}
-              section={section} />
+              section={section}
+            />
           ))}
 
           {members.subcoms && (
@@ -84,7 +84,8 @@ const Team = () => {
                     {index !== 0 && <hr />}
                     <Subcom
                       key={`subcom-${portfolio.name}-${index}`}
-                      portfolio={portfolio} />
+                      portfolio={portfolio}
+                    />
                   </>
                 ))}
               </div>
@@ -94,6 +95,6 @@ const Team = () => {
       </section>
     </>
   );
-}
+};
 
 export default Team;

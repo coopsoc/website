@@ -4,9 +4,7 @@ import { NavLink } from "reactstrap";
 const NextNavLink = React.forwardRef((props, ref) => {
   return (
     <div ref={ref}>
-      <NavLink {...props}>
-        {props.children}
-      </NavLink>
+      <NavLink {...props}>{props.children}</NavLink>
     </div>
   );
 });

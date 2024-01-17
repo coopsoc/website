@@ -10,9 +10,10 @@ const CharityCard = ({ event, onClick }) => {
         src={event.image}
         alt={event.title}
         className="card-img-top"
-        onClick={onClick} />
+        onClick={onClick}
+      />
     </Col>
   );
-}
+};
 
 export default CharityCard;

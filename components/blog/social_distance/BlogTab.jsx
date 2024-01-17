@@ -19,7 +19,8 @@ const BlogTab = (props) => {
         height="100%"
         layout="responsive"
         objectFit="contain"
-        onClick={() => setTab(index)} />
+        onClick={() => setTab(index)}
+      />
     );
   };
 
@@ -40,9 +41,7 @@ const BlogTab = (props) => {
         {partition(images, 4).map((row, index) => (
           <Row key={`blog-tab-row-${index}`}>
             {row.map((image, rowIndex) => (
-              <Col
-                key={`blog-tab-item-${index}-${rowIndex}`}
-                sm={3}>
+              <Col key={`blog-tab-item-${index}-${rowIndex}`} sm={3}>
                 {image}
               </Col>
             ))}
@@ -50,9 +49,7 @@ const BlogTab = (props) => {
         ))}
       </Container>
 
-      <TabContent activeTab={`blog-tab-${tab}`}>
-        {contents}
-      </TabContent>
+      <TabContent activeTab={`blog-tab-${tab}`}>{contents}</TabContent>
     </>
   );
 };

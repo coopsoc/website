@@ -8,19 +8,20 @@ const NomineeCard = ({ data, onClick }) => {
 
   return (
     <div className={styles["nominee-card"]}>
-        <div>
-          <a className="limit" onClick={onClick}>
-            <Image
-              alt={name}
-              src={image}
-              className={"card-img-top " + styles[`pref-${preference}`]} />
-          </a>
-        </div>
-
-        <div className="card-body text-center">
-          <h4>{name}</h4>
-        </div>
+      <div>
+        <a className="limit" onClick={onClick}>
+          <Image
+            alt={name}
+            src={image}
+            className={"card-img-top " + styles[`pref-${preference}`]}
+          />
+        </a>
       </div>
+
+      <div className="card-body text-center">
+        <h4>{name}</h4>
+      </div>
+    </div>
   );
 };
 

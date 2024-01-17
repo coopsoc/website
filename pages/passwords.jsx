@@ -8,10 +8,10 @@ const Passwords = () => {
       <Head>
         <title>Passwords | UNSW Co-op Society</title>
       </Head>
-      <button className={'submit'}>BRUH!</button>
+      <button className={"submit"}>BRUH!</button>
       <Script src="/scripts/test.js"></Script>
     </>
-  )
+  );
 };
 
 export default Passwords;

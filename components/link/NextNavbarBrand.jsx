@@ -4,9 +4,7 @@ import { NavbarBrand } from "reactstrap";
 const NextNavbarBrand = React.forwardRef((props, ref) => {
   return (
     <div ref={ref}>
-      <NavbarBrand {...props}>
-        {props.children}
-      </NavbarBrand>
+      <NavbarBrand {...props}>{props.children}</NavbarBrand>
     </div>
   );
 });

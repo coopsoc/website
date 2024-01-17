@@ -14,7 +14,7 @@ const PodcastList = () => {
         </Col>
       ))}
     </Row>
-  )
+  );
 };
 
 export default PodcastList;

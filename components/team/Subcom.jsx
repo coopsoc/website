@@ -12,7 +12,10 @@ const Subcom = ({ portfolio }) => {
           {portfolio.icons.map((icon, index) => (
             <FontAwesomeIcon
               key={`subcom-icon-${portfolio.name}-${index}`}
-              icon={icon} size="4x" className="m-2" />
+              icon={icon}
+              size="4x"
+              className="m-2"
+            />
           ))}
           <div className="card-body text-center">
             <h4 className="about-name">{portfolio.name}</h4>
@@ -25,7 +28,8 @@ const Subcom = ({ portfolio }) => {
               {portfolio.members.map((name, index) => (
                 <li
                   key={`subcom-name-${name}-${index}`}
-                  className="list-group-item border-0 li-name">
+                  className="list-group-item border-0 li-name"
+                >
                   {name}
                 </li>
               ))}

@@ -10,7 +10,7 @@ const YearSlider = ({ start, end, onChange }) => {
   const updateSlider = (values, _) => {
     const year = parseInt(values[0]);
     onChange(year);
-  }
+  };
 
   useEffect(() => {
     const sliderNode = sliderRef.current;
@@ -21,8 +21,8 @@ const YearSlider = ({ start, end, onChange }) => {
       step: 1,
       range: { min: start, max: end },
       format: wNumb({
-        decimals: 0
-      })
+        decimals: 0,
+      }),
     }).on("update", updateSlider);
 
     return () => {
@@ -52,6 +52,6 @@ const YearSlider = ({ start, end, onChange }) => {
       </Container>
     </>
   );
-}
+};
 
 export default YearSlider;

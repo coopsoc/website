@@ -14,8 +14,8 @@ const PodcastSlider = ({ duration, currentTime, onChange }) => {
       step: 1,
       range: { min: 0, max: duration },
       format: wNumb({
-        decimals: 0
-      })
+        decimals: 0,
+      }),
     }).on("change", onChange);
 
     return () => {
@@ -35,12 +35,15 @@ const PodcastSlider = ({ duration, currentTime, onChange }) => {
     const remainder = seconds % 60;
 
     return `${minutes}:${String(remainder).padStart(2, "0")}`;
-  }
+  };
 
   return (
     <>
       <div className="slider w-100" ref={sliderRef}></div>
-      <p>{toTimestamp(Math.floor(currentTime))} / {toTimestamp(Math.floor(duration))}</p>
+      <p>
+        {toTimestamp(Math.floor(currentTime))} /{" "}
+        {toTimestamp(Math.floor(duration))}
+      </p>
     </>
   );
 };

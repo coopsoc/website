@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
-    height: undefined
+    height: undefined,
   });
 
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
       });
     };
 
@@ -27,7 +27,7 @@ const useWindowSize = () => {
 
 const useBreakpoints = (breakpoints) => {
   const { width } = useWindowSize();
-  return breakpoints.map(breakpoint => width < breakpoint);
+  return breakpoints.map((breakpoint) => width < breakpoint);
 };
 
 export default useBreakpoints;

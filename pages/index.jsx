@@ -2,19 +2,12 @@ import React from "react";
 import Head from "next/head";
 
 // Reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  Container,
-  Row,
-  CardDeck
-} from "reactstrap";
+import { Button, Card, CardBody, Container, Row, CardDeck } from "reactstrap";
 
 // Import Swiper styles
 import "swiper/css/bundle";
 // Core version + navigation, pagination modules:
-import SwiperCore, { Navigation as SNavigation, Pagination } from 'swiper/core';
+import SwiperCore, { Navigation as SNavigation, Pagination } from "swiper/core";
 
 // Configure Swiper to use modules
 SwiperCore.use([SNavigation, Pagination]);
@@ -41,12 +34,11 @@ const Index = () => {
                     <FontAwesomeIcon icon={niCalendarGrid} />
                   </div>
                   <div className="justify-content-center text-center mt-3 mb-3">
-                    <h6 className="text-uppercase">
-                      Social Events
-                    </h6>
+                    <h6 className="text-uppercase">Social Events</h6>
                     <p className="description">
-                      At the core of the society, our aims are to socialise and meet new people. We facilitate this through a wide range of social events,
-                      including an annual camp and ball.
+                      At the core of the society, our aims are to socialise and
+                      meet new people. We facilitate this through a wide range
+                      of social events, including an annual camp and ball.
                     </p>
                   </div>
                   <div className="justify-content-center text-center mt-auto">
@@ -62,15 +54,18 @@ const Index = () => {
                     <FontAwesomeIcon icon={faPencil} />
                   </div>
                   <div className="justify-content-center text-center mt-3 mb-3">
-                    <h6 className="text-uppercase">
-                      Publications
-                    </h6>
+                    <h6 className="text-uppercase">Publications</h6>
                     <p className="description">
-                      Our goal with our articles and podcast is to create a platform where scholars past and present can share their experiences, learn something new, and stay connected.
+                      Our goal with our articles and podcast is to create a
+                      platform where scholars past and present can share their
+                      experiences, learn something new, and stay connected.
                     </p>
                   </div>
                   <div className="justify-content-center text-center mt-auto">
-                    <Button className="btn-icon btn-icon-style2" href="/publications">
+                    <Button
+                      className="btn-icon btn-icon-style2"
+                      href="/publications"
+                    >
                       Learn more
                     </Button>
                   </div>
@@ -82,16 +77,19 @@ const Index = () => {
                     <FontAwesomeIcon icon={faHeart} />
                   </div>
                   <div className="justify-content-center text-center mt-3 mb-3">
-                    <h6 className="text-uppercase">
-                      Charity Events
-                    </h6>
+                    <h6 className="text-uppercase">Charity Events</h6>
                     <p className="description">
-                      The charity portfolio is an integral way for Co-op scholars to give back to the community through events
-                      that raise awareness for a diverse range of charities and social issues.
+                      The charity portfolio is an integral way for Co-op
+                      scholars to give back to the community through events that
+                      raise awareness for a diverse range of charities and
+                      social issues.
                     </p>
                   </div>
                   <div className="justify-content-center text-center mt-auto">
-                    <Button className="btn-icon btn-icon-style3" href="/charity">
+                    <Button
+                      className="btn-icon btn-icon-style3"
+                      href="/charity"
+                    >
                       Learn more
                     </Button>
                   </div>
