@@ -27,17 +27,15 @@ const IndexHeader = () => {
                 <Typewriter
                   options={{ loop: false }}
                   onInit={(typewriter) => {
-                    typewriter.typeString('UNSW CO-OP SOCIETY')
-                      .start();
+                    typewriter.typeString("UNSW CO-OP SOCIETY").start();
                   }}
                 />
-                <p className="lead text-white" style={{ fontWeight: 'normal' }}>
+                <p className="lead text-white" style={{ fontWeight: "normal" }}>
                   A society for co-ops, by co-ops.
                 </p>
               </Col>
             </Row>
           </div>
-
         </Container>
         {/* SVG separator */}
         <div className="separator separator-bottom separator-skew">
@@ -49,10 +47,7 @@ const IndexHeader = () => {
             x="0"
             y="0"
           >
-            <polygon
-              className="fill-white"
-              points="4000 0 4000 100 0 100"
-            />
+            <polygon className="fill-white" points="4000 0 4000 100 0 100" />
           </svg>
         </div>
       </section>

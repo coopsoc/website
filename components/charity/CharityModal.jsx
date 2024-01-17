@@ -12,9 +12,9 @@ const CharityModal = ({ isOpen, toggle, event }) => {
   const chooseBody = (special) => {
     switch (special) {
       case "casecomp":
-        return <CaseCompBody event={event} />
+        return <CaseCompBody event={event} />;
       case "casecomp22":
-        return <CaseCompBody1 event={event} />
+        return <CaseCompBody1 event={event} />;
       default:
         return <CharityBody event={event} />;
     }
@@ -24,31 +24,26 @@ const CharityModal = ({ isOpen, toggle, event }) => {
     <Modal
       isOpen={isOpen}
       toggle={toggle}
-      className="modal-dialog-centered modal-lg">
-      <ModalHeader toggle={toggle}>
-        {event.title}
-      </ModalHeader>
-      <ModalBody>
-        {chooseBody(event.special)}
-      </ModalBody>
+      className="modal-dialog-centered modal-lg"
+    >
+      <ModalHeader toggle={toggle}>{event.title}</ModalHeader>
+      <ModalBody>{chooseBody(event.special)}</ModalBody>
       <ModalFooter>
         <a href={event.link}>
-          <Button
-            color="index"
-            style={{ minWidth: '100px' }}
-            onClick={toggle}>
+          <Button color="index" style={{ minWidth: "100px" }} onClick={toggle}>
             Visit
           </Button>
         </a>
         <Button
           color="secondary"
-          style={{ minWidth: '100px' }}
-          onClick={toggle}>
+          style={{ minWidth: "100px" }}
+          onClick={toggle}
+        >
           Cancel
         </Button>
       </ModalFooter>
     </Modal>
   );
-}
+};
 
 export default CharityModal;

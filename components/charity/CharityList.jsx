@@ -11,17 +11,17 @@ const CharityList = () => {
         {SPONSORS.map((sponsor, index) => (
           <Col
             key={`charity-list-${sponsor.name}-${index}`}
-            lg={3} className="mb-3 mb-lg-0">
+            lg={3}
+            className="mb-3 mb-lg-0"
+          >
             <a href={sponsor.link} target="_blank" rel="noopener noreferrer">
-              <Image
-                alt={sponsor.name}
-                src={sponsor.image} />
+              <Image alt={sponsor.name} src={sponsor.image} />
             </a>
           </Col>
         ))}
       </Row>
     </Container>
   );
-}
+};
 
 export default CharityList;

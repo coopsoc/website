@@ -1,11 +1,11 @@
 import React from "react";
-import Head from "next/head"; 
+import Head from "next/head";
 
 // reactstrap components
 import { Row, Col, Container, Button } from "reactstrap";
 
 // yess let's get those animations
-import "animate.css"
+import "animate.css";
 
 // core components
 import NomineeCard from "components/nominations/NomineeCard";
@@ -21,7 +21,6 @@ const Nominations = () => {
   const [nominee, setNominee] = useState({});
   const showNominations = false; // Change this to true when nominations are open
 
-
   // Given a person's name, returns all roles they're nominated for
   const getNominatedRoles = (name) => {
     const roles = [];
@@ -29,7 +28,7 @@ const Nominations = () => {
     for (const role of NOMINEES) {
       const role_name = role.role;
 
-      if (role.nominees.find(data => data.name === name)) {
+      if (role.nominees.find((data) => data.name === name)) {
         roles.push(role_name);
       }
     }
@@ -52,11 +51,13 @@ const Nominations = () => {
         <Head>
           <title>Nominations | UNSW Co-op Society</title>
         </Head>
-  
+
         <section className="section section-lg">
           <Row className="justify-content-center text-center ">
             <Col lg="8">
-              <h1 className="animate__animated animate__zoomIn animate__fast">VOTING CLOSED</h1>
+              <h1 className="animate__animated animate__zoomIn animate__fast">
+                VOTING CLOSED
+              </h1>
             </Col>
           </Row>
 
@@ -64,7 +65,9 @@ const Nominations = () => {
             <Row className="justify-content-center text-center">
               <Col lg="10">
                 <p className="lead text-muted">
-                  Thank you for participating! The voting process for the new executive team has concluded. Come back at the end of this year for the next round of nominations!
+                  Thank you for participating! The voting process for the new
+                  executive team has concluded. Come back at the end of this
+                  year for the next round of nominations!
                 </p>
               </Col>
             </Row>
@@ -130,23 +133,24 @@ const Nominations = () => {
             <>
               <hr />
               <br />
-              {(role.role === "Marketing Director" || role.role === "Charity Director")
-                ?
+              {role.role === "Marketing Director" ||
+              role.role === "Charity Director" ? (
                 <div>
                   <Row className="justify-content-center text-center">
                     <h2>{role.role}</h2>
                   </Row>
                   <Row className="justify-content-center text-center mb-md">
-                    <p style={{ fontSize: 20 }}>Two directors will be elected.</p>
+                    <p style={{ fontSize: 20 }}>
+                      Two directors will be elected.
+                    </p>
                   </Row>
                 </div>
-                :
+              ) : (
                 <Row className="justify-content-center text-center mb-md">
                   <h2>{role.role}</h2>
                 </Row>
-              }
+              )}
               <div className="row justify-content-center">
-
                 <Container>
                   <div className="row justify-content-center">
                     {/* Iterate over every nominee going for that role */}
@@ -154,7 +158,8 @@ const Nominations = () => {
                       <NomineeCard
                         key={`nominee-${index}-${nomineeIndex}`}
                         data={nominee}
-                        onClick={() => clickNominee(nominee)} />
+                        onClick={() => clickNominee(nominee)}
+                      />
                     ))}
                   </div>
                 </Container>
@@ -172,9 +177,10 @@ const Nominations = () => {
         data={nominee}
         roles={getNominatedRoles(nominee.name)}
         isOpen={showModal}
-        toggle={toggleModal} />
+        toggle={toggleModal}
+      />
     </>
   );
-}
+};
 
 export default Nominations;

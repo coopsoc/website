@@ -17,7 +17,7 @@ const CharityEvents = ({ onClick }) => {
   const updateYear = (newYear) => {
     // Using a callback here to ensure that state gets updated properly -
     // when we didn't use a callback, `prev` would always be stuck on END
-    setYear(prev => {
+    setYear((prev) => {
       if (newYear === prev) return newYear;
 
       const dirCheck = newYear < prev;
@@ -48,7 +48,8 @@ const CharityEvents = ({ onClick }) => {
                   <CharityCard
                     key={index}
                     event={event}
-                    onClick={() => onClick(event)} />
+                    onClick={() => onClick(event)}
+                  />
                 ))}
               </div>
             </Row>
@@ -65,36 +66,34 @@ const CharityEvents = ({ onClick }) => {
       enter: styles[`${style}-enter`],
       enterActive: styles[`${style}-enter-active`],
       exit: styles[`${style}-exit`],
-      exitActive: styles[`${style}-exit-active`]
+      exitActive: styles[`${style}-exit-active`],
     };
   };
 
   return (
     <>
-      <YearSlider
-        start={START}
-        end={END}
-        onChange={updateYear} />
+      <YearSlider start={START} end={END} onChange={updateYear} />
 
-      <TransitionGroup childFactory={child => {
-        return cloneElement(child, {
-          classNames: fetchStyles(),
-          timeout: 1000,
-          unmountOnExit: true
-        });
-      }}>
+      <TransitionGroup
+        childFactory={(child) => {
+          return cloneElement(child, {
+            classNames: fetchStyles(),
+            timeout: 1000,
+            unmountOnExit: true,
+          });
+        }}
+      >
         <CSSTransition
           key={`transition-${year}`}
           classNames={fetchStyles()}
           timeout={1000}
-          unmountOnExit>
-          <Container>
-            {renderYear()}
-          </Container>
+          unmountOnExit
+        >
+          <Container>{renderYear()}</Container>
         </CSSTransition>
       </TransitionGroup>
     </>
   );
-}
+};
 
 export default CharityEvents;

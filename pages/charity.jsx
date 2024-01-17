@@ -5,11 +5,7 @@ import Head from "next/head";
 import "animate.css";
 
 // reactstrap components
-import {
-  Container,
-  Col,
-  Row
-} from "reactstrap";
+import { Container, Col, Row } from "reactstrap";
 
 import CharityEvents from "components/charity/CharityEvents.jsx";
 import CharityList from "components/charity/CharityList.jsx";
@@ -40,7 +36,9 @@ const Charity = () => {
       <section className="section section-lg">
         <Row className="justify-content-center text-center">
           <Col lg="8">
-            <h1 className="animate__animated animate__zoomIn animate__fast">CHARITY</h1>
+            <h1 className="animate__animated animate__zoomIn animate__fast">
+              CHARITY
+            </h1>
           </Col>
         </Row>
 
@@ -50,11 +48,12 @@ const Charity = () => {
               <p className="lead text-muted">
                 Co-op Soc merged with the Co-op Soc Charitable Society (CSCS) in
                 2018, and since then, the charity portfolio has been an integral
-                way for Co-op scholars to give back to the community. We organise
-                fun events to support a diverse range of charities and social
-                issues, providing various avenues for social impact. Beyond having
-                a positive impact on society, our core aims are to socialise, meet
-                new people and above all, contribute with a giving heart.
+                way for Co-op scholars to give back to the community. We
+                organise fun events to support a diverse range of charities and
+                social issues, providing various avenues for social impact.
+                Beyond having a positive impact on society, our core aims are to
+                socialise, meet new people and above all, contribute with a
+                giving heart.
               </p>
             </Col>
           </Row>
@@ -69,8 +68,7 @@ const Charity = () => {
           <h2>Our Events</h2>
         </Row>
 
-        <CharityEvents
-          onClick={displayInfo} />
+        <CharityEvents onClick={displayInfo} />
       </section>
 
       <hr />
@@ -98,9 +96,10 @@ const Charity = () => {
       <CharityModal
         isOpen={showModal}
         toggle={toggleModal}
-        event={currentEvent} />
+        event={currentEvent}
+      />
     </>
   );
-}
+};
 
 export default Charity;

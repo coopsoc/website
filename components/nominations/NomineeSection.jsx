@@ -1,7 +1,5 @@
 import React from "react";
 
-const NomineeSection = () => {
-
-};
+const NomineeSection = () => {};
 
 export default NomineeSection;

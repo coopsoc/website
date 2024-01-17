@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
-import { Elements, useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
+import {
+  Elements,
+  useStripe,
+  useElements,
+  PaymentElement,
+} from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe("pk_live_51N7xWEKWz42bhxUE0OeOgsSQoeFdMRPXvxelNmH2U9TkHjsCC1wLE1O6nYvArlihn7regSqjiHVTk89atbSNL2hc00c4XYqVw3");
+const stripePromise = loadStripe(
+  "pk_live_51N7xWEKWz42bhxUE0OeOgsSQoeFdMRPXvxelNmH2U9TkHjsCC1wLE1O6nYvArlihn7regSqjiHVTk89atbSNL2hc00c4XYqVw3",
+);
 
 const PaymentEl = ({ clientSecret, router }) => {
   const stripe = useStripe();
@@ -14,52 +21,53 @@ const PaymentEl = ({ clientSecret, router }) => {
   const handler = async (e) => {
     e.preventDefault();
 
-    const {error: submitError} = await elements.submit();
+    const { error: submitError } = await elements.submit();
 
     if (submitError) {
-      return;  
+      return;
     }
 
-    stripe.confirmPayment({
-      elements: elements,
-      clientSecret: clientSecret,
-      redirect: "if_required"
-    }).then((result) => {
-      if (result.err) {
-        router.push('/checkout/unsuccesful');
-      } else {
-        router.push('/merch');
-      }
-    })
-
-  }
+    stripe
+      .confirmPayment({
+        elements: elements,
+        clientSecret: clientSecret,
+        redirect: "if_required",
+      })
+      .then((result) => {
+        if (result.err) {
+          router.push("/checkout/unsuccesful");
+        } else {
+          router.push("/merch");
+        }
+      });
+  };
 
   return (
     <div className="container">
       <div className="w-50 mx-auto p-4">
-          <form onSubmit={handler}>
-            <PaymentElement className="py-3"/>
-            <button className='btn btn-primary'>Submit</button>
-          </form>
+        <form onSubmit={handler}>
+          <PaymentElement className="py-3" />
+          <button className="btn btn-primary">Submit</button>
+        </form>
       </div>
     </div>
   );
-}
+};
 
 const Payment = () => {
   const router = useRouter();
 
-  if (router.isReady) { 
+  if (router.isReady) {
     const options = {
-      clientSecret: `${router.query.slug}`
-    }
+      clientSecret: `${router.query.slug}`,
+    };
 
     return (
       <Elements stripe={stripePromise} options={options}>
-        <PaymentEl clientSecret={options.clientSecret} router={router}/>
+        <PaymentEl clientSecret={options.clientSecret} router={router} />
       </Elements>
     );
   }
-}
+};
 
 export default Payment;

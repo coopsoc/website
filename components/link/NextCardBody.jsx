@@ -4,9 +4,7 @@ import { CardBody } from "reactstrap";
 const NextCardBody = React.forwardRef((props, ref) => {
   return (
     <div ref={ref}>
-      <CardBody {...props}>
-        {props.children}
-      </CardBody>
+      <CardBody {...props}>{props.children}</CardBody>
     </div>
   );
 });

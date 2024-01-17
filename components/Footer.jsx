@@ -19,33 +19,38 @@
 import React from "react";
 
 // reactstrap components
-import {
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 const Footer = () => {
   return (
     <>
       <footer className="footer">
         <Container>
-            <br></br>
-            <Row className="justify-content-center text-center">
+          <br></br>
+          <Row className="justify-content-center text-center">
             <Col lg="8">
-            <div className="container">
-              <a className="footerLink" href="/Constitution.pdf">Constitution</a> | <a className="footerLink" href="/Grievance-Resolution-Policy-Procedure.pdf">Grievance Policy</a>
-            </div>
-            <div className="container">
+              <div className="container">
+                <a className="footerLink" href="/Constitution.pdf">
+                  Constitution
+                </a>{" "}
+                |{" "}
+                <a
+                  className="footerLink"
+                  href="/Grievance-Resolution-Policy-Procedure.pdf"
+                >
+                  Grievance Policy
+                </a>
+              </div>
+              <div className="container">
                 Copyright &copy; 2023 UNSW Co-op Society
-            </div>
-            <br></br>
-            </Col>              
+              </div>
+              <br></br>
+            </Col>
           </Row>
         </Container>
       </footer>
     </>
   );
-}
+};
 
 export default Footer;

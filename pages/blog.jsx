@@ -1,11 +1,7 @@
 import React from "react";
 import Head from "next/head";
 // reactstrap components
-import {
-  Row,
-  Col,
-  CardDeck,
-} from "reactstrap";
+import { Row, Col, CardDeck } from "reactstrap";
 
 // yess let's get those animations
 import "animate.css";
@@ -28,7 +24,9 @@ const Blog = ({ posts }) => {
       <section className="section section-lg">
         <Row className="justify-content-center text-center">
           <Col lg="8">
-            <h1 className="animate__animated animate__fadeInDown animate__fast">BLOG POSTS</h1>
+            <h1 className="animate__animated animate__fadeInDown animate__fast">
+              BLOG POSTS
+            </h1>
           </Col>
         </Row>
       </section>
@@ -37,9 +35,7 @@ const Blog = ({ posts }) => {
         <Row className="justify-content-center text-center">
           <Col lg="8">
             {rows.map((row, index) => (
-              <CardDeck
-                key={`blog-row-${index}`}
-                className="mb-lg">
+              <CardDeck key={`blog-row-${index}`} className="mb-lg">
                 {row.map((post, postIndex) => (
                   <BlogCard
                     key={`blog-${index}-${postIndex}`}
@@ -47,7 +43,8 @@ const Blog = ({ posts }) => {
                     description={post.description}
                     img={post.image}
                     published={post.published}
-                    href={post.link === null ? `/blog/${post.slug}` : post.link} />
+                    href={post.link === null ? `/blog/${post.slug}` : post.link}
+                  />
                 ))}
               </CardDeck>
             ))}
@@ -56,7 +53,7 @@ const Blog = ({ posts }) => {
       </section>
     </>
   );
-}
+};
 
 export default Blog;
 
@@ -73,7 +70,7 @@ export async function getStaticProps() {
         return 0;
       }
     })
-    .map(article => {
+    .map((article) => {
       return {
         ...article,
         published: article.published.toISOString(),
@@ -83,6 +80,6 @@ export async function getStaticProps() {
   return {
     props: {
       posts: sorted,
-    }
-  }
+    },
+  };
 }

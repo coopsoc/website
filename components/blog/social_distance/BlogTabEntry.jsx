@@ -1,5 +1,5 @@
 const BlogTabEntry = ({ image, children }) => {
-  return (null);
+  return null;
 };
 
 export default BlogTabEntry;

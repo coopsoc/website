@@ -2,10 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-import {
-  Row,
-  Col
-} from "reactstrap";
+import { Row, Col } from "reactstrap";
 
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -26,7 +23,7 @@ const MarkdownImage = (props) => (
 const components = {
   img: MarkdownImage,
   BlogTab: BlogTab,
-  BlogTabEntry: BlogTabEntry
+  BlogTabEntry: BlogTabEntry,
 };
 
 const BlogPost = ({ source, frontmatter }) => {
@@ -50,7 +47,9 @@ const BlogPost = ({ source, frontmatter }) => {
           </Col>
 
           <Col lg="8">
-            <p className="text-muted">{dayjs(frontmatter.published).format("D MMMM YYYY")}</p>
+            <p className="text-muted">
+              {dayjs(frontmatter.published).format("D MMMM YYYY")}
+            </p>
 
             <hr />
           </Col>
@@ -87,12 +86,12 @@ export async function getStaticProps({ params }) {
         [
           rehypeImgSize,
           {
-            dir: "public"
-          }
+            dir: "public",
+          },
         ],
         rehypeSlug,
-      ]
-    }
+      ],
+    },
   });
 
   return {
@@ -101,16 +100,16 @@ export async function getStaticProps({ params }) {
       frontmatter: {
         ...frontmatter,
         published: frontmatter.published.toISOString(),
-      }
-    }
-  }
+      },
+    },
+  };
 }
 
 export async function getStaticPaths() {
-  const paths = (await getSlugs()).map(slug => ({ params: { slug } }));
+  const paths = (await getSlugs()).map((slug) => ({ params: { slug } }));
 
   return {
     paths,
-    fallback: false
+    fallback: false,
   };
 }

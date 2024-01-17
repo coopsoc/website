@@ -6,11 +6,7 @@ import Image from "next/image";
 import "animate.css";
 
 // Reactstrap components
-import {
-  Container,
-  Row,
-  Col
-} from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 // Images
 import Ball from "public/img/events/ball2.jpg";
@@ -29,11 +25,13 @@ const Events = () => {
       <Head>
         <title>Events | UNSW Co-op Society</title>
       </Head>
-      
+
       <section className="section section-lg">
         <Row className="justify-content-center text-center ">
           <Col lg="8">
-            <h1 className="animate__animated animate__zoomIn animate__fast">EVENTS</h1>
+            <h1 className="animate__animated animate__zoomIn animate__fast">
+              EVENTS
+            </h1>
           </Col>
         </Row>
 
@@ -41,7 +39,9 @@ const Events = () => {
           <Row className="justify-content-center text-center">
             <Col lg="8">
               <p className="lead text-muted">
-                At Co-op Soc, our top aims are to socialise and meet new people. We facilitate this through a wide range of social events, including our highly anticipated annual camp and ball.
+                At Co-op Soc, our top aims are to socialise and meet new people.
+                We facilitate this through a wide range of social events,
+                including our highly anticipated annual camp and ball.
               </p>
             </Col>
           </Row>
@@ -115,6 +115,6 @@ const Events = () => {
       </section>
     </>
   );
-}
+};
 
 export default Events;

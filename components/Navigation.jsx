@@ -35,7 +35,11 @@ import {
 } from "reactstrap";
 
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faFacebookSquare, faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebookSquare,
+  faInstagram,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "public/img/brand/logo_white.png";
 import LogoSmall from "public/img/brand/logo_small.png";
@@ -55,8 +59,10 @@ const Navigation = () => {
   });
 
   const getNavLinkClass = (path) => {
-    return router.pathname === path ? "active" : "navbar-hover navbar-nav-hover align-items-lg-center";
-  }
+    return router.pathname === path
+      ? "active"
+      : "navbar-hover navbar-nav-hover align-items-lg-center";
+  };
 
   return (
     <>
@@ -81,17 +87,14 @@ const Navigation = () => {
                   <Col className="collapse-brand" xs="6">
                     <Link href="/">
                       <a>
-                        <Image
-                          alt="..."
-                          src={LogoSmall}
-                        />
+                        <Image alt="..." src={LogoSmall} />
                       </a>
                     </Link>
                   </Col>
 
                   <Col className="collapse-close" xs="6">
                     {/* Needs two spans to make "X" shape */}
-                    <NavbarToggler onClick={() => setOpen(false)} >
+                    <NavbarToggler onClick={() => setOpen(false)}>
                       <span />
                       <span />
                     </NavbarToggler>
@@ -117,9 +120,7 @@ const Navigation = () => {
 
                 <NavItem>
                   <Link href="/events" passHref>
-                    <NextNavLink
-                      className={getNavLinkClass("/events")}
-                    >
+                    <NextNavLink className={getNavLinkClass("/events")}>
                       <span className="nav-link-inner--text">Events</span>
                     </NextNavLink>
                   </Link>
@@ -127,9 +128,7 @@ const Navigation = () => {
 
                 <NavItem>
                   <Link href="/publications" passHref>
-                    <NextNavLink
-                      className={getNavLinkClass("/publications")}
-                    >
+                    <NextNavLink className={getNavLinkClass("/publications")}>
                       <span className="nav-link-inner--text">Publications</span>
                     </NextNavLink>
                   </Link>
@@ -137,26 +136,20 @@ const Navigation = () => {
 
                 <NavItem>
                   <Link href="/charity" passHref>
-                    <NextNavLink
-                      className={getNavLinkClass("/charity")}
-                    >
+                    <NextNavLink className={getNavLinkClass("/charity")}>
                       <span className="nav-link-inner--text">Charity</span>
                     </NextNavLink>
                   </Link>
                 </NavItem>
-                
+
                 <NavItem>
                   <Link href="/calendar" passHref>
-                    <NextNavLink
-                      className={getNavLinkClass("/calendar")}
-                    >
+                    <NextNavLink className={getNavLinkClass("/calendar")}>
                       <span className="nav-link-inner--text">Calendar</span>
                     </NextNavLink>
                   </Link>
                 </NavItem>
-
               </Nav>
-
 
               <Nav className="align-items-lg-center ml-lg-auto" navbar>
                 <NavIcon
@@ -164,25 +157,29 @@ const Navigation = () => {
                   id="tooltip-facebook"
                   icon={faFacebookSquare}
                   collapseText="FACEBOOK"
-                  tooltip="Like us on Facebook" />
+                  tooltip="Like us on Facebook"
+                />
                 <NavIcon
                   href="mailto: coopsoc.unsw@gmail.com"
                   id="tooltip-email"
                   icon={faEnvelope}
                   collapseText="EMAIL"
-                  tooltip="Email us" />
+                  tooltip="Email us"
+                />
                 <NavIcon
                   href="https://www.instagram.com/coopsoc_unsw/"
                   id="tooltip-instagram"
                   icon={faInstagram}
                   collapseText="INSTAGRAM"
-                  tooltip="Follow us on Instagram" />
+                  tooltip="Follow us on Instagram"
+                />
                 <NavIcon
                   href="https://www.linkedin.com/company/unsw-co-op-society/"
                   id="tooltip-linkedin"
                   icon={faLinkedinIn}
                   collapseText="LINKEDIN"
-                  tooltip="Connect on LinkedIn" />
+                  tooltip="Connect on LinkedIn"
+                />
               </Nav>
             </Collapse>
           </Container>

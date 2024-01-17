@@ -3,20 +3,18 @@ import Head from "next/head";
 import Link from "next/link";
 
 // reactstrap components
-import {
-  Card,
-  CardBody,
-  Container,
-  Row,
-  Col
-} from "reactstrap";
+import { Card, CardBody, Container, Row, Col } from "reactstrap";
 
 // yess let's get those animations
 import "animate.css";
 
 // Fas Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHandsHelping, faMicrophoneAlt, faPencil } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHandsHelping,
+  faMicrophoneAlt,
+  faPencil,
+} from "@fortawesome/free-solid-svg-icons";
 
 import NextCardBody from "components/link/NextCardBody";
 
@@ -30,7 +28,9 @@ const Publications = () => {
       <section className="section section-lg">
         <Row className="justify-content-center text-center ">
           <Col lg="8">
-            <h1 className="animate__animated animate__zoomIn animate__fast">PUBLICATIONS</h1>
+            <h1 className="animate__animated animate__zoomIn animate__fast">
+              PUBLICATIONS
+            </h1>
           </Col>
         </Row>
 
@@ -38,7 +38,13 @@ const Publications = () => {
           <Row className="justify-content-center text-center">
             <Col lg="10">
               <p className="lead text-muted">
-                A central part of the Co-op society is the Publications portfolio who helps provide additional professional support for our Co-op scholars. Our work includes the First Year Guide, writing blogs and now an upcoming podcast with alumni who have stories to share. Together, our goal is to create a platform in which scholars past and present can share their experiences, learn something new, and stay connected.
+                A central part of the Co-op society is the Publications
+                portfolio who helps provide additional professional support for
+                our Co-op scholars. Our work includes the First Year Guide,
+                writing blogs and now an upcoming podcast with alumni who have
+                stories to share. Together, our goal is to create a platform in
+                which scholars past and present can share their experiences,
+                learn something new, and stay connected.
               </p>
             </Col>
           </Row>
@@ -50,13 +56,20 @@ const Publications = () => {
               <Row className="row-grid">
                 <Col lg="4">
                   <Card className="card-lift--hover shadow border-0">
-                    <a href="https://www.coopsoc.com.au/FYG2021.pdf" target="_blank" rel="noreferrer">
+                    <a
+                      href="https://www.coopsoc.com.au/FYG2021.pdf"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <CardBody className="py-5 align-items-center">
                         <div>
                           <div className="icon icon-shape icon-shape-style1 rounded-circle mb-4">
                             <FontAwesomeIcon icon={faHandsHelping} size="4x" />
                           </div>
-                          <h6 style={{ textAlign: "center" }} className="display-4 text-uppercase">
+                          <h6
+                            style={{ textAlign: "center" }}
+                            className="display-4 text-uppercase"
+                          >
                             First Year Guide
                           </h6>
                         </div>
@@ -72,7 +85,10 @@ const Publications = () => {
                         <div className="icon icon-shape icon-shape-style2 rounded-circle mb-4">
                           <FontAwesomeIcon icon={faPencil} size="4x" />
                         </div>
-                        <h6 style={{ textAlign: "center" }} className="display-4 text-uppercase">
+                        <h6
+                          style={{ textAlign: "center" }}
+                          className="display-4 text-uppercase"
+                        >
                           Blog Posts
                         </h6>
                       </NextCardBody>
@@ -87,7 +103,10 @@ const Publications = () => {
                         <div className="icon icon-shape icon-shape-style3 rounded-circle mb-4">
                           <FontAwesomeIcon icon={faMicrophoneAlt} size="4x" />
                         </div>
-                        <h6 style={{ textAlign: "center" }} className=" display-4 text-uppercase">
+                        <h6
+                          style={{ textAlign: "center" }}
+                          className=" display-4 text-uppercase"
+                        >
                           Podcast
                         </h6>
                       </NextCardBody>
@@ -101,6 +120,6 @@ const Publications = () => {
       </section>
     </>
   );
-}
+};
 
 export default Publications;

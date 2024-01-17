@@ -1,8 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleNotch, faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleNotch,
+  faPause,
+  faPlay,
+} from "@fortawesome/free-solid-svg-icons";
 
 import React, { useEffect, useState } from "react";
-import { Button, Card, CardBody, CardText, CardTitle, Col, Row } from "reactstrap";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardText,
+  CardTitle,
+  Col,
+  Row,
+} from "reactstrap";
 import PodcastSlider from "./PodcastSlider";
 
 const PAUSED = 0;
@@ -19,14 +31,14 @@ const PodcastPlayer = ({ podcast }) => {
   const onChange = (values, _) => {
     const newTime = parseInt(values[0]);
 
-    setCurrentTime(prevTime => {
+    setCurrentTime((prevTime) => {
       if (prevTime === newTime) return;
       console.log(prevTime, newTime);
 
       audio.currentTime = newTime;
       return newTime;
     });
-  }
+  };
 
   useEffect(() => {
     // Initialise audio object
@@ -44,19 +56,19 @@ const PodcastPlayer = ({ podcast }) => {
 
     audio.addEventListener("loadedmetadata", () => {
       setDuration(audio.duration);
-    })
+    });
   }, [audio]);
 
   const playAudio = async () => {
     setAudioState(LOADING);
     await audio.play();
     setAudioState(PLAYING);
-  }
+  };
 
   const pauseAudio = () => {
     audio.pause();
     setAudioState(PAUSED);
-  }
+  };
 
   const buttonPress = () => {
     if (audioState === PAUSED) {
@@ -64,7 +76,7 @@ const PodcastPlayer = ({ podcast }) => {
     } else if (audioState === PLAYING) {
       pauseAudio();
     }
-  }
+  };
 
   const getIcon = () => {
     switch (audioState) {
@@ -75,7 +87,7 @@ const PodcastPlayer = ({ podcast }) => {
       default:
         return faPause;
     }
-  }
+  };
 
   return (
     <Card>
@@ -86,8 +98,14 @@ const PodcastPlayer = ({ podcast }) => {
             <CardText>{podcast.description}</CardText>
           </Col>
 
-          <Col lg={2} className="d-flex align-items-center justify-content-center">
-            <Button className="btn-icon icon-shape rounded-circle" onClick={buttonPress}>
+          <Col
+            lg={2}
+            className="d-flex align-items-center justify-content-center"
+          >
+            <Button
+              className="btn-icon icon-shape rounded-circle"
+              onClick={buttonPress}
+            >
               <FontAwesomeIcon icon={getIcon()} spin={audioState === LOADING} />
             </Button>
           </Col>
@@ -99,7 +117,8 @@ const PodcastPlayer = ({ podcast }) => {
               <PodcastSlider
                 currentTime={currentTime}
                 duration={duration}
-                onChange={onChange} />
+                onChange={onChange}
+              />
             )}
           </Col>
         </Row>

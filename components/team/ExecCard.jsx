@@ -14,10 +14,7 @@ const ExecCard = ({ data, colour }) => {
       <div className="card-person">
         <div className={`${styles["card-person-style" + colour]} limit`}>
           <div className={styles["card-person-animation"]} />
-          <Image
-            alt={name}
-            src={image}
-            className="card-img-top" />
+          <Image alt={name} src={image} className="card-img-top" />
           <div className={styles[`go-corner-style${colour}`]}>
             <div className={styles["go-arrow"]} />
           </div>
