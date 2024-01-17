@@ -22,7 +22,7 @@ const ExecSection = ({ section }) => {
   return (
     <>
       <hr />
-      <Row className="justify-content-center text-center mb-lg">
+      <Row className="justify-content-center text-center mb-3 mb-sm-4 mb-md-5">
         <h2>{section.sectionName}</h2>
       </Row>
       {section.members.map((row, rowIndex) => (

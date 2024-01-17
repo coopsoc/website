@@ -49,7 +49,7 @@ const Team = () => {
       </Head>
 
       <section className="section section-lg">
-        <Row className="justify-content-center text-center mb-lg">
+        <Row className="justify-content-center text-center mb-3 mb-sm-4 mb-md-5">
           <Col lg="8">
             <h1 className="animate__animated animate__zoomIn animate__fast">
               MEET THE TEAM
@@ -63,7 +63,7 @@ const Team = () => {
           onChange={(year) => setYear(year)}
         />
 
-        <div className="container">
+        <div className="container px-4 px-md-3">
           {members.exec.map((section, index) => (
             <ExecSection
               key={`exec-section-${section.sectionName}-${index}`}
@@ -75,7 +75,7 @@ const Team = () => {
             <section className="about-section text-center bg-white pb-sm-5">
               <div className="container subcom">
                 <hr />
-                <Row className="justify-content-center text-center mb-lg">
+                <Row className="justify-content-center text-center mb-4 mb-md-5">
                   <h2>The Committee</h2>
                 </Row>
                 {members.subcoms.map((portfolio, index) => (
