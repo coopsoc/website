@@ -7,6 +7,7 @@ const Passwords = () => {
     <>
       <Head>
         <title>Passwords | UNSW Co-op Society</title>
+        <meta name="robots" content="noindex"></meta>
       </Head>
       <button className={"submit"}>BRUH!</button>
       <Script src="/scripts/test.js"></Script>

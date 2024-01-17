@@ -50,6 +50,7 @@ const Nominations = () => {
       <>
         <Head>
           <title>Nominations | UNSW Co-op Society</title>
+          <meta name="robots" content="noindex"></meta>
         </Head>
 
         <section className="section section-lg">

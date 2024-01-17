@@ -46,6 +46,7 @@ const Team = () => {
     <>
       <Head>
         <title>Team | UNSW Co-op Society</title>
+        <meta name="robots" content="noindex"></meta>
       </Head>
 
       <section className="section section-lg">

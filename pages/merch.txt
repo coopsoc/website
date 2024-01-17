@@ -27,6 +27,7 @@ const Merch = () => {
     <>
       <Head>
         <title>Merch | UNSW Co-op Society</title>
+        <meta name="robots" content="noindex">
       </Head>
       <div className="container">
         <MerchHeader click={toggle} cart={cart} />
