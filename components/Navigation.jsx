@@ -21,16 +21,12 @@ import Headroom from "headroom.js";
 // reactstrap components
 import {
   Collapse,
-  UncontrolledDropdown,
   Navbar,
   NavItem,
   Nav,
   Container,
   Row,
   Col,
-  DropdownMenu,
-  DropdownItem,
-  DropdownToggle,
   NavbarToggler,
 } from "reactstrap";
 
@@ -47,6 +43,18 @@ import LogoSmall from "public/img/brand/logo_small.png";
 import NextNavbarBrand from "./link/NextNavbarBrand.jsx";
 import NextNavLink from "./link/NextNavLink.jsx";
 import NavIcon from "./navigation/NavIcon.jsx";
+
+// Supports both internal and external links, but internal links/redirects are preferred
+const navLinks = [
+  // [text, link]
+  ["About Us", "/about"],
+  ["Team", "/team"],
+  ["Events", "/events"],
+  ["Publications", "/publications"],
+  ["Charity", "/charity"],
+  // ["Calendar", "/calendar"], // TODO add 2024 calendar
+  ["First Year FB Group", "/first-year-fb-group"],
+];
 
 const Navigation = () => {
   const router = useRouter();
@@ -102,53 +110,15 @@ const Navigation = () => {
                 </Row>
               </div>
               <Nav className="navbar-nav-click align-items-lg-center" navbar>
-                <NavItem>
-                  <Link href="/about" passHref>
-                    <NextNavLink className={getNavLinkClass("/about")}>
-                      <span className="nav-link-inner--text">About Us</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem>
-
-                <NavItem>
-                  <Link href="/team" passHref>
-                    <NextNavLink className={getNavLinkClass("/team")}>
-                      <span className="nav-link-inner--text">The Team</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem>
-
-                <NavItem>
-                  <Link href="/events" passHref>
-                    <NextNavLink className={getNavLinkClass("/events")}>
-                      <span className="nav-link-inner--text">Events</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem>
-
-                <NavItem>
-                  <Link href="/publications" passHref>
-                    <NextNavLink className={getNavLinkClass("/publications")}>
-                      <span className="nav-link-inner--text">Publications</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem>
-
-                <NavItem>
-                  <Link href="/charity" passHref>
-                    <NextNavLink className={getNavLinkClass("/charity")}>
-                      <span className="nav-link-inner--text">Charity</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem>
-
-                <NavItem>
-                  <Link href="/calendar" passHref>
-                    <NextNavLink className={getNavLinkClass("/calendar")}>
-                      <span className="nav-link-inner--text">Calendar</span>
-                    </NextNavLink>
-                  </Link>
-                </NavItem>
+                {navLinks.map(([text, link]) => (
+                  <NavItem>
+                    <Link href={link} passHref>
+                      <NextNavLink className={getNavLinkClass(link)}>
+                        <span className="nav-link-inner--text">{text}</span>
+                      </NextNavLink>
+                    </Link>
+                  </NavItem>
+                ))}
               </Nav>
 
               <Nav className="align-items-lg-center ml-lg-auto" navbar>
