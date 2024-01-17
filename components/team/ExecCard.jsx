@@ -11,11 +11,13 @@ const ExecCard = ({ data, colour }) => {
     <div className="col-md-4">
       <div className="card-person">
         <div className={`${styles["card-person-style" + colour]} limit`}>
-          {description === "" || description === undefined ? null : (
-            <div className={styles["card-person-animation"]} />
+          {description && (
+            <>
+              <div className={styles["card-person-animation"]} />
+              <p className={styles["person-text"]}>{description}</p>
+            </>
           )}
           <Image alt={name} src={image} className={styles["card-img-top"]} />
-          <p className={styles["person-text"]}>{description}</p>
         </div>
       </div>
       <div className="card-body text-center pt-2 pb-4">
