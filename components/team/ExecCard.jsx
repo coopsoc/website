@@ -20,7 +20,7 @@ const ExecCard = ({ data, colour }) => {
           </div>
         </div>
       </div>
-      <div className="card-body text-center">
+      <div className="card-body text-center pt-2 pb-4">
         <h4 className="about-name">{name}</h4>
         {role === "" ? null : <p className="about-role">{role}</p>}
         {/* {description === "" ? null : <p className={styles["person-text"]}>{description}</p>} */}

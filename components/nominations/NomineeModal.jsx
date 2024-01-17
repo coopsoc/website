@@ -36,7 +36,7 @@ const NomineeModal = ({ data, roles, isOpen, toggle }) => {
           {data.description !== undefined &&
             data.description.split("\n").map((paragraph) => (
               <>
-                <p>{paragraph}</p>
+                <p className="px-3 px-md-4 px-lg-5">{paragraph}</p>
                 <br />
               </>
             ))}

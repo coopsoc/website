@@ -34,7 +34,7 @@ const Publications = () => {
           </Col>
         </Row>
 
-        <Container className="py-lg-md d-flex">
+        <Container className="pb-4 pb-md-5 d-flex">
           <Row className="justify-content-center text-center">
             <Col lg="10">
               <p className="lead text-muted">

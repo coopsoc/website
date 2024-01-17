@@ -1,14 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// import styles from "styles/modules/Subcom.module.scss"; // TODO: centre left column (col-sm-8)
-
 const Subcom = ({ portfolio }) => {
   return (
     <>
-      <div className="row">
-        {/* <div className={styles["col-sm-8"]}> */}
-        <div className="col-sm-8">
+      <div className="row d-flex align-items-center">
+        <div className="col-md-8">
           {portfolio.icons.map((icon, index) => (
             <FontAwesomeIcon
               key={`subcom-icon-${portfolio.name}-${index}`}
@@ -17,12 +14,12 @@ const Subcom = ({ portfolio }) => {
               className="m-2"
             />
           ))}
-          <div className="card-body text-center">
+          <div className="card-body text-center pb-0 pb-md-3">
             <h4 className="about-name">{portfolio.name}</h4>
             <p className="card-text subcom-desc">{portfolio.description}</p>
           </div>
         </div>
-        <div className="col-sm-4 d-flex align-items-center">
+        <div className="col-md-4">
           <div className="card-body text-center">
             <ul className="list-group">
               {portfolio.members.map((name, index) => (
