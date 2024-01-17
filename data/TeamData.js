@@ -675,7 +675,7 @@ const MEMBERS = [
       {
         icons: [faDesktop],
         name: "IT",
-        description: `The IT portfolio is responsible for satisfying the society's technical needs, focusing on the Co-op Soc website, merchandise store, nomination system, and other internal systems.`,
+        description: `The IT portfolio forms the technical backbone for the society. It oversees the development of internal tools and manages the Co-op Soc website; a hub for existing and prospective scholars, hosting blog posts and event information, as well a merchandise store and an executive nomination/voting system.`,
         members: ["Jason Tang", "Lucas Harvey", "Nicholas Langford", "Sky Lam"],
       },
       {
@@ -714,13 +714,11 @@ const MEMBERS = [
           [
             {
               image: Alex_Image,
-              description: ``,
               name: "Alexander Lee",
               role: "Co-President",
             },
             {
               image: Sam_Image,
-              description: ``,
               name: "Samuel Katz",
               role: "Co-President",
             },
@@ -728,19 +726,16 @@ const MEMBERS = [
           [
             {
               image: Doris_Image_2024,
-              description: ``,
               name: "Doris Yang",
               role: "Arc Delegate",
             },
             {
               image: Arya_Image,
-              description: ``,
               name: "Arya Ahluwalia",
               role: "Secretary",
             },
             {
               image: Anna_Image,
-              description: ``,
               name: "Anna Tokarev",
               role: "Treasurer",
             },
@@ -753,19 +748,16 @@ const MEMBERS = [
           [
             {
               image: Dinara_Image,
-              description: ``,
               name: "Dinara Jayarathna",
               role: "Charities",
             },
             {
               image: Inika_Image,
-              description: ``,
               name: "Inika Weber",
               role: "Charities",
             },
             {
               image: Lucas_Image,
-              description: ``,
               name: "Lucas Harvey",
               role: "IT (Technical)",
             },
@@ -773,19 +765,16 @@ const MEMBERS = [
           [
             {
               image: Nicholas_Image,
-              description: ``,
               name: "Nicholas Langford",
               role: "IT (Project Management)",
             },
             {
               image: Kelly_Image,
-              description: ``,
               name: "Kelly Nguyen",
               role: "Marketing",
             },
             {
               image: Maggie_Image,
-              description: ``,
               name: "Maggie Lam",
               role: "Marketing",
             },
@@ -793,19 +782,16 @@ const MEMBERS = [
           [
             {
               image: Imogen_Image,
-              description: ``,
               name: "Imogen Wills",
               role: "Publications",
             },
             {
               image: Kiran_Image,
-              description: ``,
               name: "Kiran Singh",
               role: "Socials",
             },
             {
               image: Sienna_Image,
-              description: ``,
               name: "Sienna Strauss",
               role: "Socials",
             },
@@ -818,13 +804,11 @@ const MEMBERS = [
       //     [
       //       {
       //         image: Name_Image,
-      //         description: ``,
       //         name: "First Last",
       //         role: "",
       //       },
       //       {
       //         image: Name_Image,
-      //         description: ``,
       //         name: "First Last",
       //         role: "",
       //       },
@@ -848,7 +832,7 @@ const MEMBERS = [
     //   {
     //     icons: [faDesktop],
     //     name: "IT",
-    //     description: `The IT portfolio is responsible for satisfying the society's technical needs, focusing on the Co-op Soc website, merchandise store, nomination system, and other internal systems.`,
+    //     description: `The IT portfolio forms the technical backbone for the society. It oversees the development of internal tools and manages the Co-op Soc website; a hub for existing and prospective scholars, hosting blog posts and event information, as well a merchandise store and an executive nomination/voting system.`,
     //     members: [],
     //   },
     //   {
