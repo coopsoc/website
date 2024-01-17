@@ -752,18 +752,6 @@ const MEMBERS = [
         members: [
           [
             {
-              image: Kiran_Image,
-              description: ``,
-              name: "Kiran Singh",
-              role: "Social",
-            },
-            {
-              image: Sienna_Image,
-              description: ``,
-              name: "Sienna Strauss",
-              role: "Social",
-            },
-            {
               image: Dinara_Image,
               description: ``,
               name: "Dinara Jayarathna",
@@ -775,8 +763,20 @@ const MEMBERS = [
               name: "Inika Weber",
               role: "Charity",
             },
+            {
+              image: Lucas_Image,
+              description: ``,
+              name: "Lucas Harvey",
+              role: "IT (Technical)",
+            },
           ],
           [
+            {
+              image: Nicholas_Image,
+              description: ``,
+              name: "Nicholas Langford",
+              role: "IT (Project Management)",
+            },
             {
               image: Kelly_Image,
               description: ``,
@@ -789,25 +789,25 @@ const MEMBERS = [
               name: "Maggie Lam",
               role: "Marketing",
             },
+          ],
+          [
             {
               image: Imogen_Image,
               description: ``,
               name: "Imogen Wills",
               role: "Publications",
             },
-          ],
-          [
             {
-              image: Lucas_Image,
+              image: Kiran_Image,
               description: ``,
-              name: "Lucas Harvey",
-              role: "IT (Technical)",
+              name: "Kiran Singh",
+              role: "Social",
             },
             {
-              image: Nicholas_Image,
+              image: Sienna_Image,
               description: ``,
-              name: "Nicholas Langford",
-              role: "IT (Project Management)",
+              name: "Sienna Strauss",
+              role: "Social",
             },
           ],
         ],
