@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head"; 
 
 // reactstrap components
 import { Row, Col, Container, Button } from "reactstrap";
@@ -18,6 +19,8 @@ import styles from "styles/modules/nominations.module.scss";
 const Nominations = () => {
   const [showModal, setShowModal] = useState(false);
   const [nominee, setNominee] = useState({});
+  const showNominations = false; // Change this to true when nominations are open
+
 
   // Given a person's name, returns all roles they're nominated for
   const getNominatedRoles = (name) => {
@@ -43,8 +46,39 @@ const Nominations = () => {
     setShowModal(!showModal);
   };
 
+  if (!showNominations) {
+    return (
+      <>
+        <Head>
+          <title>Nominations | UNSW Co-op Society</title>
+        </Head>
+  
+        <section className="section section-lg">
+          <Row className="justify-content-center text-center ">
+            <Col lg="8">
+              <h1 className="animate__animated animate__zoomIn animate__fast">VOTING CLOSED</h1>
+            </Col>
+          </Row>
+
+          <Container className="py-lg-md d-flex">
+            <Row className="justify-content-center text-center">
+              <Col lg="10">
+                <p className="lead text-muted">
+                  Thank you for participating! The voting process for the new executive team has concluded. Come back at the end of this year for the next round of nominations!
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </>
+    );
+  }
+
   return (
     <>
+      <Head>
+        <title>Nominations | UNSW Co-op Society</title>
+      </Head>
       <section className="section section-lg">
         {/* Title */}
         <Row className="justify-content-center text-center">
