@@ -52,7 +52,7 @@ const navLinks = [
   ["Events", "/events"],
   ["Publications", "/publications"],
   ["Charity", "/charity"],
-  // ["Calendar", "/calendar"], // TODO add 2024 calendar
+  ["Calendar", "/calendar"],
   ["First Year FB Group", "/first-year-fb-group"],
 ];
 
