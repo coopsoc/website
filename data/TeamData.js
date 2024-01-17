@@ -540,7 +540,6 @@ const MEMBERS = [
   {
     // 2023
     exec: [
-      // titles will need to change pending EGM
       {
         sectionName: "Executive",
         members: [
