@@ -673,6 +673,12 @@ const MEMBERS = [
         ],
       },
       {
+        icons: [faDesktop],
+        name: "IT",
+        description: `The IT portfolio is responsible for satisfying the society's technical needs, focusing on the Co-op Soc website, merchandise store, nomination system, and other internal systems.`,
+        members: ["Jason Tang", "Lucas Harvey", "Nicholas Langford", "Sky Lam"],
+      },
+      {
         icons: [faBullhorn],
         name: "Marketing",
         description: `The Marketing portfolio focuses on creating continued engagement with our Co-op Society Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
@@ -687,14 +693,8 @@ const MEMBERS = [
       {
         icons: [faEdit],
         name: "Publications",
-        description: `The Publications portfolio is responsible for continuing to develop and facilitate the society's online presence through new and existing avenues, focusing on the Co-op Soc website and the Chicken Coop podcast.`,
+        description: `The Publications portfolio is responsible for continuing to grow the society's online presence and keeping scholars up to date, focusing on the blog posts for the Co-op Soc website and the Chicken Coop podcast.`,
         members: ["Gemma Lapins-Silvirs", "Imogen Wills", "Sebastian Pelayo"],
-      },
-      {
-        icons: [faDesktop],
-        name: "IT",
-        description: `The IT portfolio is responsible for continuing to develop and facilitate the society's online presence through new and existing avenues, focusing on the Co-op Soc website and the Chicken Coop podcast.`,
-        members: ["Jason Tang", "Lucas Harvey", "Nicholas Langford", "Sky Lam"],
       },
       {
         icons: [faUserFriends],
@@ -812,78 +812,64 @@ const MEMBERS = [
           ],
         ],
       },
-      {
-        sectionName: "First Year Representatives",
-        members: [
-          [
-            // {
-            //   image: Doris_Image_2023,
-            //   description: ``,
-            //   name: "Doris Yang",
-            //   role: "",
-            // },
-            // {
-            //   image: MattL_Image,
-            //   description: ``,
-            //   name: "Matthew Lim",
-            //   role: "",
-            // },
-          ],
-        ],
-      },
-    ],
-    subcoms: [
       // {
-      //   icons: [faClipboard],
-      //   name: "Administrative Officers",
-      //   description: `The Administrative Officers assist the executive team, largely secretary, with things such as event organisation, booking systems and managing the inbox. They are organised, efficient and dedicated to their work.`,
-      //   members: ["Arya Ahluwalia", "Flick Jensen", "Peter Osborne"],
-      // },
-      // {
-      //   icons: [faDove],
-      //   name: "Charity",
-      //   description: `The Charity portfolio seeks to create awareness, raise funds and drive social change for charities. The committee also compliments the Social portfolio in hosting fun events for a great cause.`,
+      //   sectionName: "First Year Representatives",
       //   members: [
-      //     "Alex Lee",
-      //     "Anna Tokarev",
-      //     "Dinara Jayarathna",
-      //     "Inika Weber",
-      //     "Isabel Dean",
+      //     [
+      //       {
+      //         image: Name_Image,
+      //         description: ``,
+      //         name: "First Last",
+      //         role: "",
+      //       },
+      //       {
+      //         image: Name_Image,
+      //         description: ``,
+      //         name: "First Last",
+      //         role: "",
+      //       },
+      //     ],
       //   ],
-      // },
-      // {
-      //   icons: [faBullhorn],
-      //   name: "Marketing",
-      //   description: `The Marketing portfolio focuses on creating continued engagement with our Co-op Society Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
-      //   members: [
-      //     "Amal Khan",
-      //     "Essa Mehdi",
-      //     "Jaime Pitcher",
-      //     "Maggie Lam",
-      //     "Sam Katz",
-      //   ],
-      // },
-      // {
-      //   icons: [faEdit, faDesktop],
-      //   name: "Publications/IT",
-      //   description: `The Publications/IT portfolio is responsible for continuing to develop and facilitate the society's online presence through new and existing avenues, focusing on the Co-op Soc website and the Chicken Coop podcast.`,
-      //   members: [
-      //     "Gemma Lapins-Silvirs",
-      //     "Imogen Wills",
-      //     "Sebastian Pelayo",
-      //     "Jason Tang",
-      //     "Lucas Harvey",
-      //     "Nicholas Langford",
-      //     "Sky Lam",
-      //   ],
-      // },
-      // {
-      //   icons: [faUserFriends],
-      //   name: "Social",
-      //   description: `The Social portfolio is responsible for organising our social calendar, including planning, developing and executing a core suite of events. They ensure all members are given the opportunity to be a part of this vibrant community, through the creation and maintenance of social groups.`,
-      //   members: ["Kiran Singh", "Sienna Strauss"],
       // },
     ],
+    // subcoms: [
+    //   {
+    //     icons: [faClipboard],
+    //     name: "Administrative Officers",
+    //     description: `The Administrative Officers assist the executive team, largely secretary, with things such as event organisation, booking systems and managing the inbox. They are organised, efficient and dedicated to their work.`,
+    //     members: [],
+    //   },
+    //   {
+    //     icons: [faDove],
+    //     name: "Charity",
+    //     description: `The Charity portfolio seeks to create awareness, raise funds and drive social change for charities. The committee also compliments the Social portfolio in hosting fun events for a great cause.`,
+    //     members: [],
+    //   },
+    //   {
+    //     icons: [faDesktop],
+    //     name: "IT",
+    //     description: `The IT portfolio is responsible for satisfying the society's technical needs, focusing on the Co-op Soc website, merchandise store, nomination system, and other internal systems.`,
+    //     members: [],
+    //   },
+    //   {
+    //     icons: [faBullhorn],
+    //     name: "Marketing",
+    //     description: `The Marketing portfolio focuses on creating continued engagement with our Co-op Society Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
+    //     members: [],
+    //   },
+    //   {
+    //     icons: [faEdit],
+    //     name: "Publications",
+    //     description: `The Publications portfolio is responsible for continuing to grow the society's online presence and keeping scholars up to date, focusing on the blog posts for the Co-op Soc website and the Chicken Coop podcast.`,
+    //     members: [],
+    //   },
+    //   {
+    //     icons: [faUserFriends],
+    //     name: "Social",
+    //     description: `The Social portfolio is responsible for organising our social calendar, including planning, developing and executing a core suite of events. They ensure all members are given the opportunity to be a part of this vibrant community, through the creation and maintenance of social groups.`,
+    //     members: [],
+    //   },
+    // ],
   },
 ];
 
