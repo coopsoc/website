@@ -110,8 +110,8 @@ const Navigation = () => {
                 </Row>
               </div>
               <Nav className="navbar-nav-click align-items-lg-center" navbar>
-                {navLinks.map(([text, link]) => (
-                  <NavItem>
+                {navLinks.map(([text, link], index) => (
+                  <NavItem key={`nav-item-${text}-${index}`}>
                     <Link href={link} passHref>
                       <NextNavLink className={getNavLinkClass(link)}>
                         <span className="nav-link-inner--text">{text}</span>

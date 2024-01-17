@@ -35,7 +35,7 @@ const MerchCard = ({ productData, addToCart }) => {
         key={id}
         onClick={toggle}
       >
-        <img className="card-img-top" src={images[0]} alt={name} />
+        <Image className="card-img-top" src={images[0]} alt={name} />
         <div className="card-body pt-3">
           <h5 className="card-title mb-3">{name}</h5>
           <h5 className="card-subtitle text-muted">
@@ -58,12 +58,17 @@ const MerchCard = ({ productData, addToCart }) => {
                     <div className="images p-3">
                       <div className="text-center p-4">
                         {" "}
-                        <img id="main-image" src={source} width="250" />{" "}
+                        <Image
+                          id="main-image"
+                          src={source}
+                          width="250"
+                          alt={`Main image of ${name}`}
+                        />{" "}
                       </div>
                       {/* <div className="thumbnail text-center">
                           {images.map((src, index) => {
                             return (
-                              <img key={index} onClick={() => changeImage(index)} src={src} width="70"/>
+                              <Image key={index} onClick={() => changeImage(index)} src={src} width="70"/>
                             );
                           })}
                         </div> */}
