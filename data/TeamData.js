@@ -66,6 +66,7 @@ import MattL_Image from "public/img/exec/2023/MattL.jpeg";
 // 2024 Team Images
 import Alex_Image from "public/img/exec/2024/Alex.jpg";
 import Sam_Image from "public/img/exec/2024/Sam.jpg";
+import Sebastian_Image from "public/img/exec/2024/Sebastian.png";
 import Doris_Image_2024 from "public/img/exec/2024/Doris.jpg";
 import Arya_Image from "public/img/exec/2024/Arya.jpg";
 import Anna_Image from "public/img/exec/2024/Anna.jpg";
@@ -522,12 +523,7 @@ const MEMBERS = [
         icons: [faEdit, faDesktop],
         name: "Publications/IT",
         description: `The Publications/IT portfolio is responsible for continuing to develop and facilitate the society's online presence through new and existing avenues, focusing on the Co-op Soc website and the Chicken Coop podcast.`,
-        members: [
-          "Lucas Brunton",
-          "Meghna Sunil",
-          "Michelle Yeom",
-          "Stephen Lincon",
-        ],
+        members: ["Lucas Brunton", "Meghna Sunil", "Michelle Yeom", "Stephen Lincon"],
       },
       {
         icons: [faUserFriends],
@@ -540,7 +536,6 @@ const MEMBERS = [
   {
     // 2023
     exec: [
-      // titles will need to change pending EGM
       {
         sectionName: "Executive",
         members: [
@@ -664,13 +659,7 @@ const MEMBERS = [
         icons: [faDove],
         name: "Charity",
         description: `The Charity portfolio seeks to create awareness, raise funds and drive social change for charities. The committee also compliments the Social portfolio in hosting fun events for a great cause.`,
-        members: [
-          "Alex Lee",
-          "Anna Tokarev",
-          "Dinara Jayarathna",
-          "Inika Weber",
-          "Isabel Dean",
-        ],
+        members: ["Alex Lee", "Anna Tokarev", "Dinara Jayarathna", "Inika Weber", "Isabel Dean"],
       },
       {
         icons: [faDesktop],
@@ -682,13 +671,7 @@ const MEMBERS = [
         icons: [faBullhorn],
         name: "Marketing",
         description: `The Marketing portfolio focuses on creating continued engagement with our Co-op Society Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
-        members: [
-          "Amal Khan",
-          "Essa Mehdi",
-          "Jaime Pitcher",
-          "Maggie Lam",
-          "Sam Katz",
-        ],
+        members: ["Amal Khan", "Essa Mehdi", "Jaime Pitcher", "Maggie Lam", "Sam Katz"],
       },
       {
         icons: [faEdit],
@@ -707,7 +690,6 @@ const MEMBERS = [
   {
     // 2024
     exec: [
-      // titles will need to change pending EGM
       {
         sectionName: "Executive",
         members: [
@@ -724,13 +706,19 @@ const MEMBERS = [
               name: "Samuel Katz",
               role: "Co-President",
             },
+            {
+              image: Sebastian_Image,
+              description: ``,
+              name: "Sebastian Pelayo",
+              role: "Arc Delegate",
+            },
           ],
           [
             {
               image: Doris_Image_2024,
               description: ``,
               name: "Doris Yang",
-              role: "Arc Delegate",
+              role: "HR / Grievance Officer",
             },
             {
               image: Arya_Image,
