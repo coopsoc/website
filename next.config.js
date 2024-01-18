@@ -14,15 +14,17 @@ const nextConfig = {
   redirects: async () => [
     {
       source: "/calendar",
-      destination: "webcal://calendar.google.com/calendar/ical/pnpcv7pttn3n36herr12kb0lm8%40group.calendar.google.com/public/basic.ics",
+      destination:
+        "webcal://calendar.google.com/calendar/ical/pnpcv7pttn3n36herr12kb0lm8%40group.calendar.google.com/public/basic.ics",
       permanent: false,
     },
     {
-      source: "/first-year-fb-group",
+      // Short link for first year facebook group
+      source: "/fb",
       destination: "https://www.facebook.com/groups/883034036564419/",
       permanent: false,
     },
-  ]
+  ],
 };
 
 module.exports = nextConfig;
