@@ -66,6 +66,7 @@ import MattL_Image from "public/img/exec/2023/MattL.jpeg";
 // 2024 Team Images
 import Alex_Image from "public/img/exec/2024/Alex.jpg";
 import Sam_Image from "public/img/exec/2024/Sam.jpg";
+import Sebastian_Image from "public/img/exec/2024/Sebastian.png";
 import Doris_Image_2024 from "public/img/exec/2024/Doris.jpg";
 import Arya_Image from "public/img/exec/2024/Arya.jpg";
 import Anna_Image from "public/img/exec/2024/Anna.jpg";
@@ -540,7 +541,6 @@ const MEMBERS = [
   {
     // 2023
     exec: [
-      // titles will need to change pending EGM
       {
         sectionName: "Executive",
         members: [
@@ -707,7 +707,6 @@ const MEMBERS = [
   {
     // 2024
     exec: [
-      // titles will need to change pending EGM
       {
         sectionName: "Executive",
         members: [
@@ -724,13 +723,19 @@ const MEMBERS = [
               name: "Samuel Katz",
               role: "Co-President",
             },
+            {
+              image: Sebastian_Image,
+              description: ``,
+              name: "Sebastian Pelayo",
+              role: "Arc Delegate",
+            },
           ],
           [
             {
               image: Doris_Image_2024,
               description: ``,
               name: "Doris Yang",
-              role: "Arc Delegate",
+              role: "HR / Grievance Officer",
             },
             {
               image: Arya_Image,
