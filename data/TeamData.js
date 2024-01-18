@@ -523,7 +523,12 @@ const MEMBERS = [
         icons: [faEdit, faDesktop],
         name: "Publications/IT",
         description: `The Publications/IT portfolio is responsible for continuing to develop and facilitate the society's online presence through new and existing avenues, focusing on the Co-op Soc website and the Chicken Coop podcast.`,
-        members: ["Lucas Brunton", "Meghna Sunil", "Michelle Yeom", "Stephen Lincon"],
+        members: [
+          "Lucas Brunton",
+          "Meghna Sunil",
+          "Michelle Yeom",
+          "Stephen Lincon",
+        ],
       },
       {
         icons: [faUserFriends],
@@ -659,7 +664,13 @@ const MEMBERS = [
         icons: [faDove],
         name: "Charity",
         description: `The Charity portfolio seeks to create awareness, raise funds and drive social change for charities. The committee also compliments the Social portfolio in hosting fun events for a great cause.`,
-        members: ["Alex Lee", "Anna Tokarev", "Dinara Jayarathna", "Inika Weber", "Isabel Dean"],
+        members: [
+          "Alex Lee",
+          "Anna Tokarev",
+          "Dinara Jayarathna",
+          "Inika Weber",
+          "Isabel Dean",
+        ],
       },
       {
         icons: [faDesktop],
@@ -671,7 +682,13 @@ const MEMBERS = [
         icons: [faBullhorn],
         name: "Marketing",
         description: `The Marketing portfolio focuses on creating continued engagement with our Co-op Society Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
-        members: ["Amal Khan", "Essa Mehdi", "Jaime Pitcher", "Maggie Lam", "Sam Katz"],
+        members: [
+          "Amal Khan",
+          "Essa Mehdi",
+          "Jaime Pitcher",
+          "Maggie Lam",
+          "Sam Katz",
+        ],
       },
       {
         icons: [faEdit],
