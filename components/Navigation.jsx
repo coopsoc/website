@@ -53,7 +53,7 @@ const navLinks = [
   ["Publications", "/publications"],
   ["Charity", "/charity"],
   ["Calendar", "/calendar"],
-  ["First Year FB Group", "/first-year-fb-group"],
+  ["First Year FB", "/first-year-fb-group"],
 ];
 
 const Navigation = () => {
