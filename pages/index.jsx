@@ -10,7 +10,7 @@ import {
   CardText,
   Container,
   Row,
-  CardDeck,
+  Col,
 } from "reactstrap";
 
 // Import Swiper styles
@@ -36,7 +36,7 @@ const Index = () => {
       <section className="section section-lg">
         <Container>
           <Row className="justify-content-center">
-            <CardDeck>
+            <Col md="4">
               <Card className="card-lift--hover shadow border-0 h-100">
                 <CardBody className="py-5 d-flex flex-column">
                   <div className="icon icon-shape icon-shape-style1 rounded-circle mb-3">
@@ -59,6 +59,8 @@ const Index = () => {
                   </div>
                 </CardBody>
               </Card>
+            </Col>
+            <Col md="4">
               <Card className="card-lift--hover shadow border-0 h-100">
                 <CardBody className="py-5 d-flex flex-column">
                   <div className="icon icon-shape icon-shape-style2 rounded-circle mb-3">
@@ -84,6 +86,8 @@ const Index = () => {
                   </div>
                 </CardBody>
               </Card>
+            </Col>
+            <Col md="4">
               <Card className="card-lift--hover shadow border-0 h-100">
                 <CardBody className="py-5 d-flex flex-column">
                   <div className="icon icon-shape icon-shape-style3 rounded-circle mb-3">
@@ -110,7 +114,7 @@ const Index = () => {
                   </div>
                 </CardBody>
               </Card>
-            </CardDeck>
+            </Col>
           </Row>
         </Container>
       </section>
