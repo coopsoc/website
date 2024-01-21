@@ -2,7 +2,16 @@ import React from "react";
 import Head from "next/head";
 
 // Reactstrap components
-import { Button, Card, CardBody, Container, Row, CardDeck } from "reactstrap";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardTitle,
+  CardText,
+  Container,
+  Row,
+  CardDeck,
+} from "reactstrap";
 
 // Import Swiper styles
 import "swiper/css/bundle";
@@ -30,16 +39,18 @@ const Index = () => {
             <CardDeck>
               <Card className="card-lift--hover shadow border-0 h-100">
                 <CardBody className="py-5 d-flex flex-column">
-                  <div className="icon icon-shape icon-shape-style1 rounded-circle mb-4">
+                  <div className="icon icon-shape icon-shape-style1 rounded-circle mb-3">
                     <FontAwesomeIcon icon={niCalendarGrid} />
                   </div>
                   <div className="justify-content-center text-center mt-3 mb-3">
-                    <h6 className="text-uppercase">Social Events</h6>
-                    <p className="description">
+                    <CardTitle tag="h5" className="text-uppercase">
+                      Social Events
+                    </CardTitle>
+                    <CardText className="mb-4 mx-1">
                       At the core of the society, our aims are to socialise and
                       meet new people. We facilitate this through a wide range
                       of social events, including an annual camp and ball.
-                    </p>
+                    </CardText>
                   </div>
                   <div className="justify-content-center text-center mt-auto">
                     <Button className="btn-icon btn-icon-style1" href="/events">
@@ -50,16 +61,18 @@ const Index = () => {
               </Card>
               <Card className="card-lift--hover shadow border-0 h-100">
                 <CardBody className="py-5 d-flex flex-column">
-                  <div className="icon icon-shape icon-shape-style2 rounded-circle mb-4">
+                  <div className="icon icon-shape icon-shape-style2 rounded-circle mb-3">
                     <FontAwesomeIcon icon={faPencil} />
                   </div>
                   <div className="justify-content-center text-center mt-3 mb-3">
-                    <h6 className="text-uppercase">Publications</h6>
-                    <p className="description">
+                    <CardTitle tag="h5" className="text-uppercase">
+                      Publications
+                    </CardTitle>
+                    <CardText className="mb-4 mx-1">
                       Our goal with our articles and podcast is to create a
                       platform where scholars past and present can share their
                       experiences, learn something new, and stay connected.
-                    </p>
+                    </CardText>
                   </div>
                   <div className="justify-content-center text-center mt-auto">
                     <Button
@@ -73,17 +86,19 @@ const Index = () => {
               </Card>
               <Card className="card-lift--hover shadow border-0 h-100">
                 <CardBody className="py-5 d-flex flex-column">
-                  <div className="icon icon-shape icon-shape-style3 rounded-circle mb-4">
+                  <div className="icon icon-shape icon-shape-style3 rounded-circle mb-3">
                     <FontAwesomeIcon icon={faHeart} />
                   </div>
                   <div className="justify-content-center text-center mt-3 mb-3">
-                    <h6 className="text-uppercase">Charity Events</h6>
-                    <p className="description">
+                    <CardTitle tag="h5" className="text-uppercase">
+                      Charity Events
+                    </CardTitle>
+                    <CardText className="mb-4 mx-1">
                       The charity portfolio is an integral way for Co-op
                       scholars to give back to the community through events that
                       raise awareness for a diverse range of charities and
                       social issues.
-                    </p>
+                    </CardText>
                   </div>
                   <div className="justify-content-center text-center mt-auto">
                     <Button
