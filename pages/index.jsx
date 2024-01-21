@@ -38,8 +38,8 @@ const Index = () => {
           <Row className="justify-content-center">
             <Col md="4" className="mb-4 mb-md-0">
               <Card className="card-lift--hover shadow border-0 h-100">
-                <CardBody className="py-5 d-flex flex-column">
-                  <div className="icon icon-shape icon-shape-style1 rounded-circle mb-3">
+                <CardBody className="py-4 py-md-5 d-flex flex-column">
+                  <div className="icon icon-shape icon-shape-style1 rounded-circle mt-2 mt-md-0 mb-3">
                     <FontAwesomeIcon icon={niCalendarGrid} />
                   </div>
                   <div className="justify-content-center text-center mt-2 mt-md-3 mb-md-3">
@@ -53,7 +53,10 @@ const Index = () => {
                     </CardText>
                   </div>
                   <div className="justify-content-center text-center mt-auto">
-                    <Button className="btn-icon btn-icon-style1" href="/events">
+                    <Button
+                      className="btn-icon btn-icon-style1 mb-3 mb-md-0"
+                      href="/events"
+                    >
                       Learn more
                     </Button>
                   </div>
@@ -62,8 +65,8 @@ const Index = () => {
             </Col>
             <Col md="4" className="mb-4 mb-md-0">
               <Card className="card-lift--hover shadow border-0 h-100">
-                <CardBody className="py-5 d-flex flex-column">
-                  <div className="icon icon-shape icon-shape-style2 rounded-circle mb-3">
+                <CardBody className="py-4 py-md-5 d-flex flex-column">
+                  <div className="icon icon-shape icon-shape-style2 rounded-circle mt-2 mt-md-0 mb-3">
                     <FontAwesomeIcon icon={faPencil} />
                   </div>
                   <div className="justify-content-center text-center mt-2 mt-md-3 mb-md-3">
@@ -78,7 +81,7 @@ const Index = () => {
                   </div>
                   <div className="justify-content-center text-center mt-auto">
                     <Button
-                      className="btn-icon btn-icon-style2"
+                      className="btn-icon btn-icon-style2 mb-3 mb-md-0"
                       href="/publications"
                     >
                       Learn more
@@ -89,8 +92,8 @@ const Index = () => {
             </Col>
             <Col md="4">
               <Card className="card-lift--hover shadow border-0 h-100">
-                <CardBody className="py-5 d-flex flex-column">
-                  <div className="icon icon-shape icon-shape-style3 rounded-circle mb-3">
+                <CardBody className="py-4 py-md-5 d-flex flex-column">
+                  <div className="icon icon-shape icon-shape-style3 rounded-circle mt-2 mt-md-0 mb-3">
                     <FontAwesomeIcon icon={faHeart} />
                   </div>
                   <div className="justify-content-center text-center mt-2 mt-md-3 mb-md-3">
@@ -106,7 +109,7 @@ const Index = () => {
                   </div>
                   <div className="justify-content-center text-center mt-auto">
                     <Button
-                      className="btn-icon btn-icon-style3"
+                      className="btn-icon btn-icon-style3 mb-3 mb-md-0"
                       href="/charity"
                     >
                       Learn more
