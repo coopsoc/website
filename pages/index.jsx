@@ -33,10 +33,10 @@ const Index = () => {
         <title>UNSW Co-op Society</title>
       </Head>
 
-      <section className="section section-lg">
+      <section className="section my-2 mt-md-4 mb-md-5">
         <Container>
           <Row className="justify-content-center">
-            <Col md="4">
+            <Col md="4" className="mb-4 mb-md-0">
               <Card className="card-lift--hover shadow border-0 h-100">
                 <CardBody className="py-5 d-flex flex-column">
                   <div className="icon icon-shape icon-shape-style1 rounded-circle mb-3">
@@ -46,7 +46,7 @@ const Index = () => {
                     <CardTitle tag="h5" className="text-uppercase">
                       Social Events
                     </CardTitle>
-                    <CardText className="mb-4 mx-1">
+                    <CardText className="mb-4 mx-0 mx-lg-1">
                       At the core of the society, our aims are to socialise and
                       meet new people. We facilitate this through a wide range
                       of social events, including an annual camp and ball.
@@ -60,7 +60,7 @@ const Index = () => {
                 </CardBody>
               </Card>
             </Col>
-            <Col md="4">
+            <Col md="4" className="mb-4 mb-md-0">
               <Card className="card-lift--hover shadow border-0 h-100">
                 <CardBody className="py-5 d-flex flex-column">
                   <div className="icon icon-shape icon-shape-style2 rounded-circle mb-3">
@@ -70,7 +70,7 @@ const Index = () => {
                     <CardTitle tag="h5" className="text-uppercase">
                       Publications
                     </CardTitle>
-                    <CardText className="mb-4 mx-1">
+                    <CardText className="mb-4 mx-0 mx-lg-1">
                       Our goal with our articles and podcast is to create a
                       platform where scholars past and present can share their
                       experiences, learn something new, and stay connected.
@@ -97,7 +97,7 @@ const Index = () => {
                     <CardTitle tag="h5" className="text-uppercase">
                       Charity Events
                     </CardTitle>
-                    <CardText className="mb-4 mx-1">
+                    <CardText className="mb-4 mx-0 mx-lg-1">
                       The charity portfolio is an integral way for Co-op
                       scholars to give back to the community through events that
                       raise awareness for a diverse range of charities and
