@@ -42,11 +42,11 @@ const Index = () => {
                   <div className="icon icon-shape icon-shape-style1 rounded-circle mb-3">
                     <FontAwesomeIcon icon={niCalendarGrid} />
                   </div>
-                  <div className="justify-content-center text-center mt-3 mb-3">
+                  <div className="justify-content-center text-center mt-2 mt-md-3 mb-md-3">
                     <CardTitle tag="h5" className="text-uppercase">
                       Social Events
                     </CardTitle>
-                    <CardText className="mb-4 mx-0 mx-lg-1">
+                    <CardText className="mb-4 mx-lg-1">
                       At the core of the society, our aims are to socialise and
                       meet new people. We facilitate this through a wide range
                       of social events, including an annual camp and ball.
@@ -66,11 +66,11 @@ const Index = () => {
                   <div className="icon icon-shape icon-shape-style2 rounded-circle mb-3">
                     <FontAwesomeIcon icon={faPencil} />
                   </div>
-                  <div className="justify-content-center text-center mt-3 mb-3">
+                  <div className="justify-content-center text-center mt-2 mt-md-3 mb-md-3">
                     <CardTitle tag="h5" className="text-uppercase">
                       Publications
                     </CardTitle>
-                    <CardText className="mb-4 mx-0 mx-lg-1">
+                    <CardText className="mb-4 mx-lg-1">
                       Our goal with our articles and podcast is to create a
                       platform where scholars past and present can share their
                       experiences, learn something new, and stay connected.
@@ -93,11 +93,11 @@ const Index = () => {
                   <div className="icon icon-shape icon-shape-style3 rounded-circle mb-3">
                     <FontAwesomeIcon icon={faHeart} />
                   </div>
-                  <div className="justify-content-center text-center mt-3 mb-3">
+                  <div className="justify-content-center text-center mt-2 mt-md-3 mb-md-3">
                     <CardTitle tag="h5" className="text-uppercase">
                       Charity Events
                     </CardTitle>
-                    <CardText className="mb-4 mx-0 mx-lg-1">
+                    <CardText className="mb-4 mx-lg-1">
                       The charity portfolio is an integral way for Co-op
                       scholars to give back to the community through events that
                       raise awareness for a diverse range of charities and
