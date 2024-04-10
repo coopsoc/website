@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-common-types": "^6.5.2",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
