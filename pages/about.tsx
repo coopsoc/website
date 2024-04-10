@@ -72,7 +72,7 @@ const About = () => {
           {/*Section 2 Heading*/}
           <Row
             className="justify-content-centre text-center"
-            style={{ "justify-content": "flex-end", marginRight: "260px" }}
+            style={{ justifyContent: "flex-end", marginRight: "260px" }}
           >
             <Col lg="3.9">
               <h1 className="animate__animated animate__zoomIn animate__fast">

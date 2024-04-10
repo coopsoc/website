@@ -1,14 +1,14 @@
 // Event images
-import sixKForWater from "../public/img/charity/6k-for-water.jpg";
-import bloodDrive from "../public/img/charity/blood-drive.jpg";
-import caseComp from "../public/img/charity/case-comp.jpg";
-import greatestShave from "../public/img/charity/greatest-shave.jpg";
-import hscWorkshop from "../public/img/charity/hsc-workshops.jpg";
-import pokerNight from "../public/img/charity/poker.jpg";
-import caseComp2021 from "../public/img/charity/case-comp2021.png";
-import funRun from "../public/img/charity/funRun.jpg";
-import charitycasecomp from "../public/img/charity/charitycasecop.jpg";
-import funRun22 from "../public/img/charity/funrun2022.jpg";
+import sixKForWater from "public/img/charity/6k-for-water.jpg";
+import bloodDrive from "public/img/charity/blood-drive.jpg";
+import caseComp from "public/img/charity/case-comp.jpg";
+import greatestShave from "public/img/charity/greatest-shave.jpg";
+import hscWorkshop from "public/img/charity/hsc-workshops.jpg";
+import pokerNight from "public/img/charity/poker.jpg";
+import caseComp2021 from "public/img/charity/case-comp2021.png";
+import funRun from "public/img/charity/funRun.jpg";
+import charitycasecomp from "public/img/charity/charitycasecop.jpg";
+import funRun22 from "public/img/charity/funrun2022.jpg";
 
 // Sponsor charity images
 import ILF from "public/img/charity/logos/ilf.png";
@@ -21,7 +21,7 @@ import WorldVision from "public/img/charity/logos/world_vision.png";
 // Upcoming event images
 import FHF from "public/img/charity/upcoming/40_hour_famine.png";
 import WGS from "public/img/charity/upcoming/worlds_greatest_shave.png";
-import coopLogo from "../public/img/charity/coopLogo.jpg";
+import coopLogo from "public/img/charity/coopLogo.jpg";
 
 const START = 2019;
 const END = 2022;

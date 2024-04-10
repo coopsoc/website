@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Container, Row, Col } from "reactstrap";
 
-import { SPONSORS } from "data/CharityData.js";
+import { SPONSORS } from "data/CharityData";
 
 const CharityList = () => {
   return (

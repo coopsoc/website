@@ -40,9 +40,9 @@ import {
 import Logo from "public/img/brand/logo_white.png";
 import LogoSmall from "public/img/brand/logo_small.png";
 
-import NextNavbarBrand from "./link/NextNavbarBrand.jsx";
-import NextNavLink from "./link/NextNavLink.jsx";
-import NavIcon from "./navigation/NavIcon.jsx";
+import NextNavbarBrand from "./link/NextNavbarBrand";
+import NextNavLink from "./link/NextNavLink";
+import NavIcon from "./navigation/NavIcon";
 
 // Supports both internal and external links, but internal links/redirects are preferred
 const navLinks = [

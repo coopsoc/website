@@ -7,10 +7,10 @@ import "animate.css";
 // reactstrap components
 import { Container, Col, Row } from "reactstrap";
 
-import CharityEvents from "components/charity/CharityEvents.jsx";
-import CharityList from "components/charity/CharityList.jsx";
-import CharityModal from "components/charity/CharityModal.jsx";
-import CharityUpcoming from "components/charity/CharityUpcoming.jsx";
+import CharityEvents from "components/charity/CharityEvents";
+import CharityList from "components/charity/CharityList";
+import CharityModal from "components/charity/CharityModal";
+import CharityUpcoming from "components/charity/CharityUpcoming";
 
 const Charity = () => {
   const [showModal, setShowModal] = useState(false);

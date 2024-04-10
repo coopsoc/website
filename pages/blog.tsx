@@ -6,7 +6,7 @@ import { Row, Col, CardDeck } from "reactstrap";
 // yess let's get those animations
 import "animate.css";
 
-import BlogCard from "components/blog/BlogCard.jsx";
+import BlogCard from "components/blog/BlogCard";
 
 import { partition } from "scripts/list";
 import { getAllArticles } from "scripts/article";

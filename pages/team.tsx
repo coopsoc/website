@@ -22,12 +22,12 @@ import Head from "next/head";
 import { Row, Col } from "reactstrap";
 
 // core components
-import YearSlider from "components/YearSlider.jsx";
+import YearSlider from "components/YearSlider";
 
-import ExecSection from "components/team/ExecSection.jsx";
-import Subcom from "components/team/Subcom.jsx";
+import ExecSection from "components/team/ExecSection";
+import Subcom from "components/team/Subcom";
 
-import { START, END, MEMBERS } from "data/TeamData.js";
+import { START, END, MEMBERS } from "data/TeamData";
 
 // yess let's get those animations
 import "animate.css";

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { Col, Container, Row, TabContent, TabPane } from "reactstrap";
-import { partition } from "scripts/list.js";
+import { partition } from "scripts/list";
 
 const BlogTab = (props) => {
   const NONE = -1;

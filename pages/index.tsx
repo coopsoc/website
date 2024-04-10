@@ -24,7 +24,7 @@ SwiperCore.use([SNavigation, Pagination]);
 // FontAwesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faHeart } from "@fortawesome/free-solid-svg-icons";
-import { niCalendarGrid } from "components/icon/nucleo.js";
+import { niCalendarGrid } from "components/icon/nucleo";
 
 const Index = () => {
   return (

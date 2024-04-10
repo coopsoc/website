@@ -1,7 +1,7 @@
 import React from "react";
 import { Row } from "reactstrap";
 
-import ExecCard from "./ExecCard.jsx";
+import ExecCard from "./ExecCard";
 
 const seededRandom = (s) => {
   let hash = 0;

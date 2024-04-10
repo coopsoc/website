@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Col, Container, Row } from "reactstrap";
 
 import { partition } from "scripts/list";
-import { UPCOMING } from "data/CharityData.js";
+import { UPCOMING } from "data/CharityData";
 
 import useBreakpoints from "./upcoming/useBreakpoints";
 

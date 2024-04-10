@@ -11,7 +11,7 @@ import "animate.css";
 import NomineeCard from "components/nominations/NomineeCard";
 import NomineeModal from "components/nominations/NomineeModal";
 
-import NOMINEES from "data/NominationsData.js";
+import NOMINEES from "data/NominationsData";
 import { useState } from "react";
 
 import styles from "styles/modules/nominations.module.scss";

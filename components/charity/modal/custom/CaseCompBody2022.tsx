@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Row, Col } from "reactstrap";
 
-import CharityBody from "../CharityBody.jsx";
+import CharityBody from "../CharityBody";
 
 import caseCompWinners from "public/img/charity/case-comp2021Winners.jpg";
 
