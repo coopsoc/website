@@ -16,7 +16,7 @@ import { useState } from "react";
 
 import styles from "styles/modules/nominations.module.scss";
 
-const Nominations = () => {
+const Egm = () => {
   const [showModal, setShowModal] = useState(false);
   const [nominee, setNominee] = useState({});
 
@@ -139,12 +139,18 @@ const Nominations = () => {
                   </div>
                 </Container>
               </div>
-
-              <br />
-              <br />
-              <br />
             </>
           ))}
+        </div>
+        <div className="container justify-content-center text-center">
+          <hr />
+          <h1>Constitution Updates</h1>
+          <p style={{ fontWeight: "bold" }}>
+            Proposed updates to the constitution can be seen{" "}
+            <a href="/Constitution_Proposal.pdf">here.</a> Please read and be
+            prepared to vote for/against during the EGM. <br />
+            Note: Changes are highlighted in yellow.
+          </p>
         </div>
       </section>
 
@@ -158,4 +164,4 @@ const Nominations = () => {
   );
 };
 
-export default Nominations;
+export default Egm;
