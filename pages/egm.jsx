@@ -67,7 +67,7 @@ const Egm = () => {
               className="mt-4"
               color="primary"
               target="_blank"
-              href="https://youtube.com/watch?v=dQw4w9WgXcQ"
+              href="https://forms.office.com/r/d6ayhJmHdG"
             >
               Vote Now!
             </Button>
@@ -147,8 +147,11 @@ const Egm = () => {
           <h1>Constitution Updates</h1>
           <p style={{ fontWeight: "bold" }}>
             Proposed updates to the constitution can be seen{" "}
-            <a href="/Constitution_Proposal.pdf">here.</a> Please read and be
-            prepared to vote for/against during the EGM. <br />
+            <a href="/Constitution_Proposal.pdf" target="_blank">
+              here.
+            </a>{" "}
+            Please read and be prepared to vote for/against during the EGM.{" "}
+            <br />
             Note: Changes are highlighted in yellow.
           </p>
         </div>
