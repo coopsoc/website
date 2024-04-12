@@ -147,12 +147,10 @@ const Egm = () => {
           <h1>Constitution Updates</h1>
           <p style={{ fontWeight: "bold" }}>
             Proposed updates to the constitution can be seen{" "}
-            <a href="/Constitution_Proposal.pdf" target="_blank">
+            <a href="https://www.diffchecker.com/jsVX0b3N/" target="_blank">
               here.
             </a>{" "}
             Please read and be prepared to vote for/against during the EGM.{" "}
-            <br />
-            Note: Changes are highlighted in yellow.
           </p>
         </div>
       </section>
