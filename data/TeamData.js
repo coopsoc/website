@@ -64,18 +64,19 @@ import Doris_Image_2023 from "public/img/exec/2023/Doris.jpeg";
 import MattL_Image from "public/img/exec/2023/MattL.jpeg";
 
 // 2024 Team Images
-import Alex_Image from "public/img/exec/2024/Alex.jpg";
+import Mariam_Image from "public/img/exec/2024/Mariam.jpg";
 import Sam_Image from "public/img/exec/2024/Sam.jpg";
-import Sebastian_Image from "public/img/exec/2024/Sebastian.png";
-import Doris_Image_2024 from "public/img/exec/2024/Doris.jpg";
+import Shreya_Image from "public/img/exec/2024/Shreya.jpg";
+import Tyrone_Image from "public/img/exec/2024/Tyrone.png";
 import Arya_Image from "public/img/exec/2024/Arya.jpg";
-import Anna_Image from "public/img/exec/2024/Anna.jpg";
-import Kiran_Image from "public/img/exec/2024/Kiran.jpeg";
+import Prapann_Image from "public/img/exec/2024/Prapann.png";
+import Karen_Image from "public/img/exec/2024/Karen.jpeg";
+import Meera_Image from "public/img/exec/2024/Meera.jpg";
+import Vicky_Image from "public/img/exec/2024/Vicky.png";
 import Sienna_Image from "public/img/exec/2024/Sienna.png";
 import Dinara_Image from "public/img/exec/2024/Dinara.jpg";
 import Inika_Image from "public/img/exec/2024/Inika.jpg";
-import Kelly_Image from "public/img/exec/2024/Kelly.jpg";
-import Maggie_Image from "public/img/exec/2024/Maggie.jpg";
+//import Jaime_Image from "public/img/exec/2024/Jaime.jpeg";
 import Imogen_Image from "public/img/exec/2024/Imogen.png";
 import Lucas_Image from "public/img/exec/2024/Lucas.jpg";
 import Nicholas_Image from "public/img/exec/2024/Nicholas.png";
@@ -712,9 +713,9 @@ const MEMBERS = [
         members: [
           [
             {
-              image: Alex_Image,
+              image: Mariam_Image,
               description: ``,
-              name: "Alexander Lee",
+              name: "Mariam Youssef",
               role: "Co-President",
             },
             {
@@ -724,29 +725,38 @@ const MEMBERS = [
               role: "Co-President",
             },
             {
-              image: Sebastian_Image,
+              image: Shreya_Image,
               description: ``,
-              name: "Sebastian Pelayo",
+              name: "Shreya Mukherjee",
               role: "Arc Delegate",
             },
           ],
           [
             {
-              image: Doris_Image_2024,
+              image: Tyrone_Image,
               description: ``,
-              name: "Doris Yang",
+              name: "Tyrone Lui",
               role: "HR / Grievance Officer",
             },
+            {
+              image: Vicky_Image,
+              description: ``,
+              name: "Vicky Chen",
+              role: "HR",
+            },
+
             {
               image: Arya_Image,
               description: ``,
               name: "Arya Ahluwalia",
               role: "Secretary",
             },
+          ],
+          [
             {
-              image: Anna_Image,
+              image: Prapann_Image,
               description: ``,
-              name: "Anna Tokarev",
+              name: "Prapann Malavia",
               role: "Treasurer",
             },
           ],
@@ -783,15 +793,15 @@ const MEMBERS = [
               role: "IT (Project Management)",
             },
             {
-              image: Kelly_Image,
+              image: Karen_Image,
               description: ``,
-              name: "Kelly Nguyen",
+              name: "Karen Lau",
               role: "Marketing",
             },
             {
-              image: Maggie_Image,
+              image: Meera_Image,
               description: ``,
-              name: "Maggie Lam",
+              name: "Meera Gandhi",
               role: "Marketing",
             },
           ],
@@ -803,9 +813,9 @@ const MEMBERS = [
               role: "Publications",
             },
             {
-              image: Kiran_Image,
+              image: Mariam_Image,
               description: ``,
-              name: "Kiran Singh",
+              name: "Jaime Pitcher",
               role: "Socials",
             },
             {
