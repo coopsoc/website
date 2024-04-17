@@ -70,6 +70,7 @@ import Shreya_Image from "public/img/exec/2024/Shreya.jpg";
 import Tyrone_Image from "public/img/exec/2024/Tyrone.png";
 import Arya_Image from "public/img/exec/2024/Arya.jpg";
 import Prapann_Image from "public/img/exec/2024/Prapann.png";
+import Tony_Image from "public/img/exec/2024/Tony.jpeg";
 import Karen_Image from "public/img/exec/2024/Karen.jpeg";
 import Meera_Image from "public/img/exec/2024/Meera.jpg";
 import Vicky_Image from "public/img/exec/2024/Vicky.png";
@@ -833,7 +834,7 @@ const MEMBERS = [
           [
             //Get Tony's Pic
             {
-              image: Mariam_Image,
+              image: Tony_Image,
               description: ``,
               name: "Tony Wang",
               role: "",
