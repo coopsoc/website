@@ -739,12 +739,6 @@ const MEMBERS = [
               name: "Tyrone Lui",
               role: "HR / Grievance Officer",
             },
-            {
-              image: Vicky_Image,
-              description: ``,
-              name: "Vicky Chen",
-              role: "HR",
-            },
 
             {
               image: Arya_Image,
@@ -752,8 +746,7 @@ const MEMBERS = [
               name: "Arya Ahluwalia",
               role: "Secretary",
             },
-          ],
-          [
+
             {
               image: Prapann_Image,
               description: ``,
@@ -768,6 +761,12 @@ const MEMBERS = [
         members: [
           [
             {
+              image: Vicky_Image,
+              description: ``,
+              name: "Vicky Chen",
+              role: "HR",
+            },
+            {
               image: Dinara_Image,
               description: ``,
               name: "Dinara Jayarathna",
@@ -779,14 +778,14 @@ const MEMBERS = [
               name: "Inika Weber",
               role: "Charities",
             },
+          ],
+          [
             {
               image: Lucas_Image,
               description: ``,
               name: "Lucas Harvey",
               role: "IT (Technical)",
             },
-          ],
-          [
             {
               image: Nicholas_Image,
               description: ``,
@@ -799,14 +798,14 @@ const MEMBERS = [
               name: "Karen Lau",
               role: "Marketing",
             },
+          ],
+          [
             {
               image: Meera_Image,
               description: ``,
               name: "Meera Gandhi",
               role: "Marketing",
             },
-          ],
-          [
             {
               image: Imogen_Image,
               description: ``,
@@ -819,6 +818,8 @@ const MEMBERS = [
               name: "Jaime Pitcher",
               role: "Socials",
             },
+          ],
+          [
             {
               image: Sienna_Image,
               description: ``,
