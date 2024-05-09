@@ -898,7 +898,7 @@ const MEMBERS = [
         icons: [faEdit],
         name: "Publications",
         description: `The Publications portfolio is responsible for continuing to grow the society's online presence and keeping scholars up to date, focusing on the blog posts for the Co-op Soc website and the Chicken Coop podcast.`,
-        members: ["Jamie Hilliam", "Jack Preller"],
+        members: ["Jamie Hilliam", "Jack Preller", "Declan Gormley"],
       },
       {
         icons: [faUserFriends],
