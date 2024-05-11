@@ -1,72 +1,90 @@
-// TODO: For 2025 nominations, add images to "public/img/nominee/name.jpg"
-import Alex_Image from "public/img/exec/2024/Alex.jpg";
-import Amal_Image from "public/img/exec/2024/Amal.jpg";
-import Anna_Image from "public/img/exec/2024/Anna.jpg";
+import Aiden_Image from "public/img/nominee/Aiden.png";
+import Alex_Image from "public/img/nominee/Alex.jpeg";
+import Angellinah_Image from "public/img/nominee/Angellinah.png";
 import Arya_Image from "public/img/exec/2024/Arya.jpg";
-import Dinara_Image from "public/img/exec/2024/Dinara.jpg";
-import Doris_Image from "public/img/exec/2024/Doris.jpg";
-import Franklin_Image from "public/img/exec/2024/Franklin.png";
-import Imogen_Image from "public/img/exec/2024/Imogen.png";
-import Inika_Image from "public/img/exec/2024/Inika.jpg";
-import Kelly_Image from "public/img/exec/2024/Kelly.jpg";
-import Kiran_Image from "public/img/exec/2024/Kiran.jpeg";
-import Lucas_Image from "public/img/exec/2024/Lucas.jpg";
-import Maggie_Image from "public/img/exec/2024/Maggie.jpg";
-import Matthew_Image from "public/img/exec/2024/Matthew.jpg";
-import Nicholas_Image from "public/img/exec/2024/Nicholas.png";
-import Peter_Image from "public/img/exec/2024/Peter.png";
-import Sam_Image from "public/img/exec/2024/Sam.jpg";
-import Sebastian_Image from "public/img/exec/2024/Sebastian.png";
-import Sienna_Image from "public/img/exec/2024/Sienna.png";
+import Athen_Image from "public/img/nominee/Athen.jpg";
+import Karen_Image from "public/img/nominee/Karen.jpeg";
+import Mariam_Image from "public/img/nominee/Mariam.jpg";
+import MatthewL_Image from "public/img/nominee/MatthewL.jpg";
+import MatthewM_Image from "public/img/nominee/MatthewM.jpeg";
+import Meckenzie_Image from "public/img/nominee/Meckenzie.png";
+import Meera_Image from "public/img/nominee/Meera.jpg";
+import Peter_Image from "public/img/nominee/Peter.jpeg";
+import Prapann_Image from "public/img/nominee/Prapann.png";
+import Sania_Image from "public/img/nominee/Sania.png";
+import Shreya_Image from "public/img/nominee/Shreya.jpg";
+import Tony_Image from "public/img/nominee/Tony.jpeg";
+import Tyrone_Image from "public/img/nominee/Tyrone.png";
+import Vicky_Image from "public/img/nominee/Vicky.png";
 
 const NOMINEES = [
   {
     role: "Co-President",
     nominees: [
       {
-        name: "Samuel Katz",
-        image: Sam_Image,
+        name: "Arya Ahluwalia",
+        image: Arya_Image,
         preference: 1,
-        description:
-          "Hellloooooo fellow Co-ops! I would like to think that I know almost all of you by now, but for those I somehow haven't had the pleasure of meeting, I'm Sam. When first joining Co-op Society, on that very first camp, I went in with no expectations and close to no friends at UNSW. However, by the bus ride there that had all changed, meeting wonderful people who are now close friends and finding a passion for the society. It is this combination of passion for the friends I've met and the opportunity to facilitate this same experience for next years co-ops that has lead me to run for the position of Co-president. I am prepared to put in the time and commitment that this task requires, understanding that this is not just an item for a resume but a genuine commitment to the society. At the end of the day I would love to be a part of this thriving society filled with some of the most amazing people I know :)) Your consideration would be much apricated! 🌱🌱",
+        description: `Having already taken on co-president duties in the last few weeks, I have the best understanding of this role and its responsibilities. My familiarity with the current executives and board of directors will enable the smoothest of transitions so our new team members, including the subcommittee, have the resources and support they need to push Co-op Society to new heights this year.
+
+My work ethic is unparalleled, I am reliable and have a keen eye for detail - crucial skills for a co-pres. I produce tangible results, having played a major role in organising last year’s exec roadtrip and first year camp earlier this year.
+
+While I would love to see first years take on executive and director positions, I do believe the role of Co-President requires a degree of experience, which I possess as I have held 5 different positions in 3 different societies in the past year.
+
+My vision for Co-opSoc is to get back on track with fun events to make the Co-op community tighter than ever before!`,
+      },
+      {
+        name: "Tony Wang",
+        image: Tony_Image,
+        preference: 1,
+        description: `Hello everyone! I’m running for Co-president as I believe our society needs a capable leader at the head, someone who will maintain the consistent organisation of events, and who will gather fellow co-ops together. I believe I hold these key qualities. As it stands, we have had no events to date since the camp, and I am passionate about changing this status quo. Despite being a first year, I am dedicated to this society’s mission of bringing co-ops together, and am excited to take on the responsibilities that this role entails.
+
+I am also applying for Arc Delegate as it is a position which I believe can help to liven up the society. As an intermediary with Arc I hope to be able to work closely with the other executives and Arc, to organise amazing events for our co-ops. A motion under this position I hope to put forth, is to get sponsors for our society.
+
+I hope that I am able to represent you all, although this time in an executive position, and work towards building a greater student culture.`,
       },
       {
         name: "Matthew Lim",
-        image: Matthew_Image,
+        image: MatthewL_Image,
         preference: 1,
-        description:
-          "COOPSoc has been the highlight of my university journey. It is a community I feel like I belong to, one where I've forged friendships that will last a lifetime. I'm grateful to have crossed paths with each one of you. It has been a privilege to work for such extraordinary people, & I hope to enrich the experience of all COOPs in 24` as co-president. My mission is to empower directors & subcom to fulfil their personal visions in order to contribute to the greater vision of the society. I’ll fulfil this by actively handling administrative, higher-level descisions, & serving as a reliable source of help. Handling these responsibilities & associated stress will help our team deliver meaningful, high-quality events. I'm well-prepared for this due to my current role on the COOPSoc exec team, where I've gained expertise in the systems & frameworks that facilitate the society’s operation. Ultimately, I hope to see COOPSoc as welcoming second home for both current & new scholars. Ty guys <3",
+        description: `Dear lovely Co-ops of COOPSoc,
+
+The COOP community is an integral part of being a COOP, and to many people, it's comparable to value of the program itself! I hope to give COOPSoc the attention that it needs and deserves, and through COOPSoc, I hope to enrich your experiences as COOPs so that university becomes the highlight of your life!
+
+My journey with COOPSoc began as a first-year representative. Working alongside the incredibly swag Doris, I witnessed the 2023 exec team work their roles to perfection. 
+This year, as the Technical Vice President at CSESoc, I’ve been privy to the inner workings of a large society, learning how to maintain quality and consistency. These roles have not only prepared me for the logistical challenges of leadership but have also instilled in me a profound appreciation for the dynamics of a smaller, close-knit community like COOPSoc.
+
+My vision for COOPSoc in 2024 is twofold: to amplify the fun, memorable experiences that epitomise the complete university journey, and to enhance our society's professional standing.
+
+My primary vision is to deliver fun experiences with a quality that parallels that of the best societies - only enhanced by the presence of you legends. That is, I hope to run accessible and fun events that bring people together and help form lifelong memories!
+
+Some events I want to see the most:
+COOPSoc Christmas In July Meriton (with Secret Santa) (😂) + Halloween party in October (costume party type beat) (😂).
+COOPSoc Pubcrawl (Soda Factory to Scary Canary to 80 Proof to WAO) (😂).
+COOPSoc Vivid (😊).
+COOPSoc Paint and Sip (😍).
+
+An auxiliary vision of mine is to improve COOPSoc’s professional standing to make COOPSocs importance as a society concrete, and (stretch goal!) potentially increase COOPSoc’s funding from the COOP Office. 
+As you may or may not know, due to our affiliation with official COOP sponsors, COOPSoc is not able to obtain sponsors. 
+Therefore, it should be in COOPSoc’s best interest to cement our social and professional value! Not only so that we can uphold the legacy of COOPSoc and encourage following years to do the same, but also so that we can beg the COOP office for more money!
+
+Some initiatives in this regard include:
+COOPSoc Investing and Personal Finance Workshop (so you can hit 6 fig NW asap).
+Reviving COOPSoc Linkedin. 
+Making COOPSoc Marketing more concrete (Proper pictures of events, more active in general). 
+COOPSoc Interyear networking event, including COOPs who have already graduated (Potential collaboration with the COOP office). 
+
+Let's work together to restore COOPSoc to it's former glory, and help it find new heights!
+
+All the best everyone!
+
+MATT - FROM THE VERY SWAG COHORT CMP23 🦈🦈🦈`,
       },
       {
-        name: "Doris Yang",
-        image: Doris_Image,
+        name: "Mariam Youssef",
+        image: Mariam_Image,
         preference: 1,
-        description: `
-(T)rust,
-(O)pen-mindedness,
-(W)ork-hard,
-(E)mpathy,
-(R)espect,
-(I)nitiative,
-(N)ever-give up,
-(G)roup dynamic 
-
-(I)nitialize,
-(N)ote previous learning,
-(F)ollowers,
-(E)xploration,
-(R)esource analysis,
-(N)ew plan,
-(O)peration,
-(D)ebrief!
-
-(Acrostic poem credits to red team on camp1) `,
-      },
-      {
-        name: "Alexander Lee",
-        image: Alex_Image,
-        preference: 1,
-        description: `One of the best parts of my first year so far has been CoopSoc. Without this society, I wouldn't have met many of the people I consider my best friends. Activities ranging from camp to pub crawl, we run some great events that help bring all of us closer. I am running for co-president as I'd like  to make sure that CoopSoc continues to thrive as an inclusive community for all co-ops, but especially first years. I would like to be able to help not just new, but existing co-ops get more comfortable and involved with the society, and I feel as though being co-president would be one of the best ways to do so.`,
+        description: `Running for co-president for the co-op society would be a great fit for me as I believe that my vibrant and enthusiastic personality, along with my passion for this society would lead me to be a leader who not only is open minded but also be a voice for the people, ensuring that it will be a society that we are all proud to be apart of. I believe that my collaboration and commitment towards the society as co-president will make such a significant impact that brings our society closer together and work as a team in order to make life-long memories. I also believe that my social skills will allow me to connect with other societies in order to branch out and make co-op an even bigger and better society. Not only this, but I believe that making connections and relationships with one another is extremely important, and as co-president, I strongly believe that I will be someone who people can talk and share their opinions. I am extremely passionate on improving the society and I know that I will be fully committed and ensure that I'll foster a community that is dynamic and enjoyable.`,
       },
     ],
   },
@@ -74,49 +92,41 @@ const NOMINEES = [
     role: "Secretary",
     nominees: [
       {
-        name: "Amal Khan",
-        image: Amal_Image,
+        name: "Matthew Lim",
+        image: MatthewL_Image,
         preference: 2,
-        description: `Picture this: a data science student with an interest in design and a hidden talent for creating engaging TikToks – that's me! Currently, I'm a part of the Coop-soc marketing subcommittee, which is like being the marketing director's trusty sidekick. I've got my foot in the door and no doubt I can rise to the challenge. 
-And, here's the scoop: I'm not just your average marketing aficionado. I come equipped with a supercharged blend of marketing ninja skills and a creative flair.`,
-      },
-      {
-        name: "Peter Haraldur Hamar Osborne",
-        image: Peter_Image,
-        preference: 2,
-        description: `As we gear up for the marvellous year of 2024, I'm not just running for Treasurer 📈; I’m offering you a vision of financial leadership 💸💸💸 that will elevate the UNSW Co-Op Society to new heights. Picture a year where our financial affairs are not just managed but masterfully orchestrated 😎, where every dollar 💰 spent is an investment in the future of our society. 
+        description: `Dear lovely Co-ops of COOPSoc,
 
-Although objectively 'huge' 📢, it is my belief that this year could have contained even more remarkable events and opportunities for our members. As Treasurer, I intend to be a catalyst for change, seeking out partnerships 🤝 and sponsorships 💼 to cultivate workshops, career development meetings, networking, cultural celebrations and the sneakiest of social events ⚰️ 🚶.`,
-      },
-      {
-        name: "Nicholas Langford",
-        image: Nicholas_Image,
-        preference: 2,
-        description: `Hi! I'm Nick - a first year comp co-op scholar. I've been part of the 2023 IT Subcommittee, and keen to continue contributing in 2024. I also lab assist COMP1511/COMP1521. I'm running alongside Lucas - together, we hope to improve Coop Soc's IT systems.
+The COOP community is an integral part of being a COOP, and to many people, it's comparable to value of the program itself! I hope to give COOPSoc the attention that it needs and deserves, and through COOPSoc, I hope to enrich your experiences as COOPs so that university becomes the highlight of your life!
 
-Specifically, I want to update the website to make it relevant to current students, starting with updating the publications page, which is 3 years out of date. I'll work with the Pubs Director to develop more content for the website, like an improved 1st yr guide, more educational articles etc. Also, the Coop newsletter is currently email-only, causing it to get lost in the sea of admin. There's a simple fix - host the articles on the Co-op website!
+My journey with COOPSoc began as a first-year representative. Working alongside the incredibly swag Doris, I witnessed the 2023 exec team work their roles to perfection. 
+This year, as the Technical Vice President at CSESoc, I’ve been privy to the inner workings of a large society, learning how to maintain quality and consistency. These roles have not only prepared me for the logistical challenges of leadership but have also instilled in me a profound appreciation for the dynamics of a smaller, close-knit community like COOPSoc.
 
-I'll also work with Lucas to reduce bugs in the merch system. We've worked with it over the past year, so know the issues and how to fix them. For example, fixing discount codes so they're consistently applied. Check out more of my ideas here: https://github.com/coopsoc/coopsoc.com.au/issues/created_by/scorpiontornado. I have suggestions for new projects too, like a tool for meeting people on campus.
+My vision for COOPSoc in 2024 is twofold: to amplify the fun, memorable experiences that epitomise the complete university journey, and to enhance our society's professional standing.
 
-My big-picture vision is suited to an IT Project Manager role, which would compliment Lucas' Technical Director role. Also, my democratic leadership style suits an intelligent group like coop, and would free up the cognitive load of the Technical Director - allowing them to make better-informed decisions surrounding IT technologies.
+My primary vision is to deliver fun experiences with a quality that parallels that of the best societies - only enhanced by the presence of you legends. That is, I hope to run accessible and fun events that bring people together and help form lifelong memories!
 
-With your vote, I will make these ideas a reality! Thank you :)`,
-      },
-      {
-        name: "Arya Ahluwalia",
-        image: Arya_Image,
-        preference: 1,
-        description: `Basically, I’m an absolute weapon behind the scenes. Formally though:
+Some events I want to see the most:
+COOPSoc Christmas In July Meriton (with Secret Santa) (😂) + Halloween party in October (costume party type beat) (😂).
+COOPSoc Pubcrawl (Soda Factory to Scary Canary to 80 Proof to WAO) (😂).
+COOPSoc Vivid (😊).
+COOPSoc Paint and Sip (😍).
 
-I am running for the positions of Secretary and Arc Delegate because I believe in the value of effective organisation and communication within our society. Having had the privilege of working under this year’s Secretary and Arc Delegate as their subcom, I recognise the pivotal role these positions play in the smooth functioning of our society and see my strengths aligning with their responsibilities. Over this year, I have picked up valuable experience in completing Arc Forms for event grants (to get our society more money!!) and room bookings, as well as helping organise 2 roadtrips (one each for DataSoc and Co-OpSoc). These skills transfer directly into the Exec roles I am applying for.`,
-      },
-      {
-        name: "Franklin Ruan",
-        image: Franklin_Image,
-        preference: 1,
-        description: `Hey I'm Franklin and I'm one of the new SEN Co-ops in your cohort :D. 
-I won't say that I'm perfect or I have the cure for cancer or that I can quadruple our scholarship payments (maybe 10% more though👀) but I will try my very best to make Co-op Soc the best it can be for the upcoming co-ops. 
-I look forward to seeing you all if I haven't already :D. Also I'll buy you a cookie if you vote me in 🍪.`,
+An auxiliary vision of mine is to improve COOPSoc’s professional standing to make COOPSocs importance as a society concrete, and (stretch goal!) potentially increase COOPSoc’s funding from the COOP Office. 
+As you may or may not know, due to our affiliation with official COOP sponsors, COOPSoc is not able to obtain sponsors. 
+Therefore, it should be in COOPSoc’s best interest to cement our social and professional value! Not only so that we can uphold the legacy of COOPSoc and encourage following years to do the same, but also so that we can beg the COOP office for more money!
+
+Some initiatives in this regard include:
+COOPSoc Investing and Personal Finance Workshop (so you can hit 6 fig NW asap).
+Reviving COOPSoc Linkedin. 
+Making COOPSoc Marketing more concrete (Proper pictures of events, more active in general). 
+COOPSoc Interyear networking event, including COOPs who have already graduated (Potential collaboration with the COOP office). 
+
+Let's work together to restore COOPSoc to it's former glory, and help it find new heights!
+
+All the best everyone!
+
+MATT - FROM THE VERY SWAG COHORT CMP23 🦈🦈🦈`,
       },
     ],
   },
@@ -124,33 +134,41 @@ I look forward to seeing you all if I haven't already :D. Also I'll buy you a co
     role: "Treasurer",
     nominees: [
       {
-        name: "Peter Haraldur Hamar Osborne",
+        name: "Peter Osborne",
         image: Peter_Image,
         preference: 1,
-        description: `As we gear up for the marvellous year of 2024, I'm not just running for Treasurer 📈; I’m offering you a vision of financial leadership 💸💸💸 that will elevate the UNSW Co-Op Society to new heights. Picture a year where our financial affairs are not just managed but masterfully orchestrated 😎, where every dollar 💰 spent is an investment in the future of our society. 
+        description: `Hello! My name is Peter, I am a second year studying software engineering (WOOOO) and I would love to continue in Anna’s 😎 glory and be your 2024 Treasurer! As we step into April having smashed camp, I am filled with enthusiasm to contribute to this fantastic community.
 
-Although objectively 'huge' 📢, it is my belief that this year could have contained even more remarkable events and opportunities for our members. As Treasurer, I intend to be a catalyst for change, seeking out partnerships 🤝 and sponsorships 💼 to cultivate workshops, career development meetings, networking, cultural celebrations and the sneakiest of social events ⚰️ 🚶.`,
+I believe in injecting a dose of fun and creativity into our financial planning, ensuring that every dollar spent contributes to enhancing your experience. I am currently a director for UNSW Dev-Soc and was our Administrative Officer in 2023, allowing me plenty of experience in running a busy team and executing on society wide events! 
+
+To get into the numbers, as a certified Excel expert 🥸 (had to be said), I am very well equipped with the skills to effectively manage our finances. To compliment this, I am currently developing a personal finance start-up and have saved 6 friends and family from financial ruins with google sheets 📈📈. 
+
+Above all, I am incredibly excited about the opportunity to contribute to the continued success and growth of our society. I have made some very cool, life long friends and would to enable you to do the same!`,
       },
       {
-        name: "Anna Tokarev",
-        image: Anna_Image,
+        name: "Matthew Morris",
+        image: MatthewM_Image,
         preference: 1,
-        description: `Being part of Co-op soc has been an amazing experience. From the very beginning, I felt at home and welcomed, and I am so grateful for the opportunity it has given me to meet incredible people and make lifelong friends. 
-
-One of the ways that I've gotten to know people is through the Co-op soc events throughout the year, whether it be camp, beach day or a barbecue. I want to play my role in making these events happen and that's why I'm applying for Treasurer. 
-
-I'll make sure that we're always in positive cash flow and 'excel' in getting a high IRR. I'll debit the co-op soc fun and credit dividends payable because you guys invest your time and are paid with amazing memories. 
-
-I am a Doris and Alex certified accountant who will make sure we adhere to all standards (while sneaking some extra money from Arc). What more can I say?
-
-On a serious note, it's been a pleasure to be a part of this society and I would be very excited to be involved in its executive in 2024.`,
+        description: `If you want to become a great chef, you have to work with great chefs. ...
+I don't like looking back. ...
+Cooking is about passion, so it may look slightly temperamental in a way that it's too assertive to the naked eye. ...
+Yes chef`,
       },
       {
-        name: "Samuel Katz",
-        image: Sam_Image,
-        preference: 2,
-        description:
-          "As a second preference I am also running for Treasurer. In this capacity I can continue to help allocate the society's finances to maintain a stable resource for current and all future year events, ensuring that we can host memorable gatherings and create lasting memories. At the end of the day I would love to be a part of this thriving society filled with some of the most amazing people I know :)) Your consideration would be much apricated! 🌱🌱",
+        name: "Sania Kulkarni",
+        image: Sania_Image,
+        preference: 1,
+        description: `ATTENTION CO-OPS - do you want someone who can manage money effectively, to maximise the amount of free things YOU can get during Co-op events?? If you answered yes, VOTE FOR ME (SANIA) for Co-op Treasurer for 2024. Although I am a marketing scholar, my talents extend from the field of marketing, making me more than capable of managing money well (although this is not evidenced through my personal financial state). 
+
+Two things that matter to me are 1) 2024 Co-ops are a super close-knit community and 2) We have incredible, memorable events. How will we achieve these goals? By electing me as Treasurer, I will organise more funding into the events that YOU really want and will enjoy, including but not limited to, more ice skating and pub crawls. 
+
+In summary, if you are interested in being part of FUN CO-OP EVENTS that receive maximum funding (reducing the amount YOU have to pay out of pocket), vote for SANIA KULKARNI for Co-op Treasurer.`,
+      },
+      {
+        name: "Prapann Malavia",
+        image: Prapann_Image,
+        preference: 1,
+        description: `Hey everyone! I'm running for treasurer and am looking forward to helping guide the society through the foreseeable future. I'd love to have a role where I can help secure more funding for co-op events, with the aim of getting more people involved in the society. I've always had a strong mathematical inclination, and would love to deliver larger events to you guys where we don't have to worry about the budget, and I believe I can accomplish this by negotiating with Arc! With more funding and a larger budget we can enjoy our events and bond with eachother more often, which everyone would enjoy! Thanks for your consideration and I appreciate your support :)`,
       },
     ],
   },
@@ -158,189 +176,173 @@ On a serious note, it's been a pleasure to be a part of this society and I would
     role: "Arc Delegate",
     nominees: [
       {
-        name: "Doris Yang",
-        image: Doris_Image,
+        name: "Tony Wang",
+        image: Tony_Image,
         preference: 2,
-        description: `(T)rust,
-(O)pen-mindedness,
-(W)ork-hard,
-(E)mpathy,
-(R)espect,
-(I)nitiative,
-(N)ever-give up,
-(G)roup dynamic 
+        description: `Hello everyone! I’m running for Co-president as I believe our society needs a capable leader at the head, someone who will maintain the consistent organisation of events, and who will gather fellow co-ops together. I believe I hold these key qualities. As it stands, we have had no events to date since the camp, and I am passionate about changing this status quo. Despite being a first year, I am dedicated to this society’s mission of bringing co-ops together, and am excited to take on the responsibilities that this role entails.
 
-(I)nitialize,
-(N)ote previous learning,
-(F)ollowers,
-(E)xploration,
-(R)esource analysis,
-(N)ew plan,
-(O)peration,
-(D)ebrief!
+I am also applying for Arc Delegate as it is a position which I believe can help to liven up the society. As an intermediary with Arc I hope to be able to work closely with the other executives and Arc, to organise amazing events for our co-ops. A motion under this position I hope to put forth, is to get sponsors for our society.
 
-(Acrostic poem credits to red team on camp1)`,
+I hope that I am able to represent you all, although this time in an executive position, and work towards building a greater student culture.`,
       },
       {
-        name: "Sebastian Pelayo",
-        image: Sebastian_Image,
+        name: "Shreya Mukherjee",
+        image: Shreya_Image,
         preference: 1,
-        description: `Doris asked me to do it`,
+        description: `HEYA! I would love to be Arc Delegate to co-ordinate with Arc and ensure our events are run successfully!! I love co-ordinating and running events, and as Arc Delegate, I would love to organise and finalise all the details from finalising forms to booking necessary spaces!!! I would love Co-op Soc to be a space for everyone to bond and connect, and by being your Arc Delegate, I would ensure events and meetings are continuously created to ensure great vibes! Thanks guys!!!`,
       },
       {
-        name: "Arya Ahluwalia",
-        image: Arya_Image,
+        name: "Athen Wilson",
+        image: Athen_Image,
         preference: 2,
-        description: `Basically, I’m an absolute weapon behind the scenes. Formally though:
-
-I am running for the positions of Secretary and Arc Delegate because I believe in the value of effective organisation and communication within our society. Having had the privilege of working under this year’s Secretary and Arc Delegate as their subcom, I recognise the pivotal role these positions play in the smooth functioning of our society and see my strengths aligning with their responsibilities. Over this year, I have picked up valuable experience in completing Arc Forms for event grants (to get our society more money!!) and room bookings, as well as helping organise 2 roadtrips (one each for DataSoc and Co-OpSoc). These skills transfer directly into the Exec roles I am applying for.`,
-      },
-      {
-        name: "Franklin Ruan",
-        image: Franklin_Image,
-        preference: 2,
-        description: `Hey I'm Franklin and I'm one of the new SEN Co-ops in your cohort :D. 
-I won't say that I'm perfect or I have the cure for cancer or that I can quadruple our scholarship payments (maybe 10% more though👀) but I will try my very best to make Co-op Soc the best it can be for the upcoming co-ops. 
-I look forward to seeing you all if I haven't already :D. Also I'll buy you a cookie if you vote me in 🍪.`,
+        description: `Had the chance to meet most of the people in co-op during camp and I enjoyed the moments we shared, whilst keeping in mind the many years and moments to come. I see marketing director as a great way to be more involved in the making of those moments, as.I work behind the scenes to bring those in co-op closer together.`,
       },
     ],
   },
   {
-    role: "Social Director",
+    role: "HR & Grievance Officer",
     nominees: [
       {
-        name: "Sienna Strauss",
-        image: Sienna_Image,
+        name: "Tyrone Lui",
+        image: Tyrone_Image,
         preference: 1,
-        description: `I am running for the position of Socials Director because I am passionate about fostering a vibrant and inclusive social community within our co-op society. With a soft-spot for event planning and a genuine love for connecting people, I am committed to creating memorable and enjoyable experiences for all members.
-As Socials Director, I aim to enhance our Co-op Soc's social calendar with a diverse range of events that cater to all interests and backgrounds. From themed parties to skill-building workshops, I envision a year filled with exciting and meaningful experiences for our members.
-
-Furthermore, I am dedicated to promoting inclusivity and diversity in our events. I will work tirelessly to ensure that everyone's voice is heard, and their preferences considered when planning activities. By creating a welcoming and inclusive atmosphere, I believe we can strengthen our sense of community and enrich the Co-op experience for all.
-
-With my organizational skills, creativity, and dedication, I am confident in my ability to execute this vision effectively. Together, we can create a lively and connected co-op community that enhances our overall living experience. I am excited to have the opportunity to serve as your Socials Director and make a positive impact on our co-op's social life.`,
+        description: `As an extroverted individual deeply committed to the success of our Co-op Society, I'm eager to step up from my current role within the Human Resources Subcommittee to take on a larger responsibility as HR Director / Grievance Officer. I strongly believe that I will be able to forge meaningful connections and ensuring ensure communication within not only the subcommittee but the broader society. Despite being a first-year member, I'm enthusiastic about the opportunity to learn and grow within a more significant role. I believe that my proactive approach and dedication to teamwork make me well-suited to handle the challenges and responsibilities that come with this position. One of my primary goals is to bring Co-op Society back to its former glory and create an inclusive environment where everyone feels welcome and valued. I want to create a culture where members not only work together towards common goals but also enjoy each other's company a ands fellow Co-ops have fun in the process. I am confident in my ability to help steer the society towards continued success, so please consider me for your vote.`,
       },
       {
-        name: "Kiran Singh",
-        image: Kiran_Image,
+        name: "Matthew Morris",
+        image: MatthewM_Image,
+        preference: 2,
+        description: `If you want to become a great chef, you have to work with great chefs. ...
+I don't like looking back. ...
+Cooking is about passion, so it may look slightly temperamental in a way that it's too assertive to the naked eye. ...
+Yes chef`,
+      },
+      {
+        name: "Aiden Ahmad",
+        image: Aiden_Image,
         preference: 1,
-        description: `I’m just looking to organise some events so that everyone can have fun and let loose.`,
+        description: `It would be fun`,
+      },
+      {
+        name: "Karen Lau",
+        image: Karen_Image,
+        preference: 2,
+        description: `Hey, I’m Karen! A marketing co-op, marketing subcomm and hopefully your next coop marketing director! I love marketing, particularly through social media, running my own food blog on Instagram & Tiktok (@idk_justeat which has 6k+ followers), so I can ensure you will get entertaining yet aesthetic content on the co-op society’s socials and maybe even some free food if you vote for me 😉 I’m also very organised, familiar with the software (ie capcut, lightroom, canva & adobe illustrator) and have a creative eye so I think I’d be a great fit for this role as co-op soc’s marketing director!`,
+      },
+      {
+        name: "Vicky Chen",
+        image: Vicky_Image,
+        preference: 1,
+        description: `As a candidate for this role, I am genuine about fostering an inclusive and supportive culture within the Coop Society. As a first-year student, I am excited by the prospects of forging new connections within Coop, not only within my stream but across all fields and cohorts. My goals if being elected to this role are to create opportunities and channels for Coop members to build meaningful connections and for all members to feel welcomed, included and supported. My experiences in leadership and teamwork allow me to understand the needs to elevate internal culture and promote a positive atmosphere through events and bonding. Although being a first-year member, I understand this role holds significant responsibilities, however, I hope to contribute my current set of skills and passions, while also embracing the opportunity to learn along the way. With your support, I hope to work with everyone to make Coop society a vibrant community where we all feel connected and valued.`,
       },
     ],
   },
+  //   {
+  //     role: "Social Director",
+  //     nominees: [
+  //       {
+  //         name: "Sienna Strauss",
+  //         image: Sienna_Image,
+  //         preference: 1,
+  //         description: `I am running for the position of Socials Director because I am passionate about fostering a vibrant and inclusive social community within our co-op society. With a soft-spot for event planning and a genuine love for connecting people, I am committed to creating memorable and enjoyable experiences for all members.
+  // As Socials Director, I aim to enhance our Co-op Soc's social calendar with a diverse range of events that cater to all interests and backgrounds. From themed parties to skill-building workshops, I envision a year filled with exciting and meaningful experiences for our members.
+
+  // Furthermore, I am dedicated to promoting inclusivity and diversity in our events. I will work tirelessly to ensure that everyone's voice is heard, and their preferences considered when planning activities. By creating a welcoming and inclusive atmosphere, I believe we can strengthen our sense of community and enrich the Co-op experience for all.
+
+  // With my organizational skills, creativity, and dedication, I am confident in my ability to execute this vision effectively. Together, we can create a lively and connected co-op community that enhances our overall living experience. I am excited to have the opportunity to serve as your Socials Director and make a positive impact on our co-op's social life.`,
+  //       },
+  //     ],
+  //   },
   {
     role: "Marketing Director",
     nominees: [
       {
-        name: "Amal Khan",
-        image: Amal_Image,
+        name: "Meera Gandhi",
+        image: Meera_Image,
         preference: 1,
-        description: `Picture this: a data science student with an interest in design and a hidden talent for creating engaging TikToks – that's me! Currently, I'm a part of the Coop-soc marketing subcommittee, which is like being the marketing director's trusty sidekick. I've got my foot in the door and no doubt I can rise to the challenge. 
-And, here's the scoop: I'm not just your average marketing aficionado. I come equipped with a supercharged blend of marketing ninja skills and a creative flair.`,
+        description: `I would love to help my marketing subcom and all of coopsoc market and promote all our events on social media, and create an environment where my teammates are comfortable sharing their ideas and creativity. I enjoy coming up with new ideas and campaigns to increase awareness of events such as Co-op pub crawl and cruise. I am very organised and am able to meet deadlines well so being a co-director will let me apply these skills to help my peers! This role will also give me a lot of experience for industry placements next year in the Marketing industry, so I will appreciate the opportunity given to me and take care of all of coopsoc's marketing needs.`,
       },
       {
-        name: "Maggie Lam",
-        image: Maggie_Image,
+        name: "Meckenzie Lai",
+        image: Meckenzie_Image,
         preference: 1,
-        description: `Hii I’m Maggie ! At the start of the year I genuinely knew nothing about marketing but after learning about how fun and cool and amazing marketing is, I am a changed person! During my time in marketing subcom, I have discovered my deep deep love for Canva but I don’t get to use Canva in actl courses so please vote for me so I have a reason to keep having fun on Canva and scrolling through elements to find the free ones. YAY okay THANKS !! Live laugh love marketing <33`,
+        description: `Hey guys, I'm Kenzie!! I’m currently doing actl 🤓, and am super excited for co-op soc and all the upcoming events this year! Even though I don’t do marketing, I’d love to be marketing director (following in the glorious Maggie’s footsteps 👸) to get everyone more involved in co-op soc and boost the vibe of the society overall 🥰. I love food, music, alchys and pretty much any fun night out with friends ✨✨ so I think it would be amazing to run/promote more opportunities for us to bond and just have a great time together 😋 (I also promise to revamp the co-op soc tiktok for your entertainment - we’ll get co-op soc tiktok famous 🤩)`,
       },
       {
-        name: "Kelly Nguyen",
-        image: Kelly_Image,
-        preference: 1,
-        description: `Hi! I'm running for MKT director because…
-
-1. Marketing is life (i’m from the mkt stream lol). 
-2. I have Canva PREMIUM >:)
-3. SOoo ill make sexy cover photos + my visuals >> (remember my merch mock-ups? :P) 
-4. I think it's time to revamp the Insta & TikTok page  — with me as director, Co-op Soc’s socials will have a glow-up!! :D
-5. I’m super enthusiastic — able to guide our future sub-com members to create fresh & fun content YAY 😁
-
-As someone always looking for opportunities to exercise my creativity & grow as a person,  this role is a perfect fit <3 
-
-SO, what are you waiting for? #VoteForKELLY or Co-op Soc will be in its DOWN-FALL ERA!!!!!`,
-      },
-    ],
-  },
-  {
-    role: "Charity Director",
-    nominees: [
-      {
-        name: "Alexander Lee",
+        name: "Alex Dorfman Knijnik",
         image: Alex_Image,
-        preference: 2,
-        description: `I'm also running for charity director because it's obviously the best subcom. Not only do we do great things for great causes, but we also have the greatest people (sorry other subcoms pls vote for me). I'd like to follow in the footsteps of TJ and Max, being swag directors who still get their work done. `,
-      },
-      {
-        name: "Dinara Jayarathna",
-        image: Dinara_Image,
         preference: 1,
-        description: `Though I wrote an acrostic poem with a secret message to get into the Charity subcommittee, I make it no secret my passion for philanthropy.
-Being a part of Co-op Soc has been an absolute blast and I don’t want the fun to end. With that, if I am voted Charity Director, I’ll bring on the best charity events Co-op Soc has seen to this day, whether that be a fun fundraising picnic or sausage sizzle where Co-op and non-scholars can mingle and *network* (lol), or our inaugural Charity case competition (though it’ll be hard to follow in the footsteps of the terrific TJ and marvellous Max, I CAN promise a better turnout for that at least).
-To finish off this spiel, with the experience I’ve gained as a Charity subcomm member and the examples I can follow through TJ and Max, alongside my character as a compassionate and altruistic person, I promise to be a Charity Director that Co-op Soc will be proud of and you will never regret your decision to vote for me.`,
+        description: `Marketing directors connect the society with its members. That’s exactly what I will do. I want to connect with you all, ramping up our social media interactions to not only be informative but also moments to share banter and inside jokes within our society. 
+
+My experiences include running a highly successful global Photoshop business. I received over 500 orders, consistently achieving five-star reviews. This experience has given me a deeper understanding of how to capture and engage an audience effectively. In addition, my volunteer work marketing for Nick Kyrgios' charity, NK Foundation, has given me valuable experience in collaborating to promote events and causes. I plan to work with Events and Charity Directors and use my skills to promote our events and foster a dynamic and inclusive community environment.
+
+I’m fully committed to this role, have ample time to devote to our community needs, and will ensure every project I undertake enhances our events and member experience.`,
       },
       {
-        name: "Kiran Singh",
-        image: Kiran_Image,
-        preference: 2,
-        description: `I’m just looking to organise some events so that everyone can have fun and let loose.`,
-      },
-      {
-        name: "Inika Weber",
-        image: Inika_Image,
+        name: "Karen Lau",
+        image: Karen_Image,
         preference: 1,
-        description: `Charities and community service is an area I have always been very passionate about. Throughout high school I volunteered regularly for a variety of organisations with both social and environment missions and since coming to uni I have been a part of Co-op soc charities sub-com, the Goldstein College Charities Officer, spent my May holidays volunteering on a turtle conservation project in Thailand, and volunteered at a Gala Event for Tour De Cure which raised $1.5 million for cancer research. Through being on charities subcom, I have a good idea of what the charities director role entails and as such believe it would be a smooth transition into events next year. I have also enjoyed working with the rest of charities subcom this year and as such would collaborate well with my fellow charities director to ideate and run new initiatives. Some ideas I have for new initiatives next year include a Co-opSoc blood drive, quiz night and book swap, but I’m open to work with the rest of subcom.
-        `,
+        description: `Hey, I’m Karen! A marketing co-op, marketing subcomm and hopefully your next coop marketing director! I love marketing, particularly through social media, running my own food blog on Instagram & Tiktok (@idk_justeat which has 6k+ followers), so I can ensure you will get entertaining yet aesthetic content on the co-op society’s socials and maybe even some free food if you vote for me 😉 I’m also very organised, familiar with the software (ie capcut, lightroom, canva & adobe illustrator) and have a creative eye so I think I’d be a great fit for this role as co-op soc’s marketing director!`,
+      },
+      {
+        name: "Angellinah Guo",
+        image: Angellinah_Image,
+        preference: 1,
+        description: `I'm running for Marketing Director of Co-op Soc as I have always been highly interested in curating fun and lively feeds on my social media platforms- Instagram, Youtube (@angellinah guo), Tiktok, Facebook and LinkedIn. I also have experience navigating the multimedia platforms Canva and Adobe Photoshop for Youtube video thumbnails, Year 12 Charity posters and general inspiration for eye-catching designs. My eye for creating engaging stories and posts combined with my ability to communicate cohesively in writing will make me a capable director of the Marketing team for Co-op Soc. Finally, my peers and family have described me as a socially active and warm person and thus, I believe I can be a friendly face within and outside of Co-op Soc, to encourage participation in all of our events and campaigns :)`,
+      },
+      {
+        name: "Athen Wilson",
+        image: Athen_Image,
+        preference: 1,
+        description: `Had the chance to meet most of the people in co-op during camp and I enjoyed the moments we shared, whilst keeping in mind the many years and moments to come. I see marketing director as a great way to be more involved in the making of those moments, as.I work behind the scenes to bring those in co-op closer together.`,
       },
     ],
   },
-  {
-    role: "Publications Director",
-    nominees: [
-      {
-        name: "Imogen Wills",
-        image: Imogen_Image,
-        preference: 1,
-        description: `I am not at university to be a bystander and I am a firm believer that you get back what you put in. I am excited about being around like-minded, ambitious individuals and I thrive on opportunities to be creative and think outside the box. I know that my passion, imagination and initiative will be valuable assets to the Co-op Soc Executive team. 
-As Pubs Director I can promise you inspiring content, comprehensive profiles, and articulate banter. I love to write and I miss being able to flex this muscle. I appreciate the power of language and its capacity to inspire, chronicle and challenge, and I am excited to promote Co-op Soc and engage with alumni and current scholars.
-2024 will be a year of much frivolity if you put me in charge of your social calendar. There is so much potential for memory-making and high jinx when gathering together as a tribe and I will make it my mission to ensure Co-op Soc dominates your 2024 highlight reel. Get ready, get social, break free from the Co-op.`,
-      },
-    ],
-  },
-  {
-    role: "IT Director",
-    nominees: [
-      {
-        name: "Lucas Harvey",
-        image: Lucas_Image,
-        preference: 1,
-        description: `Why does Co-op soc exist? Well, we say it ourselves on our website: At the core of the society, our aims are to socialise and meet new people. In fact – I’m Lucas – and I’ve been helping build that website as a member of your IT Subcommittee throughout 2023 and I'd love to step up into the role of your IT director.
+  //   {
+  //     role: "Charity Director",
+  //     nominees: [
+  //       {
+  //         name: "Alexander Lee",
+  //         image: Alex_Image,
+  //         preference: 2,
+  //         description: `I'm also running for charity director because it's obviously the best subcom. Not only do we do great things for great causes, but we also have the greatest people (sorry other subcoms pls vote for me). I'd like to follow in the footsteps of TJ and Max, being swag directors who still get their work done. `,
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     role: "Publications Director",
+  //     nominees: [
+  //       {
+  //         name: "Imogen Wills",
+  //         image: Imogen_Image,
+  //         preference: 1,
+  //         description: `I am not at university to be a bystander and I am a firm believer that you get back what you put in. I am excited about being around like-minded, ambitious individuals and I thrive on opportunities to be creative and think outside the box. I know that my passion, imagination and initiative will be valuable assets to the Co-op Soc Executive team.
+  // As Pubs Director I can promise you inspiring content, comprehensive profiles, and articulate banter. I love to write and I miss being able to flex this muscle. I appreciate the power of language and its capacity to inspire, chronicle and challenge, and I am excited to promote Co-op Soc and engage with alumni and current scholars.
+  // 2024 will be a year of much frivolity if you put me in charge of your social calendar. There is so much potential for memory-making and high jinx when gathering together as a tribe and I will make it my mission to ensure Co-op Soc dominates your 2024 highlight reel. Get ready, get social, break free from the Co-op.`,
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     role: "IT Director",
+  //     nominees: [
+  //       {
+  //         name: "Lucas Harvey",
+  //         image: Lucas_Image,
+  //         preference: 1,
+  //         description: `Why does Co-op soc exist? Well, we say it ourselves on our website: At the core of the society, our aims are to socialise and meet new people. In fact – I’m Lucas – and I’ve been helping build that website as a member of your IT Subcommittee throughout 2023 and I'd love to step up into the role of your IT director.
 
-I’ve met some wonderful people on this subcom, and being able to socialise with other co-ops, across years, degrees and experiences has brought a great sense of community. It would be my priority to cultivate that environment as a director, especially as we build friendships with new and returning scholars.
+  // I’ve met some wonderful people on this subcom, and being able to socialise with other co-ops, across years, degrees and experiences has brought a great sense of community. It would be my priority to cultivate that environment as a director, especially as we build friendships with new and returning scholars.
 
-Of course, beyond this environment of friendship and collaboration, I’m confident that I can lead our team to innovate on the online systems that Co-op Soc maintains – after all this is the heart of our publications, supports our charity, and the all-important merch store. We’re actually planning something exciting: development of a new online platform for Co-op students to organise meetups, study groups and events on campus.
+  // Of course, beyond this environment of friendship and collaboration, I’m confident that I can lead our team to innovate on the online systems that Co-op Soc maintains – after all this is the heart of our publications, supports our charity, and the all-important merch store. We’re actually planning something exciting: development of a new online platform for Co-op students to organise meetups, study groups and events on campus.
 
-This year has been an enormous learning experience for me, and I cannot wait to assist our next generation in learning valuable skills in front-end web development as well as teamwork in the IT field.
+  // This year has been an enormous learning experience for me, and I cannot wait to assist our next generation in learning valuable skills in front-end web development as well as teamwork in the IT field.
 
-Ideally, I'd be suited for an IT Technical Director role, bringing my technical expertise from outside projects, complementing Nick in an IT Project Management role.
+  // Ideally, I'd be suited for an IT Technical Director role, bringing my technical expertise from outside projects, complementing Nick in an IT Project Management role.
 
-I hope to get your vote, and I look forward to meeting the Co-op Soc of 2024. Thanks!`,
-      },
-      {
-        name: "Nicholas Langford",
-        image: Nicholas_Image,
-        preference: 1,
-        description: `Hi! I'm Nick - a first year comp co-op scholar. I've been part of the 2023 IT Subcommittee, and keen to continue contributing in 2024. I also lab assist COMP1511/COMP1521. I'm running alongside Lucas - together, we hope to improve Coop Soc's IT systems.
-
-Specifically, I want to update the website to make it relevant to current students, starting with updating the publications page, which is 3 years out of date. I'll work with the Pubs Director to develop more content for the website, like an improved 1st yr guide, more educational articles etc. Also, the Coop newsletter is currently email-only, causing it to get lost in the sea of admin. There's a simple fix - host the articles on the Co-op website!
-
-I'll also work with Lucas to reduce bugs in the merch system. We've worked with it over the past year, so know the issues and how to fix them. For example, fixing discount codes so they're consistently applied. Check out more of my ideas here: https://github.com/coopsoc/coopsoc.com.au/issues/created_by/scorpiontornado. I have suggestions for new projects too, like a tool for meeting people on campus.
-
-My big-picture vision is suited to an IT Project Manager role, which would compliment Lucas' Technical Director role. Also, my democratic leadership style suits an intelligent group like coop, and would free up the cognitive load of the Technical Director - allowing them to make better-informed decisions surrounding IT technologies.
-
-With your vote, I will make these ideas a reality! Thank you :)`,
-      },
-    ],
-  },
+  // I hope to get your vote, and I look forward to meeting the Co-op Soc of 2024. Thanks!`,
+  //       },
+  //     ],
+  //   },
 ];
 
 export default NOMINEES;

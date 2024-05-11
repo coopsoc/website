@@ -1,3 +1,5 @@
 User-agent: *
 Disallow: /img/exec
 Disallow: /img/nominee
+Disallow: /egm
+Disallow: /nominations
