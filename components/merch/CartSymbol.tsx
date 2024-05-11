@@ -1,8 +1,14 @@
+import { Product } from "data/types";
 import React from "react";
 
 import styles from "styles/modules/Merch.module.scss";
 
-const CartSymbol = ({ click, cart }) => {
+interface CartSymbolProps {
+  click: () => void;
+  cart: Product[];
+}
+
+const CartSymbol = ({ click, cart }: CartSymbolProps) => {
   return (
     <>
       <i className="fa badge fa-2x" onClick={click}>

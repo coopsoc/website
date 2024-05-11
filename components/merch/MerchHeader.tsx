@@ -1,8 +1,14 @@
 import React from "react";
 
 import CartSymbol from "./CartSymbol";
+import { Product } from "data/types";
 
-const MerchHeader = ({ click, cart }) => {
+interface MerchHeaderProps {
+  click: () => void;
+  cart: Product[];
+}
+
+const MerchHeader = ({ click, cart }: MerchHeaderProps) => {
   return (
     <>
       <div className="py-3 text-right">

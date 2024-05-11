@@ -3,9 +3,14 @@ import MerchCard from "./MerchCard";
 import Loader from "components/Loader";
 
 import Image from "next/image";
+import { Product } from "data/types";
 
-const MerchCollection = ({ addToCart }) => {
-  const [data, setData] = useState([]);
+interface MerchCollectionProps {
+  addToCart: (value: Product) => void;
+}
+
+const MerchCollection = ({ addToCart }: MerchCollectionProps) => {
+  const [data, setData] = useState<Product[][]>([]);
 
   useEffect(() => {
     if (data.length === 0) {
@@ -13,12 +18,12 @@ const MerchCollection = ({ addToCart }) => {
         cache: "no-cache",
       }).then((value) => {
         value.json().then((_data) => {
-          let _d = _data.sort((a, b) => {
+          let _d: Product[] = _data.sort((a: Product, b: Product) => {
             if (a.name == b.name) return 0;
             return a.name < b.name ? 1 : -1;
           });
 
-          let d = [];
+          let d: Product[][] = [];
           while (_d.length) {
             d.push(_d.splice(0, 3 > _d.length ? _d.length : 3));
           }

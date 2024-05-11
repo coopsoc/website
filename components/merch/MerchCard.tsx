@@ -3,22 +3,28 @@ import { Modal, ModalBody } from "reactstrap";
 import Image from "next/image";
 
 import styles from "styles/modules/Merch.module.scss";
+import { Product } from "data/types";
 
-const MerchCard = ({ productData, addToCart }) => {
-  const [modal, setModal] = useState(false);
-  const [size, setSize] = useState("S");
+interface MerchCardProps {
+  productData: Product;
+  addToCart: (value: Product) => void;
+}
+
+const MerchCard = ({ productData, addToCart }: MerchCardProps) => {
+  const [modal, setModal] = useState<boolean>(false);
+  const [size, setSize] = useState<string>("S");
   const { name, id, images, price } = productData;
   const [source, setSource] = useState(images[0]);
 
   const toggle = () => setModal(!modal);
 
-  const changeImage = (index) => {
+  const changeImage = (index: number) => {
     if (source === images[index]) return;
 
     setSource(images[index]);
   };
 
-  const onChange = (value) => {
+  const onChange = (value: string) => {
     setSize(value);
   };
 

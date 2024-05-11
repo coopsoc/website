@@ -4,21 +4,29 @@ import { useRouter } from "next/router";
 
 import styles from "styles/modules/Merch.module.scss";
 import LoadingButton from "components/LoadingButton";
+import { Product } from "data/types";
 
-const CheckoutForm = ({ cart, updateCart }) => {
-  const [isLoading, setLoading] = useState(false);
+interface CheckoutFormProps {
+  cart: Product[];
+  updateCart: (cart: Product[]) => void;
+}
+
+const CheckoutForm = ({ cart, updateCart }: CheckoutFormProps) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const router = useRouter();
 
-  const removeFromCart = (e) => {
-    let newCart = JSON.parse(JSON.stringify(cart)); // this an extremely hacky way of getting a hard copied array
-    let index = e.target.parentElement.getAttribute("data-value"); // this is gross chaining
+  const removeFromCart = (e: React.MouseEvent<HTMLSpanElement>) => {
+    let newCart: Product[] = JSON.parse(JSON.stringify(cart)); // this an extremely hacky way of getting a hard copied array
+    let index: number = Number(
+      e.currentTarget.parentElement?.getAttribute("data-value"),
+    ); // this is gross chaining
     newCart.splice(index, 1);
     updateCart(newCart);
   };
 
-  const createPaymentIntent = async (e) => {
-    setLoading(true);
+  const createPaymentIntent = async (e: { preventDefault: () => void }) => {
+    setIsLoading(true);
     e.preventDefault();
     fetch("https://api.coopsoc.com.au/payment", {
       method: "POST",
@@ -26,9 +34,11 @@ const CheckoutForm = ({ cart, updateCart }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        firstName: document.querySelector("#firstName").value,
-        lastName: document.querySelector("#lastName").value,
-        email: document.querySelector("#email").value,
+        firstName: (document.querySelector("#firstName") as HTMLInputElement)
+          .value,
+        lastName: (document.querySelector("#lastName") as HTMLInputElement)
+          .value,
+        email: (document.querySelector("#email") as HTMLInputElement).value,
         cart: {
           items: [
             ...cart.map((item) => {
@@ -40,13 +50,13 @@ const CheckoutForm = ({ cart, updateCart }) => {
     })
       .then((object) => {
         object.json().then((client) => {
-          setLoading(false);
+          setIsLoading(false);
           const { clientSecret } = client;
           router.push(`/checkout/${clientSecret}`);
         });
       })
       .catch((err) => {
-        setLoading(false);
+        setIsLoading(false);
         router.push("/checkout/unsuccessful");
       });
   };
