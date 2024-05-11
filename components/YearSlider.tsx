@@ -1,13 +1,19 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, MutableRefObject } from "react";
 import { Col, Container } from "reactstrap";
 
-import Slider from "nouislider";
+import Slider, { target } from "nouislider";
 import wNumb from "wnumb";
 
-const YearSlider = ({ start, end, onChange }) => {
-  const sliderRef = useRef(null);
+interface YearSliderProps {
+  start: number;
+  end: number;
+  onChange: (year: number) => void;
+}
 
-  const updateSlider = (values, _) => {
+const YearSlider = ({ start, end, onChange }: YearSliderProps) => {
+  const sliderRef = useRef<target>(null);
+
+  const updateSlider = (values: string[], _: number) => {
     const year = parseInt(values[0]);
     onChange(year);
   };
@@ -38,7 +44,10 @@ const YearSlider = ({ start, end, onChange }) => {
       <Container className="py-lg-md d-flex">
         <Col></Col>
         <Col lg="5" sm="8">
-          <div className="slider" ref={sliderRef} />
+          <div
+            className="slider"
+            ref={sliderRef as MutableRefObject<HTMLDivElement>}
+          />
         </Col>
         <Col></Col>
       </Container>

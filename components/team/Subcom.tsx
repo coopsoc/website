@@ -1,7 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SubcomSection } from "data/types";
 
-const Subcom = ({ portfolio }) => {
+interface SubcomProps {
+  portfolio: SubcomSection;
+}
+
+const Subcom = ({ portfolio }: SubcomProps) => {
   return (
     <>
       <div className="row d-flex align-items-center">

@@ -2,7 +2,19 @@ import React from "react";
 
 import Loader from "./Loader";
 
-const LoadingButton = ({ text, onClick, isLoading, disabled }) => {
+interface LoadingButtonProps {
+  text: string;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => Promise<void>;
+  isLoading: boolean;
+  disabled?: boolean;
+}
+
+const LoadingButton = ({
+  text,
+  onClick,
+  isLoading,
+  disabled,
+}: LoadingButtonProps) => {
   return (
     <button
       className="w-100 btn btn-primary btn-lg"

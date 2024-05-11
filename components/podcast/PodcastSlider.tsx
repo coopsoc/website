@@ -1,9 +1,19 @@
-import { useEffect, useRef } from "react";
-import Slider from "nouislider";
+import { MutableRefObject, useEffect, useRef } from "react";
+import Slider, { target } from "nouislider";
 import wNumb from "wnumb";
 
-const PodcastSlider = ({ duration, currentTime, onChange }) => {
-  const sliderRef = useRef(null);
+interface PodcastSliderProps {
+  duration: number;
+  currentTime: number;
+  onChange: (values: string[], handle: number) => void;
+}
+
+const PodcastSlider = ({
+  duration,
+  currentTime,
+  onChange,
+}: PodcastSliderProps) => {
+  const sliderRef = useRef<target>(null);
 
   useEffect(() => {
     const node = sliderRef.current;
@@ -30,7 +40,7 @@ const PodcastSlider = ({ duration, currentTime, onChange }) => {
     sliderRef.current.noUiSlider.set(currentTime);
   }, [currentTime]);
 
-  const toTimestamp = (seconds) => {
+  const toTimestamp = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const remainder = seconds % 60;
 
@@ -39,7 +49,10 @@ const PodcastSlider = ({ duration, currentTime, onChange }) => {
 
   return (
     <>
-      <div className="slider w-100" ref={sliderRef}></div>
+      <div
+        className="slider w-100"
+        ref={sliderRef as MutableRefObject<HTMLDivElement>}
+      ></div>
       <p>
         {toTimestamp(Math.floor(currentTime))} /{" "}
         {toTimestamp(Math.floor(duration))}

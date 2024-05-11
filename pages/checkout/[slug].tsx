@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { useRouter } from "next/router";
+import { NextRouter, useRouter } from "next/router";
 
 import {
   Elements,
@@ -14,11 +14,16 @@ const stripePromise = loadStripe(
   "pk_live_51N7xWEKWz42bhxUE0OeOgsSQoeFdMRPXvxelNmH2U9TkHjsCC1wLE1O6nYvArlihn7regSqjiHVTk89atbSNL2hc00c4XYqVw3",
 );
 
-const PaymentEl = ({ clientSecret, router }) => {
+interface PaymentElProps {
+  clientSecret: string;
+  router: NextRouter;
+}
+
+const PaymentEl = ({ clientSecret, router }: PaymentElProps) => {
   const stripe = useStripe();
   const elements = useElements();
 
-  const handler = async (e) => {
+  const handler = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     const { error: submitError } = await elements.submit();
@@ -34,7 +39,7 @@ const PaymentEl = ({ clientSecret, router }) => {
         redirect: "if_required",
       })
       .then((result) => {
-        if (result.err) {
+        if (result.error) {
           router.push("/checkout/unsuccesful");
         } else {
           router.push("/merch");

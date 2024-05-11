@@ -11,13 +11,14 @@ import CharityEvents from "components/charity/CharityEvents";
 import CharityList from "components/charity/CharityList";
 import CharityModal from "components/charity/CharityModal";
 import CharityUpcoming from "components/charity/CharityUpcoming";
+import { CharityEvent } from "data/types";
 
 const Charity = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [currentEvent, setCurrentEvent] = useState({});
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [currentEvent, setCurrentEvent] = useState<CharityEvent>();
 
   // Given a charity event, display its details in the modal.
-  const displayInfo = (event) => {
+  const displayInfo = (event: CharityEvent) => {
     setShowModal(true);
     setCurrentEvent(event);
   };

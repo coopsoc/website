@@ -1,13 +1,19 @@
-import React from "react";
-import { NavbarBrand } from "reactstrap";
+import React, { forwardRef, Ref } from "react";
+import { NavbarBrand, NavbarBrandProps } from "reactstrap";
 
-const NextNavbarBrand = React.forwardRef((props, ref) => {
-  return (
-    <div ref={ref}>
-      <NavbarBrand {...props}>{props.children}</NavbarBrand>
-    </div>
-  );
-});
+interface NextNavbarBrandProps extends NavbarBrandProps {
+  children: React.ReactNode;
+}
+
+const NextNavbarBrand = forwardRef<HTMLDivElement, NextNavbarBrandProps>(
+  (props, ref: Ref<HTMLDivElement>) => {
+    return (
+      <div ref={ref}>
+        <NavbarBrand {...props}>{props.children}</NavbarBrand>
+      </div>
+    );
+  },
+);
 NextNavbarBrand.displayName = "NextNavbarBrand";
 
 export default NextNavbarBrand;

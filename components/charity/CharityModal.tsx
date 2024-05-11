@@ -4,12 +4,19 @@ import { Modal, ModalBody, ModalFooter, ModalHeader, Button } from "reactstrap";
 import CharityBody from "./modal/CharityBody";
 import CaseCompBody from "./modal/custom/CaseCompBody";
 import CaseCompBody1 from "./modal/custom/CaseCompBody2022";
+import { CharityEvent } from "data/types";
 
-const CharityModal = ({ isOpen, toggle, event }) => {
+interface CharityModalProps {
+  isOpen: boolean;
+  toggle: () => void;
+  event?: CharityEvent;
+}
+
+const CharityModal = ({ isOpen, toggle, event }: CharityModalProps) => {
   // Renders the body of our modal. If there's anything in the `special`
   // key of our event object, we render a special object with any new items
   // attached (extra images, extra text etc.)
-  const chooseBody = (special) => {
+  const chooseBody = (special: string) => {
     switch (special) {
       case "casecomp":
         return <CaseCompBody event={event} />;
@@ -26,10 +33,10 @@ const CharityModal = ({ isOpen, toggle, event }) => {
       toggle={toggle}
       className="modal-dialog-centered modal-lg"
     >
-      <ModalHeader toggle={toggle}>{event.title}</ModalHeader>
-      <ModalBody>{chooseBody(event.special)}</ModalBody>
+      <ModalHeader toggle={toggle}>{event?.title}</ModalHeader>
+      <ModalBody>{chooseBody(event?.special)}</ModalBody>
       <ModalFooter>
-        <a href={event.link}>
+        <a href={event?.link}>
           <Button color="index" style={{ minWidth: "100px" }} onClick={toggle}>
             Visit
           </Button>

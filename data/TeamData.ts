@@ -79,11 +79,12 @@ import Maggie_Image from "public/img/exec/2024/Maggie.jpg";
 import Imogen_Image from "public/img/exec/2024/Imogen.png";
 import Lucas_Image from "public/img/exec/2024/Lucas.jpg";
 import Nicholas_Image from "public/img/exec/2024/Nicholas.png";
+import { MembersByYear } from "./types";
 
 const START = 2020;
 const END = 2024;
 
-const MEMBERS = [
+const MEMBERS: MembersByYear[] = [
   {
     // 2020
     exec: [

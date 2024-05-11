@@ -1,8 +1,16 @@
+import { Nominee } from "data/types";
 import Image from "next/image";
 import React from "react";
 import { Col, Modal, ModalHeader, ModalBody, Row } from "reactstrap";
 
-const NomineeModal = ({ data, roles, isOpen, toggle }) => {
+interface NomineeModalProps {
+  data: Nominee;
+  roles: string[];
+  isOpen: boolean;
+  toggle: () => void;
+}
+
+const NomineeModal = ({ data, roles, isOpen, toggle }: NomineeModalProps) => {
   return (
     <Modal
       className="modal-dialog-centered modal-lg"

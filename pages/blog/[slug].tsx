@@ -15,6 +15,7 @@ import dayjs from "scripts/dayjs";
 import { getArticle, getSlugs } from "scripts/article";
 import BlogTab from "components/blog/social_distance/BlogTab";
 import BlogTabEntry from "components/blog/social_distance/BlogTabEntry";
+import { Blog } from "data/types";
 
 const MarkdownImage = (props) => (
   <Image alt={props.alt} layout="responsive" loading="lazy" {...props} />
@@ -26,7 +27,16 @@ const components = {
   BlogTabEntry: BlogTabEntry,
 };
 
-const BlogPost = ({ source, frontmatter }) => {
+interface BlogPostProps {
+  source: {
+    compiledSource: string;
+    renderedOutput: string;
+    scope: Record<string, unknown>;
+  };
+  frontmatter: Blog;
+}
+
+const BlogPost = ({ source, frontmatter }: BlogPostProps) => {
   // TODO: add styles to our blog
   return (
     <>
@@ -59,7 +69,11 @@ const BlogPost = ({ source, frontmatter }) => {
       <section className="section section-lg pt-0">
         <Row className="justify-content-center">
           <Col lg="6" className="markdown">
-            <MDXRemote components={components} {...source} />
+            <MDXRemote
+              components={components}
+              frontmatter={frontmatter}
+              {...source}
+            />
           </Col>
         </Row>
       </section>
@@ -69,7 +83,7 @@ const BlogPost = ({ source, frontmatter }) => {
 
 export default BlogPost;
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const { content, frontmatter } = await getArticle(slug);
 

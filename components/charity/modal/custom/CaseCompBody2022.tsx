@@ -1,12 +1,15 @@
 import React from "react";
-import Image from "next/image";
 import { Row, Col } from "reactstrap";
 
 import CharityBody from "../CharityBody";
 
-import caseCompWinners from "public/img/charity/case-comp2021Winners.jpg";
+import { CharityEvent } from "data/types";
 
-const CaseCompBody1 = ({ event }) => {
+interface CaseCompBody1Props {
+  event: CharityEvent;
+}
+
+const CaseCompBody1 = ({ event }: CaseCompBody1Props) => {
   return (
     <>
       <CharityBody event={event} />

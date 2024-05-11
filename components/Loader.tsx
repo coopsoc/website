@@ -2,7 +2,13 @@ import React from "react";
 
 import styles from "styles/modules/Loader.module.scss";
 
-const Loader = ({ width, height, strokeColour }) => {
+interface LoaderProps {
+  width: number;
+  height: number;
+  strokeColour: string;
+}
+
+const Loader = ({ width, height, strokeColour }: LoaderProps) => {
   return (
     <svg
       width={width}

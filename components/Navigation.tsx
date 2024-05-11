@@ -58,7 +58,7 @@ const navLinks = [
 
 const Navigation = () => {
   const router = useRouter();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
     let headroom = new Headroom(document.getElementById("navbar-main"));
@@ -66,7 +66,7 @@ const Navigation = () => {
     headroom.init();
   });
 
-  const getNavLinkClass = (path) => {
+  const getNavLinkClass = (path: string) => {
     return router.pathname === path
       ? "active"
       : "navbar-hover navbar-nav-hover align-items-lg-center";

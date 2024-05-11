@@ -16,19 +16,26 @@ import {
   Row,
 } from "reactstrap";
 import PodcastSlider from "./PodcastSlider";
+import { Podcast } from "data/types";
 
-const PAUSED = 0;
-const LOADING = 1;
-const PLAYING = 2;
+enum AudioState {
+  PAUSED,
+  LOADING,
+  PLAYING,
+}
 
-const PodcastPlayer = ({ podcast }) => {
-  const [audio, setAudio] = useState(null);
-  const [audioState, setAudioState] = useState(PAUSED);
+interface PodcastPlayerProps {
+  podcast: Podcast;
+}
 
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(NaN);
+const PodcastPlayer = ({ podcast }: PodcastPlayerProps) => {
+  const [audio, setAudio] = useState<HTMLAudioElement>(null);
+  const [audioState, setAudioState] = useState<AudioState>(AudioState.PAUSED);
 
-  const onChange = (values, _) => {
+  const [currentTime, setCurrentTime] = useState<number>(0);
+  const [duration, setDuration] = useState<number>(NaN);
+
+  const onChange = (values: string[], _: number) => {
     const newTime = parseInt(values[0]);
 
     setCurrentTime((prevTime) => {
@@ -60,29 +67,29 @@ const PodcastPlayer = ({ podcast }) => {
   }, [audio]);
 
   const playAudio = async () => {
-    setAudioState(LOADING);
+    setAudioState(AudioState.LOADING);
     await audio.play();
-    setAudioState(PLAYING);
+    setAudioState(AudioState.PLAYING);
   };
 
   const pauseAudio = () => {
     audio.pause();
-    setAudioState(PAUSED);
+    setAudioState(AudioState.PAUSED);
   };
 
   const buttonPress = () => {
-    if (audioState === PAUSED) {
+    if (audioState === AudioState.PAUSED) {
       playAudio();
-    } else if (audioState === PLAYING) {
+    } else if (audioState === AudioState.PLAYING) {
       pauseAudio();
     }
   };
 
   const getIcon = () => {
     switch (audioState) {
-      case PAUSED:
+      case AudioState.PAUSED:
         return faPlay;
-      case LOADING:
+      case AudioState.LOADING:
         return faCircleNotch;
       default:
         return faPause;
@@ -106,7 +113,10 @@ const PodcastPlayer = ({ podcast }) => {
               className="btn-icon icon-shape rounded-circle"
               onClick={buttonPress}
             >
-              <FontAwesomeIcon icon={getIcon()} spin={audioState === LOADING} />
+              <FontAwesomeIcon
+                icon={getIcon()}
+                spin={audioState === AudioState.LOADING}
+              />
             </Button>
           </Col>
         </Row>

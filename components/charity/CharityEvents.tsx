@@ -11,10 +11,10 @@ import { END, EVENTS, START } from "data/CharityData";
 
 // TODO: events sliding is still a bit janky, patch up when possible
 const CharityEvents = ({ onClick }) => {
-  const [year, setYear] = useState(END);
-  const [direction, setDirection] = useState("left");
+  const [year, setYear] = useState<number>(END);
+  const [direction, setDirection] = useState<string>("left");
 
-  const updateYear = (newYear) => {
+  const updateYear = (newYear: number) => {
     // Using a callback here to ensure that state gets updated properly -
     // when we didn't use a callback, `prev` would always be stuck on END
     setYear((prev) => {

@@ -11,9 +11,18 @@ import BlogCard from "components/blog/BlogCard";
 import { partition } from "scripts/list";
 import { getAllArticles } from "scripts/article";
 
+type Post = {
+  title: string;
+  description: string;
+  image: string;
+  published: string;
+  link: string;
+  slug: string;
+};
+
 const Blog = ({ posts }) => {
   // TODO: add dates published to each blog
-  const rows = partition(posts, 3);
+  const rows: Post[][] = partition(posts, 3);
 
   return (
     <>

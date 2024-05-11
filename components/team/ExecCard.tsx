@@ -2,9 +2,15 @@ import React from "react";
 import Image from "next/image";
 
 import styles from "styles/modules/ExecCard.module.scss";
+import { ExecMember } from "data/types";
+
+interface ExecCardProps {
+  data: ExecMember;
+  colour: number;
+}
 
 // TODO: consider separating into component that's more generic, and having ExecCard inherit from that
-const ExecCard = ({ data, colour }) => {
+const ExecCard = ({ data, colour }: ExecCardProps) => {
   const { name, image, description, role } = data;
 
   return (

@@ -2,8 +2,9 @@ import React from "react";
 import { Row } from "reactstrap";
 
 import ExecCard from "./ExecCard";
+import { ExecMembersSection } from "data/types";
 
-const seededRandom = (s) => {
+const seededRandom = (s: string) => {
   let hash = 0;
   if (s.length === 0) return hash;
 
@@ -16,7 +17,11 @@ const seededRandom = (s) => {
   return hash;
 };
 
-const ExecSection = ({ section }) => {
+interface ExecSectionProps {
+  section: ExecMembersSection;
+}
+
+const ExecSection = ({ section }: ExecSectionProps) => {
   const colour = (Math.abs(seededRandom(section.sectionName)) % 5) + 1;
 
   return (

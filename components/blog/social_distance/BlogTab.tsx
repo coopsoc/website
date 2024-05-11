@@ -3,18 +3,29 @@ import React, { useState } from "react";
 import { Col, Container, Row, TabContent, TabPane } from "reactstrap";
 import { partition } from "scripts/list";
 
-const BlogTab = (props) => {
+interface Props {
+  children: Child[];
+}
+
+type Child = {
+  props: {
+    image: string;
+    children: string;
+  };
+};
+
+const BlogTab = (props: Props) => {
   const NONE = -1;
-  const [tab, setTab] = useState(NONE);
+  const [tab, setTab] = useState<number>(NONE);
 
-  const images = [];
-  const contents = [];
+  const images: React.JSX.Element[] = [];
+  const contents: React.JSX.Element[] = [];
 
-  const generateImage = (src, index) => {
+  const generateImage = (src: string, index: number) => {
     return (
       <Image
         src={src}
-        alt={index}
+        alt={`${index}`}
         width="100%"
         height="100%"
         layout="responsive"
@@ -24,13 +35,13 @@ const BlogTab = (props) => {
     );
   };
 
-  const generateContents = (contents, index) => (
+  const generateContents = (contents: string, index: number) => (
     <TabPane tabId={`blog-tab-${index}`} key={`blog-tab-contents-${index}`}>
       {contents}
     </TabPane>
   );
 
-  props.children.forEach((child, index) => {
+  props.children.forEach((child: Child, index: number) => {
     images.push(generateImage(child.props.image, index));
     contents.push(generateContents(child.props.children, index));
   });

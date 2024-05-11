@@ -16,15 +16,18 @@ import {
 // Import Swiper styles
 import "swiper/css/bundle";
 // Core version + navigation, pagination modules:
-import SwiperCore, { Navigation as SNavigation, Pagination } from "swiper/core";
+import SwiperCore from "swiper";
+import Pagination from "swiper";
+import Navigation from "swiper";
 
 // Configure Swiper to use modules
-SwiperCore.use([SNavigation, Pagination]);
+SwiperCore.use([Navigation, Pagination]);
 
 // FontAwesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { niCalendarGrid } from "components/icon/nucleo";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const Index = () => {
   return (
@@ -40,7 +43,7 @@ const Index = () => {
               <Card className="card-lift--hover shadow border-0 h-100">
                 <CardBody className="py-4 py-md-5 d-flex flex-column">
                   <div className="icon icon-shape icon-shape-style1 rounded-circle mt-2 mt-md-0 mb-3">
-                    <FontAwesomeIcon icon={niCalendarGrid} />
+                    <FontAwesomeIcon icon={niCalendarGrid as IconProp} />
                   </div>
                   <div className="justify-content-center text-center mt-2 mt-md-3 mb-md-3">
                     <CardTitle tag="h5" className="text-uppercase">

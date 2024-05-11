@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Col, Container, Row } from "reactstrap";
 
 import { partition } from "scripts/list";
 import { UPCOMING } from "data/CharityData";
 
 import useBreakpoints from "./upcoming/useBreakpoints";
+import { CharityEvent } from "data/types";
 
 const CharityUpcoming = () => {
-  const [small, medium, large] = useBreakpoints([720, 960, 1140]);
-  const [parts, setParts] = useState([]);
+  const [small, medium, large]: boolean[] = useBreakpoints([720, 960, 1140]);
+  const [parts, setParts] = useState<React.JSX.Element[][]>([]);
 
-  const rowToDisplay = (row) => {
-    let images = [];
-    let text = [];
+  const rowToDisplay = (row: CharityEvent[]) => {
+    let images: React.JSX.Element[] = [];
+    let text: React.JSX.Element[] = [];
 
     for (let i = 0; i < row.length; i++) {
       const item = row[i];
 
-      images.push(<Image alt={item.name} src={item.image} />);
+      images.push(<Image alt={item.title} src={item.image} />);
 
       text.push(
         <>
-          <b>{item.name}</b>
+          <b>{item.title}</b>
           <p className="mt-auto">{item.date}</p>
         </>,
       );
@@ -34,7 +35,7 @@ const CharityUpcoming = () => {
   // Breakpoints change whenever we resize, and we need to change the number
   // of items in each row for a responsive layout
   useEffect(() => {
-    let rowItems = !small + !medium + !large + 1;
+    let rowItems = Number(!small) + Number(!medium) + Number(!large) + 1;
 
     const partitioned = partition(UPCOMING, rowItems).map(rowToDisplay).flat(1);
     setParts(partitioned);

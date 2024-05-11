@@ -22,11 +22,12 @@ import WorldVision from "public/img/charity/logos/world_vision.png";
 import FHF from "public/img/charity/upcoming/40_hour_famine.png";
 import WGS from "public/img/charity/upcoming/worlds_greatest_shave.png";
 import coopLogo from "public/img/charity/coopLogo.jpg";
+import { CharityEvent, Sponsor } from "./types";
 
 const START = 2019;
 const END = 2022;
 
-const EVENTS = [
+const EVENTS: CharityEvent[][] = [
   [
     {
       title: "Poker Night",
@@ -119,7 +120,7 @@ const EVENTS = [
   ],
 ];
 
-const SPONSORS = [
+const SPONSORS: Sponsor[] = [
   {
     name: "Indigenous Literacy Foundation",
     image: ILF,
@@ -152,9 +153,9 @@ const SPONSORS = [
   },
 ];
 
-const UPCOMING = [
+const UPCOMING: CharityEvent[] = [
   {
-    name: "Poker Night",
+    title: "Poker Night",
     image: coopLogo,
     date: "Term 3",
   },

@@ -15,14 +15,15 @@ import NOMINEES from "data/NominationsData";
 import { useState } from "react";
 
 import styles from "styles/modules/nominations.module.scss";
+import { Nominee } from "data/types";
 
 const Nominations = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [nominee, setNominee] = useState({});
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [nominee, setNominee] = useState<Nominee>({} as Nominee);
   const showNominations = false; // Change this to true when nominations are open
 
   // Given a person's name, returns all roles they're nominated for
-  const getNominatedRoles = (name) => {
+  const getNominatedRoles = (name: string) => {
     const roles = [];
 
     for (const role of NOMINEES) {
@@ -36,7 +37,7 @@ const Nominations = () => {
     return roles;
   };
 
-  const clickNominee = (nominee) => {
+  const clickNominee = (nominee: Nominee) => {
     setShowModal(true);
     setNominee(nominee);
   };

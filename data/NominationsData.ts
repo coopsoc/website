@@ -16,8 +16,9 @@ import Shreya_Image from "public/img/nominee/Shreya.jpg";
 import Tony_Image from "public/img/nominee/Tony.jpeg";
 import Tyrone_Image from "public/img/nominee/Tyrone.png";
 import Vicky_Image from "public/img/nominee/Vicky.png";
+import { Role } from "./types";
 
-const NOMINEES = [
+const NOMINEES: Role[] = [
   {
     role: "Co-President",
     nominees: [

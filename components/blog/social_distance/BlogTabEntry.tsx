@@ -1,4 +1,10 @@
-const BlogTabEntry = ({ image, children }) => {
+const BlogTabEntry = ({
+  image,
+  children,
+}: {
+  image: string;
+  children: string;
+}) => {
   return null;
 };
 

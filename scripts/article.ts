@@ -13,7 +13,7 @@ const articlesPath = path.join(process.cwd(), "articles");
  * @returns a list of all slugs available
  */
 export async function getSlugs() {
-  const paths = sync(`${articlesPath}/*.mdx`);
+  const paths: string[] = sync(`${articlesPath}/*.mdx`);
 
   return paths.map((path) => {
     const folders = path.split("/");
@@ -28,7 +28,7 @@ export async function getSlugs() {
  * @param {string} slug - the slug we want to get data from
  * @returns all data from the corresponding MDX file
  */
-export async function getArticle(slug) {
+export async function getArticle(slug: string) {
   const location = path.join(articlesPath, `${slug}.mdx`);
   const source = fs.readFileSync(location);
   const { content, data } = matter(source);
