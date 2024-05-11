@@ -1,4 +1,6 @@
-const PODCASTS = [
+import { Podcast } from "./types";
+
+const PODCASTS: Podcast[] = [
   {
     name: "Ep. 1: Andrew Phin",
     description: `Introducing… The Chicken Coop! 🐥 CoopSoc’s brand new podcast! 🎤🎧

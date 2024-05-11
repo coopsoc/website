@@ -1,8 +1,8 @@
 {
-  "parser": "@typescript-eslint/parser",
   "extends": ["next/core-web-vitals", "plugin:mdx/recommended", "prettier"],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error"
-  }
+  },
+  "parser": "@typescript-eslint/parser"
 }
