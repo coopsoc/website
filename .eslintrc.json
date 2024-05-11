@@ -4,5 +4,5 @@
   "rules": {
     "prettier/prettier": "error"
   },
-  "parser": "@typescript-eslint/parser",
+  "parser": "@typescript-eslint/parser"
 }
