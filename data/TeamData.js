@@ -854,7 +854,7 @@ const MEMBERS = [
       {
         icons: [faClipboard],
         name: "HR",
-        description: `The HR portfolio is committed to strengthening teamwork and cross-portfolio communication within the society. They are responsible for organizing internal events, helping shape our culture at Co-op Soc.`,
+        description: `The HR portfolio is committed to strengthening teamwork and cross-portfolio communication within the society. They are responsible for organizing internal events, to help shape our culture at Co-op Soc.`,
         members: ["Stella Lin", "James Liao", "Aiden Ahmad", "Rashid Abuzarov"],
       },
       {
