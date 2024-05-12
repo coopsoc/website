@@ -854,9 +854,7 @@ const MEMBERS = [
       {
         icons: [faClipboard],
         name: "HR",
-        //Check this description, changed Admin to HR
-        description: `The HR portfolio assist the executive team, largely secretary, with things such as event organisation, booking systems and managing the inbox. They are organised, efficient and dedicated to their work.`,
-        //Get Rashid's Surname
+        description: `The HR portfolio is committed to strengthening teamwork and cross-portfolio communication within the society. They are responsible for organizing internal events, helping shape our culture at Co-op Soc.`,
         members: ["Stella Lin", "James Liao", "Aiden Ahmad", "Rashid Abuzarov"],
       },
       {
