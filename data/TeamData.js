@@ -857,7 +857,7 @@ const MEMBERS = [
         //Check this description, changed Admin to HR
         description: `The HR portfolio assist the executive team, largely secretary, with things such as event organisation, booking systems and managing the inbox. They are organised, efficient and dedicated to their work.`,
         //Get Rashid's Surname
-        members: ["Stella Lin", "James Liao", "Aiden Ahmad", "Rashid A"],
+        members: ["Stella Lin", "James Liao", "Aiden Ahmad", "Rashid Abuzarov"],
       },
       {
         icons: [faDove],
