@@ -833,19 +833,12 @@ const MEMBERS = [
         sectionName: "First Year Representatives",
         members: [
           [
-            //Get Tony's Pic
             {
               image: Tony_Image,
               description: ``,
               name: "Tony Wang",
               role: "",
             },
-            // {
-            //   image: Mariam_Image,
-            //   description: ``,
-            //   name: "First Last",
-            //   role: "",
-            // },
           ],
         ],
       },
