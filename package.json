@@ -35,6 +35,7 @@
     "rehype-autolink-headings": "^6.1.1",
     "rehype-img-size": "^1.0.1",
     "rehype-slug": "^5.0.1",
+    "stripe": "^15.7.0",
     "swiper": "^8.1.4",
     "typewriter-effect": "^2.18.2",
     "wnumb": "^1.2.0"

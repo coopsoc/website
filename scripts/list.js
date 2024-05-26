@@ -5,11 +5,11 @@
  * @returns {any[][]}
  */
 export function partition(list, n) {
-    let result = [];
+  let result = [];
 
-    for (let i = 0; i < list.length; i += n) {
-        result.push(list.slice(i, i + n));
-    }
+  for (let i = 0; i < list.length; i += n) {
+    result.push(list.slice(i, i + n));
+  }
 
-    return result;
-};
+  return result;
+}

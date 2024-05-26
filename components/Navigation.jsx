@@ -54,7 +54,8 @@ const navLinks = [
   ["Charity", "/charity"],
   ["Calendar", "/calendar"],
   // ["First Year FB", "/fb"],
-  ["EGM", "/egm"],
+  // ["EGM", "/egm"],
+  // ["Checkout", "/checkout"],
 ];
 
 const Navigation = () => {
