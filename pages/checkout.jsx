@@ -12,7 +12,7 @@ const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
 );
 
-export default function App() {
+const Checkout = () => {
   const fetchClientSecret = useCallback(() => {
     // Create a Checkout Session
     return fetch("/api/checkout_sessions", {
@@ -31,4 +31,6 @@ export default function App() {
       </EmbeddedCheckoutProvider>
     </div>
   );
-}
+};
+
+export default Checkout;
