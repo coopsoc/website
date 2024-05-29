@@ -1,6 +1,6 @@
 // From https://docs.stripe.com/checkout/embedded/quickstart?client=next
 
-// TODO add secret key to env
+// TODO update secret key in .env.local
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
