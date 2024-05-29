@@ -21,8 +21,7 @@ export default async function handler(req, res) {
             },
           ],
           mode: "payment",
-          // TODO update return endpoint as necessary (keep {CHECKOUT_SESSION_ID})
-          return_url: `${req.headers.origin}/return?session_id={CHECKOUT_SESSION_ID}`,
+          return_url: `${req.headers.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
         });
 
         res.send({ clientSecret: session.client_secret });
