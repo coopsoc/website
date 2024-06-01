@@ -61,7 +61,7 @@ const Navigation = () => {
   const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    let headroom = new Headroom(document.getElementById("navbar-main"));
+    const headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
     headroom.init();
   });

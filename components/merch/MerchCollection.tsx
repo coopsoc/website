@@ -18,12 +18,12 @@ const MerchCollection = ({ addToCart }: MerchCollectionProps) => {
         cache: "no-cache",
       }).then((value) => {
         value.json().then((_data) => {
-          let _d: Product[] = _data.sort((a: Product, b: Product) => {
+          const _d: Product[] = _data.sort((a: Product, b: Product) => {
             if (a.name == b.name) return 0;
             return a.name < b.name ? 1 : -1;
           });
 
-          let d: Product[][] = [];
+          const d: Product[][] = [];
           while (_d.length) {
             d.push(_d.splice(0, 3 > _d.length ? _d.length : 3));
           }
