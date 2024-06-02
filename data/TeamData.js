@@ -830,7 +830,7 @@ const MEMBERS = [
         ],
       },
       {
-        sectionName: "First Year Representatives",
+        sectionName: "First Year Representative",
         members: [
           [
             {
