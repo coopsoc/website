@@ -64,18 +64,20 @@ import Doris_Image_2023 from "public/img/exec/2023/Doris.jpeg";
 import MattL_Image from "public/img/exec/2023/MattL.jpeg";
 
 // 2024 Team Images
-import Alex_Image from "public/img/exec/2024/Alex.jpg";
+import Mariam_Image from "public/img/exec/2024/Mariam.jpg";
 import Sam_Image from "public/img/exec/2024/Sam.jpg";
-import Sebastian_Image from "public/img/exec/2024/Sebastian.png";
-import Doris_Image_2024 from "public/img/exec/2024/Doris.jpg";
+import Shreya_Image from "public/img/exec/2024/Shreya.jpg";
+import Tyrone_Image from "public/img/exec/2024/Tyrone.png";
 import Arya_Image from "public/img/exec/2024/Arya.jpg";
-import Anna_Image from "public/img/exec/2024/Anna.jpg";
-import Kiran_Image from "public/img/exec/2024/Kiran.jpeg";
+import Prapann_Image from "public/img/exec/2024/Prapann.png";
+import Tony_Image from "public/img/exec/2024/Tony.jpeg";
+import Karen_Image from "public/img/exec/2024/Karen.jpeg";
+import Meera_Image from "public/img/exec/2024/Meera.jpg";
+import Vicky_Image from "public/img/exec/2024/Vicky.png";
 import Sienna_Image from "public/img/exec/2024/Sienna.png";
 import Dinara_Image from "public/img/exec/2024/Dinara.jpg";
 import Inika_Image from "public/img/exec/2024/Inika.jpg";
-import Kelly_Image from "public/img/exec/2024/Kelly.jpg";
-import Maggie_Image from "public/img/exec/2024/Maggie.jpg";
+import Jaime_Image from "public/img/exec/2024/Jaime.jpg";
 import Imogen_Image from "public/img/exec/2024/Imogen.png";
 import Lucas_Image from "public/img/exec/2024/Lucas.jpg";
 import Nicholas_Image from "public/img/exec/2024/Nicholas.png";
@@ -712,9 +714,9 @@ const MEMBERS = [
         members: [
           [
             {
-              image: Alex_Image,
+              image: Mariam_Image,
               description: ``,
-              name: "Alexander Lee",
+              name: "Mariam Youssef",
               role: "Co-President",
             },
             {
@@ -724,29 +726,31 @@ const MEMBERS = [
               role: "Co-President",
             },
             {
-              image: Sebastian_Image,
+              image: Shreya_Image,
               description: ``,
-              name: "Sebastian Pelayo",
+              name: "Shreya Mukherjee",
               role: "Arc Delegate",
             },
           ],
           [
             {
-              image: Doris_Image_2024,
+              image: Tyrone_Image,
               description: ``,
-              name: "Doris Yang",
+              name: "Tyrone Lui",
               role: "HR / Grievance Officer",
             },
+
             {
               image: Arya_Image,
               description: ``,
               name: "Arya Ahluwalia",
               role: "Secretary",
             },
+
             {
-              image: Anna_Image,
+              image: Prapann_Image,
               description: ``,
-              name: "Anna Tokarev",
+              name: "Prapann Malavia",
               role: "Treasurer",
             },
           ],
@@ -756,6 +760,12 @@ const MEMBERS = [
         sectionName: "Directors",
         members: [
           [
+            {
+              image: Vicky_Image,
+              description: ``,
+              name: "Vicky Chen",
+              role: "HR",
+            },
             {
               image: Dinara_Image,
               description: ``,
@@ -768,14 +778,14 @@ const MEMBERS = [
               name: "Inika Weber",
               role: "Charities",
             },
+          ],
+          [
             {
               image: Lucas_Image,
               description: ``,
               name: "Lucas Harvey",
               role: "IT (Technical)",
             },
-          ],
-          [
             {
               image: Nicholas_Image,
               description: ``,
@@ -783,19 +793,19 @@ const MEMBERS = [
               role: "IT (Project Management)",
             },
             {
-              image: Kelly_Image,
+              image: Karen_Image,
               description: ``,
-              name: "Kelly Nguyen",
-              role: "Marketing",
-            },
-            {
-              image: Maggie_Image,
-              description: ``,
-              name: "Maggie Lam",
+              name: "Karen Lau",
               role: "Marketing",
             },
           ],
           [
+            {
+              image: Meera_Image,
+              description: ``,
+              name: "Meera Gandhi",
+              role: "Marketing",
+            },
             {
               image: Imogen_Image,
               description: ``,
@@ -803,11 +813,13 @@ const MEMBERS = [
               role: "Publications",
             },
             {
-              image: Kiran_Image,
+              image: Jaime_Image,
               description: ``,
-              name: "Kiran Singh",
+              name: "Jaime Pitcher",
               role: "Socials",
             },
+          ],
+          [
             {
               image: Sienna_Image,
               description: ``,
@@ -817,64 +829,81 @@ const MEMBERS = [
           ],
         ],
       },
-      // {
-      //   sectionName: "First Year Representatives",
-      //   members: [
-      //     [
-      //       {
-      //         image: Name_Image,
-      //         description: ``,
-      //         name: "First Last",
-      //         role: "",
-      //       },
-      //       {
-      //         image: Name_Image,
-      //         description: ``,
-      //         name: "First Last",
-      //         role: "",
-      //       },
-      //     ],
-      //   ],
-      // },
+      {
+        sectionName: "First Year Representative",
+        members: [
+          [
+            {
+              image: Tony_Image,
+              description: ``,
+              name: "Tony Wang",
+              role: "",
+            },
+          ],
+        ],
+      },
     ],
-    // subcoms: [
-    //   {
-    //     icons: [faClipboard],
-    //     name: "Administrative Officers",
-    //     description: `The Administrative Officers assist the executive team, largely secretary, with things such as event organisation, booking systems and managing the inbox. They are organised, efficient and dedicated to their work.`,
-    //     members: [],
-    //   },
-    //   {
-    //     icons: [faDove],
-    //     name: "Charity",
-    //     description: `The Charity portfolio seeks to create awareness, raise funds and drive social change for charities. The committee also compliments the Social portfolio in hosting fun events for a great cause.`,
-    //     members: [],
-    //   },
-    //   {
-    //     icons: [faDesktop],
-    //     name: "IT",
-    //     description: `The IT portfolio forms the technical backbone for the society. It oversees the development of internal tools and manages the Co-op Soc website; a hub for existing and prospective scholars, hosting blog posts and event information, as well a merchandise store and an executive nomination/voting system.`,
-    //     members: [],
-    //   },
-    //   {
-    //     icons: [faBullhorn],
-    //     name: "Marketing",
-    //     description: `The Marketing portfolio focuses on creating continued engagement with our Co-op Society Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
-    //     members: [],
-    //   },
-    //   {
-    //     icons: [faEdit],
-    //     name: "Publications",
-    //     description: `The Publications portfolio is responsible for continuing to grow the society's online presence and keeping scholars up to date, focusing on the blog posts for the Co-op Soc website and the Chicken Coop podcast.`,
-    //     members: [],
-    //   },
-    //   {
-    //     icons: [faUserFriends],
-    //     name: "Social",
-    //     description: `The Social portfolio is responsible for organising our social calendar, including planning, developing and executing a core suite of events. They ensure all members are given the opportunity to be a part of this vibrant community, through the creation and maintenance of social groups.`,
-    //     members: [],
-    //   },
-    // ],
+    subcoms: [
+      {
+        icons: [faClipboard],
+        name: "HR",
+        description: `The HR portfolio is committed to strengthening teamwork and cross-portfolio communication within the society. They are responsible for organizing internal events, to help shape our culture at Co-op Soc.`,
+        members: ["Stella Lin", "James Liao", "Aiden Ahmad", "Rashid Abuzarov"],
+      },
+      {
+        icons: [faDove],
+        name: "Charity",
+        description: `The Charity portfolio seeks to create awareness, raise funds and drive social change for charities. The committee also compliments the Social portfolio in hosting fun events for a great cause.`,
+        members: [
+          "Georgia Stanfield-Gates",
+          "Rory Wilson",
+          "Angellinah Guo",
+          "Erica Comito",
+          "Sam Morphett",
+        ],
+      },
+      {
+        icons: [faDesktop],
+        name: "IT",
+        description: `The IT portfolio forms the technical backbone for the society. It oversees the development of internal tools and manages the Co-op Soc website; a hub for existing and prospective scholars, hosting blog posts and event information, as well a merchandise store and an executive nomination/voting system.`,
+        members: [
+          "Chris Yoo",
+          "Ronan Green",
+          "Time Sothanayongkul",
+          "Mir Hasan",
+        ],
+      },
+      {
+        icons: [faBullhorn],
+        name: "Marketing",
+        description: `The Marketing portfolio focuses on creating continued engagement with our Co-op Society Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
+        members: [
+          "Kenzie Lai",
+          "Angie Counsell",
+          "Emma Kirkland",
+          "Sania Kulkarni",
+          "Alex Knijnik",
+        ],
+      },
+      {
+        icons: [faEdit],
+        name: "Publications",
+        description: `The Publications portfolio is responsible for continuing to grow the society's online presence and keeping scholars up to date, focusing on the blog posts for the Co-op Soc website and the Chicken Coop podcast.`,
+        members: ["Jamie Hilliam", "Jack Preller", "Declan Gormley"],
+      },
+      {
+        icons: [faUserFriends],
+        name: "Social",
+        description: `The Social portfolio is responsible for organising our social calendar, including planning, developing and executing a core suite of events. They ensure all members are given the opportunity to be a part of this vibrant community, through the creation and maintenance of social groups.`,
+        members: [
+          "Alana Breed",
+          "Anna Xu",
+          "Darcy Keenlyside",
+          "Caitlin Blackburn",
+          "Athen Wilson",
+        ],
+      },
+    ],
   },
 ];
 
