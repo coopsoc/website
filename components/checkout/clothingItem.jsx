@@ -5,17 +5,23 @@ import styles from "styles/modules/checkout.module.scss";
 
 import { Row, Col, Card, Button } from "reactstrap";
 
+import { IMAGES } from "data/CheckoutData.js";
+
 const ClothingItem = ({ item, addToCart, removeFromCart }) => {
+  console.log(item.product.images[0]);
   return (
     <Row className={styles["clothingItem"]}>
       <Col style={{ display: "flex", flexDirection: "row" }}>
         <Image
-          src={item.product.images[0]}
+          src={IMAGES[item.product.images[0]]}
           width={200}
           height={200}
           alt="Picture of the clothing item"
+          unoptimized
         />
-        <h3 style={{ marginTop: "10px" }}>{item.product.name}</h3>
+        <h3 style={{ marginTop: "10px", marginLeft: "10px" }}>
+          {item.product.name}
+        </h3>
       </Col>
       <Col className={styles["clothingRow"]}>
         <p>${item.price / 100}</p>
