@@ -4,8 +4,13 @@ const path = require("path");
 const nextConfig = {
   basePath: "",
   images: {
-    loader: "akamai",
-    path: "/",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+        pathname: "/300/200",
+      },
+    ],
   },
   reactStrictMode: true,
   sassOptions: {
