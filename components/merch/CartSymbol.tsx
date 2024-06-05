@@ -1,17 +1,17 @@
+import { Clickable } from "components/types";
 import { Product } from "data/types";
 import React from "react";
 
 import styles from "styles/modules/Merch.module.scss";
 
-interface CartSymbolProps {
-  click: () => void;
+interface CartSymbolProps extends Clickable {
   cart: Product[];
 }
 
-const CartSymbol = ({ click, cart }: CartSymbolProps) => {
+const CartSymbol = ({ onClick, cart }: CartSymbolProps) => {
   return (
     <>
-      <i className="fa badge fa-2x" onClick={click}>
+      <i className="fa badge fa-2x" onClick={onClick}>
         &#xf07a;
       </i>
       <span

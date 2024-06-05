@@ -16,18 +16,15 @@ const CharityUpcoming = () => {
     const images: React.JSX.Element[] = [];
     const text: React.JSX.Element[] = [];
 
-    for (let i = 0; i < row.length; i++) {
-      const item = row[i];
-
+    row.forEach((item) => {
       images.push(<Image alt={item.title} src={item.image} />);
-
       text.push(
         <>
           <b>{item.title}</b>
           <p className="mt-auto">{item.date}</p>
         </>,
       );
-    }
+    });
 
     return [images, text];
   };

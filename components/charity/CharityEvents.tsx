@@ -9,13 +9,10 @@ import styles from "styles/modules/CharityEvents.module.scss";
 
 import { END, EVENTS, START } from "data/CharityData";
 import { CharityEvent } from "data/types";
-
-interface CharityEventsProps {
-  onClick: (event: CharityEvent) => void;
-}
+import { ClickableEvent } from "components/types";
 
 // TODO: events sliding is still a bit janky, patch up when possible
-const CharityEvents = ({ onClick }: CharityEventsProps) => {
+const CharityEvents = ({ onClick }: ClickableEvent<CharityEvent, void>) => {
   const [year, setYear] = useState<number>(END);
   const [direction, setDirection] = useState<string>("left");
 

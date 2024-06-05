@@ -4,7 +4,7 @@
  * @param {number} n   - The number of elements in each part.
  * @returns {any[][]}
  */
-export function partition(list: any, n: number): any[][] {
+export function partition<T>(list: T[], n: number): T[][] {
   const result = [];
 
   for (let i = 0; i < list.length; i += n) {
