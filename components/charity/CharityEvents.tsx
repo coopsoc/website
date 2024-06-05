@@ -9,8 +9,12 @@ import styles from "styles/modules/CharityEvents.module.scss";
 
 import { END, EVENTS, START } from "data/CharityData";
 
+interface CharityEventsProps {
+  onClick: () => void;
+}
+
 // TODO: events sliding is still a bit janky, patch up when possible
-const CharityEvents = ({ onClick }) => {
+const CharityEvents = ({ onClick }: CharityEventsProps) => {
   const [year, setYear] = useState<number>(END);
   const [direction, setDirection] = useState<string>("left");
 
@@ -45,11 +49,7 @@ const CharityEvents = ({ onClick }) => {
             <Row className="align-items-center">
               <div className="row">
                 {events.map((event, index) => (
-                  <CharityCard
-                    key={index}
-                    event={event}
-                    onClick={() => onClick(event)}
-                  />
+                  <CharityCard key={index} event={event} onClick={onClick} />
                 ))}
               </div>
             </Row>

@@ -64,7 +64,7 @@ const Team = () => {
         />
 
         <div className="container px-4 px-md-3">
-          {members.exec.map((section, index) => (
+          {members.exec?.map((section, index) => (
             <ExecSection
               key={`exec-section-${section.sectionName}-${index}`}
               section={section}

@@ -32,6 +32,7 @@ const useWindowSize = () => {
 
 const useBreakpoints = (breakpoints: number[]) => {
   const { width } = useWindowSize();
+  if (!width) return [];
   return breakpoints.map((breakpoint) => width < breakpoint);
 };
 

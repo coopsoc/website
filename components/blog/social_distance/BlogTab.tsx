@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Col, Container, Row, TabContent, TabPane } from "reactstrap";
 import { partition } from "scripts/list";
 
-interface Props {
+interface BlogTabProps {
   children: Child[];
 }
 
@@ -14,7 +14,7 @@ type Child = {
   };
 };
 
-const BlogTab = (props: Props) => {
+const BlogTab = (props: BlogTabProps) => {
   const NONE = -1;
   const [tab, setTab] = useState<number>(NONE);
 

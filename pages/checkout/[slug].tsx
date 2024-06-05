@@ -26,8 +26,9 @@ const PaymentEl = ({ clientSecret, router }: PaymentElProps) => {
   const handler = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    const { error: submitError } = await elements.submit();
+    if (!stripe || !elements) return;
 
+    const { error: submitError } = await elements.submit();
     if (submitError) {
       return;
     }

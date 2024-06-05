@@ -49,6 +49,8 @@
   "devDependencies": {
     "@eslint/js": "^9.4.0",
     "@next/eslint-plugin-next": "^14.2.3",
+    "@types/headroom.js": "^0.12.4",
+    "@types/wnumb": "^1.2.3",
     "@typescript-eslint/eslint-plugin": "^7.11.0",
     "@typescript-eslint/parser": "^7.11.0",
     "eslint": "8.x",
@@ -61,6 +63,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "globals": "^15.3.0",
     "prettier": "^3.2.3",
+    "rehype-image-size": "^1.0.0",
     "sass": "^1.51.0",
     "typescript-eslint": "^7.11.0"
   },

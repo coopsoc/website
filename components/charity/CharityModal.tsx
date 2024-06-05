@@ -13,6 +13,7 @@ interface CharityModalProps {
 }
 
 const CharityModal = ({ isOpen, toggle, event }: CharityModalProps) => {
+  if (!event) return null;
   // Renders the body of our modal. If there's anything in the `special`
   // key of our event object, we render a special object with any new items
   // attached (extra images, extra text etc.)
@@ -34,7 +35,7 @@ const CharityModal = ({ isOpen, toggle, event }: CharityModalProps) => {
       className="modal-dialog-centered modal-lg"
     >
       <ModalHeader toggle={toggle}>{event?.title}</ModalHeader>
-      <ModalBody>{chooseBody(event?.special)}</ModalBody>
+      <ModalBody>{chooseBody(event?.special ?? "")}</ModalBody>
       <ModalFooter>
         <a href={event?.link}>
           <Button color="index" style={{ minWidth: "100px" }} onClick={toggle}>

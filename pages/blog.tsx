@@ -20,7 +20,11 @@ type Post = {
   slug: string;
 };
 
-const Blog = ({ posts }) => {
+interface BlogProps {
+  posts: Post[];
+}
+
+const Blog = ({ posts }: BlogProps) => {
   // TODO: add dates published to each blog
   const rows: Post[][] = partition(posts, 3);
 
