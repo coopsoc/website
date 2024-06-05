@@ -29,17 +29,18 @@ interface PodcastPlayerProps {
 }
 
 const PodcastPlayer = ({ podcast }: PodcastPlayerProps) => {
-  const [audio, setAudio] = useState<HTMLAudioElement>(null);
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [audioState, setAudioState] = useState<AudioState>(AudioState.PAUSED);
 
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [duration, setDuration] = useState<number>(NaN);
 
-  const onChange = (values: string[], _: number) => {
-    const newTime = parseInt(values[0]);
+  const onChange = (values: (string | number)[]) => {
+    const newTime =
+      typeof values[0] === "string" ? parseInt(values[0]) : values[0];
 
     setCurrentTime((prevTime) => {
-      if (prevTime === newTime) return;
+      if (prevTime === newTime || !audio) return prevTime;
       console.log(prevTime, newTime);
 
       audio.currentTime = newTime;
@@ -67,14 +68,20 @@ const PodcastPlayer = ({ podcast }: PodcastPlayerProps) => {
   }, [audio]);
 
   const playAudio = async () => {
+    if (!audio) return;
     setAudioState(AudioState.LOADING);
-    await audio.play();
-    setAudioState(AudioState.PLAYING);
+
+    // FIXME: The media resource indicated by the src attribute or assigned media provider object was not suitable.
+    // await audio.play();
+    // setAudioState(AudioState.PLAYING);
   };
 
   const pauseAudio = () => {
-    audio.pause();
-    setAudioState(AudioState.PAUSED);
+    if (!audio) return;
+
+    // FIXME: The media resource indicated by the src attribute or assigned media provider object was not suitable.
+    // audio.pause();
+    // setAudioState(AudioState.PAUSED);
   };
 
   const buttonPress = () => {

@@ -17,7 +17,7 @@ import BlogTab from "components/blog/social_distance/BlogTab";
 import BlogTabEntry from "components/blog/social_distance/BlogTabEntry";
 import { Blog } from "data/types";
 
-const MarkdownImage = (props) => (
+const MarkdownImage = (props: any) => (
   <Image alt={props.alt} layout="responsive" loading="lazy" {...props} />
 );
 
@@ -98,7 +98,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
           { behaviour: "wrap" },
         ],
         [
-          rehypeImgSize,
+          rehypeImgSize as unknown as any, // workaround for TS strict mode
           {
             dir: "public",
           },

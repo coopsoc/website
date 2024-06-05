@@ -13,13 +13,17 @@ interface YearSliderProps {
 const YearSlider = ({ start, end, onChange }: YearSliderProps) => {
   const sliderRef = useRef<target>(null);
 
-  const updateSlider = (values: string[], _: number) => {
-    const year = parseInt(values[0]);
+  const updateSlider = (values: (string | number)[]) => {
+    const year =
+      typeof values[0] === "string" ? parseInt(values[0]) : values[0];
     onChange(year);
   };
 
   useEffect(() => {
     const sliderNode = sliderRef.current;
+    if (!sliderNode) {
+      return;
+    }
 
     Slider.create(sliderRef.current, {
       start: [end],
@@ -32,7 +36,7 @@ const YearSlider = ({ start, end, onChange }: YearSliderProps) => {
     }).on("update", updateSlider);
 
     return () => {
-      if (sliderNode) {
+      if (sliderNode && sliderNode.noUiSlider) {
         sliderNode.noUiSlider.destroy();
       }
     };

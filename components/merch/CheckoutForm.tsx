@@ -17,8 +17,8 @@ const CheckoutForm = ({ cart, updateCart }: CheckoutFormProps) => {
   const router = useRouter();
 
   const removeFromCart = (e: React.MouseEvent<HTMLSpanElement>) => {
-    let newCart: Product[] = JSON.parse(JSON.stringify(cart)); // this an extremely hacky way of getting a hard copied array
-    let index: number = Number(
+    const newCart: Product[] = JSON.parse(JSON.stringify(cart)); // this an extremely hacky way of getting a hard copied array
+    const index: number = Number(
       e.currentTarget.parentElement?.getAttribute("data-value"),
     ); // this is gross chaining
     newCart.splice(index, 1);

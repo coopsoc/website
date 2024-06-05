@@ -13,9 +13,9 @@ const CharityBody = ({ event }: CharityBodyProps) => {
         <Image src={event.image} alt={event.title} style={{ width: "50%" }} />
       </div>
       <hr />
-      {event.description.split("\n").map((line, index) => (
-        <p key={index}>{line}</p>
-      ))}
+      {event.description
+        ?.split("\n")
+        .map((line, index) => <p key={index}>{line}</p>)}
     </>
   );
 };

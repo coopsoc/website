@@ -13,8 +13,8 @@ const CharityUpcoming = () => {
   const [parts, setParts] = useState<React.JSX.Element[][]>([]);
 
   const rowToDisplay = (row: CharityEvent[]) => {
-    let images: React.JSX.Element[] = [];
-    let text: React.JSX.Element[] = [];
+    const images: React.JSX.Element[] = [];
+    const text: React.JSX.Element[] = [];
 
     for (let i = 0; i < row.length; i++) {
       const item = row[i];
@@ -35,7 +35,7 @@ const CharityUpcoming = () => {
   // Breakpoints change whenever we resize, and we need to change the number
   // of items in each row for a responsive layout
   useEffect(() => {
-    let rowItems = Number(!small) + Number(!medium) + Number(!large) + 1;
+    const rowItems = Number(!small) + Number(!medium) + Number(!large) + 1;
 
     const partitioned = partition(UPCOMING, rowItems).map(rowToDisplay).flat(1);
     setParts(partitioned);

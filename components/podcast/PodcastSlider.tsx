@@ -5,7 +5,7 @@ import wNumb from "wnumb";
 interface PodcastSliderProps {
   duration: number;
   currentTime: number;
-  onChange: (values: string[], handle: number) => void;
+  onChange: (values: (string | number)[]) => void;
 }
 
 const PodcastSlider = ({
@@ -17,6 +17,9 @@ const PodcastSlider = ({
 
   useEffect(() => {
     const node = sliderRef.current;
+    if (!node) {
+      return;
+    }
 
     Slider.create(node, {
       start: 0,
@@ -29,7 +32,7 @@ const PodcastSlider = ({
     }).on("change", onChange);
 
     return () => {
-      if (node) {
+      if (node && node.noUiSlider) {
         node.noUiSlider.destroy();
       }
     };
@@ -37,7 +40,9 @@ const PodcastSlider = ({
   }, []);
 
   useEffect(() => {
-    sliderRef.current.noUiSlider.set(currentTime);
+    if (sliderRef.current?.noUiSlider) {
+      sliderRef.current.noUiSlider.set(currentTime);
+    }
   }, [currentTime]);
 
   const toTimestamp = (seconds: number) => {

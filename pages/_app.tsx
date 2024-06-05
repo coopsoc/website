@@ -20,10 +20,11 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import Footer from "components/Footer";
 import IndexHeader from "components/IndexHeader";
+import { AppProps } from "next/app";
 
 config.autoAddCss = false;
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
 
   useEffect(() => {

@@ -61,9 +61,12 @@ const Navigation = () => {
   const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    let headroom = new Headroom(document.getElementById("navbar-main"));
-    // initialise
-    headroom.init();
+    const navbar = document.getElementById("navbar-main");
+    if (navbar) {
+      const headroom = new Headroom(navbar);
+      // initialise
+      headroom.init();
+    }
   });
 
   const getNavLinkClass = (path: string) => {

@@ -5,7 +5,7 @@
  * @returns {any[][]}
  */
 export function partition(list: any, n: number): any[][] {
-  let result = [];
+  const result = [];
 
   for (let i = 0; i < list.length; i += n) {
     result.push(list.slice(i, i + n));

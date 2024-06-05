@@ -26,11 +26,13 @@ The first version of the website was written by the 2020 Co-op Soc IT director,
 Vincent Chen.
 
 The React rewrite of the website was done by the 2021 IT subcom:
+
 - Noa Challis
 - Hanyuan Li
 - Rohan Agarwal
 
 This was then ported over to Next.js and improved on by the 2022 IT subcom:
+
 - Hanyuan Li
 - Stephen Lincon
 - Meghna Sunil

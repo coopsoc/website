@@ -14,12 +14,12 @@ const MerchCard = ({ productData, addToCart }: MerchCardProps) => {
   const [modal, setModal] = useState<boolean>(false);
   const [size, setSize] = useState<string>("S");
   const { name, id, images, price } = productData;
-  const [source, setSource] = useState(images[0]);
+  const [source, setSource] = useState(images ? images[0] : "");
 
   const toggle = () => setModal(!modal);
 
   const changeImage = (index: number) => {
-    if (source === images[index]) return;
+    if (!images || source === images[index]) return;
 
     setSource(images[index]);
   };
@@ -41,7 +41,11 @@ const MerchCard = ({ productData, addToCart }: MerchCardProps) => {
         key={id}
         onClick={toggle}
       >
-        <Image className="card-img-top" src={images[0]} alt={name} />
+        <Image
+          className="card-img-top"
+          src={images ? images[0] : ""}
+          alt={name}
+        />
         <div className="card-body pt-3">
           <h5 className="card-title mb-3">{name}</h5>
           <h5 className="card-subtitle text-muted">

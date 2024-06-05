@@ -6,7 +6,7 @@ import { CharityEvent } from "data/types";
 
 interface CharityCardProps {
   event: CharityEvent;
-  onClick: () => void;
+  onClick: (event: CharityEvent) => void;
 }
 
 const CharityCard = ({ event, onClick }: CharityCardProps) => {
@@ -16,7 +16,7 @@ const CharityCard = ({ event, onClick }: CharityCardProps) => {
         src={event.image}
         alt={event.title}
         className="card-img-top"
-        onClick={onClick}
+        onClick={() => onClick(event)}
       />
     </Col>
   );
