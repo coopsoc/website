@@ -8,9 +8,10 @@ import CharityCard from "./events/CharityCard";
 import styles from "styles/modules/CharityEvents.module.scss";
 
 import { END, EVENTS, START } from "data/CharityData";
+import { CharityEvent } from "data/types";
 
 interface CharityEventsProps {
-  onClick: () => void;
+  onClick: (event: CharityEvent) => void;
 }
 
 // TODO: events sliding is still a bit janky, patch up when possible
