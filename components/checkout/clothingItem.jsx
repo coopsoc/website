@@ -11,7 +11,9 @@ const ClothingItem = ({ item, addToCart, removeFromCart }) => {
   console.log(item.product.images[0]);
   return (
     <Row className={styles["clothingItem"]}>
-      <Col style={{ display: "flex", flexDirection: "row" }}>
+      <Col
+        style={{ display: "flex", flexDirection: "row", textAlign: "center" }}
+      >
         <Image
           src={IMAGES[item.product.images[0]]}
           width={200}
@@ -24,7 +26,7 @@ const ClothingItem = ({ item, addToCart, removeFromCart }) => {
         </h3>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <p>${item.price / 100}</p>
+        <h3>${item.price / 100}</h3>
       </Col>
       <Col className={styles["clothingRow"]}>
         <div className={styles["quantityButtons"]}>
@@ -36,7 +38,7 @@ const ClothingItem = ({ item, addToCart, removeFromCart }) => {
           >
             -
           </Button>
-          <p>{item.amount}</p>
+          <h3>{item.amount}</h3>
           <Button
             className="mt-4"
             color="primary"
@@ -48,7 +50,7 @@ const ClothingItem = ({ item, addToCart, removeFromCart }) => {
         </div>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <p>${(item.price / 100) * item.amount}</p>
+        <h3>${(item.price / 100) * item.amount}</h3>
       </Col>
     </Row>
   );

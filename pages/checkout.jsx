@@ -119,14 +119,14 @@ const Checkout = () => {
   return (
     <>
       <Head>
-        <title>CHECKOUT | UNSW Co-op Society</title>
+        <title>CART | UNSW Co-op Society</title>
       </Head>
 
       <section className="section section-lg">
         <Row className="justify-content-center text-center">
           <Col lg="8">
             <h1 className="animate__animated animate__zoomIn animate__fast">
-              CHECKOUT
+              CART
             </h1>
           </Col>
         </Row>
