@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { createContext, useEffect } from "react";
 
 // NextJS router
 import { useRouter } from "next/router";
@@ -24,6 +24,9 @@ import { AppProps } from "next/app";
 
 config.autoAddCss = false;
 
+const stripe = require("stripe")(process.env["STRIPE_TEST_KEY"]);
+export const StripeContext = createContext(stripe);
+
 function App({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
 
@@ -35,9 +38,11 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <Navigation />
       {pathname === "/" ? <IndexHeader /> : <Header />}
-      <main>
-        <Component {...pageProps} />
-      </main>
+      <StripeContext.Provider value={{ stripe }}>
+        <main>
+          <Component {...pageProps} />
+        </main>
+      </StripeContext.Provider>
       <Footer />
     </>
   );
