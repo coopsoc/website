@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import styles from "styles/modules/ExecCard.module.scss";
-import { ExecMember } from "data/types";
+import { ExecMember } from "../../data/types";
 
 interface ExecCardProps {
   data: ExecMember;

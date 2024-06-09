@@ -19,8 +19,8 @@ import Variety from "public/img/charity/logos/variety.png";
 import WorldVision from "public/img/charity/logos/world_vision.png";
 
 // Upcoming event images
-import FHF from "public/img/charity/upcoming/40_hour_famine.png";
-import WGS from "public/img/charity/upcoming/worlds_greatest_shave.png";
+// import FHF from "public/img/charity/upcoming/40_hour_famine.png";
+// import WGS from "public/img/charity/upcoming/worlds_greatest_shave.png";
 import coopLogo from "public/img/charity/coopLogo.jpg";
 import { CharityEvent, Sponsor } from "./types";
 

@@ -8,7 +8,7 @@ import { Modal, ModalBody } from "reactstrap";
 import MerchHeader from "components/merch/MerchHeader";
 
 import styles from "styles/modules/Merch.module.scss";
-import { Product } from "data/types";
+import { Product } from "../data/types";
 
 const Merch = () => {
   const [showModal, setShowModal] = useState<boolean>(false);

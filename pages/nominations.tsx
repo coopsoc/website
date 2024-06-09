@@ -15,7 +15,7 @@ import NOMINEES from "data/NominationsData";
 import { useState } from "react";
 
 import styles from "styles/modules/nominations.module.scss";
-import { Nominee } from "data/types";
+import { Nominee } from "../data/types";
 
 const Nominations = () => {
   const [showModal, setShowModal] = useState<boolean>(false);

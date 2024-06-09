@@ -16,6 +16,10 @@ export interface Nominee extends Person {
   preference: number;
 }
 
+export interface NomineeData {
+  data: Nominee;
+}
+
 export type Sponsor = {
   name: string;
   image: StaticImageData;

@@ -1,4 +1,4 @@
-import React, { cloneElement, useEffect, useState } from "react";
+import React, { cloneElement, useState } from "react";
 import { Card, Container, Row } from "reactstrap";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -8,7 +8,7 @@ import CharityCard from "./events/CharityCard";
 import styles from "styles/modules/CharityEvents.module.scss";
 
 import { END, EVENTS, START } from "data/CharityData";
-import { CharityEvent } from "data/types";
+import { CharityEvent } from "../../data/types";
 import { ClickableEvent } from "components/types";
 
 // TODO: events sliding is still a bit janky, patch up when possible

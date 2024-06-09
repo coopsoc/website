@@ -3,7 +3,7 @@ import { Row, Col } from "reactstrap";
 
 import CharityBody from "../CharityBody";
 
-import { CharityEvent } from "data/types";
+import { CharityEvent } from "../../../../data/types";
 
 interface CaseCompBody1Props {
   event: CharityEvent;

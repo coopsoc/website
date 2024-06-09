@@ -1,5 +1,5 @@
 import { Clickable } from "components/types";
-import { Product } from "data/types";
+import { Product } from "../../data/types";
 import React from "react";
 
 import styles from "styles/modules/Merch.module.scss";

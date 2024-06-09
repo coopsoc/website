@@ -3,7 +3,7 @@ import MerchCard from "./MerchCard";
 import Loader from "components/Loader";
 
 import Image from "next/image";
-import { Product } from "data/types";
+import { Product } from "../../data/types";
 
 interface MerchCollectionProps {
   addToCart: (value: Product) => void;

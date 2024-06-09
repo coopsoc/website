@@ -2,7 +2,7 @@ import React from "react";
 import { Row } from "reactstrap";
 
 import ExecCard from "./ExecCard";
-import { ExecMembersSection } from "data/types";
+import { ExecMembersSection } from "../../data/types";
 
 const seededRandom = (s: string) => {
   let hash = 0;

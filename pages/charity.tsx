@@ -11,7 +11,7 @@ import CharityEvents from "components/charity/CharityEvents";
 import CharityList from "components/charity/CharityList";
 import CharityModal from "components/charity/CharityModal";
 import CharityUpcoming from "components/charity/CharityUpcoming";
-import { CharityEvent } from "data/types";
+import { CharityEvent } from "../data/types";
 
 const Charity = () => {
   const [showModal, setShowModal] = useState<boolean>(false);

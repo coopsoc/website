@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { CharityEvent } from "data/types";
+import { CharityEvent } from "../../../data/types";
 
 interface CharityBodyProps {
   event: CharityEvent;

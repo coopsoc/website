@@ -1,7 +1,7 @@
 import React from "react";
 
 import CartSymbol from "./CartSymbol";
-import { Product } from "data/types";
+import { Product } from "../../data/types";
 import { Clickable } from "components/types";
 
 interface MerchHeaderProps extends Clickable {

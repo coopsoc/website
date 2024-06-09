@@ -1,4 +1,4 @@
-import { Blog } from "data/types";
+import { Blog } from "../../data/types";
 import React from "react";
 
 import {
