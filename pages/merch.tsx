@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import {
   Card,
+  Carousel,
+  CarouselIndicators,
+  CarouselItem,
   Col,
   Container,
   Dropdown,
@@ -219,6 +222,26 @@ const MerchCard = ({
   const [qtyChoice, setQtyChoice] = useState(0);
   const [qtyDropdownOpen, setQtyDropdownOpen] = useState(false);
 
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [carouselAnimating, setCarouselAnimating] = useState(false);
+
+  const carouselNext = () => {
+    if (carouselAnimating) return;
+    const nextIndex = carouselIndex === 999 - 1 ? 0 : carouselIndex + 1;
+    setCarouselIndex(nextIndex);
+  };
+
+  const carouselPrevious = () => {
+    if (carouselAnimating) return;
+    const nextIndex = carouselIndex === 0 ? 999 - 1 : carouselIndex - 1;
+    setCarouselIndex(nextIndex);
+  };
+
+  const carouselGoToIndex = (newIndex: number) => {
+    if (carouselAnimating) return;
+    setCarouselIndex(newIndex);
+  };
+
   const toggleColourDropdown = () => setColourDropdownOpen(!colourDropdownOpen);
   const toggleSizeDropdown = () => setSizeDropdownOpen(!sizeDropdownOpen);
   const toggleQtyDropdown = () => setQtyDropdownOpen(!qtyDropdownOpen);
@@ -226,10 +249,18 @@ const MerchCard = ({
   const updateCart = (qty: number) => {
     const variantID = getVariantID(product.name, colourChoice, sizeChoice);
     if (!variantID) return;
-    setCart((prevCart) => {
-      prevCart.set(variantID, qty);
-      return prevCart;
-    });
+
+    if (qty === 0) {
+      setCart((prevCart) => {
+        prevCart.delete(variantID);
+        return prevCart;
+      });
+    } else {
+      setCart((prevCart) => {
+        prevCart.set(variantID, qty);
+        return prevCart;
+      });
+    }
     setQtyChoice(qty);
   };
 
@@ -241,6 +272,36 @@ const MerchCard = ({
         height={500}
         alt="merch1"
       />
+      {/* <Carousel
+        activeIndex={carouselIndex}
+        next={carouselNext}
+        previous={carouselPrevious}
+      >
+        <CarouselIndicators
+          items={items}
+          activeIndex={carouselIndex}
+          onClickHandler={carouselGoToIndex}
+        />
+        <CarouselItem
+          onExiting={() => setCarouselAnimating(true)}
+          onExited={() => setCarouselAnimating(false)}
+        >
+          <Image
+            src="https://picsum.photos/300/200"
+            width={500}
+            height={500}
+            alt="merch1"
+          />
+        </CarouselItem>
+        <CarouselItem>
+          <Image
+            src="https://picsum.photos/300/200"
+            width={500}
+            height={500}
+            alt="merch2"
+          />
+        </CarouselItem>
+      </Carousel> */}
       <Container className="p-3">
         <h3>{product.name}</h3>
         <p>{displayPrice(product.price.cents)}</p>
@@ -267,7 +328,10 @@ const MerchCard = ({
               {product.colours.map((colour) => (
                 <DropdownItem
                   key={colour}
-                  onClick={() => setColourChoice(colour)}
+                  onClick={() => {
+                    setColourChoice(colour);
+                    updateCart(0);
+                  }}
                 >
                   {colour}
                 </DropdownItem>
@@ -287,7 +351,10 @@ const MerchCard = ({
               {sizeChoice !== ProductSize.UNKNOWN && (
                 <DropdownItem
                   key={ProductSize.UNKNOWN}
-                  onClick={() => setSizeChoice(ProductSize.UNKNOWN)}
+                  onClick={() => {
+                    setSizeChoice(ProductSize.UNKNOWN);
+                    updateCart(0);
+                  }}
                 >
                   Unselect size
                 </DropdownItem>
@@ -303,6 +370,10 @@ const MerchCard = ({
             isOpen={qtyDropdownOpen}
             toggle={toggleQtyDropdown}
             className="m-1"
+            disabled={
+              colourChoice === ProductColour.UNKNOWN ||
+              sizeChoice === ProductSize.UNKNOWN
+            }
           >
             <DropdownToggle caret>
               {qtyChoice === 0 ? "Qty" : qtyChoice}
@@ -368,7 +439,7 @@ const Merch = ({
           </Row>
         </Container>
 
-        <button>Proceed to checkout</button>
+        <button onClick={() => console.log(cart)}>Proceed to checkout</button>
       </section>
     </>
   );
