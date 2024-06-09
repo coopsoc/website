@@ -15,7 +15,7 @@ const ClothingItem = ({ item, addToCart, removeFromCart }) => {
         style={{ display: "flex", flexDirection: "row", textAlign: "center" }}
       >
         <Image
-          src={IMAGES[item.product.images[0]]}
+          src={item.product.images[0]}
           width={200}
           height={200}
           alt="Picture of the clothing item"

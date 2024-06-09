@@ -61,9 +61,7 @@ const Checkout = () => {
     }
     async function getProduct() {
       try {
-        const stripe = require("stripe")(
-          "sk_test_51PIkmbB3z3RPTmalbKtYxQM3xaFkmK8l7GOAhVG2GZ4wWmLZt2QqELTrXK3wJmU9fx8Mxa4ueUubSNpp0mWEhz0700Wo29uJ9S",
-        );
+        const stripe = require("stripe")(process.env.NEXT_PUBLIC_STRIPE_KEY);
         let products_list = await stripe.products.list({ ids: ids });
         products_list = products_list.data;
         let price_list = [];
