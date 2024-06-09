@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { Col, Container, Row } from "reactstrap";
 
 import { partition } from "scripts/list";
 import { UPCOMING } from "data/CharityData";
 
 import useBreakpoints from "./upcoming/useBreakpoints";
-import { CharityEvent } from "data/types";
+import { CharityEvent } from "../../data/types";
 
 const CharityUpcoming = () => {
   const [small, medium, large]: boolean[] = useBreakpoints([720, 960, 1140]);
@@ -16,18 +16,15 @@ const CharityUpcoming = () => {
     const images: React.JSX.Element[] = [];
     const text: React.JSX.Element[] = [];
 
-    for (let i = 0; i < row.length; i++) {
-      const item = row[i];
-
+    row.forEach((item) => {
       images.push(<Image alt={item.title} src={item.image} />);
-
       text.push(
         <>
           <b>{item.title}</b>
           <p className="mt-auto">{item.date}</p>
         </>,
       );
-    }
+    });
 
     return [images, text];
   };

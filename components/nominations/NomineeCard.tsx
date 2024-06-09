@@ -1,13 +1,11 @@
-import { Nominee } from "data/types";
+import { Clickable } from "components/types";
+import { NomineeData } from "../../data/types";
 import Image from "next/image";
 import React from "react";
 
 import styles from "styles/modules/NomineeCard.module.scss";
 
-interface NomineeCardProps {
-  data: Nominee;
-  onClick: () => void;
-}
+interface NomineeCardProps extends NomineeData, Clickable {}
 
 const NomineeCard = ({ data, onClick }: NomineeCardProps) => {
   const { name, image, preference } = data;

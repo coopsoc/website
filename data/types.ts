@@ -6,12 +6,19 @@ export type Role = {
   nominees: Nominee[];
 };
 
-export type Nominee = {
+export interface Person {
   name: string;
   image: StaticImageData;
-  preference: number;
   description: string;
-};
+}
+
+export interface Nominee extends Person {
+  preference: number;
+}
+
+export interface NomineeData {
+  data: Nominee;
+}
 
 export type Sponsor = {
   name: string;
@@ -44,12 +51,9 @@ export type ExecMembersSection = {
   members: ExecMember[][];
 };
 
-export type ExecMember = {
-  name: string;
-  image: StaticImageData;
-  description: string;
+export interface ExecMember extends Person {
   role: string;
-};
+}
 
 export type SubcomSection = {
   icons: IconDefinition[];
@@ -73,3 +77,7 @@ export type Product = {
   price: number;
   size: string;
 };
+
+export interface CharityEventProps {
+  event: CharityEvent;
+}

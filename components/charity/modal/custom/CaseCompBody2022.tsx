@@ -3,13 +3,9 @@ import { Row, Col } from "reactstrap";
 
 import CharityBody from "../CharityBody";
 
-import { CharityEvent } from "data/types";
+import { CharityEventProps } from "../../../../data/types";
 
-interface CaseCompBody1Props {
-  event: CharityEvent;
-}
-
-const CaseCompBody1 = ({ event }: CaseCompBody1Props) => {
+const CaseCompBody1 = ({ event }: CharityEventProps) => {
   return (
     <>
       <CharityBody event={event} />

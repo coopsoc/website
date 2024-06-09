@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 import styles from "styles/modules/Merch.module.scss";
 import LoadingButton from "components/LoadingButton";
-import { Product } from "data/types";
+import { Product } from "../../data/types";
 
 interface CheckoutFormProps {
   cart: Product[];
@@ -55,7 +55,7 @@ const CheckoutForm = ({ cart, updateCart }: CheckoutFormProps) => {
           router.push(`/checkout/${clientSecret}`);
         });
       })
-      .catch((err) => {
+      .catch(() => {
         setIsLoading(false);
         router.push("/checkout/unsuccessful");
       });

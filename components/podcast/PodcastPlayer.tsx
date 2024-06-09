@@ -16,7 +16,7 @@ import {
   Row,
 } from "reactstrap";
 import PodcastSlider from "./PodcastSlider";
-import { Podcast } from "data/types";
+import { Podcast } from "../../data/types";
 
 enum AudioState {
   PAUSED,

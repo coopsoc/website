@@ -1,10 +1,9 @@
-import { Nominee } from "data/types";
+import { NomineeData } from "../../data/types";
 import Image from "next/image";
 import React from "react";
 import { Col, Modal, ModalHeader, ModalBody, Row } from "reactstrap";
 
-interface NomineeModalProps {
-  data: Nominee;
+interface NomineeModalProps extends NomineeData {
   roles: string[];
   isOpen: boolean;
   toggle: () => void;

@@ -4,7 +4,7 @@ import { Modal, ModalBody, ModalFooter, ModalHeader, Button } from "reactstrap";
 import CharityBody from "./modal/CharityBody";
 import CaseCompBody from "./modal/custom/CaseCompBody";
 import CaseCompBody1 from "./modal/custom/CaseCompBody2022";
-import { CharityEvent } from "data/types";
+import { CharityEvent } from "../../data/types";
 
 interface CharityModalProps {
   isOpen: boolean;

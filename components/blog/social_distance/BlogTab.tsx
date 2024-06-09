@@ -10,7 +10,7 @@ interface BlogTabProps {
 type Child = {
   props: {
     image: string;
-    children: string;
+    children: React.ReactNode;
   };
 };
 
@@ -35,7 +35,7 @@ const BlogTab = (props: BlogTabProps) => {
     );
   };
 
-  const generateContents = (contents: string, index: number) => (
+  const generateContents = (contents: React.ReactNode, index: number) => (
     <TabPane tabId={`blog-tab-${index}`} key={`blog-tab-contents-${index}`}>
       {contents}
     </TabPane>

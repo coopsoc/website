@@ -1,10 +1,5 @@
-const BlogTabEntry = ({
-  image,
-  children,
-}: {
-  image: string;
-  children: string;
-}) => {
+// Stub
+const BlogTabEntry = () => {
   return null;
 };
 

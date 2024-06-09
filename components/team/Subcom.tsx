@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SubcomSection } from "data/types";
+import { SubcomSection } from "../../data/types";
 
 interface SubcomProps {
   portfolio: SubcomSection;

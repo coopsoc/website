@@ -15,8 +15,10 @@ import dayjs from "scripts/dayjs";
 import { getArticle, getSlugs } from "scripts/article";
 import BlogTab from "components/blog/social_distance/BlogTab";
 import BlogTabEntry from "components/blog/social_distance/BlogTabEntry";
-import { Blog } from "data/types";
+import { Blog } from "../../data/types";
 
+// Workaround for MDXRemote error
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const MarkdownImage = (props: any) => (
   <Image alt={props.alt} layout="responsive" loading="lazy" {...props} />
 );
@@ -98,6 +100,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
           { behaviour: "wrap" },
         ],
         [
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           rehypeImgSize as unknown as any, // workaround for TS strict mode
           {
             dir: "public",
