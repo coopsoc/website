@@ -77,3 +77,7 @@ export type Product = {
   price: number;
   size: string;
 };
+
+export interface CharityEventProps {
+  event: CharityEvent;
+}

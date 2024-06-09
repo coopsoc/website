@@ -2,12 +2,12 @@ import React from "react";
 import Image from "next/image";
 
 import { Col } from "reactstrap";
-import { CharityEvent } from "../../../data/types";
+import { CharityEvent, CharityEventProps } from "../../../data/types";
 import { ClickableEvent } from "components/types";
 
-interface CharityCardProps extends ClickableEvent<CharityEvent, void> {
-  event: CharityEvent;
-}
+interface CharityCardProps
+  extends CharityEventProps,
+    ClickableEvent<CharityEvent, void> {}
 
 const CharityCard = ({ event, onClick }: CharityCardProps) => {
   return (

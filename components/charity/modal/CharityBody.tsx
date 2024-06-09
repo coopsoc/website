@@ -1,12 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { CharityEvent } from "../../../data/types";
+import { CharityEventProps } from "../../../data/types";
 
-interface CharityBodyProps {
-  event: CharityEvent;
-}
-
-const CharityBody = ({ event }: CharityBodyProps) => {
+const CharityBody = ({ event }: CharityEventProps) => {
   return (
     <>
       <div style={{ textAlign: "center" }}>
