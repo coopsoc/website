@@ -56,8 +56,8 @@ const Checkout = () => {
   useEffect(() => {
     let ids = [];
     const items = ITEMS;
-    for (let item in items) {
-      ids.push(item.id);
+    for (let id of items.keys()) {
+      ids.push(id);
     }
     async function getProduct() {
       try {
@@ -75,12 +75,12 @@ const Checkout = () => {
         let props_list = [];
         let prop = null;
         for (let i = 0; i < products_list.length; i++) {
-          for (let j = 0; j < Object.keys(items).length; j++) {
-            if (items[j].id === products_list[i].id) {
+          for (let id of items.keys()) {
+            if (id === products_list[i].id) {
               prop = {
                 product: products_list[i],
                 price: price_list[i].unit_amount,
-                amount: items[j].amount,
+                amount: items.get(id),
               };
               props_list.push(prop);
             }
