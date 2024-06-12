@@ -31,9 +31,9 @@ export default function App() {
   // TODO - fix CSP and uncomment: https://stripe.com/docs/security/guide#content-security-policy
   return (
     <div id="checkout">
-      {/* <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
+      <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
         <EmbeddedCheckout />
-      </EmbeddedCheckoutProvider> */}
+      </EmbeddedCheckoutProvider>
     </div>
   );
 }

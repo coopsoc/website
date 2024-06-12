@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, ModalBody } from "reactstrap";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import styles from "styles/modules/Merch.module.scss";
 import { Product } from "../../data/types";

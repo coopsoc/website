@@ -11,7 +11,7 @@
 */
 
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -85,9 +85,9 @@ const Navigation = () => {
         >
           <Container>
             <Link href="/" passHref>
-              <NextNavbarBrand className="mr-lg-5">
-                <Image alt="..." src={Logo} />
-              </NextNavbarBrand>
+              {/* <NextNavbarBrand className="mr-lg-5"> */}
+              <Image alt="..." src={Logo} className="mr-lg-5 navbar-brand" />
+              {/* </NextNavbarBrand> */}
             </Link>
 
             <NavbarToggler onClick={() => setOpen(true)} />
@@ -96,10 +96,8 @@ const Navigation = () => {
               <div className="navbar-collapse-header">
                 <Row>
                   <Col className="collapse-brand" xs="6">
-                    <Link href="/">
-                      <a>
-                        <Image alt="..." src={LogoSmall} />
-                      </a>
+                    <Link href="/" passHref>
+                      <Image alt="..." src={LogoSmall} />
                     </Link>
                   </Col>
 
@@ -116,9 +114,9 @@ const Navigation = () => {
                 {navLinks.map(([text, link], index) => (
                   <NavItem key={`nav-item-${text}-${index}`}>
                     <Link href={link} passHref>
-                      <NextNavLink className={getNavLinkClass(link)}>
-                        <span className="nav-link-inner--text">{text}</span>
-                      </NextNavLink>
+                      {/* <NextNavLink className={getNavLinkClass(link)}> */}
+                      <span className="nav-link-inner--text">{text}</span>
+                      {/* </NextNavLink> */}
                     </Link>
                   </NavItem>
                 ))}

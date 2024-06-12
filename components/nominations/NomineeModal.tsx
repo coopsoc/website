@@ -1,5 +1,5 @@
 import { NomineeData } from "../../data/types";
-import Image from "next/image";
+import Image from "next/legacy/imagey/image";
 import React from "react";
 import { Col, Modal, ModalHeader, ModalBody, Row } from "reactstrap";
 

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React, { useState } from "react";
 import { Col, Container, Row, TabContent, TabPane } from "reactstrap";
 import { partition } from "scripts/list";
