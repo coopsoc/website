@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import CheckoutForm from "components/merch/CheckoutForm";
@@ -8,16 +8,17 @@ import { Modal, ModalBody } from "reactstrap";
 import MerchHeader from "components/merch/MerchHeader";
 
 import styles from "styles/modules/Merch.module.scss";
+import { Product } from "../data/types";
 
 const Merch = () => {
-  const [modal, setModal] = useState();
-  const [cart, setCart] = useState([]);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [cart, setCart] = useState<Product[]>([]);
 
   const toggle = () => {
-    setModal(!modal);
+    setShowModal(!showModal);
   };
 
-  const addToCart = (value) => {
+  const addToCart = (value: Product) => {
     let _cart = JSON.parse(JSON.stringify(cart));
     _cart.push(value);
     setCart(_cart);
@@ -27,13 +28,13 @@ const Merch = () => {
     <>
       <Head>
         <title>Merch | UNSW Co-op Society</title>
-        <meta name="robots" content="noindex">
+        <meta name="robots" content="noindex" />
       </Head>
       <div className="container">
         <MerchHeader click={toggle} cart={cart} />
         <MerchCollection addToCart={addToCart} />
         <Modal
-          isOpen={modal}
+          isOpen={showModal}
           toggle={toggle}
           size="lg"
           className={styles[`merch-modal`]}
