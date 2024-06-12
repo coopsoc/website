@@ -16,5 +16,3 @@ export function partition<T>(list: T[], n: number): T[][] {
 
   return result;
 }
-  return result;
-}

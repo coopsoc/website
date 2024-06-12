@@ -6,7 +6,6 @@ import nextPlugin from "@next/eslint-plugin-next";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import * as mdx from "eslint-plugin-mdx";
-//import "eslint-plugin-only-warn";
 
 export default [
   { languageOptions: { globals: globals.browser } },

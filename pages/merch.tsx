@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import {
+  Button,
   Card,
   Carousel,
   CarouselIndicators,
@@ -16,160 +17,21 @@ import {
 } from "reactstrap";
 import "animate.css";
 import { InferGetServerSidePropsType } from "next";
+import router, { useRouter } from "next/router";
+import {
+  Cart,
+  Price,
+  Product,
+  ProductColour,
+  ProductSize,
+  Variant,
+  getAllPrices,
+  getAllProductsAndVariants,
+} from "api/merch";
 
 type Repo = {
   products: Product[];
   variants: Variant[];
-};
-
-enum ProductColour {
-  UNKNOWN = "Unknown",
-  BLACK = "Black",
-  CREAM = "Cream",
-  POWDER = "Powder",
-  GREY = "Grey",
-  PINE = "Pine",
-  NAVY = "Navy",
-}
-
-enum ProductSize {
-  UNKNOWN = "Unknown",
-  S = "S",
-  M = "M",
-  L = "L",
-  XL = "XL",
-}
-
-// store of all product categories
-type Product = {
-  name: string;
-  description: string;
-  price: Price;
-  colours: ProductColour[];
-  sizes: ProductSize[];
-};
-
-// store of all product variants returned from Stripe
-// Use categoryName + colour + size as composite key
-type Variant = {
-  productName: string;
-  colour: ProductColour;
-  size: ProductSize;
-
-  id: string;
-  imageURLs: string[];
-};
-
-type Price = {
-  id: string;
-  cents?: number;
-};
-
-type Cart = Map<string, number>;
-
-const toProductColourMap: Map<string, ProductColour> = new Map([
-  ["black", ProductColour.BLACK],
-  ["cream", ProductColour.CREAM],
-  ["powder", ProductColour.POWDER],
-  ["grey", ProductColour.GREY],
-  ["pine", ProductColour.PINE],
-  ["navy", ProductColour.NAVY],
-]);
-
-const toProductSizeMap: Map<string, ProductSize> = new Map([
-  ["S", ProductSize.S],
-  ["M", ProductSize.M],
-  ["L", ProductSize.L],
-  ["XL", ProductSize.XL],
-]);
-
-const getAllProductsAndVariants = async (stripe: any) => {
-  const allProducts: Product[] = [];
-  const allVariants: Variant[] = [];
-  let listProductsResp = await stripe.products.list({ limit: 100 });
-  let hasMore = true;
-
-  while (hasMore) {
-    listProductsResp.data.forEach((variant: any) => {
-      const variantColourMatch = variant.name.match(/\((.*?)\)/);
-      let variantColour = "";
-      if (variantColourMatch) {
-        variantColour = variantColourMatch[1].toLowerCase();
-      }
-
-      const variantSizeMatch = variant.name.split(" ").at(-1);
-      let variantSize = "";
-      if (variantSizeMatch) {
-        variantSize = variantSizeMatch.toUpperCase();
-      }
-
-      const productName = variant.name.split("(").at(0).trim();
-      const product = allProducts.find(
-        (product) => product.name === productName,
-      );
-      if (product) {
-        const colour =
-          toProductColourMap.get(variantColour) ?? ProductColour.UNKNOWN;
-        const size = toProductSizeMap.get(variantSize) ?? ProductSize.UNKNOWN;
-        if (product.colours.indexOf(colour) === -1) {
-          product.colours.push(colour);
-        }
-        if (product.sizes.indexOf(size) === -1) {
-          product.sizes.push(size);
-        }
-      } else {
-        allProducts.push({
-          name: productName,
-          description: variant.description,
-          price: { id: variant.default_price },
-          colours: [],
-          sizes: [],
-        });
-      }
-
-      allVariants.push({
-        productName: variant.name,
-        colour: toProductColourMap.get(variantColour) ?? ProductColour.UNKNOWN,
-        size: toProductSizeMap.get(variantSize) ?? ProductSize.UNKNOWN,
-        id: variant.id,
-        imageURLs: variant.images,
-      });
-    });
-
-    listProductsResp = await stripe.products.list({
-      limit: 100,
-      starting_after:
-        listProductsResp.data[listProductsResp.data.length - 1].id,
-    });
-
-    hasMore = listProductsResp.has_more;
-  }
-
-  return { products: allProducts, variants: allVariants };
-};
-
-const getAllPrices = async (stripe: any) => {
-  const allPrices: Price[] = [];
-  let listPricesResp = await stripe.prices.list();
-  let hasMore = true;
-
-  while (hasMore) {
-    const prices: Price[] = listPricesResp.data.map((price: any) => {
-      return {
-        id: price.id,
-        cents: price.unit_amount,
-      };
-    });
-    allPrices.push(...prices);
-
-    listPricesResp = await stripe.prices.list({
-      starting_after: listPricesResp.data[listPricesResp.data.length - 1].id,
-    });
-
-    hasMore = listPricesResp.has_more;
-  }
-
-  return allPrices;
 };
 
 export const getServerSideProps = async () => {
@@ -201,11 +63,13 @@ const displayPrice = (cents: number | undefined) => {
 const MerchCard = ({
   product,
   setCart,
-  getVariantID,
+  isInCart,
+  findVariantID,
 }: {
   product: Product;
   setCart: React.Dispatch<React.SetStateAction<Cart>>;
-  getVariantID: (
+  isInCart: (productName: string) => boolean;
+  findVariantID: (
     productName: string,
     colour: ProductColour,
     size: ProductSize,
@@ -221,6 +85,7 @@ const MerchCard = ({
   const [sizeDropdownOpen, setSizeDropdownOpen] = useState(false);
   const [qtyChoice, setQtyChoice] = useState(0);
   const [qtyDropdownOpen, setQtyDropdownOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [carouselAnimating, setCarouselAnimating] = useState(false);
@@ -246,22 +111,57 @@ const MerchCard = ({
   const toggleSizeDropdown = () => setSizeDropdownOpen(!sizeDropdownOpen);
   const toggleQtyDropdown = () => setQtyDropdownOpen(!qtyDropdownOpen);
 
-  const updateCart = (qty: number) => {
-    const variantID = getVariantID(product.name, colourChoice, sizeChoice);
+  const getVariantID = () => {
+    const variantID = findVariantID(product.name, colourChoice, sizeChoice);
+    if (!variantID) {
+      if (colourChoice === ProductColour.UNKNOWN) {
+        setErrorMessage("Please select a colour.");
+      } else if (sizeChoice === ProductSize.UNKNOWN) {
+        setErrorMessage("Please select a size.");
+      } else {
+        setErrorMessage(
+          "Sorry, looks like your colour and size is not available. Please try another combination.",
+        );
+      }
+
+      return undefined;
+    }
+
+    return variantID;
+  };
+
+  const addToCart = () => {
+    const variantID = getVariantID();
     if (!variantID) return;
 
-    if (qty === 0) {
-      setCart((prevCart) => {
-        prevCart.delete(variantID);
-        return prevCart;
-      });
-    } else {
-      setCart((prevCart) => {
-        prevCart.set(variantID, qty);
-        return prevCart;
-      });
+    if (qtyChoice === 0) {
+      setErrorMessage("Please select a quantity.");
+      return;
     }
-    setQtyChoice(qty);
+
+    setCart((prevCart) => {
+      const newCart = new Map(prevCart); // must clone the map to correctly set state
+      newCart.forEach((_, key) => {
+        if (key.split("-")[0] === variantID.split("-")[0]) {
+          newCart.delete(key);
+        }
+      });
+      newCart.set(variantID, qtyChoice);
+      return newCart;
+    });
+    setErrorMessage("");
+  };
+
+  const removeFromCart = () => {
+    const variantID = getVariantID();
+    if (!variantID) return;
+
+    setCart((prevCart) => {
+      prevCart.delete(variantID);
+      return prevCart;
+    });
+    setQtyChoice(0);
+    setErrorMessage("");
   };
 
   return (
@@ -328,10 +228,7 @@ const MerchCard = ({
               {product.colours.map((colour) => (
                 <DropdownItem
                   key={colour}
-                  onClick={() => {
-                    setColourChoice(colour);
-                    updateCart(0);
-                  }}
+                  onClick={() => setColourChoice(colour)}
                 >
                   {colour}
                 </DropdownItem>
@@ -351,10 +248,7 @@ const MerchCard = ({
               {sizeChoice !== ProductSize.UNKNOWN && (
                 <DropdownItem
                   key={ProductSize.UNKNOWN}
-                  onClick={() => {
-                    setSizeChoice(ProductSize.UNKNOWN);
-                    updateCart(0);
-                  }}
+                  onClick={() => setSizeChoice(ProductSize.UNKNOWN)}
                 >
                   Unselect size
                 </DropdownItem>
@@ -370,23 +264,41 @@ const MerchCard = ({
             isOpen={qtyDropdownOpen}
             toggle={toggleQtyDropdown}
             className="m-1"
-            disabled={
-              colourChoice === ProductColour.UNKNOWN ||
-              sizeChoice === ProductSize.UNKNOWN
-            }
+            // disabled={qtyBtnDisabled}
           >
             <DropdownToggle caret>
               {qtyChoice === 0 ? "Qty" : qtyChoice}
             </DropdownToggle>
             <DropdownMenu>
-              {[0, 1, 2, 3, 4, 5].map((qty) => (
-                <DropdownItem key={qty} onClick={() => updateCart(qty)}>
+              {[1, 2, 3, 4, 5].map((qty) => (
+                <DropdownItem key={qty} onClick={() => setQtyChoice(qty)}>
                   {qty}
                 </DropdownItem>
               ))}
             </DropdownMenu>
           </Dropdown>
         </Row>
+        <Row className="p-3">
+          <Button className="m-1 bg-green" onClick={() => addToCart()}>
+            {isInCart(product.name) ? "Update cart" : "Add to cart"}
+          </Button>
+          {isInCart(product.name) && (
+            <Button
+              className="m-1 bg-warning text-white"
+              onClick={() => removeFromCart()}
+            >
+              Remove from cart
+            </Button>
+          )}
+        </Row>
+        <Container
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <p style={{ color: "#ba3232" }}>{errorMessage}</p>
+        </Container>
       </Container>
     </Card>
   );
@@ -395,9 +307,10 @@ const MerchCard = ({
 const Merch = ({
   repo,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const router = useRouter();
   const [cart, setCart] = useState<Cart>(new Map());
 
-  const getVariantID = (
+  const findVariantID = (
     productName: string,
     colour: ProductColour,
     size: ProductSize,
@@ -408,6 +321,17 @@ const Merch = ({
         variant.colour === colour &&
         variant.size === size,
     )?.id;
+  };
+
+  const isInCart = (productName: string) => {
+    const variantID = repo.variants.find((variant) =>
+      variant.productName.includes(productName),
+    )?.id;
+    if (!variantID) return false;
+
+    return [...cart.keys()].some(
+      (key) => key.split("-")[0] === variantID.split("-")[0],
+    );
   };
 
   return (
@@ -424,7 +348,6 @@ const Merch = ({
             </h1>
           </Col>
         </Row>
-
         <Container>
           <Row className="justify-content-center">
             {repo.products.map((product) => (
@@ -432,14 +355,40 @@ const Merch = ({
                 <MerchCard
                   product={product}
                   setCart={setCart}
-                  getVariantID={getVariantID}
+                  isInCart={isInCart}
+                  findVariantID={findVariantID}
                 />
               </Col>
             ))}
           </Row>
         </Container>
-
-        <button onClick={() => console.log(cart)}>Proceed to checkout</button>
+        <Container>
+          {[...cart.entries()].map((variantID, qty) => {
+            if (qty === 0) return null;
+            return (
+              <Row className="justify-content-center">
+                {qty}x {variantID}
+              </Row>
+            );
+          })}
+          <Row className="mt-2 justify-content-center">
+            <Button
+              disabled={cart.size === 0}
+              onClick={() => {
+                router.push(
+                  {
+                    pathname: "/checkout",
+                    query: Object.fromEntries(cart),
+                  },
+                  "/checkout",
+                );
+              }}
+              className="bg-primary text-white"
+            >
+              Proceed to checkout
+            </Button>
+          </Row>
+        </Container>
       </section>
     </>
   );

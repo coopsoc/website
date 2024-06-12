@@ -1,13 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 import styles from "styles/modules/checkout.module.scss";
 
-import { Row, Col, Card, Button } from "reactstrap";
+import { Row, Col, Button } from "reactstrap";
 
-import { IMAGES } from "data/CheckoutData.js";
+interface ClothingItemProps {
+  item: any;
+  addToCart: (item: any) => void;
+  removeFromCart: (item: any) => void;
+}
 
-const ClothingItem = ({ item, addToCart, removeFromCart }) => {
+const ClothingItem = ({
+  item,
+  addToCart,
+  removeFromCart,
+}: ClothingItemProps) => {
   console.log(item.product.images[0]);
   return (
     <Row className={styles["clothingItem"]}>

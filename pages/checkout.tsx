@@ -8,16 +8,52 @@ import "animate.css";
 import styles from "styles/modules/checkout.module.scss";
 
 // reactstrap components
-import { Container, Col, Row, Button } from "reactstrap";
+import { Col, Row, Button } from "reactstrap";
+import { useRouter } from "next/router";
+import { InferGetServerSidePropsType } from "next";
+import {
+  Price,
+  Product,
+  Variant,
+  getAllPrices,
+  getAllProductsAndVariants,
+} from "api/merch";
 
-import { ITEMS } from "data/CheckoutData.js";
+const ITEMS = new Map<string, number>();
 
-const Checkout = () => {
-  const [props, setProps] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+type Repo = {
+  products: Product[];
+  variants: Variant[];
+};
 
-  const handleAddToCart = (item) => {
+export const getServerSideProps = async () => {
+  // Ideally should be moved out to not initialise on every render
+  const stripe = require("stripe")(process.env["STRIPE_TEST_KEY"]);
+
+  const { products, variants } = await getAllProductsAndVariants(stripe);
+  const prices = await getAllPrices(stripe);
+
+  products.forEach((product: Product) => {
+    product.price =
+      prices.find((price: Price) => price.id === product.price.id) ??
+      product.price;
+  });
+
+  const repo: Repo = { products, variants };
+  return { props: { repo } };
+};
+
+const Checkout = ({
+  repo,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const router = useRouter();
+  console.log(router.query);
+
+  const [props, setProps] = useState<
+    { product: any; price: any; amount: number }[]
+  >([]);
+
+  const handleAddToCart = (item: any) => {
     const newArr = [...props];
     for (let element = 0; element < newArr.length; element++) {
       if (newArr[element].product.id === item.product.id) {
@@ -27,7 +63,7 @@ const Checkout = () => {
     setProps(newArr);
   };
 
-  const handleRemoveFromCart = (item) => {
+  const handleRemoveFromCart = (item: any) => {
     const newArr = [...props];
     for (let element = 0; element < newArr.length; element++) {
       if (newArr[element].product.id === item.product.id) {
@@ -52,67 +88,6 @@ const Checkout = () => {
   const handlePay = () => {
     console.log("Buy Now");
   };
-
-  useEffect(() => {
-    let ids = [];
-    const items = ITEMS;
-    for (let id of items.keys()) {
-      ids.push(id);
-    }
-    async function getProduct() {
-      try {
-        const stripe = require("stripe")(process.env.NEXT_PUBLIC_STRIPE_KEY);
-        let products_list = await stripe.products.list({ ids: ids });
-        products_list = products_list.data;
-        let price_list = [];
-        for (let product = 0; product < products_list.length; product++) {
-          price_list.push(
-            await stripe.prices.retrieve(
-              products_list[product]["default_price"],
-            ),
-          );
-        }
-        let props_list = [];
-        let prop = null;
-        for (let i = 0; i < products_list.length; i++) {
-          for (let id of items.keys()) {
-            if (id === products_list[i].id) {
-              prop = {
-                product: products_list[i],
-                price: price_list[i].unit_amount,
-                amount: items.get(id),
-              };
-              props_list.push(prop);
-            }
-          }
-        }
-        setProps(props_list);
-        setError(null);
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-      }
-    }
-
-    getProduct();
-  }, []);
-
-  if (loading) {
-    return (
-      <div>
-        <p>Loading</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div>
-        <p>{error.message}</p>
-      </div>
-    );
-  }
 
   return (
     <>
