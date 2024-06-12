@@ -84,10 +84,11 @@ const Navigation = () => {
           id="navbar-main"
         >
           <Container>
-            <Link href="/" passHref>
-              {/* <NextNavbarBrand className="mr-lg-5"> */}
-              {/* <Image alt="..." src={Logo} className="mr-lg-5 navbar-brand" /> */}
-              {/* </NextNavbarBrand> */}
+            {/* legacyBehavior to fix: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor */}
+            <Link href="/" passHref legacyBehavior>
+              <NextNavbarBrand className="mr-lg-5">
+                <Image alt="..." src={Logo} className="mr-lg-5 navbar-brand" />
+              </NextNavbarBrand>
             </Link>
 
             <NavbarToggler onClick={() => setOpen(true)} />
@@ -113,10 +114,10 @@ const Navigation = () => {
               <Nav className="navbar-nav-click align-items-lg-center" navbar>
                 {navLinks.map(([text, link], index) => (
                   <NavItem key={`nav-item-${text}-${index}`}>
-                    <Link href={link} passHref>
-                      {/* <NextNavLink className={getNavLinkClass(link)}> */}
-                      <span className="nav-link-inner--text">{text}</span>
-                      {/* </NextNavLink> */}
+                    <Link href={link} passHref legacyBehavior>
+                      <NextNavLink className={getNavLinkClass(link)}>
+                        <span className="nav-link-inner--text">{text}</span>
+                      </NextNavLink>
                     </Link>
                   </NavItem>
                 ))}
