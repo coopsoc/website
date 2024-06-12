@@ -86,7 +86,7 @@ const Navigation = () => {
           <Container>
             <Link href="/" passHref>
               {/* <NextNavbarBrand className="mr-lg-5"> */}
-              <Image alt="..." src={Logo} className="mr-lg-5 navbar-brand" />
+              {/* <Image alt="..." src={Logo} className="mr-lg-5 navbar-brand" /> */}
               {/* </NextNavbarBrand> */}
             </Link>
 

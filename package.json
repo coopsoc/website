@@ -19,7 +19,7 @@
     "@stripe/react-stripe-js": "2.7.1",
     "@stripe/stripe-js": "3.5.0",
     "animate.css": "4.1.1",
-    "bootstrap": "4.6.1",
+    "bootstrap": "5.3.3",
     "dayjs": "1.11.11",
     "gh-pages": "6.1.1",
     "glob": "10.4.1",

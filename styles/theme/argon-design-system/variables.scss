@@ -182,11 +182,11 @@ $translucent-color-opacity: .6;
 $theme-color-interval:      8% !default;
 
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
-$yiq-contrasted-threshold:  200 !default;
+$min-contrast-ratio:  200 !default;
 
 // Customize the light and dark text colors for use in our YIQ color contrast function.
-$yiq-text-dark:             $gray-900 !default;
-$yiq-text-light:            $white !default;
+$color-contrast-dark:             $gray-900 !default;
+$color-contrast-light:            $white !default;
 
 // Action colors
 
@@ -583,7 +583,8 @@ $custom-control-indicator-disabled-bg:          $gray-200 !default;
 $custom-control-label-disabled-color:           $gray-600 !default;
 
 $custom-checkbox-indicator-border-radius:       $border-radius-sm !default;
-//$custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+xml !default;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23") !default;
+// TODO: Work out why this was commented out previously.
+$custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+xml !default;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23") !default;
 
 $custom-toggle-slider-bg:   #ddd !default;
 $custom-toggle-checked-bg:  map-get($theme-colors, "primary") !default;
@@ -653,7 +654,7 @@ $nav-pills-border-radius:           $border-radius !default;
 
 $nav-pills-link-color:              map-get($theme-colors, "primary") !default;
 $nav-pills-link-hover-color:        darken(map-get($theme-colors, "primary"), 5%);
-$nav-pills-link-active-color:       color-yiq(map-get($theme-colors, "primary"));
+$nav-pills-link-active-color:       color-contrast(map-get($theme-colors, "primary"));
 $nav-pills-link-active-bg:          map-get($theme-colors, "primary") !default;
 $nav-pills-box-shadow:              $btn-box-shadow !default;
 
