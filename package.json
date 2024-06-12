@@ -17,7 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@stripe/react-stripe-js": "^2.1.0",
-    "@stripe/stripe-js": "^1.54.0",
+    "@stripe/stripe-js": "^3.5.0",
     "@types/headroom": "^0.12.4",
     "@types/node": "^20.12.5",
     "@types/nouislider": "^15.0.0",
