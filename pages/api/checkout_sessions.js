@@ -14,7 +14,7 @@ export default async function handler(req, res) {
             {
               // Provide the exact Price ID (for example, pr_1234) of
               // the product you want to sell
-              price: "{{PRICE_ID}}",
+              price: "price_1PQoBSKWz42bhxUEodZ18Z6I",
               quantity: 1,
               // TODO - get info from cart / price IDs
               //  (could get the price for the given product with stripe API)
