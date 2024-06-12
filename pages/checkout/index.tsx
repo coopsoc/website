@@ -17,7 +17,7 @@ const stripePromise = loadStripe(
 );
 
 // TODO: Do not display the checkout unless client secret is fetched, and cart is not empty
-export default function App() {
+const Checkout = () => {
   const fetchClientSecret = useCallback(async () => {
     // Create a Checkout Session
     const res = await fetch("/api/checkout_sessions", {
@@ -30,10 +30,12 @@ export default function App() {
   const options = { fetchClientSecret };
 
   return (
-    <div id="checkout">
+    <div id="checkout" className="mb-5">
       <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
         <EmbeddedCheckout />
       </EmbeddedCheckoutProvider>
     </div>
   );
-}
+};
+
+export default Checkout;

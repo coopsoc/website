@@ -1,6 +1,7 @@
 // From https://docs.stripe.com/checkout/embedded/quickstart?client=next
 
 // TODO update secret key in .env.local
+// TODO (opt) - change from CJS/require to MJS/loadStripe - see checkout/index.tsx
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
