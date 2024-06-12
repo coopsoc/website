@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import {
   Button,
   Card,
   Carousel,
-  CarouselIndicators,
+  CarouselControl,
   CarouselItem,
   Col,
   Container,
@@ -65,6 +65,7 @@ const MerchCard = ({
   setCart,
   isInCart,
   findVariantID,
+  findAllVariantsOfProduct,
 }: {
   product: Product;
   setCart: React.Dispatch<React.SetStateAction<Cart>>;
@@ -74,6 +75,7 @@ const MerchCard = ({
     colour: ProductColour,
     size: ProductSize,
   ) => string | undefined;
+  findAllVariantsOfProduct: (productName: string) => Variant[];
 }) => {
   const [colourChoice, setColourChoice] = useState<ProductColour>(
     ProductColour.UNKNOWN,
@@ -87,29 +89,27 @@ const MerchCard = ({
   const [qtyDropdownOpen, setQtyDropdownOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const toggleColourDropdown = () => setColourDropdownOpen(!colourDropdownOpen);
+  const toggleSizeDropdown = () => setSizeDropdownOpen(!sizeDropdownOpen);
+  const toggleQtyDropdown = () => setQtyDropdownOpen(!qtyDropdownOpen);
+
+  const [carouselImages, setCarouselImages] = useState<string[]>([]);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [carouselAnimating, setCarouselAnimating] = useState(false);
 
   const carouselNext = () => {
     if (carouselAnimating) return;
-    const nextIndex = carouselIndex === 999 - 1 ? 0 : carouselIndex + 1;
+    const nextIndex =
+      carouselIndex === carouselImages.length - 1 ? 0 : carouselIndex + 1;
     setCarouselIndex(nextIndex);
   };
 
   const carouselPrevious = () => {
     if (carouselAnimating) return;
-    const nextIndex = carouselIndex === 0 ? 999 - 1 : carouselIndex - 1;
+    const nextIndex =
+      carouselIndex === 0 ? carouselImages.length - 1 : carouselIndex - 1;
     setCarouselIndex(nextIndex);
   };
-
-  const carouselGoToIndex = (newIndex: number) => {
-    if (carouselAnimating) return;
-    setCarouselIndex(newIndex);
-  };
-
-  const toggleColourDropdown = () => setColourDropdownOpen(!colourDropdownOpen);
-  const toggleSizeDropdown = () => setSizeDropdownOpen(!sizeDropdownOpen);
-  const toggleQtyDropdown = () => setQtyDropdownOpen(!qtyDropdownOpen);
 
   const getVariantID = () => {
     const variantID = findVariantID(product.name, colourChoice, sizeChoice);
@@ -164,44 +164,43 @@ const MerchCard = ({
     setErrorMessage("");
   };
 
+  useEffect(() => {
+    const imageURLs = findAllVariantsOfProduct(product.name)
+      .map((variant) => variant.imageURLs)
+      .flat();
+    const dedupedImageURLs = imageURLs.filter(
+      (value, index) => imageURLs.indexOf(value) === index,
+    );
+
+    setCarouselImages(dedupedImageURLs);
+  }, []);
+
+  const displayAllVariantImages = () => {
+    return carouselImages.map((url) => {
+      const path = url.replace("https%3A//www.coopsoc.com.au", "");
+      return (
+        <CarouselItem
+          onExiting={() => setCarouselAnimating(true)}
+          onExited={() => setCarouselAnimating(false)}
+          key={path.split("/").at(-1)}
+        >
+          <Image src={path} width={500} height={500} />
+        </CarouselItem>
+      );
+    });
+  };
+
   return (
     <Card className="m-3">
-      <Image
-        src="https://picsum.photos/300/200"
-        width={500}
-        height={500}
-        alt="merch1"
-      />
-      {/* <Carousel
+      <Carousel
         activeIndex={carouselIndex}
         next={carouselNext}
         previous={carouselPrevious}
       >
-        <CarouselIndicators
-          items={items}
-          activeIndex={carouselIndex}
-          onClickHandler={carouselGoToIndex}
-        />
-        <CarouselItem
-          onExiting={() => setCarouselAnimating(true)}
-          onExited={() => setCarouselAnimating(false)}
-        >
-          <Image
-            src="https://picsum.photos/300/200"
-            width={500}
-            height={500}
-            alt="merch1"
-          />
-        </CarouselItem>
-        <CarouselItem>
-          <Image
-            src="https://picsum.photos/300/200"
-            width={500}
-            height={500}
-            alt="merch2"
-          />
-        </CarouselItem>
-      </Carousel> */}
+        {displayAllVariantImages()}
+        <CarouselControl direction="prev" onClickHandler={carouselPrevious} />
+        <CarouselControl direction="next" onClickHandler={carouselNext} />
+      </Carousel>
       <Container className="p-3">
         <h3>{product.name}</h3>
         <p>{displayPrice(product.price.cents)}</p>
@@ -312,8 +311,8 @@ const Merch = ({
 
   const findVariantID = (
     productName: string,
-    colour: ProductColour,
-    size: ProductSize,
+    colour?: ProductColour,
+    size?: ProductSize,
   ) => {
     return repo.variants.find(
       (variant) =>
@@ -321,6 +320,12 @@ const Merch = ({
         variant.colour === colour &&
         variant.size === size,
     )?.id;
+  };
+
+  const findAllVariantsOfProduct = (productName: string) => {
+    return repo.variants.filter((variant) =>
+      variant.productName.includes(productName),
+    );
   };
 
   const isInCart = (productName: string) => {
@@ -357,6 +362,7 @@ const Merch = ({
                   setCart={setCart}
                   isInCart={isInCart}
                   findVariantID={findVariantID}
+                  findAllVariantsOfProduct={findAllVariantsOfProduct}
                 />
               </Col>
             ))}
