@@ -25,14 +25,13 @@ export default function Return() {
   }
 
   if (status === "complete") {
-    // TODO update (at least the email address)
     // TODO check if failure is possible. If so, should probably have a different message
     return (
       <section id="success">
         <p>
-          We appreciate your business! A confirmation email will be sent to{" "}
+          Thanks for shopping with us! A confirmation email will be sent to{" "}
           {customerEmail}. If you have any questions, please email{" "}
-          <a href="mailto:orders@example.com">orders@example.com</a>.
+          <a href="mailto:coopsoc.unsw@gmail.com">coopsoc.unsw@gmail.com</a>.
         </p>
       </section>
     );
