@@ -30,7 +30,7 @@ const Checkout = () => {
   const options = { fetchClientSecret };
 
   return (
-    <div id="checkout" className="mb-5">
+    <div id="checkout" className="mb-4 mb-xl-5">
       <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
         <EmbeddedCheckout />
       </EmbeddedCheckoutProvider>

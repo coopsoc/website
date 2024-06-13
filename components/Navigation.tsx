@@ -87,7 +87,7 @@ const Navigation = () => {
             {/* legacyBehavior to fix: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor */}
             <Link href="/" passHref legacyBehavior>
               <NextNavbarBrand className="mr-lg-5">
-                <Image alt="..." src={Logo} className="mr-lg-5 navbar-brand" />
+                <Image alt="..." src={Logo} />
               </NextNavbarBrand>
             </Link>
 
