@@ -148,7 +148,7 @@ const MerchCard = ({ productData, addToCart }: MerchCardProps) => {
                         <div className="cart mt-4 align-items-center">
                           {" "}
                           <button
-                            className="btn btn-primary text-uppercase mr-2 px-4"
+                            className="btn btn-primary text-uppercase me-2 px-4"
                             onClick={_addToCart}
                           >
                             Add to cart

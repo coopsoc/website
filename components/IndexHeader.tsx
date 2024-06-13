@@ -8,7 +8,7 @@ const IndexHeader = () => {
   return (
     <div className="position-relative">
       {/* shape Hero */}
-      <section className="section section-lg section-shaped pb-250">
+      <section className="section section-lg section-shaped pb-150">
         <div className="shape shape-style-custom shape-primary">
           <span className="floating" />
           <span className="floating" />
@@ -19,7 +19,7 @@ const IndexHeader = () => {
           <span className="floating" />
         </div>
 
-        <Container className="d-flex">
+        <Container className="d-flex px-4 px-sm-3">
           <div className="col px-0">
             <br></br>
             <Row>

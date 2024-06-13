@@ -83,10 +83,10 @@ const Navigation = () => {
           expand="lg"
           id="navbar-main"
         >
-          <Container className="d-flex align-items-center p-0">
+          <Container className="d-flex align-items-center px-0 px-sm-3">
             {/* legacyBehavior to fix: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor */}
             <Link href="/" passHref legacyBehavior>
-              <NextNavbarBrand className="mr-lg-5">
+              <NextNavbarBrand className="me-lg-5">
                 <Image alt="..." src={Logo} />
               </NextNavbarBrand>
             </Link>
@@ -123,7 +123,7 @@ const Navigation = () => {
                 ))}
               </Nav>
 
-              <Nav className="align-items-lg-center ml-lg-auto" navbar>
+              <Nav className="align-items-lg-center ms-lg-auto" navbar>
                 <NavIcon
                   href="https://www.facebook.com/coopsoc.unsw/"
                   id="tooltip-facebook"
