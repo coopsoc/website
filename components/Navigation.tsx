@@ -83,7 +83,7 @@ const Navigation = () => {
           expand="lg"
           id="navbar-main"
         >
-          <Container>
+          <Container className="d-flex align-items-center p-0">
             {/* legacyBehavior to fix: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor */}
             <Link href="/" passHref legacyBehavior>
               <NextNavbarBrand className="mr-lg-5">
@@ -91,7 +91,7 @@ const Navigation = () => {
               </NextNavbarBrand>
             </Link>
 
-            <NavbarToggler onClick={() => setOpen(true)} />
+            <NavbarToggler className="ms-auto" onClick={() => setOpen(true)} />
 
             <Collapse isOpen={open} navbar>
               <div className="navbar-collapse-header">
