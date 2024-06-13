@@ -165,9 +165,9 @@ const MerchCard = ({
   };
 
   useEffect(() => {
-    const imageURLs = findAllVariantsOfProduct(product.name)
-      .map((variant) => variant.imageURLs)
-      .flat();
+    const imageURLs = findAllVariantsOfProduct(product.name).flatMap(
+      (variant) => variant.imageURLs,
+    );
     const dedupedImageURLs = imageURLs.filter(
       (value, index) => imageURLs.indexOf(value) === index,
     );
@@ -303,6 +303,16 @@ const MerchCard = ({
   );
 };
 
+type CartItemWithDetail = {
+  product: {
+    id: string;
+    name: string;
+    images: string[];
+  };
+  price: Price;
+  qty: number;
+};
+
 const Merch = ({
   repo,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
@@ -337,6 +347,33 @@ const Merch = ({
     return [...cart.keys()].some(
       (key) => key.split("-")[0] === variantID.split("-")[0],
     );
+  };
+
+  const proceedToCheckout = () => {
+    let cartWithDetails: CartItemWithDetail[] = [];
+
+    cart.forEach((qty, variantID) => {
+      const variant = repo.variants.find((variant) => variant.id === variantID);
+      if (!variant) return;
+
+      const product = repo.products.find((product) =>
+        variant.productName.includes(product.name),
+      );
+      if (!product) return;
+
+      cartWithDetails.push({
+        product: {
+          id: variant.id,
+          name: product.name,
+          images: variant.imageURLs,
+        },
+        price: product.price,
+        qty,
+      });
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cartWithDetails));
+    router.push({ pathname: "/checkout" });
   };
 
   return (
@@ -380,15 +417,7 @@ const Merch = ({
           <Row className="mt-2 justify-content-center">
             <Button
               disabled={cart.size === 0}
-              onClick={() => {
-                router.push(
-                  {
-                    pathname: "/checkout",
-                    query: Object.fromEntries(cart),
-                  },
-                  "/checkout",
-                );
-              }}
+              onClick={() => proceedToCheckout()}
               className="bg-primary text-white"
             >
               Proceed to checkout
