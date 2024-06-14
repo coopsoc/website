@@ -364,7 +364,7 @@ const Merch = ({
       cartWithDetails.push({
         product: {
           id: variant.id,
-          name: product.name,
+          name: variant.productName,
           images: variant.imageURLs,
         },
         price: product.price,
