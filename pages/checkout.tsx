@@ -9,31 +9,14 @@ import styles from "styles/modules/checkout.module.scss";
 
 // reactstrap components
 import { Col, Row, Button } from "reactstrap";
-import { useRouter } from "next/router";
-import { InferGetServerSidePropsType } from "next";
-import {
-  Price,
-  Product,
-  Variant,
-  getAllPrices,
-  getAllProductsAndVariants,
-} from "api/merch";
-
-const ITEMS = new Map<string, number>();
-
-type Repo = {
-  products: Product[];
-  variants: Variant[];
-};
+import { CartItemWithDetail } from "api/merch";
 
 const Checkout = () => {
-  const [props, setProps] = useState<
-    { product: any; price: any; qty: number }[]
-  >([]);
+  const [props, setProps] = useState<CartItemWithDetail[]>([]);
 
   useEffect(() => {
     const cart = localStorage.getItem("cart");
-    let items;
+    let items: CartItemWithDetail[] = [];
     if (cart !== null) {
       items = JSON.parse(cart);
     } else {
@@ -42,7 +25,7 @@ const Checkout = () => {
     setProps(items);
   }, []);
 
-  const handleAddToCart = (item: any) => {
+  const handleAddToCart = (item: CartItemWithDetail) => {
     const newArr = [...props];
     for (let element = 0; element < newArr.length; element++) {
       if (newArr[element].product.id === item.product.id) {
@@ -52,7 +35,7 @@ const Checkout = () => {
     setProps(newArr);
   };
 
-  const handleRemoveFromCart = (item: any) => {
+  const handleRemoveFromCart = (item: CartItemWithDetail) => {
     const newArr = [...props];
     for (let element = 0; element < newArr.length; element++) {
       if (newArr[element].product.id === item.product.id) {
@@ -69,7 +52,7 @@ const Checkout = () => {
   const calculateTotal = () => {
     let total = 0;
     for (let item = 0; item < props.length; item++) {
-      total += props[item].qty * props[item].price.cents;
+      total += props[item].qty * (props[item].price.cents ?? 0);
     }
     return total / 100;
   };

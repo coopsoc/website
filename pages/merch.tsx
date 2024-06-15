@@ -17,9 +17,10 @@ import {
 } from "reactstrap";
 import "animate.css";
 import { InferGetServerSidePropsType } from "next";
-import router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import {
   Cart,
+  CartItemWithDetail,
   Price,
   Product,
   ProductColour,
@@ -28,6 +29,7 @@ import {
   getAllPrices,
   getAllProductsAndVariants,
 } from "api/merch";
+import Stripe from "stripe";
 
 type Repo = {
   products: Product[];
@@ -36,7 +38,8 @@ type Repo = {
 
 export const getServerSideProps = async () => {
   // Ideally should be moved out to not initialise on every render
-  const stripe = require("stripe")(process.env["STRIPE_TEST_KEY"]);
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const stripe: Stripe = require("stripe")(process.env["STRIPE_TEST_KEY"]);
 
   const { products, variants } = await getAllProductsAndVariants(stripe);
   const prices = await getAllPrices(stripe);
@@ -303,16 +306,6 @@ const MerchCard = ({
   );
 };
 
-type CartItemWithDetail = {
-  product: {
-    id: string;
-    name: string;
-    images: string[];
-  };
-  price: Price;
-  qty: number;
-};
-
 const Merch = ({
   repo,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
@@ -350,7 +343,7 @@ const Merch = ({
   };
 
   const proceedToCheckout = () => {
-    let cartWithDetails: CartItemWithDetail[] = [];
+    const cartWithDetails: CartItemWithDetail[] = [];
 
     cart.forEach((qty, variantID) => {
       const variant = repo.variants.find((variant) => variant.id === variantID);

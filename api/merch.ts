@@ -1,3 +1,5 @@
+import Stripe from "stripe";
+
 export enum ProductColour {
   UNKNOWN = "Unknown",
   BLACK = "Black",
@@ -43,6 +45,16 @@ export type Price = {
 
 export type Cart = Map<string, number>;
 
+export type CartItemWithDetail = {
+  product: {
+    id: string;
+    name: string;
+    images: string[];
+  };
+  price: Price;
+  qty: number;
+};
+
 export const toProductColourMap: Map<string, ProductColour> = new Map([
   ["black", ProductColour.BLACK],
   ["cream", ProductColour.CREAM],
@@ -59,14 +71,14 @@ export const toProductSizeMap: Map<string, ProductSize> = new Map([
   ["XL", ProductSize.XL],
 ]);
 
-export const getAllProductsAndVariants = async (stripe: any) => {
+export const getAllProductsAndVariants = async (stripe: Stripe) => {
   const allProducts: Product[] = [];
   const allVariants: Variant[] = [];
   let listProductsResp = await stripe.products.list({ limit: 100 });
   let hasMore = true;
 
   while (hasMore) {
-    listProductsResp.data.forEach((variant: any) => {
+    listProductsResp.data.forEach((variant: Stripe.Product) => {
       const variantColourMatch = variant.name.match(/\((.*?)\)/);
       let variantColour = "";
       if (variantColourMatch) {
@@ -79,7 +91,7 @@ export const getAllProductsAndVariants = async (stripe: any) => {
         variantSize = variantSizeMatch.toUpperCase();
       }
 
-      const productName = variant.name.split("(").at(0).trim();
+      const productName = variant.name.split("(").at(0)?.trim();
       const product = allProducts.find(
         (product) => product.name === productName,
       );
@@ -95,9 +107,9 @@ export const getAllProductsAndVariants = async (stripe: any) => {
         }
       } else {
         allProducts.push({
-          name: productName,
-          description: variant.description,
-          price: { id: variant.default_price },
+          name: productName ?? "",
+          description: variant.description ?? "",
+          price: { id: variant.default_price?.toString() ?? "" },
           colours: [],
           sizes: [],
         });
@@ -124,16 +136,16 @@ export const getAllProductsAndVariants = async (stripe: any) => {
   return { products: allProducts, variants: allVariants };
 };
 
-export const getAllPrices = async (stripe: any) => {
+export const getAllPrices = async (stripe: Stripe) => {
   const allPrices: Price[] = [];
   let listPricesResp = await stripe.prices.list();
   let hasMore = true;
 
   while (hasMore) {
-    const prices: Price[] = listPricesResp.data.map((price: any) => {
+    const prices: Price[] = listPricesResp.data.map((price: Stripe.Price) => {
       return {
         id: price.id,
-        cents: price.unit_amount,
+        cents: price.unit_amount ?? 0,
       };
     });
     allPrices.push(...prices);

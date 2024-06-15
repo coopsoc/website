@@ -4,11 +4,12 @@ import Image from "next/image";
 import styles from "styles/modules/checkout.module.scss";
 
 import { Row, Col, Button } from "reactstrap";
+import { CartItemWithDetail } from "api/merch";
 
 interface ClothingItemProps {
-  item: any;
-  addToCart: (item: any) => void;
-  removeFromCart: (item: any) => void;
+  item: CartItemWithDetail;
+  addToCart: (item: CartItemWithDetail) => void;
+  removeFromCart: (item: CartItemWithDetail) => void;
 }
 
 const ClothingItem = ({
@@ -37,7 +38,7 @@ const ClothingItem = ({
         </h3>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <h3>${item.price.cents / 100}</h3>
+        <h3>${(item.price.cents ?? 0) / 100}</h3>
       </Col>
       <Col className={styles["clothingRow"]}>
         <div className={styles["quantityButtons"]}>
@@ -61,7 +62,7 @@ const ClothingItem = ({
         </div>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <h3>${(item.price.cents / 100) * item.qty}</h3>
+        <h3>${((item.price.cents ?? 0) / 100) * item.qty}</h3>
       </Col>
     </Row>
   );
