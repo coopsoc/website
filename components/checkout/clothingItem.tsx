@@ -16,7 +16,10 @@ const ClothingItem = ({
   addToCart,
   removeFromCart,
 }: ClothingItemProps) => {
-  console.log(item.product.images[0]);
+  item.product.images[0] = item.product.images[0].replace(
+    "https%3A//www.coopsoc.com.au",
+    "",
+  );
   return (
     <Row className={styles["clothingItem"]}>
       <Col
@@ -34,7 +37,7 @@ const ClothingItem = ({
         </h3>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <h3>${item.price / 100}</h3>
+        <h3>${item.price.cents / 100}</h3>
       </Col>
       <Col className={styles["clothingRow"]}>
         <div className={styles["quantityButtons"]}>
@@ -46,7 +49,7 @@ const ClothingItem = ({
           >
             -
           </Button>
-          <h3>{item.amount}</h3>
+          <h3>{item.qty}</h3>
           <Button
             className="mt-4"
             color="primary"
@@ -58,7 +61,7 @@ const ClothingItem = ({
         </div>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <h3>${(item.price / 100) * item.amount}</h3>
+        <h3>${(item.price.cents / 100) * item.qty}</h3>
       </Col>
     </Row>
   );

@@ -26,38 +26,27 @@ type Repo = {
   variants: Variant[];
 };
 
-export const getServerSideProps = async () => {
-  // Ideally should be moved out to not initialise on every render
-  const stripe = require("stripe")(process.env["STRIPE_TEST_KEY"]);
-
-  const { products, variants } = await getAllProductsAndVariants(stripe);
-  const prices = await getAllPrices(stripe);
-
-  products.forEach((product: Product) => {
-    product.price =
-      prices.find((price: Price) => price.id === product.price.id) ??
-      product.price;
-  });
-
-  const repo: Repo = { products, variants };
-  return { props: { repo } };
-};
-
-const Checkout = ({
-  repo,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  const router = useRouter();
-  console.log(router.query);
-
+const Checkout = () => {
   const [props, setProps] = useState<
-    { product: any; price: any; amount: number }[]
+    { product: any; price: any; qty: number }[]
   >([]);
+
+  useEffect(() => {
+    const cart = localStorage.getItem("cart");
+    let items;
+    if (cart !== null) {
+      items = JSON.parse(cart);
+    } else {
+      items = [];
+    }
+    setProps(items);
+  }, []);
 
   const handleAddToCart = (item: any) => {
     const newArr = [...props];
     for (let element = 0; element < newArr.length; element++) {
       if (newArr[element].product.id === item.product.id) {
-        newArr[element].amount++;
+        newArr[element].qty++;
       }
     }
     setProps(newArr);
@@ -67,10 +56,10 @@ const Checkout = ({
     const newArr = [...props];
     for (let element = 0; element < newArr.length; element++) {
       if (newArr[element].product.id === item.product.id) {
-        if (newArr[element].amount === 1) {
+        if (newArr[element].qty === 1) {
           newArr.splice(element, 1);
         } else {
-          newArr[element].amount--;
+          newArr[element].qty--;
         }
       }
     }
@@ -80,7 +69,7 @@ const Checkout = ({
   const calculateTotal = () => {
     let total = 0;
     for (let item = 0; item < props.length; item++) {
-      total += props[item].amount * props[item].price;
+      total += props[item].qty * props[item].price.cents;
     }
     return total / 100;
   };
