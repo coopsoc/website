@@ -42,7 +42,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="container">
-                Copyright &copy; 2023 UNSW Co-op Society
+                Copyright &copy; 2024 UNSW Co-op Society
               </div>
               <br></br>
             </Col>

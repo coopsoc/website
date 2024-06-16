@@ -11,7 +11,7 @@
 */
 
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -83,23 +83,22 @@ const Navigation = () => {
           expand="lg"
           id="navbar-main"
         >
-          <Container>
-            <Link href="/" passHref>
-              <NextNavbarBrand className="mr-lg-5">
+          <Container className="d-flex align-items-center px-0 px-sm-3">
+            {/* legacyBehavior to fix: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor */}
+            <Link href="/" passHref legacyBehavior>
+              <NextNavbarBrand className="me-lg-5">
                 <Image alt="..." src={Logo} />
               </NextNavbarBrand>
             </Link>
 
-            <NavbarToggler onClick={() => setOpen(true)} />
+            <NavbarToggler className="ms-auto" onClick={() => setOpen(true)} />
 
             <Collapse isOpen={open} navbar>
               <div className="navbar-collapse-header">
                 <Row>
                   <Col className="collapse-brand" xs="6">
-                    <Link href="/">
-                      <a>
-                        <Image alt="..." src={LogoSmall} />
-                      </a>
+                    <Link href="/" passHref>
+                      <Image alt="..." src={LogoSmall} />
                     </Link>
                   </Col>
 
@@ -115,7 +114,7 @@ const Navigation = () => {
               <Nav className="navbar-nav-click align-items-lg-center" navbar>
                 {navLinks.map(([text, link], index) => (
                   <NavItem key={`nav-item-${text}-${index}`}>
-                    <Link href={link} passHref>
+                    <Link href={link} passHref legacyBehavior>
                       <NextNavLink className={getNavLinkClass(link)}>
                         <span className="nav-link-inner--text">{text}</span>
                       </NextNavLink>
@@ -124,7 +123,7 @@ const Navigation = () => {
                 ))}
               </Nav>
 
-              <Nav className="align-items-lg-center ml-lg-auto" navbar>
+              <Nav className="align-items-lg-center ms-lg-auto" navbar>
                 <NavIcon
                   href="https://www.facebook.com/coopsoc.unsw/"
                   id="tooltip-facebook"

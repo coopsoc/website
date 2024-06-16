@@ -187,7 +187,12 @@ const MerchCard = ({
           onExited={() => setCarouselAnimating(false)}
           key={path.split("/").at(-1)}
         >
-          <Image src={path} width={500} height={500} />
+          <Image
+            src={path}
+            alt={path.split("/").at(-1) ?? "merch item"}
+            width={500}
+            height={500}
+          />
         </CarouselItem>
       );
     });

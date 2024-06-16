@@ -17,7 +17,7 @@ const NavIcon = ({ href, id, icon, collapseText, tooltip }: NavIconProps) => {
     <NavItem>
       <NavLink className="nav-link-icon" href={href} id={id} target="_blank">
         <FontAwesomeIcon icon={icon} />
-        <span className="nav-link-inner--text d-lg-none ml-2">
+        <span className="nav-link-inner--text d-lg-none ms-2">
           {collapseText}
         </span>
       </NavLink>

@@ -8,7 +8,7 @@ const IndexHeader = () => {
   return (
     <div className="position-relative">
       {/* shape Hero */}
-      <section className="section section-lg section-shaped pb-250">
+      <section className="section section-lg section-shaped pb-150">
         <div className="shape shape-style-custom shape-primary">
           <span className="floating" />
           <span className="floating" />
@@ -19,7 +19,7 @@ const IndexHeader = () => {
           <span className="floating" />
         </div>
 
-        <Container className="py-lg-md d-flex">
+        <Container className="d-flex px-4 px-sm-3">
           <div className="col px-0">
             <br></br>
             <Row>
@@ -47,7 +47,7 @@ const IndexHeader = () => {
             x="0"
             y="0"
           >
-            <polygon className="fill-white" points="4000 0 4000 100 0 100" />
+            <polygon className="fill-white" points="4000 0 4000 105 0 105" />
           </svg>
         </div>
       </section>

@@ -4,14 +4,14 @@
 
 	.popover-header {
 		background-color: $background;
-		color: color-yiq($background);
+		color: color-contrast($background);
 	}
 
 	.popover-body {
-		color: color-yiq($background);
+		color: color-contrast($background);
 	}
 	.popover-header{
-		border-color: rgba(color-yiq($background), .2);
+		border-color: rgba(color-contrast($background), .2);
 	}
 	&.bs-popover-top {
 		.arrow::after {
