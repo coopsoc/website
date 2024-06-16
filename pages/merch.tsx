@@ -399,14 +399,6 @@ const Merch = ({
           </Row>
         </Container>
         <Container>
-          {[...cart.entries()].map((variantID, qty) => {
-            if (qty === 0) return null;
-            return (
-              <Row className="justify-content-center">
-                {qty}x {variantID}
-              </Row>
-            );
-          })}
           <Row className="mt-2 justify-content-center">
             <Button
               disabled={cart.size === 0}
