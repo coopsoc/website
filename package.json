@@ -68,6 +68,11 @@
     "sass": "1.77.5",
     "typescript-eslint": "7.13.0"
   },
+  "resolutions": {
+    "strip-ansi": "6.0.1",
+    "string-width": "4.2.2",
+    "wrap-ansi": "7.0.0"
+  },
   "description": "This repository houses the source code for UNSW Co-op Society's website, hosted at [https://coopsoc.com.au](https://coopsoc.com.au) and written in [Next.js](https://nextjs.org). Visit our website and explore around!",
   "main": "next.config.js",
   "repository": {
