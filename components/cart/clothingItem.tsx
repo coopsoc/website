@@ -23,7 +23,10 @@ const ClothingItem = ({
   );
   return (
     <Row className={"mb-5 " + styles["clothingItem"]}>
-      <Col className="d-flex text-center justify-content-center align-items-center">
+      <Col
+        className="d-flex text-center justify-content-center align-items-center"
+        xs="4"
+      >
         <Image
           src={item.product.images[0]}
           width={150}
@@ -33,7 +36,7 @@ const ClothingItem = ({
         />
         <h5 className="m-0 ms-4">{item.product.name}</h5>
       </Col>
-      <Col className={styles["clothingRow"]}>
+      <Col className={styles["clothingRow"]} xs="2">
         <h5 className="m-0">${(item.price.cents ?? 0) / 100}</h5>
       </Col>
       <Col className={styles["clothingRow"]}>
