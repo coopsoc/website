@@ -76,10 +76,14 @@ const Cart = () => {
             </h1>
           </Col>
         </Row>
-        <Container>
+        <Container
+          className="d-flex flex-column align-items-between"
+          style={{ width: "80%" }}
+          fluid
+        >
           {/* TODO: align header row with ClothingItem at smaller display widths - bootstrap columns? */}
           {/* <Row className={styles["cartHeader"]}> */}
-          <Row className="d-flex justify-content-around m-5 mb-4">
+          <Row className="mt-5 my-4">
             {/* <Col className={styles["cartHeaderCol"]}> */}
             <Col className="text-center">
               <h4>Item</h4>
@@ -94,7 +98,8 @@ const Cart = () => {
               <h4>Total</h4>
             </Col>
           </Row>
-          <Row style={{ margin: "auto -200px" }}>
+          {/* <Row style={{ margin: "auto -200px" }}> */}
+          <Row>
             {props.map((prop, index) => (
               <ClothingItem
                 key={index}
@@ -104,18 +109,18 @@ const Cart = () => {
               />
             ))}
           </Row>
-          <Row className="d-flex flex-column align-items-end">
-            <h4 className="w-auto">Total: ${calculateTotal()}</h4>
-            <Button
-              className="mt-4"
-              color="primary"
-              target="_blank"
-              onClick={() => handlePay()}
-              style={{ width: 200, color: "white" }}
-            >
-              Buy Now
-            </Button>
-          </Row>
+        </Container>
+        <Container className="d-flex flex-column align-items-end mt-3">
+          <h4 className="w-auto">Total: ${calculateTotal()}</h4>
+          <Button
+            className="mt-3"
+            color="primary"
+            target="_blank"
+            onClick={() => handlePay()}
+            style={{ width: 200, color: "white" }}
+          >
+            <h5 style={{ color: "white", margin: "0" }}>Buy Now</h5>
+          </Button>
         </Container>
       </section>
     </>

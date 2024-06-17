@@ -26,39 +26,39 @@ const ClothingItem = ({
       <Col className="d-flex text-center justify-content-center align-items-center">
         <Image
           src={item.product.images[0]}
-          width={180}
-          height={180}
+          width={150}
+          height={150}
           alt="Picture of the clothing item"
           unoptimized
         />
-        <h4 style={{ marginTop: "10px", marginLeft: "10px" }}>
-          {item.product.name}
-        </h4>
+        <h5 className="m-0 ms-4">{item.product.name}</h5>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <h4>${(item.price.cents ?? 0) / 100}</h4>
+        <h5 className="m-0">${(item.price.cents ?? 0) / 100}</h5>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <div className="d-flex justify-content-evenly w-100">
+        <div className="d-flex justify-content-evenly align-items-center w-100">
           <Button
             color="primary"
             target="_blank"
             onClick={() => removeFromCart(item)}
+            style={{ color: "white" }}
           >
             -
           </Button>
-          <h4>{item.qty}</h4>
+          <h5 className="m-0">{item.qty}</h5>
           <Button
             color="primary"
             target="_blank"
             onClick={() => addToCart(item)}
+            style={{ color: "white" }}
           >
             +
           </Button>
         </div>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <h4>${((item.price.cents ?? 0) / 100) * item.qty}</h4>
+        <h5 className="m-0">${((item.price.cents ?? 0) / 100) * item.qty}</h5>
       </Col>
     </Row>
   );
