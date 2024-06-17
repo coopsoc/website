@@ -23,9 +23,7 @@ const ClothingItem = ({
   );
   return (
     <Row className={styles["clothingItem"]}>
-      <Col
-        style={{ display: "flex", flexDirection: "row", textAlign: "center" }}
-      >
+      <Col className="d-flex text-center justify-content-center align-items-center">
         <Image
           src={item.product.images[0]}
           width={200}
@@ -33,12 +31,12 @@ const ClothingItem = ({
           alt="Picture of the clothing item"
           unoptimized
         />
-        <h3 style={{ marginTop: "10px", marginLeft: "10px" }}>
+        <h4 style={{ marginTop: "10px", marginLeft: "10px" }}>
           {item.product.name}
-        </h3>
+        </h4>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <h3>${(item.price.cents ?? 0) / 100}</h3>
+        <h4>${(item.price.cents ?? 0) / 100}</h4>
       </Col>
       <Col className={styles["clothingRow"]}>
         <div className={styles["quantityButtons"]}>
@@ -50,7 +48,7 @@ const ClothingItem = ({
           >
             -
           </Button>
-          <h3>{item.qty}</h3>
+          <h4>{item.qty}</h4>
           <Button
             className="mt-4"
             color="primary"
@@ -62,7 +60,7 @@ const ClothingItem = ({
         </div>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <h3>${((item.price.cents ?? 0) / 100) * item.qty}</h3>
+        <h4>${((item.price.cents ?? 0) / 100) * item.qty}</h4>
       </Col>
     </Row>
   );

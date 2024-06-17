@@ -69,7 +69,7 @@ const Cart = () => {
       </Head>
 
       <section className="section section-lg">
-        <Row className="justify-content-center text-center">
+        <Row className="justify-content-around text-center">
           <Col lg="8">
             <h1 className="animate__animated animate__zoomIn animate__fast">
               CART
@@ -77,7 +77,8 @@ const Cart = () => {
           </Col>
         </Row>
         <div>
-          <Row className={styles["cartHeader"]}>
+          {/* <Row className={styles["cartHeader"]}> */}
+          <Row className="d-flex justify-content-around m-5 mb-4">
             <Col className={styles["cartHeaderCol"]}>
               <h4>Item</h4>
             </Col>
