@@ -53,6 +53,7 @@ const navLinks = [
   ["Publications", "/publications"],
   ["Charity", "/charity"],
   ["Calendar", "/calendar"],
+  ["Merch", "/merch"],
   // ["First Year FB", "/fb"],
 ];
 
