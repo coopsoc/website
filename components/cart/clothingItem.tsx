@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import styles from "styles/modules/checkout.module.scss";
+import styles from "styles/modules/Cart.module.scss";
 
 import { Row, Col, Button } from "reactstrap";
 import { CartItemWithDetail } from "api/merch";

@@ -347,7 +347,7 @@ const Merch = ({
     );
   };
 
-  const proceedToCheckout = () => {
+  const goToCart = () => {
     const cartWithDetails: CartItemWithDetail[] = [];
 
     cart.forEach((qty, variantID) => {
@@ -371,7 +371,7 @@ const Merch = ({
     });
 
     localStorage.setItem("cart", JSON.stringify(cartWithDetails));
-    router.push({ pathname: "/checkout" });
+    router.push({ pathname: "/cart" });
   };
 
   return (
@@ -407,10 +407,10 @@ const Merch = ({
           <Row className="mt-2 justify-content-center">
             <Button
               disabled={cart.size === 0}
-              onClick={() => proceedToCheckout()}
+              onClick={() => goToCart()}
               className="bg-primary text-white"
             >
-              Proceed to checkout
+              View Cart
             </Button>
           </Row>
         </Container>

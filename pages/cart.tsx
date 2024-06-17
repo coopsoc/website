@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 
-import ClothingItem from "components/checkout/clothingItem";
+import ClothingItem from "components/cart/clothingItem";
 
 // yess let's get those animations
 import "animate.css";
-import styles from "styles/modules/checkout.module.scss";
+import styles from "styles/modules/Cart.module.scss";
 
 // reactstrap components
 import { Col, Row, Button } from "reactstrap";
 import { CartItemWithDetail } from "api/merch";
+import router from "next/router";
 
-const Checkout = () => {
+const Cart = () => {
   const [props, setProps] = useState<CartItemWithDetail[]>([]);
 
   useEffect(() => {
@@ -58,7 +59,7 @@ const Checkout = () => {
   };
 
   const handlePay = () => {
-    console.log("Buy Now");
+    router.push({ pathname: "/checkout" });
   };
 
   return (
@@ -124,4 +125,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default Cart;
