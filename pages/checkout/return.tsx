@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
+import Head from "next/head";
+import { Col, Container, Row } from "reactstrap";
 
-export default function Return() {
+const Return = () => {
   const [status, setStatus] = useState(null);
   const [customerEmail, setCustomerEmail] = useState("");
 
@@ -27,15 +29,41 @@ export default function Return() {
   if (status === "complete") {
     // TODO check if failure is possible. If so, should probably have a different message
     return (
-      <section id="success">
-        <p>
-          Thanks for shopping with us! A confirmation email will be sent to{" "}
-          {customerEmail}. If you have any questions, please email{" "}
-          <a href="mailto:coopsoc.unsw@gmail.com">coopsoc.unsw@gmail.com</a>.
-        </p>
-      </section>
+      <>
+        <Head>
+          <title>Merch | UNSW Co-op Society</title>
+          <meta name="robots" content="noindex"></meta>
+        </Head>
+
+        <section className="section section-lg">
+          <Row className="justify-content-center text-center ">
+            <Col lg="8">
+              <h1 className="animate__animated animate__zoomIn animate__fast">
+                SUCCESS
+              </h1>
+            </Col>
+          </Row>
+
+          <Container className="py-lg-md d-flex">
+            <Row className="justify-content-center text-center">
+              <Col lg="10">
+                <p className="lead text-muted">
+                  Thanks for shopping with us! A confirmation email will be sent
+                  to {customerEmail}. If you have any questions, please email{" "}
+                  <a href="mailto:coopsoc.unsw@gmail.com">
+                    coopsoc.unsw@gmail.com
+                  </a>
+                  .
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </>
     );
   }
 
   return null;
-}
+};
+
+export default Return;
