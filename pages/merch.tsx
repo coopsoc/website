@@ -28,7 +28,7 @@ import {
   Variant,
   getAllPrices,
   getAllProductsAndVariants,
-} from "api/merch";
+} from "scripts/merch";
 import Stripe from "stripe";
 
 type Repo = {

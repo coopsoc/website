@@ -9,7 +9,7 @@ import styles from "styles/modules/Cart.module.scss";
 
 // reactstrap components
 import { Col, Row, Button, Container } from "reactstrap";
-import { CartItemWithDetail } from "api/merch";
+import { CartItemWithDetail } from "scripts/merch";
 import router from "next/router";
 
 const Cart = () => {

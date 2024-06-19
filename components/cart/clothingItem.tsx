@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "styles/modules/Cart.module.scss";
 
 import { Row, Col, Button } from "reactstrap";
-import { CartItemWithDetail } from "api/merch";
+import { CartItemWithDetail } from "scripts/merch";
 
 interface ClothingItemProps {
   item: CartItemWithDetail;
