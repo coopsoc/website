@@ -188,12 +188,19 @@ const MerchCard = ({
           onExited={() => setCarouselAnimating(false)}
           key={path.split("/").at(-1)}
         >
-          <Image
-            src={path}
-            alt={path.split("/").at(-1) ?? "merch item"}
-            width={400}
-            height={400}
-          />
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              paddingTop: "100%",
+            }}
+          >
+            <Image
+              src={path}
+              alt={path.split("/").at(-1) ?? "merch item"}
+              layout="fill"
+            />
+          </div>
         </CarouselItem>
       );
     });
@@ -405,10 +412,10 @@ const Merch = ({
             </h1>
           </Col>
         </Row>
-        <Container>
+        <Container className="container-md">
           <Row className="justify-content-center">
             {repo.products.map((product) => (
-              <Col xs="5" key={product.name}>
+              <Col className="col-sm-5" key={product.name}>
                 <MerchCard
                   product={product}
                   setCart={setCart}
