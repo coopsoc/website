@@ -33,7 +33,7 @@ export type Variant = {
   productName: string;
   colour: ProductColour;
   size: ProductSize;
-
+  price: Price;
   id: string;
   imageURLs: string[];
 };
@@ -121,6 +121,7 @@ export const getAllProductsAndVariants = async (stripe: Stripe) => {
         size: toProductSizeMap.get(variantSize) ?? ProductSize.UNKNOWN,
         id: variant.id,
         imageURLs: variant.images,
+        price: { id: variant.default_price?.toString() ?? "" },
       });
     });
 

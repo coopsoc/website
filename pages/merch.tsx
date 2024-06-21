@@ -51,6 +51,12 @@ export const getServerSideProps = async () => {
       product.price;
   });
 
+  variants.forEach((variant: Variant) => {
+    variant.price =
+      prices.find((price: Price) => price.id === variant.price.id) ??
+      variant.price;
+  });
+
   const repo: Repo = { products, variants };
   return { props: { repo } };
 };
@@ -388,7 +394,7 @@ const Merch = ({
           name: variant.productName,
           images: variant.imageURLs,
         },
-        price: product.price,
+        price: variant.price,
         qty,
       });
     });
