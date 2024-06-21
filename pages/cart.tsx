@@ -5,7 +5,6 @@ import ClothingItem from "components/cart/clothingItem";
 
 // yess let's get those animations
 import "animate.css";
-import styles from "styles/modules/Cart.module.scss";
 
 // reactstrap components
 import { Col, Row, Button, Container } from "reactstrap";
@@ -33,6 +32,7 @@ const Cart = () => {
         newArr[element].qty++;
       }
     }
+    localStorage.setItem("cart", JSON.stringify(props));
     setProps(newArr);
   };
 
@@ -47,6 +47,7 @@ const Cart = () => {
         }
       }
     }
+    localStorage.setItem("cart", JSON.stringify(props));
     setProps(newArr);
   };
 
