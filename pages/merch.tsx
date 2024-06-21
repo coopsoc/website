@@ -316,7 +316,18 @@ const Merch = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const router = useRouter();
   const [cart, setCart] = useState<Cart>(new Map());
-
+  useEffect(() => {
+    const existingCart = localStorage.getItem("cart");
+    if (existingCart != null) {
+      const JSONCart = JSON.parse(existingCart);
+      const newCart = new Map();
+      JSONCart.map((obj: CartItemWithDetail) => {
+        newCart.set(obj.product.id, obj.qty);
+      });
+      setCart(newCart);
+    }
+  }, []);
+  console.log(cart);
   const findVariantID = (
     productName: string,
     colour?: ProductColour,
