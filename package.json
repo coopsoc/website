@@ -47,7 +47,6 @@
     "@eslint/js": "9.4.0",
     "@next/eslint-plugin-next": "14.2.4",
     "@types/glob": "8.1.0",
-    "@types/headroom": "0.12.4",
     "@types/headroom.js": "0.12.4",
     "@types/node": "20.14.2",
     "@types/nouislider": "15.0.0",

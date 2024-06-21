@@ -374,11 +374,6 @@
   resolved "https://registry.yarnpkg.com/@types/headroom.js/-/headroom.js-0.12.4.tgz#2e6151667e96c3e46afc298faddc25d742322b15"
   integrity sha512-9Z6GHzjkq/MToVC0PNoiTMbeDZjjjKv6SCxv1XonspR7ssohjNb0+bg7K6Fbz5hDh/aFT9qLfhRa3jYYs4aMuQ==
 
-"@types/headroom@0.12.4":
-  version "0.12.4"
-  resolved "https://registry.yarnpkg.com/@types/headroom/-/headroom-0.12.4.tgz#f2b78f36c65fd8c4486eaf07b3ac71fa4f7db260"
-  integrity sha512-rZTvauq5OHubPtwKrctKLw+o8TssRVstVx4KbivsJXbOjZfG+CEvxMqkL4OftPO5C3VazSYDFhwTOA9pFehPzg==
-
 "@types/is-empty@^1.0.0":
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@types/is-empty/-/is-empty-1.2.3.tgz#a2d55ea8a5ec57bf61e411ba2a9e5132fe4f0899"
