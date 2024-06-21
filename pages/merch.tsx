@@ -14,6 +14,7 @@ import {
   DropdownMenu,
   DropdownToggle,
   Row,
+  Spinner,
 } from "reactstrap";
 import "animate.css";
 import { InferGetServerSidePropsType } from "next";
@@ -190,8 +191,8 @@ const MerchCard = ({
           <Image
             src={path}
             alt={path.split("/").at(-1) ?? "merch item"}
-            width={500}
-            height={500}
+            width={400}
+            height={400}
           />
         </CarouselItem>
       );
@@ -316,6 +317,8 @@ const Merch = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const router = useRouter();
   const [cart, setCart] = useState<Cart>(new Map());
+  const [isCartLoading, setIsCartLoading] = useState(false);
+
   useEffect(() => {
     const existingCart = localStorage.getItem("cart");
     if (existingCart != null) {
@@ -327,7 +330,7 @@ const Merch = ({
       setCart(newCart);
     }
   }, []);
-  console.log(cart);
+
   const findVariantID = (
     productName: string,
     colour?: ProductColour,
@@ -359,6 +362,8 @@ const Merch = ({
   };
 
   const goToCart = () => {
+    setIsCartLoading(true);
+
     const cartWithDetails: CartItemWithDetail[] = [];
 
     cart.forEach((qty, variantID) => {
@@ -382,6 +387,7 @@ const Merch = ({
     });
 
     localStorage.setItem("cart", JSON.stringify(cartWithDetails));
+    setIsCartLoading(false);
     router.push({ pathname: "/cart" });
   };
 
@@ -417,11 +423,12 @@ const Merch = ({
         <Container>
           <Row className="mt-2 justify-content-center">
             <Button
-              disabled={cart.size === 0}
+              disabled={cart.size === 0 || isCartLoading}
               onClick={() => goToCart()}
               className="bg-primary text-white"
             >
-              View Cart
+              {isCartLoading && <Spinner size="sm">Loading...</Spinner>}
+              <span> View Cart</span>
             </Button>
           </Row>
         </Container>
