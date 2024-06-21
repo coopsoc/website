@@ -32,7 +32,7 @@ const Cart = () => {
         newArr[element].qty++;
       }
     }
-    localStorage.setItem("cart", JSON.stringify(props));
+    localStorage.setItem("cart", JSON.stringify(newArr));
     setProps(newArr);
   };
 
@@ -47,7 +47,7 @@ const Cart = () => {
         }
       }
     }
-    localStorage.setItem("cart", JSON.stringify(props));
+    localStorage.setItem("cart", JSON.stringify(newArr));
     setProps(newArr);
   };
 
