@@ -40,7 +40,7 @@ type Repo = {
 export const getServerSideProps = async () => {
   // Ideally should be moved out to not initialise on every render
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const stripe: Stripe = require("stripe")(process.env["STRIPE_TEST_KEY"]);
+  const stripe: Stripe = require("stripe")(process.env["STRIPE_SECRET_KEY"]);
 
   const { products, variants } = await getAllProductsAndVariants(stripe);
   const prices = await getAllPrices(stripe);
