@@ -26,8 +26,8 @@ const ExecCard = ({ data, colour }: ExecCardProps) => {
           <Image
             alt={name}
             src={image}
-            sizes="(max-width: 767px) 100vw, 33vw"
-            quality="0.5"
+            sizes="(max-width: 767px) 100vw, 33vw" // 1 column -> 3 at md breakpoint (768px)
+            quality="40" // 0 to 100, default 75
             className={styles["card-img-top"]}
           />
         </div>
