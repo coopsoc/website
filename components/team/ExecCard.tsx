@@ -23,7 +23,13 @@ const ExecCard = ({ data, colour }: ExecCardProps) => {
               <p className={styles["person-text"]}>{description}</p>
             </>
           )}
-          <Image alt={name} src={image} className={styles["card-img-top"]} />
+          <Image
+            alt={name}
+            src={image}
+            sizes="(max-width: 767px) 100vw, 33vw"
+            quality="0.5"
+            className={styles["card-img-top"]}
+          />
         </div>
       </div>
       <div className="card-body text-center pt-2 pb-4">
