@@ -10,10 +10,6 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// Hacky workaround to fix `Type error: Could not find a declaration file for module 'headroom.js'.`
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 import React, { useEffect, useState } from "react";
 import Image from "next/legacy/image";
 import Link from "next/link";
