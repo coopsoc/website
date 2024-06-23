@@ -175,9 +175,10 @@ const MerchCard = ({
   };
 
   useEffect(() => {
-    const imageURLs = findAllVariantsOfProduct(product.name).flatMap(
-      (variant) => variant.imageURLs,
-    );
+    const imageURLs = findAllVariantsOfProduct(product.name)
+      .flatMap((variant) => variant.imageURLs)
+      .map((url) => url.replace(".png", ".jpg"));
+    console.log(imageURLs);
     const dedupedImageURLs = imageURLs.filter(
       (value, index) => imageURLs.indexOf(value) === index,
     );
@@ -220,6 +221,7 @@ const MerchCard = ({
         activeIndex={carouselIndex}
         next={carouselNext}
         previous={carouselPrevious}
+        dark
       >
         {displayAllVariantImages()}
         <CarouselControl direction="prev" onClickHandler={carouselPrevious} />
