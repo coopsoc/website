@@ -54,10 +54,16 @@
 
 .quantityButtons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+@include media-breakpoint-between(sm, md) {
+    .quantityButtons {
+        flex-direction: column;
+    }
 }
 
 .quantityButtons button {
@@ -71,13 +77,7 @@
     // "text-white py-2 px-3 mx-5 mt-3 m-lg-0 text-center"
 }
 
-@include media-breakpoint-up(lg) {
-    .quantityButtons {
-        flex-direction: row;
-        // justify-content: space-around;
-        align-items: center;
-    }
-}
+
 
 .checkoutButton {
     width: 100%;

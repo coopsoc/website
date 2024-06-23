@@ -70,17 +70,17 @@ const Cart = () => {
         <title>Cart | UNSW Co-op Society</title>
       </Head>
 
-      <section className="section section-lg">
+      <section className="section section-sm">
         <Row className="justify-content-around text-center">
           <Col lg="8">
-            <h1 className="animate__animated animate__zoomIn animate__fast pb-4">
+            <h1 className="animate__animated animate__zoomIn animate__fast pb-4 mt-3 mt-sm-5">
               CART
             </h1>
           </Col>
         </Row>
         <Container
           // className="d-flex flex-column align-items-between"
-          style={{ width: "75%" }}
+          style={{ width: "80%", maxWidth: 1140 }}
           fluid
         >
           {/* TODO: align header row with ClothingItem at smaller display widths - bootstrap columns? */}

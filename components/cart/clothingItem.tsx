@@ -21,10 +21,13 @@ const ClothingItem = ({
     .replace("https%3A//www.coopsoc.com.au", "")
     .replace(".png", ".jpg");
   return (
-    <Row className={"mb-5 px-5 ps-md-2 ps-lg-5 " + styles["clothingItem"]}>
+    <Row
+      className={
+        "mb-5 px-sm-5 ps-md-2 ps-lg-5 py-4 py-sm-1 " + styles["clothingItem"]
+      }
+    >
       <Col
-        className="pt-2 pb-3 pb-lg-2 d-flex flex-column flex-lg-row text-center justify-content-start align-items-center"
-        xs="3"
+        className="pt-2 pb-sm-3 pb-lg-2 d-flex flex-column flex-lg-row text-center justify-content-start align-items-center"
         sm="6"
       >
         <Image
@@ -40,11 +43,11 @@ const ClothingItem = ({
       </Col>
       <Col
         className={"d-none d-md-block text-center " + styles["clothingRow"]}
-        xs="1"
+        sm="1"
       >
         <p className="m-0 fs-5 fw-bold">${(item.price.cents ?? 0) / 100}</p>
       </Col>
-      <Col className={styles["clothingRow"]} xs="4">
+      <Col className={styles["clothingRow"]} sm="4">
         <div className={styles["quantityButtons"]}>
           <Button
             color="primary"
@@ -65,9 +68,10 @@ const ClothingItem = ({
           </Button>
         </div>
       </Col>
-      <Col className={styles["clothingRow"]} xs="1">
+      <Col sm="1">
         <p className="m-0 fw-bold fs-5 text-center">
-          ${((item.price.cents ?? 0) / 100) * item.qty}
+          <span className="d-sm-none">Total: </span>$
+          {((item.price.cents ?? 0) / 100) * item.qty}
         </p>
       </Col>
     </Row>
