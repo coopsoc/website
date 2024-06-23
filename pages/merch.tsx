@@ -207,7 +207,8 @@ const MerchCard = ({
               alt={path.split("/").at(-1) ?? "merch item"}
               layout="fill"
               sizes="(max-width 575px) 100vw, (max-width: 767px) 33vw, 25vw"
-              quality="40"
+              // By default, quality = 75 (ranges from 0-100). For now, just converted PNG -> JPEG instead
+              // quality="40"
             />
           </div>
         </CarouselItem>
