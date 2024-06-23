@@ -17,10 +17,9 @@ const ClothingItem = ({
   addToCart,
   removeFromCart,
 }: ClothingItemProps) => {
-  item.product.images[0] = item.product.images[0].replace(
-    "https%3A//www.coopsoc.com.au",
-    "",
-  );
+  item.product.images[0] = item.product.images[0]
+    .replace("https%3A//www.coopsoc.com.au", "")
+    .replace(".png", ".jpg");
   return (
     <Row className={"mb-5 " + styles["clothingItem"]}>
       <Col
