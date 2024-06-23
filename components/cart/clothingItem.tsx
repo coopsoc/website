@@ -21,47 +21,58 @@ const ClothingItem = ({
     .replace("https%3A//www.coopsoc.com.au", "")
     .replace(".png", ".jpg");
   return (
-    <Row className={"mb-5 " + styles["clothingItem"]}>
+    <Row className={"mb-5 px-5 px-lg-0 " + styles["clothingItem"]}>
       <Col
-        className="d-flex text-center justify-content-center align-items-center"
-        xs="4"
+        className="pt-2 pb-3 pb-lg-2 d-flex flex-column flex-lg-row text-center justify-content-center align-items-center"
+        xs="3"
+        md="5"
       >
         <Image
           src={item.product.images[0]}
           width={150}
           height={150}
           alt="Picture of the clothing item"
-          // className="ms-sm-5"
           unoptimized
         />
-        <h5 className="m-0 ms-4">{item.product.name}</h5>
+        <p className="fs-5 fw-bold m-0 ms-lg-4 text-center">
+          {item.product.name}
+        </p>
+      </Col>
+      <Col className={"d-none d-md-block " + styles["clothingRow"]}>
+        <p className="m-0 fs-5 fw-bold text-center">
+          ${(item.price.cents ?? 0) / 100}
+        </p>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <h5 className="m-0">${(item.price.cents ?? 0) / 100}</h5>
-      </Col>
-      <Col className={styles["clothingRow"]} xs="4">
-        <div className="d-flex justify-content-evenly align-items-center w-100">
+        <div
+          className={
+            "w-100 d-flex flex-column align-items-between justify-content-center " +
+            "flex-lg-row justify-content-lg-between align-items-lg-center"
+          }
+        >
           <Button
             color="primary"
             target="_blank"
             onClick={() => removeFromCart(item)}
-            style={{ color: "white" }}
+            className="text-white py-2 px-3 mx-5 mb-3 m-lg-0 text-center"
           >
             -
           </Button>
-          <h5 className="m-0">{item.qty}</h5>
+          <p className="m-0 mx-lg-4 fw-bold fs-5 text-center">{item.qty}</p>
           <Button
             color="primary"
             target="_blank"
             onClick={() => addToCart(item)}
-            style={{ color: "white" }}
+            className="text-white py-2 px-3 mx-5 mt-3 m-lg-0 text-center"
           >
             +
           </Button>
         </div>
       </Col>
       <Col className={styles["clothingRow"]}>
-        <h5 className="m-0">${((item.price.cents ?? 0) / 100) * item.qty}</h5>
+        <p className="m-0 fw-bold fs-5">
+          ${((item.price.cents ?? 0) / 100) * item.qty}
+        </p>
       </Col>
     </Row>
   );

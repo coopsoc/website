@@ -28,7 +28,6 @@
     // margin-bottom: 40px;
     // margin-left: 40px;
     // margin-right: 40px;
-    padding: 0px;
     // background-color: rgb(242, 242, 242);
     background-color: rgba(0,0,0,0.015);
     display: flex;
@@ -55,3 +54,9 @@
 //     align-items: baseline;
 //     width: 100%;
 // }
+
+.checkoutButton {
+    width: "20em";
+    height: "4em";
+    color: "white";
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 
+import styles from "styles/modules/Cart.module.scss";
 import ClothingItem from "components/cart/clothingItem";
 
 // yess let's get those animations
@@ -84,16 +85,18 @@ const Cart = () => {
         >
           {/* TODO: align header row with ClothingItem at smaller display widths - bootstrap columns? */}
           {/* <Row className={styles["cartHeader"]}> */}
-          <Row className="mt-sm-3 mb-4 d-none d-sm-flex">
+          <Row className="mt-sm-3 mb-4 px-5 px-lg-0 d-none d-sm-flex">
             {/* <Col className={styles["cartHeaderCol"]}> */}
-            <Col className="text-center" xs="4">
+            <Col className="text-center" xs="3" md="5">
+              {/* TODO: hacky workaround for now, should look into responsive font sizing etc */}
               <h4>Item</h4>
             </Col>
-            <Col className="text-center">
+            <Col className="text-center d-none d-md-block">
               <h4>Price</h4>
             </Col>
-            <Col className="text-center" xs="4">
-              <h4>Quantity</h4>
+            <Col className="text-center">
+              <h4 className="d-block d-lg-none">Qty</h4>
+              <h4 className="d-none d-lg-block">Quantity</h4>
             </Col>
             <Col className="text-center">
               <h4>Total</h4>
@@ -112,13 +115,12 @@ const Cart = () => {
           {/* </Row> */}
           <Row>
             <Col className="d-flex flex-column align-items-end me-1">
-              <h4> Total: ${calculateTotal()}</h4>
+              <h4>Grand Total: ${calculateTotal()}</h4>
               <Button
-                className="mt-3"
+                className={"mt-3 " + styles["checkoutButton"]}
                 color="primary"
                 target="_blank"
                 onClick={() => handlePay()}
-                style={{ width: 200, color: "white" }}
               >
                 <h5 style={{ color: "white", margin: "0" }}>Check Out</h5>
               </Button>
