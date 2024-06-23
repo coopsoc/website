@@ -74,7 +74,10 @@ export const toProductSizeMap: Map<string, ProductSize> = new Map([
 export const getAllProductsAndVariants = async (stripe: Stripe) => {
   const allProducts: Product[] = [];
   const allVariants: Variant[] = [];
-  let listProductsResp = await stripe.products.list({ limit: 100 });
+  let listProductsResp = await stripe.products.list({
+    limit: 100,
+    active: true,
+  });
   let hasMore = true;
 
   while (hasMore) {
