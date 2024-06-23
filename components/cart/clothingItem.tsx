@@ -31,14 +31,15 @@ const ClothingItem = ({
           width={150}
           height={150}
           alt="Picture of the clothing item"
+          // className="ms-sm-5"
           unoptimized
         />
         <h5 className="m-0 ms-4">{item.product.name}</h5>
       </Col>
-      <Col className={styles["clothingRow"]} xs="2">
+      <Col className={styles["clothingRow"]}>
         <h5 className="m-0">${(item.price.cents ?? 0) / 100}</h5>
       </Col>
-      <Col className={styles["clothingRow"]}>
+      <Col className={styles["clothingRow"]} xs="4">
         <div className="d-flex justify-content-evenly align-items-center w-100">
           <Button
             color="primary"
