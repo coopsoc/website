@@ -85,20 +85,20 @@ const Cart = () => {
         >
           {/* TODO: align header row with ClothingItem at smaller display widths - bootstrap columns? */}
           {/* <Row className={styles["cartHeader"]}> */}
-          <Row className="mt-sm-3 mb-4 px-5 px-lg-0 d-none d-sm-flex">
+          <Row className="mt-sm-3 mb-4 px-5 ps-md-2 ps-lg-5  d-none d-sm-flex">
             {/* <Col className={styles["cartHeaderCol"]}> */}
-            <Col className="text-center" xs="3" md="5">
+            <Col className="text-center" xs="3" sm="6">
               {/* TODO: hacky workaround for now, should look into responsive font sizing etc */}
               <h4>Item</h4>
             </Col>
-            <Col className="text-center d-none d-md-block">
+            <Col className="text-center d-none d-md-block" xs="1">
               <h4>Price</h4>
             </Col>
-            <Col className="text-center">
+            <Col className="text-center" xs="4">
               <h4 className="d-block d-lg-none">Qty</h4>
               <h4 className="d-none d-lg-block">Quantity</h4>
             </Col>
-            <Col className="text-center">
+            <Col className="text-center" xs="1">
               <h4>Total</h4>
             </Col>
           </Row>

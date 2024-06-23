@@ -1,3 +1,7 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+
 .mark-1 {
     background-color: #e5abc8;
     opacity: 0.6;
@@ -48,15 +52,41 @@
     // height: 100%;
 }
 
-// .quantityButtons {
-//     display: flex;
-//     justify-content: space-around;
-//     align-items: baseline;
-//     width: 100%;
-// }
+.quantityButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.quantityButtons button {
+    width: 2em;
+    height: 2em;
+    margin: 0 1em !important;
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-size: $h5-font-size;
+    // "text-white py-2 px-3 mx-5 mt-3 m-lg-0 text-center"
+}
+
+@include media-breakpoint-up(lg) {
+    .quantityButtons {
+        flex-direction: row;
+        // justify-content: space-around;
+        align-items: center;
+    }
+}
 
 .checkoutButton {
-    width: "20em";
-    height: "4em";
+    width: 100%;
+    height: 4em;
     color: "white";
+}
+
+@include media-breakpoint-up(md) {
+    .checkoutButton {
+        width: 20em;
+    }
 }
