@@ -232,12 +232,11 @@ const MerchCard = ({
         <h3>{product.name}</h3>
         <p>{displayPrice(product.price.cents)}</p>
         <p>{product.description}</p>
-        <Row className="p-3">
+        <Row className="gap-3 my-2 my-md-3">
           <Dropdown
             direction="down"
             isOpen={colourDropdownOpen}
             toggle={toggleColourDropdown}
-            className="m-1"
           >
             <DropdownToggle caret>
               {colourChoice === ProductColour.UNKNOWN ? "Colour" : colourChoice}
@@ -265,7 +264,6 @@ const MerchCard = ({
             direction="down"
             isOpen={sizeDropdownOpen}
             toggle={toggleSizeDropdown}
-            className="m-1"
           >
             <DropdownToggle caret>
               {sizeChoice === ProductSize.UNKNOWN ? "Size" : sizeChoice}
@@ -289,7 +287,6 @@ const MerchCard = ({
           <Dropdown
             isOpen={qtyDropdownOpen}
             toggle={toggleQtyDropdown}
-            className="m-1"
             // disabled={qtyBtnDisabled}
           >
             <DropdownToggle caret>
@@ -304,7 +301,7 @@ const MerchCard = ({
             </DropdownMenu>
           </Dropdown>
         </Row>
-        <Row className="p-3">
+        <Row className="p-2 d-flex justify-content-center align-items-center flex-col">
           <Button className="m-1 bg-green" onClick={() => addToCart()}>
             {isInCart(product.name) ? "Update cart" : "Add to cart"}
           </Button>
