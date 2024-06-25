@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 // yess let's get those animations
 import "animate.css";
@@ -26,10 +26,10 @@ const Events = () => {
         <title>Events | UNSW Co-op Society</title>
       </Head>
 
-      <section className="section section-lg">
-        <Row className="justify-content-center text-center ">
+      <section className="section section-sm">
+        <Row className="justify-content-around text-center">
           <Col lg="8">
-            <h1 className="animate__animated animate__zoomIn animate__fast">
+            <h1 className="animate__animated animate__zoomIn animate__fast pb-4 mt-3 mt-sm-5">
               EVENTS
             </h1>
           </Col>

@@ -1,5 +1,5 @@
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { StaticImageData } from "next/image";
+import { StaticImageData } from "next/legacy/image";
 
 export type Role = {
   role: string;

@@ -108,7 +108,9 @@
                     border-color: $custom-control-indicator-checked-border-color;
                 }
                 &::after {
-                    background-image: $custom-radio-indicator-icon-checked;
+                    // TODO: This was a quick fix. Need to work out what this was supposed to be later.
+                    // background-image: $custom-radio-indicator-icon-checked;
+                    background-image: $custom-control-indicator-checked-bg;
                 }
             }
         }

@@ -25,7 +25,7 @@ const Header = () => {
             x="0"
             y="0"
           >
-            <polygon className="fill-white" points="4000 0 4000 100 0 100" />
+            <polygon className="fill-white" points="4000 0 4000 105 0 105" />
           </svg>
         </div>
       </section>

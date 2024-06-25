@@ -30,7 +30,7 @@ const BlogCard = (blog: Blog) => {
           Learn more
         </Button>
 
-        <CardFooter className="pt-2 pb-0 pl-2 pr-2 bg-white">
+        <CardFooter className="pt-2 pb-0 ps-2 pe-2 bg-white">
           <p className="text-left text-sm text-muted">
             {dayjs(blog.published).fromNow()}
           </p>

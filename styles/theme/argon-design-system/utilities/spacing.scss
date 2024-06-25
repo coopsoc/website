@@ -28,9 +28,9 @@
 
 @media(min-width: 992px) {
     [class*="mt--"],
-    [class*="mr--"],
+    [class*="me--"],
     [class*="mb--"],
-    [class*="ml--"] {
+    [class*="ms--"] {
         position: relative;
         z-index: 5;
     }
@@ -41,13 +41,13 @@
     .mt--100 {
         margin-top: -100px !important;
     }
-    .mr--100 {
+    .me--100 {
         margin-right: -100px !important;
     }
     .mb--100 {
         margin-bottom: -100px !important;
     }
-    .ml--100 {
+    .ms--100 {
         margin-left: -100px !important;
     }
     .mt--150 {

@@ -5,7 +5,7 @@
     }
     a#{$parent},
     button#{$parent} {
-        @include hover-focus {
+        &:hover, &:focus {
           background-color: darken($color, 10%) !important;
         }
     }
@@ -23,7 +23,7 @@
     }
     a#{$parent},
     button#{$parent} {
-        @include hover-focus {
+        &:hover, &:focus {
             background-color: darken(rgba($color, $translucent-color-opacity), 12%) !important;
         }
     }

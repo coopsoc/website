@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import styles from "styles/modules/ExecCard.module.scss";
 import { ExecMember } from "../../data/types";
@@ -23,7 +23,14 @@ const ExecCard = ({ data, colour }: ExecCardProps) => {
               <p className={styles["person-text"]}>{description}</p>
             </>
           )}
-          <Image alt={name} src={image} className={styles["card-img-top"]} />
+          <Image
+            alt={name}
+            src={image}
+            sizes="(max-width: 767px) 100vw, 33vw" // 1 column -> 3 at md breakpoint (768px)
+            quality="40" // 0 to 100, default 75
+            placeholder="blur"
+            className={styles["card-img-top"]}
+          />
         </div>
       </div>
       <div className="card-body text-center pt-2 pb-4">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MerchCard from "./MerchCard";
 import Loader from "components/Loader";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Product } from "../../data/types";
 
 interface MerchCollectionProps {
