@@ -10,7 +10,7 @@ import {
   EmbeddedCheckoutProvider,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { CartItemWithDetail } from "scripts/merch";
+import { CartItemWithDetail } from "data/types";
 import Head from "next/head";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
