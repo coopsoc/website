@@ -10,7 +10,7 @@ import {
 import Stripe from "stripe";
 
 //! Change to toggle on/off merch
-export const isMerchActive = (): boolean => true;
+export const isMerchActive = (): boolean => false;
 
 //! Results in hydration errors but would be clean:
 // export const isMerchActive = () =>

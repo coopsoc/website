@@ -1,3 +1,5 @@
+// To turn merch page off, go to merch.ts and make isMerchActive return false
+
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import { Button, Col, Container, Row, Spinner } from "reactstrap";
@@ -15,6 +17,7 @@ import {
 } from "data/types";
 import { isMerchActive, getAllProductsAndVariants } from "scripts/merch";
 import MerchCard from "components/merch_2024/MerchCard";
+import MerchClosed from "components/merch_2024/MerchClosed";
 
 type Repo = {
   products: Product[];
@@ -135,43 +138,35 @@ const Merch = ({
             </h1>
           </Col>
         </Row>
-        <Container className="container-md">
-          {isMerchActive() ? (
-            <>
-              <Row className="justify-content-center">
-                {repo.products.map((product) => (
-                  <Col className="col-sm-5" key={product.name}>
-                    <MerchCard
-                      product={product}
-                      setCart={setCart}
-                      isInCart={isInCart}
-                      findVariantID={findVariantID}
-                      findAllVariantsOfProduct={findAllVariantsOfProduct}
-                    />
-                  </Col>
-                ))}
-              </Row>
-              <Row className="mt-3 justify-content-center">
-                <Button
-                  disabled={cart.size === 0 || isCartLoading}
-                  onClick={() => goToCart()}
-                  className="bg-primary text-white"
-                >
-                  {isCartLoading && <Spinner size="sm">Loading...</Spinner>}
-                  <span> View Cart</span>
-                </Button>
-              </Row>
-            </>
-          ) : (
-            <Row className="justify-content-center text-center">
-              <Col lg="10">
-                <p className="lead text-muted">
-                  Orders are now closed - check back next year for more merch!
-                </p>
-              </Col>
+        {isMerchActive() ? (
+          <Container className="container-md">
+            <Row className="justify-content-center">
+              {repo.products.map((product) => (
+                <Col className="col-sm-5" key={product.name}>
+                  <MerchCard
+                    product={product}
+                    setCart={setCart}
+                    isInCart={isInCart}
+                    findVariantID={findVariantID}
+                    findAllVariantsOfProduct={findAllVariantsOfProduct}
+                  />
+                </Col>
+              ))}
             </Row>
-          )}
-        </Container>
+            <Row className="mt-3 justify-content-center">
+              <Button
+                disabled={cart.size === 0 || isCartLoading}
+                onClick={() => goToCart()}
+                className="bg-primary text-white"
+              >
+                {isCartLoading && <Spinner size="sm">Loading...</Spinner>}
+                <span> View Cart</span>
+              </Button>
+            </Row>
+          </Container>
+        ) : (
+          <MerchClosed />
+        )}
       </section>
     </>
   );

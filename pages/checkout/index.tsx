@@ -10,11 +10,13 @@ import {
   EmbeddedCheckoutProvider,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import MerchClosed from "components/merch_2024/MerchClosed";
 import { CartItemWithDetail } from "data/types";
 import Head from "next/head";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
+import { isMerchActive } from "scripts/merch";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || "NO_KEY_FOUND",
@@ -59,29 +61,36 @@ const Checkout = () => {
         <meta name="robots" content="noindex"></meta>
       </Head>
 
-      {props.length ? (
-        <div id="checkout" className="mb-2 mb-sm-4 mb-xl-5">
-          <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
-            <EmbeddedCheckout />
-          </EmbeddedCheckoutProvider>
-        </div>
-      ) : (
-        <section className="section section-sm">
-          <Row className="justify-content-around text-center">
-            <Col lg="8">
-              <h1 className="animate__animated animate__zoomIn animate__fast pb-4 mt-3 mt-sm-5">
-                CHECKOUT
-              </h1>
-            </Col>
-          </Row>
+      <section className="section section-sm">
+        {props.length && isMerchActive() ? (
+          <div id="checkout" className="mb-2 mb-sm-4 mb-xl-5">
+            <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
+              <EmbeddedCheckout />
+            </EmbeddedCheckoutProvider>
+          </div>
+        ) : (
+          <>
+            <Row className="justify-content-around text-center">
+              <Col lg="8">
+                <h1 className="animate__animated animate__zoomIn animate__fast pb-4 mt-3 mt-sm-5">
+                  CHECKOUT
+                </h1>
+              </Col>
+            </Row>
 
-          <Container className="py-lg-md d-flex justify-content-center">
-            <p className="lead text-muted text-center">
-              Cart is empty, <Link href="/merch">add some items</Link> first!
-            </p>
-          </Container>
-        </section>
-      )}
+            {isMerchActive() ? (
+              <Container className="py-lg-md d-flex justify-content-center">
+                <p className="lead text-muted text-center">
+                  Cart is empty, <Link href="/merch">add some items</Link>{" "}
+                  first!
+                </p>
+              </Container>
+            ) : (
+              <MerchClosed />
+            )}
+          </>
+        )}
+      </section>
     </>
   );
 };

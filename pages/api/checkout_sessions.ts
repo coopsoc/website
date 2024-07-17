@@ -3,6 +3,7 @@
 // From https://docs.stripe.com/checkout/embedded/quickstart?client=next
 
 import { NextApiRequest, NextApiResponse } from "next";
+import { isMerchActive } from "scripts/merch";
 import { z } from "zod";
 
 const itemSchema = z.object({
@@ -31,6 +32,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>,
 ) {
+  if (!isMerchActive()) {
+    return res.status(404).end("Not Found");
+  }
+
   switch (req.method) {
     case "POST":
       try {
