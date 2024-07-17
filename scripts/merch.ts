@@ -20,6 +20,8 @@ export const isMerchActive = (): boolean => true;
 export const getAllProductsAndVariants = async (stripe: Stripe) => {
   const allProducts: Product[] = [];
   const allVariants: Variant[] = [];
+  const allPrices: Map<string, Price> = await getAllPrices(stripe);
+
   let listProductsResp = await stripe.products.list({
     limit: 100,
     active: true,
@@ -40,6 +42,9 @@ export const getAllProductsAndVariants = async (stripe: Stripe) => {
         variantSize = variantSizeMatch.toUpperCase();
       }
 
+      const priceId = variant.default_price?.toString() ?? "";
+      const price = allPrices.get(priceId) ?? { id: "", cents: 0 };
+
       const productName = variant.name.split("(").at(0)?.trim();
       const product = allProducts.find(
         (product) => product.name === productName,
@@ -58,7 +63,7 @@ export const getAllProductsAndVariants = async (stripe: Stripe) => {
         allProducts.push({
           name: productName ?? "",
           description: variant.description ?? "",
-          price: { id: variant.default_price?.toString() ?? "" },
+          price,
           colours: [],
           sizes: [],
         });
@@ -70,7 +75,7 @@ export const getAllProductsAndVariants = async (stripe: Stripe) => {
         size: toProductSizeMap.get(variantSize) ?? ProductSize.UNKNOWN,
         id: variant.id,
         imageURLs: variant.images,
-        price: { id: variant.default_price?.toString() ?? "" },
+        price,
       });
     });
 
@@ -86,25 +91,26 @@ export const getAllProductsAndVariants = async (stripe: Stripe) => {
   return { products: allProducts, variants: allVariants };
 };
 
-export const getAllPrices = async (stripe: Stripe) => {
-  const allPrices: Price[] = [];
-  let listPricesResp = await stripe.prices.list();
+const getAllPrices = async (stripe: Stripe) => {
+  // key: price id, value: Price (price id, cents) - for efficient lookup
+  const allPrices: Map<string, Price> = new Map();
+
+  let prices = await stripe.prices.list();
   let hasMore = true;
 
   while (hasMore) {
-    const prices: Price[] = listPricesResp.data.map((price: Stripe.Price) => {
-      return {
+    prices.data.forEach((price: Stripe.Price) =>
+      allPrices.set(price.id, {
         id: price.id,
         cents: price.unit_amount ?? 0,
-      };
-    });
-    allPrices.push(...prices);
+      }),
+    );
 
-    listPricesResp = await stripe.prices.list({
-      starting_after: listPricesResp.data[listPricesResp.data.length - 1].id,
+    prices = await stripe.prices.list({
+      starting_after: prices.data[prices.data.length - 1].id,
     });
 
-    hasMore = listPricesResp.has_more;
+    hasMore = prices.has_more;
   }
 
   return allPrices;
