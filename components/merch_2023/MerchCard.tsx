@@ -3,11 +3,11 @@ import { Modal, ModalBody } from "reactstrap";
 import Image from "next/legacy/image";
 
 import styles from "styles/modules/Merch.module.scss";
-import { Product } from "../../data/types";
+import { Product2023 } from "../../data/types";
 
 interface MerchCardProps {
-  productData: Product;
-  addToCart: (value: Product) => void;
+  productData: Product2023;
+  addToCart: (value: Product2023) => void;
 }
 
 const MerchCard = ({ productData, addToCart }: MerchCardProps) => {
