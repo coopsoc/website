@@ -43,6 +43,7 @@ import LogoSmall from "public/img/brand/logo_small.png";
 import NextNavbarBrand from "./link/NextNavbarBrand";
 import NextNavLink from "./link/NextNavLink";
 import NavIcon from "./navigation/NavIcon";
+import { isMerchActive } from "scripts/merch";
 
 // Supports both internal and external links, but internal links/redirects are preferred
 const navLinks = [
@@ -53,9 +54,12 @@ const navLinks = [
   ["Publications", "/publications"],
   ["Charity", "/charity"],
   ["Calendar", "/calendar"],
-  ["Merch", "/merch"],
   // ["First Year FB", "/fb"],
 ];
+
+if (isMerchActive()) {
+  navLinks.push(["Merch", "/merch"]);
+}
 
 const Navigation = () => {
   const router = useRouter();

@@ -17,7 +17,7 @@ import {
   Spinner,
 } from "reactstrap";
 import "animate.css";
-import { InferGetServerSidePropsType } from "next";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useRouter } from "next/router";
 import {
   Cart,
@@ -29,6 +29,7 @@ import {
   Variant,
   getAllPrices,
   getAllProductsAndVariants,
+  isMerchActive,
 } from "scripts/merch";
 import Stripe from "stripe";
 
@@ -37,7 +38,13 @@ type Repo = {
   variants: Variant[];
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = (async () => {
+  if (!isMerchActive()) {
+    return {
+      props: { products: [] as Product[], variants: [] as Variant[] },
+    };
+  }
+
   // Ideally should be moved out to not initialise on every render
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const stripe: Stripe = require("stripe")(process.env["STRIPE_SECRET_KEY"]);
@@ -59,7 +66,7 @@ export const getServerSideProps = async () => {
 
   const repo: Repo = { products, variants };
   return { props: { repo } };
-};
+}) satisfies GetServerSideProps<{ repo: Repo }>;
 
 const displayPrice = (cents: number | undefined) => {
   if (!cents) return "Price not available.";
@@ -70,6 +77,7 @@ const displayPrice = (cents: number | undefined) => {
   return formatter.format((cents * 1.0) / 100);
 };
 
+// TODO: move to components
 const MerchCard = ({
   product,
   setCart,
@@ -314,14 +322,11 @@ const MerchCard = ({
             </Button>
           )}
         </Row>
-        <Container
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <p style={{ color: "#ba3232" }}>{errorMessage}</p>
-        </Container>
+        {errorMessage && (
+          <Row style={{ textAlign: "center" }}>
+            <p style={{ color: "#ba3232" }}>{errorMessage}</p>
+          </Row>
+        )}
       </Container>
     </Card>
   );
@@ -421,31 +426,41 @@ const Merch = ({
           </Col>
         </Row>
         <Container className="container-md">
-          <Row className="justify-content-center">
-            {repo.products.map((product) => (
-              <Col className="col-sm-5" key={product.name}>
-                <MerchCard
-                  product={product}
-                  setCart={setCart}
-                  isInCart={isInCart}
-                  findVariantID={findVariantID}
-                  findAllVariantsOfProduct={findAllVariantsOfProduct}
-                />
+          {isMerchActive() ? (
+            <>
+              <Row className="justify-content-center">
+                {repo.products.map((product) => (
+                  <Col className="col-sm-5" key={product.name}>
+                    <MerchCard
+                      product={product}
+                      setCart={setCart}
+                      isInCart={isInCart}
+                      findVariantID={findVariantID}
+                      findAllVariantsOfProduct={findAllVariantsOfProduct}
+                    />
+                  </Col>
+                ))}
+              </Row>
+              <Row className="mt-3 justify-content-center">
+                <Button
+                  disabled={cart.size === 0 || isCartLoading}
+                  onClick={() => goToCart()}
+                  className="bg-primary text-white"
+                >
+                  {isCartLoading && <Spinner size="sm">Loading...</Spinner>}
+                  <span> View Cart</span>
+                </Button>
+              </Row>
+            </>
+          ) : (
+            <Row className="justify-content-center text-center">
+              <Col lg="10">
+                <p className="lead text-muted">
+                  Orders are now closed - check back next year for more merch!
+                </p>
               </Col>
-            ))}
-          </Row>
-        </Container>
-        <Container>
-          <Row className="mt-2 justify-content-center">
-            <Button
-              disabled={cart.size === 0 || isCartLoading}
-              onClick={() => goToCart()}
-              className="bg-primary text-white"
-            >
-              {isCartLoading && <Spinner size="sm">Loading...</Spinner>}
-              <span> View Cart</span>
-            </Button>
-          </Row>
+            </Row>
+          )}
         </Container>
       </section>
     </>
