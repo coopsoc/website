@@ -71,6 +71,14 @@ export const toProductSizeMap: Map<string, ProductSize> = new Map([
   ["XL", ProductSize.XL],
 ]);
 
+//! Change to toggle on/off merch
+
+export const isMerchActive = (): boolean => true;
+//! Results in hydration errors but would be clean:
+// export const isMerchActive = () =>
+//   "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY" in process.env &&
+//   "STRIPE_SECRET_KEY" in process.env;
+
 export const getAllProductsAndVariants = async (stripe: Stripe) => {
   const allProducts: Product[] = [];
   const allVariants: Variant[] = [];
