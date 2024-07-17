@@ -19,19 +19,16 @@ import {
 import "animate.css";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useRouter } from "next/router";
+import Stripe from "stripe";
 import {
-  Cart,
-  CartItemWithDetail,
-  Price,
   Product,
+  Variant,
+  Cart,
   ProductColour,
   ProductSize,
-  Variant,
-  getAllPrices,
-  getAllProductsAndVariants,
-  isMerchActive,
-} from "scripts/merch";
-import Stripe from "stripe";
+  CartItemWithDetail,
+} from "data/types";
+import { isMerchActive, getAllProductsAndVariants } from "scripts/merch";
 
 type Repo = {
   products: Product[];
@@ -41,31 +38,22 @@ type Repo = {
 export const getServerSideProps = (async () => {
   if (!isMerchActive()) {
     return {
-      props: { products: [] as Product[], variants: [] as Variant[] },
+      props: {
+        repo: { products: [], variants: [] },
+      },
     };
   }
 
   // Ideally should be moved out to not initialise on every render
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const stripe: Stripe = require("stripe")(process.env["STRIPE_SECRET_KEY"]);
-
   const { products, variants } = await getAllProductsAndVariants(stripe);
-  const prices = await getAllPrices(stripe);
 
-  products.forEach((product: Product) => {
-    product.price =
-      prices.find((price: Price) => price.id === product.price.id) ??
-      product.price;
-  });
-
-  variants.forEach((variant: Variant) => {
-    variant.price =
-      prices.find((price: Price) => price.id === variant.price.id) ??
-      variant.price;
-  });
-
-  const repo: Repo = { products, variants };
-  return { props: { repo } };
+  return {
+    props: {
+      repo: { products, variants },
+    },
+  };
 }) satisfies GetServerSideProps<{ repo: Repo }>;
 
 const displayPrice = (cents: number | undefined) => {
