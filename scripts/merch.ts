@@ -95,22 +95,12 @@ const getAllPrices = async (stripe: Stripe) => {
   // key: price id, value: Price (price id, cents) - for efficient lookup
   const allPrices: Map<string, Price> = new Map();
 
-  let prices = await stripe.prices.list();
-  let hasMore = true;
-
-  while (hasMore) {
-    prices.data.forEach((price: Stripe.Price) =>
-      allPrices.set(price.id, {
-        id: price.id,
-        cents: price.unit_amount ?? 0,
-      }),
-    );
-
-    prices = await stripe.prices.list({
-      starting_after: prices.data[prices.data.length - 1].id,
+  // Auto-pagination: https://docs.stripe.com/api/pagination/auto?lang=node
+  for await (const price of stripe.prices.list({ limit: 100 })) {
+    allPrices.set(price.id, {
+      id: price.id,
+      cents: price.unit_amount ?? 0,
     });
-
-    hasMore = prices.has_more;
   }
 
   return allPrices;
