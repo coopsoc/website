@@ -9,7 +9,7 @@ import "animate.css";
 
 // reactstrap components
 import { Col, Row, Button, Container } from "reactstrap";
-import { CartItemWithDetail } from "scripts/merch";
+import { CartItemWithDetail } from "data/types";
 import router from "next/router";
 
 const Cart = () => {
