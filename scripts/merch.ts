@@ -1,79 +1,17 @@
+import {
+  Product,
+  Variant,
+  toProductColourMap,
+  ProductColour,
+  toProductSizeMap,
+  ProductSize,
+  Price,
+} from "data/types";
 import Stripe from "stripe";
 
-export enum ProductColour {
-  UNKNOWN = "Unknown",
-  BLACK = "Black",
-  CREAM = "Cream",
-  POWDER = "Powder",
-  GREY = "Grey",
-  PINE = "Pine",
-  NAVY = "Navy",
-}
-
-export enum ProductSize {
-  UNKNOWN = "Unknown",
-  S = "S",
-  M = "M",
-  L = "L",
-  XL = "XL",
-}
-
-// store of all product categories
-export type Product = {
-  name: string;
-  description: string;
-  price: Price;
-  colours: ProductColour[];
-  sizes: ProductSize[];
-};
-
-// store of all product variants returned from Stripe
-// Use categoryName + colour + size as composite key
-export type Variant = {
-  productName: string;
-  colour: ProductColour;
-  size: ProductSize;
-  price: Price;
-  id: string;
-  imageURLs: string[];
-};
-
-export type Price = {
-  id: string;
-  cents?: number;
-};
-
-export type Cart = Map<string, number>;
-
-export type CartItemWithDetail = {
-  product: {
-    id: string;
-    name: string;
-    images: string[];
-  };
-  price: Price;
-  qty: number;
-};
-
-export const toProductColourMap: Map<string, ProductColour> = new Map([
-  ["black", ProductColour.BLACK],
-  ["cream", ProductColour.CREAM],
-  ["powder", ProductColour.POWDER],
-  ["grey", ProductColour.GREY],
-  ["pine", ProductColour.PINE],
-  ["navy", ProductColour.NAVY],
-]);
-
-export const toProductSizeMap: Map<string, ProductSize> = new Map([
-  ["S", ProductSize.S],
-  ["M", ProductSize.M],
-  ["L", ProductSize.L],
-  ["XL", ProductSize.XL],
-]);
-
 //! Change to toggle on/off merch
-
 export const isMerchActive = (): boolean => true;
+
 //! Results in hydration errors but would be clean:
 // export const isMerchActive = () =>
 //   "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY" in process.env &&
