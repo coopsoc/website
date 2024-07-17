@@ -1,21 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
-import {
-  Button,
-  Card,
-  Carousel,
-  CarouselControl,
-  CarouselItem,
-  Col,
-  Container,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  Row,
-  Spinner,
-} from "reactstrap";
+import { Button, Col, Container, Row, Spinner } from "reactstrap";
 import "animate.css";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useRouter } from "next/router";
@@ -29,6 +14,7 @@ import {
   CartItemWithDetail,
 } from "data/types";
 import { isMerchActive, getAllProductsAndVariants } from "scripts/merch";
+import MerchCard from "components/merch_2024/MerchCard";
 
 type Repo = {
   products: Product[];
