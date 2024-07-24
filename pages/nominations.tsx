@@ -55,15 +55,14 @@ const Nominations = () => {
         </Head>
 
         <section className="section section-sm">
-          <Row className="justify-content-around text-center">
-            <Col lg="8">
-              <h1 className="animate__animated animate__zoomIn animate__fast pb-4 mt-3 mt-sm-5">
-                VOTING CLOSED
-              </h1>
-            </Col>
-          </Row>
-
-          <Container className="py-lg-md d-flex">
+          <Container className="py-lg-md">
+            <Row className="justify-content-around text-center">
+              <Col lg="8">
+                <h1 className="animate__animated animate__zoomIn animate__fast pb-4 mt-3 mt-sm-5">
+                  VOTING CLOSED
+                </h1>
+              </Col>
+            </Row>
             <Row className="justify-content-center text-center">
               <Col lg="10">
                 <p className="lead text-muted">

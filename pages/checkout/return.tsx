@@ -2,8 +2,33 @@ import React, { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
 import Head from "next/head";
 import { Col, Container, Row } from "reactstrap";
+import { isMerchActive } from "scripts/merch";
+import MerchClosed from "components/merch_2024/MerchClosed";
 
 const Return = () => {
+  if (!isMerchActive()) {
+    // TODO: fix - currently not rendering?
+    return (
+      <>
+        <Head>
+          <title>Merch | UNSW Co-op Society</title>
+          <meta name="robots" content="noindex"></meta>
+        </Head>
+
+        <section className="section section-sm">
+          <Row className="justify-content-around text-center">
+            <Col lg="8">
+              <h1 className="animate__animated animate__zoomIn animate__fast pb-4 mt-3 mt-sm-5">
+                MERCH CLOSED
+              </h1>
+            </Col>
+          </Row>
+          <MerchClosed />
+        </section>
+      </>
+    );
+  }
+
   const [status, setStatus] = useState(null);
   const [customerEmail, setCustomerEmail] = useState("");
 

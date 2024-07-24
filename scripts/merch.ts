@@ -1,79 +1,27 @@
+import {
+  Product,
+  Variant,
+  toProductColourMap,
+  ProductColour,
+  toProductSizeMap,
+  ProductSize,
+  Price,
+} from "data/types";
 import Stripe from "stripe";
 
-export enum ProductColour {
-  UNKNOWN = "Unknown",
-  BLACK = "Black",
-  CREAM = "Cream",
-  POWDER = "Powder",
-  GREY = "Grey",
-  PINE = "Pine",
-  NAVY = "Navy",
-}
+//! Change to toggle on/off merch
+export const isMerchActive = (): boolean => false;
 
-export enum ProductSize {
-  UNKNOWN = "Unknown",
-  S = "S",
-  M = "M",
-  L = "L",
-  XL = "XL",
-}
-
-// store of all product categories
-export type Product = {
-  name: string;
-  description: string;
-  price: Price;
-  colours: ProductColour[];
-  sizes: ProductSize[];
-};
-
-// store of all product variants returned from Stripe
-// Use categoryName + colour + size as composite key
-export type Variant = {
-  productName: string;
-  colour: ProductColour;
-  size: ProductSize;
-  price: Price;
-  id: string;
-  imageURLs: string[];
-};
-
-export type Price = {
-  id: string;
-  cents?: number;
-};
-
-export type Cart = Map<string, number>;
-
-export type CartItemWithDetail = {
-  product: {
-    id: string;
-    name: string;
-    images: string[];
-  };
-  price: Price;
-  qty: number;
-};
-
-export const toProductColourMap: Map<string, ProductColour> = new Map([
-  ["black", ProductColour.BLACK],
-  ["cream", ProductColour.CREAM],
-  ["powder", ProductColour.POWDER],
-  ["grey", ProductColour.GREY],
-  ["pine", ProductColour.PINE],
-  ["navy", ProductColour.NAVY],
-]);
-
-export const toProductSizeMap: Map<string, ProductSize> = new Map([
-  ["S", ProductSize.S],
-  ["M", ProductSize.M],
-  ["L", ProductSize.L],
-  ["XL", ProductSize.XL],
-]);
+//! Results in hydration errors but would be clean:
+// export const isMerchActive = () =>
+//   "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY" in process.env &&
+//   "STRIPE_SECRET_KEY" in process.env;
 
 export const getAllProductsAndVariants = async (stripe: Stripe) => {
   const allProducts: Product[] = [];
   const allVariants: Variant[] = [];
+  const allPrices: Map<string, Price> = await getAllPrices(stripe);
+
   let listProductsResp = await stripe.products.list({
     limit: 100,
     active: true,
@@ -94,6 +42,9 @@ export const getAllProductsAndVariants = async (stripe: Stripe) => {
         variantSize = variantSizeMatch.toUpperCase();
       }
 
+      const priceId = variant.default_price?.toString() ?? "";
+      const price = allPrices.get(priceId) ?? { id: "", cents: 0 };
+
       const productName = variant.name.split("(").at(0)?.trim();
       const product = allProducts.find(
         (product) => product.name === productName,
@@ -112,7 +63,7 @@ export const getAllProductsAndVariants = async (stripe: Stripe) => {
         allProducts.push({
           name: productName ?? "",
           description: variant.description ?? "",
-          price: { id: variant.default_price?.toString() ?? "" },
+          price,
           colours: [],
           sizes: [],
         });
@@ -124,7 +75,7 @@ export const getAllProductsAndVariants = async (stripe: Stripe) => {
         size: toProductSizeMap.get(variantSize) ?? ProductSize.UNKNOWN,
         id: variant.id,
         imageURLs: variant.images,
-        price: { id: variant.default_price?.toString() ?? "" },
+        price,
       });
     });
 
@@ -140,25 +91,16 @@ export const getAllProductsAndVariants = async (stripe: Stripe) => {
   return { products: allProducts, variants: allVariants };
 };
 
-export const getAllPrices = async (stripe: Stripe) => {
-  const allPrices: Price[] = [];
-  let listPricesResp = await stripe.prices.list();
-  let hasMore = true;
+const getAllPrices = async (stripe: Stripe) => {
+  // key: price id, value: Price (price id, cents) - for efficient lookup
+  const allPrices: Map<string, Price> = new Map();
 
-  while (hasMore) {
-    const prices: Price[] = listPricesResp.data.map((price: Stripe.Price) => {
-      return {
-        id: price.id,
-        cents: price.unit_amount ?? 0,
-      };
+  // Auto-pagination: https://docs.stripe.com/api/pagination/auto?lang=node
+  for await (const price of stripe.prices.list({ limit: 100 })) {
+    allPrices.set(price.id, {
+      id: price.id,
+      cents: price.unit_amount ?? 0,
     });
-    allPrices.push(...prices);
-
-    listPricesResp = await stripe.prices.list({
-      starting_after: listPricesResp.data[listPricesResp.data.length - 1].id,
-    });
-
-    hasMore = listPricesResp.has_more;
   }
 
   return allPrices;
