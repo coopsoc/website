@@ -3,18 +3,14 @@ import Head from "next/head";
 import Link from "next/link";
 
 // reactstrap components
-import { Card, CardBody, Container, Row, Col } from "reactstrap";
+import { Card, Container, Row, Col } from "reactstrap";
 
 // yess let's get those animations
 import "animate.css";
 
 // Fas Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHandsHelping,
-  faMicrophoneAlt,
-  faPencil,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMicrophoneAlt, faPencil } from "@fortawesome/free-solid-svg-icons";
 
 import NextCardBody from "components/link/NextCardBody";
 
@@ -40,11 +36,11 @@ const Publications = () => {
               <p className="lead text-muted">
                 A central part of the Co-op society is the Publications
                 portfolio who helps provide additional professional support for
-                our Co-op scholars. Our work includes the First Year Guide,
-                writing blogs and now an upcoming podcast with alumni who have
-                stories to share. Together, our goal is to create a platform in
-                which scholars past and present can share their experiences,
-                learn something new, and stay connected.
+                our Co-op scholars. Our work includes making the Coop newsletter
+                - <em>The Scoop</em>, writing blogs and now an upcoming podcast
+                with alumni who have stories to share. Together, our goal is to
+                create a platform in which scholars past and present can share
+                their experiences, learn something new, and stay connected.
               </p>
             </Col>
           </Row>
@@ -54,31 +50,7 @@ const Publications = () => {
           <Row className="justify-content-center">
             <Col lg="12">
               <Row className="row-grid">
-                <Col lg="4">
-                  <Card className="card-lift--hover shadow border-0">
-                    <a
-                      href="https://www.coopsoc.com.au/FYG2021.pdf"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <CardBody className="py-5 align-items-center">
-                        <div>
-                          <div className="icon icon-shape icon-shape-style1 rounded-circle mb-4">
-                            <FontAwesomeIcon icon={faHandsHelping} size="4x" />
-                          </div>
-                          <h6
-                            style={{ textAlign: "center" }}
-                            className="display-4 text-uppercase"
-                          >
-                            First Year Guide
-                          </h6>
-                        </div>
-                      </CardBody>
-                    </a>
-                  </Card>
-                </Col>
-
-                <Col lg="4">
+                <Col>
                   <Card className="card-lift--hover shadow border-0">
                     <Link href="/blog" passHref>
                       <NextCardBody className="py-5">
@@ -96,7 +68,7 @@ const Publications = () => {
                   </Card>
                 </Col>
 
-                <Col lg="4">
+                <Col>
                   <Card className="card-lift--hover shadow border-0">
                     <Link href="/podcast" passHref>
                       <NextCardBody className="py-5">
