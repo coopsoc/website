@@ -54,16 +54,15 @@ const Nominations = () => {
           <meta name="robots" content="noindex"></meta>
         </Head>
 
-        <section className="section section-lg">
-          <Row className="justify-content-center text-center ">
-            <Col lg="8">
-              <h1 className="animate__animated animate__zoomIn animate__fast">
-                VOTING CLOSED
-              </h1>
-            </Col>
-          </Row>
-
-          <Container className="py-lg-md d-flex">
+        <section className="section section-sm">
+          <Container className="py-lg-md">
+            <Row className="justify-content-around text-center">
+              <Col lg="8">
+                <h1 className="animate__animated animate__zoomIn animate__fast pb-4 mt-3 mt-sm-5">
+                  VOTING CLOSED
+                </h1>
+              </Col>
+            </Row>
             <Row className="justify-content-center text-center">
               <Col lg="10">
                 <p className="lead text-muted">
@@ -84,11 +83,10 @@ const Nominations = () => {
       <Head>
         <title>Nominations | UNSW Co-op Society</title>
       </Head>
-      <section className="section section-lg">
-        {/* Title */}
-        <Row className="justify-content-center text-center">
+      <section className="section section-sm">
+        <Row className="justify-content-around text-center">
           <Col lg="8">
-            <h1 className="animate__animated animate__zoomIn animate__fast">
+            <h1 className="animate__animated animate__zoomIn animate__fast pb-4 mt-3 mt-sm-5">
               2023 EXEC NOMINEES
             </h1>
           </Col>

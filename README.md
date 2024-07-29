@@ -20,6 +20,16 @@ To run the website on your local machine, do the following:
    should be available at `http://localhost:3000`, where any edits made to the
    website's source code should be immediately reflected on the webpage.
 
+## Maintaining
+
+### Enabling/disabling nominations
+
+Change `const showNominations` to `true` or `false` in `pages/nominations.tsx` to enable or disable nominations.
+
+### Enabling/disabling merch
+
+Change `export const isMerchActive = (): boolean => false;` to `true` in `scripts/merch.ts` to enable merch.
+
 ## Contributors
 
 The first version of the website was written by the 2020 Co-op Soc IT director,

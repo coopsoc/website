@@ -10,6 +10,9 @@ export function partition<T>(list: T[], n: number): T[][] {
   for (let i = 0; i < list.length; i += n) {
     result.push(list.slice(i, i + n));
   }
+  for (let i = 0; i < list.length; i += n) {
+    result.push(list.slice(i, i + n));
+  }
 
   return result;
 }

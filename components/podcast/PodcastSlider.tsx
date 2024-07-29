@@ -36,7 +36,6 @@ const PodcastSlider = ({
         node.noUiSlider.destroy();
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

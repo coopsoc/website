@@ -52,7 +52,6 @@ const PodcastPlayer = ({ podcast }: PodcastPlayerProps) => {
     // Initialise audio object
     const newAudio = new Audio(podcast.href);
     setAudio(newAudio);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

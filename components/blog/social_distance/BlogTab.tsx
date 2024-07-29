@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React, { useState } from "react";
 import { Col, Container, Row, TabContent, TabPane } from "reactstrap";
 import { partition } from "scripts/list";
@@ -26,8 +26,10 @@ const BlogTab = (props: BlogTabProps) => {
       <Image
         src={src}
         alt={`${index}`}
-        width="100%"
-        height="100%"
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
         layout="responsive"
         objectFit="contain"
         onClick={() => setTab(index)}

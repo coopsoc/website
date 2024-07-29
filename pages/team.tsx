@@ -48,10 +48,10 @@ const Team = () => {
         <title>Team | UNSW Co-op Society</title>
       </Head>
 
-      <section className="section section-lg">
-        <Row className="justify-content-center text-center mb-3 mb-sm-4 mb-md-5">
+      <section className="section section-sm">
+        <Row className="justify-content-around text-center">
           <Col lg="8">
-            <h1 className="animate__animated animate__zoomIn animate__fast">
+            <h1 className="animate__animated animate__zoomIn animate__fast pb-4 mt-3 mt-sm-5">
               MEET THE TEAM
             </h1>
           </Col>

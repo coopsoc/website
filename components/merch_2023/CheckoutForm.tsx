@@ -4,11 +4,11 @@ import { useRouter } from "next/router";
 
 import styles from "styles/modules/Merch.module.scss";
 import LoadingButton from "components/LoadingButton";
-import { Product } from "../../data/types";
+import { Product2023 } from "../../data/types";
 
 interface CheckoutFormProps {
-  cart: Product[];
-  updateCart: (cart: Product[]) => void;
+  cart: Product2023[];
+  updateCart: (cart: Product2023[]) => void;
 }
 
 const CheckoutForm = ({ cart, updateCart }: CheckoutFormProps) => {
@@ -17,7 +17,7 @@ const CheckoutForm = ({ cart, updateCart }: CheckoutFormProps) => {
   const router = useRouter();
 
   const removeFromCart = (e: React.MouseEvent<HTMLSpanElement>) => {
-    const newCart: Product[] = JSON.parse(JSON.stringify(cart)); // this an extremely hacky way of getting a hard copied array
+    const newCart: Product2023[] = JSON.parse(JSON.stringify(cart)); // this an extremely hacky way of getting a hard copied array
     const index: number = Number(
       e.currentTarget.parentElement?.getAttribute("data-value"),
     ); // this is gross chaining

@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import MerchCard from "./MerchCard";
 import Loader from "components/Loader";
 
-import Image from "next/image";
-import { Product } from "../../data/types";
+import Image from "next/legacy/image";
+import { Product2023 } from "../../data/types";
 
 interface MerchCollectionProps {
-  addToCart: (value: Product) => void;
+  addToCart: (value: Product2023) => void;
 }
 
 const MerchCollection = ({ addToCart }: MerchCollectionProps) => {
-  const [data, setData] = useState<Product[][]>([]);
+  const [data, setData] = useState<Product2023[][]>([]);
 
   useEffect(() => {
     if (data.length === 0) {
@@ -18,12 +18,14 @@ const MerchCollection = ({ addToCart }: MerchCollectionProps) => {
         cache: "no-cache",
       }).then((value) => {
         value.json().then((_data) => {
-          const _d: Product[] = _data.sort((a: Product, b: Product) => {
-            if (a.name == b.name) return 0;
-            return a.name < b.name ? 1 : -1;
-          });
+          const _d: Product2023[] = _data.sort(
+            (a: Product2023, b: Product2023) => {
+              if (a.name == b.name) return 0;
+              return a.name < b.name ? 1 : -1;
+            },
+          );
 
-          const d: Product[][] = [];
+          const d: Product2023[][] = [];
           while (_d.length) {
             d.push(_d.splice(0, 3 > _d.length ? _d.length : 3));
           }

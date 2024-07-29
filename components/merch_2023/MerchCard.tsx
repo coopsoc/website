@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Modal, ModalBody } from "reactstrap";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import styles from "styles/modules/Merch.module.scss";
-import { Product } from "../../data/types";
+import { Product2023 } from "../../data/types";
 
 interface MerchCardProps {
-  productData: Product;
-  addToCart: (value: Product) => void;
+  productData: Product2023;
+  addToCart: (value: Product2023) => void;
 }
 
 const MerchCard = ({ productData, addToCart }: MerchCardProps) => {
@@ -148,7 +148,7 @@ const MerchCard = ({ productData, addToCart }: MerchCardProps) => {
                         <div className="cart mt-4 align-items-center">
                           {" "}
                           <button
-                            className="btn btn-primary text-uppercase mr-2 px-4"
+                            className="btn btn-primary text-uppercase me-2 px-4"
                             onClick={_addToCart}
                           >
                             Add to cart

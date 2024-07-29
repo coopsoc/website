@@ -425,7 +425,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     font-size: $font-size-xs;
     font-weight: 500;
     background-color: rgba($dark, .7);
-    color: color-yiq($dark);
+    color: color-contrast($dark);
     border-radius: 10px;
     padding: .4em .8em .3em .85em;
 }

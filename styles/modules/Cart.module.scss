@@ -1,0 +1,92 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+
+.mark-1 {
+    background-color: #e5abc8;
+    opacity: 0.6;
+}
+
+.mark-2 {
+    background-color: #6eb6d4;
+    opacity: 0.6;
+}
+
+// .cartHeader {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-around;
+//     margin-bottom: 30px;
+//     margin-left: 40px;
+//     margin-right: 40px;
+// }
+
+// .cartHeaderCol {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-around;
+// }
+
+.clothingItem {
+    // width: 100%;
+    // margin-bottom: 40px;
+    // margin-left: 40px;
+    // margin-right: 40px;
+    // background-color: rgb(242, 242, 242);
+    background-color: rgba(0,0,0,0.015);
+    display: flex;
+    align-items: center;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+.clothingRow {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    // width: 100%;
+    // height: 100%;
+}
+
+.quantityButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@include media-breakpoint-between(sm, md) {
+    .quantityButtons {
+        flex-direction: column;
+    }
+}
+
+.quantityButtons button {
+    width: 2em;
+    height: 2em;
+    margin: 0 1em !important;
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-size: $h5-font-size;
+    // "text-white py-2 px-3 mx-5 mt-3 m-lg-0 text-center"
+}
+
+
+
+.checkoutButton {
+    width: 100%;
+    height: 4em;
+    color: "white";
+}
+
+@include media-breakpoint-up(md) {
+    .checkoutButton {
+        width: 20em;
+    }
+}
