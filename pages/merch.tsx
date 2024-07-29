@@ -4,18 +4,16 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import { Button, Col, Container, Row, Spinner } from "reactstrap";
 import "animate.css";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useRouter } from "next/router";
-import Stripe from "stripe";
 import {
-  Product,
-  Variant,
   Cart,
   ProductColour,
   ProductSize,
   CartItemWithDetail,
+  Variant,
+  Product,
 } from "data/types";
-import { isMerchActive, getAllProductsAndVariants } from "scripts/merch";
+import { isMerchActive } from "scripts/merch";
 import MerchCard from "components/merch_2024/MerchCard";
 import MerchClosed from "components/merch_2024/MerchClosed";
 
@@ -24,30 +22,29 @@ type Repo = {
   variants: Variant[];
 };
 
-export const getServerSideProps = (async () => {
-  if (!isMerchActive()) {
-    return {
-      props: {
-        repo: { products: [], variants: [] },
-      },
-    };
-  }
+// TODO: move to AWS lambda
+// export const getServerSideProps = (async () => {
+//   if (!isMerchActive()) {
+//     return {
+//       props: {
+//         repo: { products: [], variants: [] },
+//       },
+//     };
+//   }
 
-  // Ideally should be moved out to not initialise on every render
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const stripe: Stripe = require("stripe")(process.env["STRIPE_SECRET_KEY"]);
-  const { products, variants } = await getAllProductsAndVariants(stripe);
+//   // Ideally should be moved out to not initialise on every render
+//   // eslint-disable-next-line @typescript-eslint/no-var-requires
+//   const stripe: Stripe = require("stripe")(process.env["STRIPE_SECRET_KEY"]);
+//   const { products, variants } = await getAllProductsAndVariants(stripe);
 
-  return {
-    props: {
-      repo: { products, variants },
-    },
-  };
-}) satisfies GetServerSideProps<{ repo: Repo }>;
+//   return {
+//     props: {
+//       repo: { products, variants },
+//     },
+//   };
+// }) satisfies GetServerSideProps<{ repo: Repo }>;
 
-const Merch = ({
-  repo,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Merch = ({ repo }: { repo: Repo }) => {
   const router = useRouter();
   const [cart, setCart] = useState<Cart>(new Map());
   const [isCartLoading, setIsCartLoading] = useState(false);
