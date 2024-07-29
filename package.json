@@ -8,7 +8,6 @@
     "build:digitalocean": "yarn install --production=false && yarn run build && rm -rf node_modules && yarn install --production --frozen-lockfile",
     "start": "next start",
     "lint": "npx eslint .",
-    "export": "next export",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
