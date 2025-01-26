@@ -4,7 +4,7 @@ import { StaticImageData } from "next/legacy/image";
 export interface Person {
   name: string;
   image: StaticImageData;
-  description: string;
+  description?: string;
 }
 
 // === Nominations ===
