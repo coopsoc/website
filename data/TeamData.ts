@@ -81,10 +81,29 @@ import Jaime_Image from "public/img/exec/2024/Jaime.jpg";
 import Imogen_Image from "public/img/exec/2024/Imogen.png";
 import Lucas_Image from "public/img/exec/2024/Lucas.jpg";
 import Nicholas_Image from "public/img/exec/2024/Nicholas.png";
+
+// 2025 Team Images
+import Jack_Image_2025 from "public/img/exec/2025/Jack.jpg";
+import Rory_Image_2025 from "public/img/exec/2025/Rory.jpg";
+import Tyrone_Image_2025 from "public/img/exec/2025/Tyrone.png";
+import Mariam_Image_2025 from "public/img/exec/2025/Mariam.png";
+import Sania_Image_2025 from "public/img/exec/2025/Sania.png";
+import Aiden_Image_2025 from "public/img/exec/2025/Aiden.png";
+import Chris_Image_2025 from "public/img/exec/2025/Chris.jpg";
+import Ronan_Image_2025 from "public/img/exec/2025/Ronan.png";
+import Meera_Image_2025 from "public/img/exec/2025/Meera.png";
+import Karen_Image_2025 from "public/img/exec/2025/Karen.jpg";
+import Sam_Image_2025 from "public/img/exec/2025/Sam.jpg";
+import Josh_Image_2025 from "public/img/exec/2025/Josh.jpg";
+import Kenzie_Image_2025 from "public/img/exec/2025/Kenzie.jpg";
+import Georgia_Image_2025 from "public/img/exec/2025/Georgia.png";
+import Alana_Image_2025 from "public/img/exec/2025/Alana.png";
+import Prapann_Image_2025 from "public/img/exec/2025/Prapann.png";
+
 import { MembersByYear } from "./types";
 
 const START = 2020;
-const END = 2024;
+const END = 2025;
 
 const MEMBERS: MembersByYear[] = [
   {
@@ -550,13 +569,11 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Aks_Image,
-              description: ``,
               name: "Aks Walia",
               role: "Co-President",
             },
             {
               image: Kristina_Image,
-              description: ``,
               name: "Kristina Hua",
               role: "Co-President",
             },
@@ -564,19 +581,16 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Issac_Image,
-              description: ``,
               name: "Issac Liu",
               role: "Secretary",
             },
             {
               image: Lily_Image,
-              description: ``,
               name: "Lily Miranda",
               role: "Treasurer",
             },
             {
               image: Sofia_Image,
-              description: ``,
               name: "Sofia De Bellis",
               role: "Arc Delegate",
             },
@@ -589,19 +603,16 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Matthew_Image,
-              description: ``,
               name: "Matthew Awad",
               role: "Events",
             },
             {
               image: TJ_Image,
-              description: ``,
               name: "Thivakar Jeyaseelan (TJ)",
               role: "Charity",
             },
             {
               image: Max_Image,
-              description: ``,
               name: "Max Gobel",
               role: "Charity",
             },
@@ -609,19 +620,16 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: JackL_Image,
-              description: ``,
               name: "Jack Lane",
               role: "Marketing",
             },
             {
               image: Arousha_Image,
-              description: ``,
               name: "Arousha Soltany",
               role: "Marketing",
             },
             {
               image: Michelle_Image,
-              description: ``,
               name: "Michelle Yeom",
               role: "Publications",
             },
@@ -629,7 +637,6 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Will_Image,
-              description: ``,
               name: "Will Kennedy",
               role: "IT",
             },
@@ -642,13 +649,11 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Doris_Image_2023,
-              description: ``,
               name: "Doris Yang",
               role: "",
             },
             {
               image: MattL_Image,
-              description: ``,
               name: "Matthew Lim",
               role: "",
             },
@@ -716,19 +721,16 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Mariam_Image,
-              description: ``,
               name: "Mariam Youssef",
               role: "Co-President",
             },
             {
               image: Sam_Image,
-              description: ``,
               name: "Samuel Katz",
               role: "Co-President",
             },
             {
               image: Shreya_Image,
-              description: ``,
               name: "Shreya Mukherjee",
               role: "Arc Delegate",
             },
@@ -736,21 +738,18 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Tyrone_Image,
-              description: ``,
               name: "Tyrone Lui",
               role: "HR / Grievance Officer",
             },
 
             {
               image: Arya_Image,
-              description: ``,
               name: "Arya Ahluwalia",
               role: "Secretary",
             },
 
             {
               image: Prapann_Image,
-              description: ``,
               name: "Prapann Malavia",
               role: "Treasurer",
             },
@@ -763,19 +762,16 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Vicky_Image,
-              description: ``,
               name: "Vicky Chen",
               role: "HR",
             },
             {
               image: Dinara_Image,
-              description: ``,
               name: "Dinara Jayarathna",
               role: "Charities",
             },
             {
               image: Inika_Image,
-              description: ``,
               name: "Inika Weber",
               role: "Charities",
             },
@@ -783,19 +779,16 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Lucas_Image,
-              description: ``,
               name: "Lucas Harvey",
               role: "IT (Technical)",
             },
             {
               image: Nicholas_Image,
-              description: ``,
               name: "Nicholas Langford",
               role: "IT (Project Management)",
             },
             {
               image: Karen_Image,
-              description: ``,
               name: "Karen Lau",
               role: "Marketing",
             },
@@ -803,19 +796,16 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Meera_Image,
-              description: ``,
               name: "Meera Gandhi",
               role: "Marketing",
             },
             {
               image: Imogen_Image,
-              description: ``,
               name: "Imogen Wills",
               role: "Publications",
             },
             {
               image: Jaime_Image,
-              description: ``,
               name: "Jaime Pitcher",
               role: "Socials",
             },
@@ -823,7 +813,6 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Sienna_Image,
-              description: ``,
               name: "Sienna Strauss",
               role: "Socials",
             },
@@ -836,7 +825,6 @@ const MEMBERS: MembersByYear[] = [
           [
             {
               image: Tony_Image,
-              description: ``,
               name: "Tony Wang",
               role: "",
             },
@@ -905,6 +893,122 @@ const MEMBERS: MembersByYear[] = [
         ],
       },
     ],
+  },
+  {
+    // 2025
+    exec: [
+      {
+        sectionName: "Executive",
+        members: [
+          [
+            {
+              image: Mariam_Image_2025,
+              name: "Mariam Youssef",
+              role: "Co-President",
+            },
+            {
+              image: Tyrone_Image_2025,
+              name: "Tyrone Lui",
+              role: "Co-President",
+            },
+            {
+              image: Aiden_Image_2025,
+              name: "Aiden Ahmad",
+              role: "HR / Grievance Officer",
+            },
+          ],
+          [
+            {
+              image: Kenzie_Image_2025,
+              name: "Kenzie Lai",
+              role: "Secretary / ARC Delegate",
+            },
+            {
+              image: Prapann_Image_2025,
+              name: "Prapann Malavia",
+              role: "Treasurer",
+            },
+          ],
+        ],
+      },
+      {
+        sectionName: "Directors",
+        members: [
+          [
+            {
+              image: Sania_Image_2025,
+              name: "Sania Kulkarni",
+              role: "HR",
+            },
+            {
+              image: Jack_Image_2025,
+              name: "Jack Preller",
+              role: "Charities",
+            },
+            {
+              image: Rory_Image_2025,
+              name: "Rory Wilson",
+              role: "Charities",
+            },
+          ],
+          [
+            {
+              image: Chris_Image_2025,
+              name: "Chris Yoo",
+              role: "IT",
+            },
+            {
+              image: Ronan_Image_2025,
+              name: "Ronan Green",
+              role: "IT",
+            },
+            {
+              image: Karen_Image_2025,
+              name: "Karen Lau",
+              role: "Marketing",
+            },
+          ],
+          [
+            {
+              image: Meera_Image_2025,
+              name: "Meera Gandhi",
+              role: "Marketing",
+            },
+            {
+              image: Josh_Image_2025,
+              name: "Josh Maung",
+              role: "Publications",
+            },
+            {
+              image: Sam_Image_2025,
+              name: "Sam Morphett",
+              role: "Publications",
+            },
+          ],
+          [
+            {
+              image: Georgia_Image_2025,
+              name: "Georgia Stanfield-Gates",
+              role: "Socials",
+            },
+            {
+              image: Alana_Image_2025,
+              name: "Alana Breed",
+              role: "Socials",
+            },
+          ],
+        ],
+      },
+      // {
+      //   sectionName: "First Year Representative",
+      //   members: [
+      //     // fill out after recruitment
+      //   ],
+      // },
+    ],
+    // subcoms: [
+    //   // fill out after subcom recruitment
+    // ],
   },
 ];
 
