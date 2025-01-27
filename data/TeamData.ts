@@ -85,7 +85,7 @@ import Nicholas_Image from "public/img/exec/2024/Nicholas.png";
 // 2025 Team Images
 import Jack_Image_2025 from "public/img/exec/2025/Jack.jpg";
 import Rory_Image_2025 from "public/img/exec/2025/Rory.jpg";
-import Tyrone_Image_2025 from "public/img/exec/2025/Tyrone.png";
+import Tyrone_Image_2025 from "public/img/exec/2025/Tyrone.jpg";
 import Mariam_Image_2025 from "public/img/exec/2025/Mariam.png";
 import Sania_Image_2025 from "public/img/exec/2025/Sania.png";
 import Aiden_Image_2025 from "public/img/exec/2025/Aiden.png";
