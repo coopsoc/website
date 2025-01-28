@@ -93,7 +93,7 @@ import Chris_Image_2025 from "public/img/exec/2025/Chris.jpg";
 import Ronan_Image_2025 from "public/img/exec/2025/Ronan.png";
 import Meera_Image_2025 from "public/img/exec/2025/Meera.png";
 import Karen_Image_2025 from "public/img/exec/2025/Karen.jpg";
-import Sam_Image_2025 from "public/img/exec/2025/Sam.jpg";
+import Sam_Image_2025 from "public/img/exec/2025/Sam.png";
 import Josh_Image_2025 from "public/img/exec/2025/Josh.jpg";
 import Kenzie_Image_2025 from "public/img/exec/2025/Kenzie.jpg";
 import Georgia_Image_2025 from "public/img/exec/2025/Georgia.png";
