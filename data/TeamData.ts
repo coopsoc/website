@@ -85,7 +85,7 @@ import Nicholas_Image from "public/img/exec/2024/Nicholas.png";
 // 2025 Team Images
 import Jack_Image_2025 from "public/img/exec/2025/Jack.jpg";
 import Rory_Image_2025 from "public/img/exec/2025/Rory.jpg";
-import Tyrone_Image_2025 from "public/img/exec/2025/Tyrone.jpg";
+import Tyrone_Image_2025 from "public/img/exec/2025/Tyrone.png";
 import Mariam_Image_2025 from "public/img/exec/2025/Mariam.png";
 import Sania_Image_2025 from "public/img/exec/2025/Sania.png";
 import Aiden_Image_2025 from "public/img/exec/2025/Aiden.png";
@@ -99,6 +99,8 @@ import Kenzie_Image_2025 from "public/img/exec/2025/Kenzie.jpg";
 import Georgia_Image_2025 from "public/img/exec/2025/Georgia.png";
 import Alana_Image_2025 from "public/img/exec/2025/Alana.png";
 import Prapann_Image_2025 from "public/img/exec/2025/Prapann.png";
+import Angelo_Image_2025 from "public/img/exec/2025/Angelo.png"; 
+import Niamh_Image_2025 from "public/img/exec/2025/Nimah.png"; 
 
 import { MembersByYear } from "./types";
 
@@ -999,12 +1001,23 @@ const MEMBERS: MembersByYear[] = [
           ],
         ],
       },
-      // {
-      //   sectionName: "First Year Representative",
-      //   members: [
-      //     // fill out after recruitment
-      //   ],
-      // },
+      {
+        sectionName: "First Year Representative",
+        members: [
+          [
+            {
+              image: Niamh_Image_2025,
+              name: "Niamh Xu-Glassop",
+              role: "",
+            },
+            {
+              image: Angelo_Image_2025,
+              name: "Angelo Varghese Paul",
+              role: "",
+            }
+          ],
+        ],
+      },
     ],
     // subcoms: [
     //   // fill out after subcom recruitment
