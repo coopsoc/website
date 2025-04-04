@@ -1049,7 +1049,7 @@ const MEMBERS: MembersByYear[] = [
       {
         icons: [faDesktop],
         name: "IT",
-        description: `The IT portfolio forms the technical backbone for the society. It oversees the development of internal tools and manages the Co-op Soc website; a hub for existing and prospective scholars, hosting blog posts and event information, as well a merchandise store and an executive nomination/voting system.`,
+        description: `The IT portfolio forms the technical backbone for the society. It oversees the development of internal tools and manages the Co-op Soc website; a hub for existing and prospective scholars, hosting blog posts and event information, as well as a merchandise store and an executive nomination/voting system.`,
         members: [
           "Angie Counsell",
           "Corinne Zhou",
