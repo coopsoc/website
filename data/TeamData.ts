@@ -1019,9 +1019,77 @@ const MEMBERS: MembersByYear[] = [
         ],
       },
     ],
-    // subcoms: [
-    //   // fill out after subcom recruitment
-    // ],
+    subcoms: [
+      {
+        icons: [faDove],
+        name: "Charity",
+        description: `The Charity portfolio seeks to create awareness, raise funds and drive social change for charities. The committee also compliments the Social portfolio in hosting fun events for a great cause.`,
+        members: [
+          "Bhavesh Nain",
+          "Catherine Lee",
+          "Elisha Petelo",
+          "Jonathon Adji",
+          "Justin Nguyen",
+          "Trent Song",
+        ],
+      },
+      {
+        icons: [faClipboard],
+        name: "HR",
+        description: `The HR portfolio is committed to strengthening teamwork and cross-portfolio communication within the society. They are responsible for organizing internal events, to help shape our culture at Co-op Soc.`,
+        members: [
+          "Bea Pelayo",
+          "Erika Mori",
+          "Jessica Su",
+          "Nathan Ha",
+          "Nathan Yang",
+          "Piraveen Sivachchandran",
+        ],
+      },
+      {
+        icons: [faDesktop],
+        name: "IT",
+        description: `The IT portfolio forms the technical backbone for the society. It oversees the development of internal tools and manages the Co-op Soc website; a hub for existing and prospective scholars, hosting blog posts and event information, as well a merchandise store and an executive nomination/voting system.`,
+        members: [
+          "Angie Counsell",
+          "Corinne Zhou",
+          "Matej Groombridge",
+          "Max Burykin",
+          "Tate Mcallum",
+        ],
+      },
+      {
+        icons: [faBullhorn],
+        name: "Marketing",
+        description: `The Marketing portfolio focuses on creating continued engagement with our Co-op Society Facebook platform. Via the creation of digital marketing content, all students are encouraged to participate in fulfilling social events.`,
+        members: [
+          "Angelo Varghese Paul",
+          "Ben Chau",
+          "David Lin",
+          "Fynn Hopkins",
+          "Tate Dee",
+        ],
+      },
+      {
+        icons: [faEdit],
+        name: "Publications",
+        description: `The Publications portfolio is responsible for continuing to grow the society's online presence and keeping scholars up to date, focusing on the blog posts for the Co-op Soc website and the Chicken Coop podcast.`,
+        members: ["Niamh G", "Oliver N", "Oscar W", "Rashid Abuzarov"],
+      },
+      {
+        icons: [faUserFriends],
+        name: "Social",
+        description: `The Social portfolio is responsible for organising our social calendar, including planning, developing and executing a core suite of events. They ensure all members are given the opportunity to be a part of this vibrant community, through the creation and maintenance of social groups.`,
+        members: [
+          "Amudha Bharathi",
+          "Ariana Chan",
+          "Emma Xiang",
+          "Judy Huang",
+          "Kai Hampson",
+          "Tom Pike",
+        ],
+      },
+    ],
   },
 ];
 
