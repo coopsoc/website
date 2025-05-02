@@ -13,9 +13,11 @@ import {
   Variant,
   Product,
 } from "data/types";
-import { isMerchActive } from "scripts/merch";
+import { getAllProductsAndVariants, isMerchActive } from "scripts/merch";
 import MerchCard from "components/merch_2024/MerchCard";
 import MerchClosed from "components/merch_2024/MerchClosed";
+import Stripe from "stripe";
+import { GetServerSideProps } from "next";
 
 type Repo = {
   products: Product[];
@@ -23,26 +25,26 @@ type Repo = {
 };
 
 // TODO: move to AWS lambda
-// export const getServerSideProps = (async () => {
-//   if (!isMerchActive()) {
-//     return {
-//       props: {
-//         repo: { products: [], variants: [] },
-//       },
-//     };
-//   }
+export const getServerSideProps = (async () => {
+  if (!isMerchActive()) {
+    return {
+      props: {
+        repo: { products: [], variants: [] },
+      },
+    };
+  }
 
-//   // Ideally should be moved out to not initialise on every render
-//   // eslint-disable-next-line @typescript-eslint/no-var-requires
-//   const stripe: Stripe = require("stripe")(process.env["STRIPE_SECRET_KEY"]);
-//   const { products, variants } = await getAllProductsAndVariants(stripe);
+  // Ideally should be moved out to not initialise on every render
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const stripe: Stripe = require("stripe")(process.env["STRIPE_SECRET_KEY"]);
+  const { products, variants } = await getAllProductsAndVariants(stripe);
 
-//   return {
-//     props: {
-//       repo: { products, variants },
-//     },
-//   };
-// }) satisfies GetServerSideProps<{ repo: Repo }>;
+  return {
+    props: {
+      repo: { products, variants },
+    },
+  };
+}) satisfies GetServerSideProps<{ repo: Repo }>;
 
 const Merch = ({ repo }: { repo: Repo }) => {
   const router = useRouter();
