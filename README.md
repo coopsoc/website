@@ -18,7 +18,7 @@ To run the website on your local machine, do the following:
 2. Go into the repository and run `yarn install` to install all required packages.
 3. Run `yarn dev` to launch the website. After executing this command, the website
    should be available at `http://localhost:3000`, where any edits made to the
-   website's source code should be immediately reflected on the webpage.
+   website's source code should be immediately reflected on the webpage. aaa
 
 ## Maintaining
 
