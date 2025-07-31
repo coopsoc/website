@@ -1,4 +1,4 @@
-# Co-op Soc Website
+# Co-op Soc Website 2025
 
 This repository houses the source code for UNSW Co-op Society's website, hosted
 at [https://coopsoc.com.au](https://coopsoc.com.au) and written in
